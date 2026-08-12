@@ -94,6 +94,15 @@ signed install's permission flow and can retain local storage after removal.
 The evidence, ranked hypotheses, and durable diagnostic plan are in
 [`research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`](../research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md).
 
+The next-test build now includes that plan's opt-in diagnostic ring buffer in
+Firefox settings. It is restricted to one explicitly entered test hostname,
+retains at most 40 technical stage records, and excludes page text, URL paths,
+queries, and full URLs. The next device session should clear the previous
+temporary add-on state, enable the log for the test portal, navigate with the
+popup and extension debugger closed, then inspect and clear the log. Compare the
+same steps with a clean Mozilla-signed XPI before classifying the failure as a
+current Firefox regression.
+
 This negative result does not invalidate Mozilla's MV3 design, but it means this
 repository cannot claim Android durability from the documentation alone. Retest
 the exact signed AMO artifact and Firefox desktop. If the signed Android build

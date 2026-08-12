@@ -18,7 +18,7 @@ section, details, aside { border: 1px solid #d9d4c7; border-radius: 16px; backgr
 section { padding: 22px; }
 section > label:first-child { display: block; margin-bottom: 9px; font-size: 13px; font-weight: 750; }
 textarea { width: 100%; resize: vertical; border: 1px solid #cbc7bb; border-radius: 11px; padding: 13px; background: #fff; color: #1c2924; font: 14px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; }
-textarea:focus, button:focus-visible, summary:focus-visible { outline: 3px solid #f1b94d; outline-offset: 2px; }
+textarea:focus, .text-input:focus, button:focus-visible, summary:focus-visible { outline: 3px solid #f1b94d; outline-offset: 2px; }
 .help { margin: 9px 0 0; color: #707a75; font-size: 12px; line-height: 1.5; }
 
 .checkbox-row { display: flex; gap: 12px; margin-top: 12px; }
@@ -30,6 +30,14 @@ textarea:focus, button:focus-visible, summary:focus-visible { outline: 3px solid
 details { margin-top: 12px; padding: 17px 22px; }
 summary { color: #315c4e; cursor: pointer; font-size: 13px; font-weight: 700; }
 details p { color: #6a756f; font-size: 12px; line-height: 1.65; }
+.diagnostics { margin-top: 12px; }
+.diagnostics h2 { margin: 0 0 6px; font-family: Georgia, "Times New Roman", serif; font-size: 20px; }
+.diagnostic-toggle { display: flex !important; gap: 9px; align-items: center; margin: 15px 0 12px !important; }
+.diagnostic-toggle input { width: 18px; height: 18px; accent-color: #126b4f; }
+.text-input { display: block; width: 100%; margin-top: 7px; border: 1px solid #cbc7bb; border-radius: 11px; padding: 10px 12px; background: #fff; color: #1c2924; font: 14px ui-monospace, SFMono-Regular, Consolas, monospace; }
+.diagnostic-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+button.secondary { border: 1px solid #b9c8c1; background: #fffdf8; color: #245545; box-shadow: none; }
+#diagnostics-log { min-height: 80px; max-height: 300px; overflow: auto; margin: 14px 0 0; border-radius: 10px; padding: 12px; background: #17251f; color: #dbece4; font: 11px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-wrap; }
 
 .actions { display: flex; align-items: center; gap: 16px; margin-top: 18px; }
 button { border: 0; border-radius: 11px; padding: 12px 20px; background: #126b4f; color: white; font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; box-shadow: 0 5px 12px rgb(18 107 79 / 20%); }

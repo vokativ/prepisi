@@ -22,13 +22,15 @@
   const rule = persistence.ruleForSite(stored[persistence.STORAGE_KEY], site);
   if (!rule) return;
 
-  await globalThis.__PREPISI__.apply({
+  const result = await globalThis.__PREPISI__.apply({
     customProtectedTerms: stored.customProtectedTerms,
     respectForeignLanguageSpans: stored.respectForeignLanguageSpans,
     ...rule
   });
+  return { stage: "auto-apply-complete", changedTextNodes: result?.changedTextNodes || 0 };
   })();
-  await globalThis.__PREPISI_AUTO_APPLY_PROMISE__;
+  return await globalThis.__PREPISI_AUTO_APPLY_PROMISE__;
 })().catch((error) => {
   globalThis.__PREPISI_AUTO_APPLY_ERROR__ = String(error?.message || error);
+  return { stage: "auto-apply-error", error: String(error?.message || error) };
 });

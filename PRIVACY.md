@@ -7,7 +7,8 @@ browsing activity, settings, or identifiers to a server.
 
 - `activeTab`: temporary access to the page only after the user invokes Prepiši.
 - `scripting`: runs the packaged, local converter on that active page.
-- `storage`: stores protected-name and foreign-language-span preferences locally.
+- `storage`: stores protected-name and foreign-language-span preferences,
+  remembered-site rules, and optional Firefox diagnostic settings locally.
 
 Chrome, Edge, and Safari request persistent website access only when the user
 turns on **Remember on this site**, and scope it to that exact hostname.
@@ -39,6 +40,12 @@ browser's local extension storage until the user changes them or removes the
 extension. Script, pronunciation, and highlight choices otherwise live in the
 current page's memory, so each tab reflects its own actual conversion state. A
 remembered site stores only the three selected mode values, never page text.
+When a user explicitly enables Firefox diagnostics for one test hostname,
+Prepiši retains at most 40 local technical entries containing the hostname,
+time, processing stage, tab/frame number, short success state, or short error.
+The diagnostic log never contains page text, URL paths, queries, or full URLs;
+entries for every hostname except the configured test hostname are discarded.
+The user can clear and disable the log from the settings page.
 Original and converted page text disappear when the page or tab is closed.
 The bundled company-name and dialect vocabularies are static package files; they
 do not update themselves or contact their source sites while browsing.

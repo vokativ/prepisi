@@ -113,26 +113,30 @@ host-list product model, but does not validate MV3 event-page wake-up.
 5. **An old fixed Firefox defect.** Unlikely on 153.0.3; the most relevant known
    defect was fixed in 129.
 
-## Next diagnostic build
+## Implemented diagnostic build
 
 Do not keep the event page alive with timers and do not use an open extension
 toolbox during the decisive test. Developer Tools prevents normal idle
 termination and can hide the bug being tested.
 
-Add a small bounded diagnostic ring buffer in `storage.local` and expose it in
-the popup or a diagnostic page. Record only local technical state—never page
-text or browsing history beyond the explicitly tested hostname. At minimum
-record:
+The Firefox settings page now exposes an opt-in diagnostic ring buffer in
+`storage.local`. It accepts one explicit test hostname, discards host-specific
+events for every other hostname, retains at most 40 entries, and records no page
+text, URL path, query, or full URL. It records:
 
-1. background script evaluated, with build version and whether the install is
-   temporary (`runtime.onInstalled` supplies `details.temporary`);
+1. background script evaluated and whether the install is temporary
+   (`runtime.onInstalled` supplies `details.temporary`);
 2. `webNavigation.onCompleted` received, including time, top-frame flag, and
    test hostname;
 3. portal descriptor and remembered-rule lookup result;
 4. `permissions.contains()` result for every explicit alias pattern;
 5. `insertCSS` success or exact rejection;
 6. `executeScript` success/result or exact rejection;
-7. a final acknowledgment from `auto-apply.js` after conversion begins.
+7. the final acknowledgment and changed-node count returned by `auto-apply.js`
+   to `scripting.executeScript()`.
+
+The user can inspect and clear the log without attaching an extension debugger.
+Disable and clear it after the targeted test.
 
 Also create a minimal reproduction containing only a top-level
 `webNavigation.onCompleted` listener, one test origin, `storage.local` markers,

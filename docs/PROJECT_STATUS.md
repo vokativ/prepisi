@@ -12,13 +12,15 @@ Last updated: 2026-08-12. Current extension version: 0.9.0.
 - Popup choices apply immediately and are tab-local by default.
 - **Remember on this site** optionally reapplies the selected modes after
   same-host navigation using hostname-scoped permission.
+- Firefox includes an opt-in, single-host, 40-entry local diagnostic log for
+  remembered-navigation testing; it stores no page text or full URLs.
 - The interface can switch independently between Latin and Cyrillic.
 - Dialect changes can be highlighted without wrapping or rewriting page HTML.
 - The project makes no browsing-time network request and stores no page text.
 
 ## Verified baseline
 
-- `npm run check`: 82/82 tests pass.
+- `npm run check`: 83/83 tests pass.
 - All four browser targets build and package successfully.
 - Mozilla `web-ext lint`: 0 errors, 0 warnings, and 0 notices.
 - Frozen portal fixtures cover RTS, Index.hr, NSPM, Vijesti.me, and Klix.ba.
@@ -50,13 +52,19 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 
 ## Next release work
 
-1. Run the 0.9 human checklist in Chrome, Edge, and Firefox on Windows.
-2. Repeat desktop smoke tests on macOS and Linux.
-3. Test Firefox Android and the approved Edge mobile distribution path.
+1. Repeat desktop smoke tests on macOS: Chrome, Edge, Firefox, then Safari.
+2. On the next Firefox Android session, enable the options-page diagnostic log
+   for the explicit test domain and compare a clean temporary install with a
+   clean Mozilla-signed XPI; add Nightly if the signed Release build still fails.
+3. Run the remaining 0.9 human checklist in Chrome, Edge, and Firefox on Windows
+   and Linux, then test the approved Edge mobile distribution path.
 4. Package and test the Safari wrapper on macOS, iOS, and iPadOS.
 5. Continue reviewed dialect-vocabulary expansion and exact regression cases.
 6. Resolve the two public-release licensing gates above.
 7. Prepare store screenshots, descriptions, privacy URL, signing, and listings.
 
 Detailed instructions are in `HUMAN_TEST.md`, `docs/LOCAL_INSTALL.md`,
-`docs/RELEASE_COVERAGE.md`, and `research/BROWSER_COMPATIBILITY.md`.
+`docs/RELEASE_COVERAGE.md`, and `research/BROWSER_COMPATIBILITY.md`. The exact
+Firefox Android state and rationale are in `docs/FIREFOX_ANDROID_TEST.md` and
+`research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also
+summarized in `AGENTS.md`.

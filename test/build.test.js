@@ -67,7 +67,7 @@ test("browser builds share one runtime and contain target-specific manifests", (
   assert.equal(manifests.firefox.content_scripts, undefined);
   assert.deepEqual(manifests.firefox.background, {
     scripts: [
-      "src/platform/webext.js", "src/curated-portals.js",
+      "src/platform/webext.js", "src/firefox-diagnostics.js", "src/curated-portals.js",
       "src/site-persistence.js", "src/firefox-background.js"
     ],
     persistent: false

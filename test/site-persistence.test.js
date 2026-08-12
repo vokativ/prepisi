@@ -97,7 +97,10 @@ test("automatic content script applies only a stored rule for the current hostna
         respectForeignLanguageSpans: true
       }) } }
     },
-    __PREPISI__: { apply: async (settings) => calls.push(settings) }
+    __PREPISI__: { apply: async (settings) => {
+      calls.push(settings);
+      return { changedTextNodes: 2 };
+    } }
   });
   context.globalThis = context;
   const source = fs.readFileSync(path.join(root, "src", "auto-apply.js"), "utf8");

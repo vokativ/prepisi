@@ -90,6 +90,16 @@ Use the same `build/firefox` source and declared Android minimum.
    source changes; the temporary add-on disappears when the development session
    is removed or Firefox's temporary state is cleared.
 
+For the remembered-navigation diagnostic pass, open **Prepiši settings**, find
+**Firefox Android diagnostics**, enter only the explicit test domain (for
+example `rts.rs`), enable the local log, and save. Navigate with the popup closed,
+then return to settings to read the recorded stages. The log retains at most 40
+entries and records the selected test hostname, stage, time, tab/frame IDs,
+success state, and short errors. It never records page text, paths, queries, or
+full URLs. Clear and disable it after the test. Do not keep the extension
+debugger open during the decisive idle/wake test because the debugger can keep
+the event page alive.
+
 The Firefox MV3 build declares the reviewed editorial-portal batch and uses a
 non-persistent navigation event page to inject the converter only for remembered
 sites. A temporary Android installation may not enumerate the batch on its
@@ -101,6 +111,8 @@ For a normal device install, sign the package through AMO first; Firefox Android
 can then install the signed add-on from a file or an AMO listing. See the dated
 [device-test report](FIREFOX_ANDROID_TEST.md) for the verified environment and
 the original dynamic-registration failure plus curated-build retest gates.
+The signed-XPI comparison and interpretation of every diagnostic stage are in
+[`research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`](../research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md).
 
 Official instructions:
 

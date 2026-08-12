@@ -39,6 +39,23 @@
         <p id="company-summary"></p>
       </details>
 
+      <section id="firefox-diagnostics" class="diagnostics" hidden>
+        <h2 data-i18n="diagnosticsHeading">Firefox Android dijagnostika</h2>
+        <p class="help" data-i18n="diagnosticsHelp">Privremeno beleži samo tehničke faze za jedan test domen. Ne beleži tekst stranice ni punu URL adresu.</p>
+        <label class="diagnostic-toggle" for="diagnostics-enabled">
+          <input id="diagnostics-enabled" type="checkbox">
+          <span data-i18n="diagnosticsEnable">Uključi lokalni dijagnostički dnevnik</span>
+        </label>
+        <label for="diagnostics-host" data-i18n="diagnosticsHost">Test domen</label>
+        <input id="diagnostics-host" class="text-input" type="text" inputmode="url"
+          autocomplete="off" spellcheck="false" placeholder="rts.rs">
+        <div class="diagnostic-actions">
+          <button id="diagnostics-save" type="button" data-i18n="diagnosticsSave">Sačuvaj dijagnostiku</button>
+          <button id="diagnostics-clear" class="secondary" type="button" data-i18n="diagnosticsClear">Obriši dnevnik</button>
+        </div>
+        <pre id="diagnostics-log" tabindex="0"></pre>
+      </section>
+
       <div class="actions">
         <button id="save" type="button" data-i18n="saveSettings">Sačuvaj podešavanja</button>
         <p id="status" role="status" aria-live="polite"></p>
@@ -50,6 +67,7 @@
       </aside>
     </main>
     <script src="../platform/webext.js"></script>
+    <script src="../firefox-diagnostics.js"></script>
     <script src="../ui-strings.js"></script>
     <script src="../generated/company-names.js"></script>
     <script src="../generated/comtext-pairs.js"></script>
