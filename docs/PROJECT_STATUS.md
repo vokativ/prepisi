@@ -22,8 +22,18 @@ Last updated: 2026-08-12. Current extension version: 0.9.0.
 
 - `npm run check`: 83/83 tests pass.
 - All four browser targets build and package successfully.
-- Mozilla `web-ext lint`: 0 errors, 0 warnings, and 0 notices.
+- Mozilla `web-ext` 10.6.0 lint: 0 errors, 0 warnings, and 0 notices.
 - Frozen portal fixtures cover RTS, Index.hr, NSPM, Vijesti.me, and Klix.ba.
+- Xcode 26.6 generates and compiles the Safari wrapper for macOS and a physical
+  iPhone. The development-signed iOS app installs and launches on an iPhone 14
+  running iOS 26.5.2.
+- Firefox 153.0.4 on macOS passed core RTS/Klix conversion, restoration,
+  highlighting, tab/host isolation, and remembered RTS navigation. The complete
+  platform checklist remains open; see
+  [`docs/APPLE_PLATFORM_TEST_2026-08-12.md`](APPLE_PLATFORM_TEST_2026-08-12.md).
+- Chrome 151 on macOS passed the core RTS Cyrillic conversion, protected-name
+  sample, readable-layout, and exact-restoration checks after a manual Developer
+  mode load. The remaining Chrome checklist is still open.
 
 Run after cloning on another machine:
 
@@ -52,16 +62,21 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 
 ## Next release work
 
-1. Repeat desktop smoke tests on macOS: Chrome, Edge, Firefox, then Safari.
-2. On the next Firefox Android session, enable the options-page diagnostic log
+1. Finish the dated macOS/iPhone pass: complete Chrome's remaining live matrix,
+   establish a trusted macOS Safari development identity/Xcode-run context, and
+   complete the iPhone extension's remaining runtime, layout, recovery,
+   protected-text, and offline checks.
+2. Investigate the Klix protected-text concerns and retry the live NSPM and
+   Vijesti pages from the dated macOS report.
+3. On the next Firefox Android session, enable the options-page diagnostic log
    for the explicit test domain and compare a clean temporary install with a
    clean Mozilla-signed XPI; add Nightly if the signed Release build still fails.
-3. Run the remaining 0.9 human checklist in Chrome, Edge, and Firefox on Windows
+4. Run the remaining 0.9 human checklist in Chrome, Edge, and Firefox on Windows
    and Linux, then test the approved Edge mobile distribution path.
-4. Package and test the Safari wrapper on macOS, iOS, and iPadOS.
-5. Continue reviewed dialect-vocabulary expansion and exact regression cases.
-6. Resolve the two public-release licensing gates above.
-7. Prepare store screenshots, descriptions, privacy URL, signing, and listings.
+5. Test the Safari wrapper on iPadOS; Edge macOS remains intentionally deferred.
+6. Continue reviewed dialect-vocabulary expansion and exact regression cases.
+7. Resolve the two public-release licensing gates above.
+8. Prepare store screenshots, descriptions, privacy URL, signing, and listings.
 
 Detailed instructions are in `HUMAN_TEST.md`, `docs/LOCAL_INSTALL.md`,
 `docs/RELEASE_COVERAGE.md`, and `research/BROWSER_COMPATIBILITY.md`. The exact

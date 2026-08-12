@@ -4,9 +4,10 @@ This file separates packages that can be generated now from platforms that have
 actually passed human testing. Store acceptance and a successful device test are
 required before changing a platform from **candidate** to **supported**.
 
-Repository and Firefox Android validation completed on Windows on 2026-08-12:
+Repository, Firefox Android, and partial Apple-platform validation completed on
+2026-08-12:
 
-- The shared automated suite passes 82/82, including frozen samples from
+- The shared automated suite passes 83/83, including frozen samples from
   Index.hr, NSPM, Vijesti.me, and Klix.ba.
 - Chromium, Edge, Firefox, and Safari-source packages build successfully.
 - Mozilla `web-ext lint` reports 0 errors, 0 notices, and 0 warnings for the
@@ -29,18 +30,34 @@ Repository and Firefox Android validation completed on Windows on 2026-08-12:
   every claimed browser/OS combination.
 - Safari and all mobile targets require the corresponding Apple/Android device
   environment. A Windows-only check cannot honestly promote them to supported.
+- On macOS 26.5.2, Firefox 153.0.4 passed live RTS/Klix conversion,
+  restoration, highlighting, tab/host isolation, and remembered RTS navigation.
+  NSPM was unreachable, Vijesti failed with `PR_CONNECT_RESET_ERROR`, and
+  protected-text concerns on Klix plus several checklist items remain open.
+- Chrome 151 did not load through the removed branded `--load-extension` flag,
+  then passed core RTS conversion, protected-name sampling, layout, and exact
+  restoration after the user performed a manual Developer mode load. The
+  remaining Chrome macOS checklist is still required.
+- Xcode 26.6 compiled the generated Safari wrapper. A development-signed iOS app
+  installed and launched on an iPhone 14 running iOS 26.5.2. The enabled iPhone
+  extension passed core RTS Cyrillic conversion, portrait readability, protected
+  `RTS`/hostname sampling, and source restoration; the rest of the phone runtime
+  checklist remains. Safari macOS did not expose the regenerated wrapper in
+  Extensions settings.
+- Exact evidence and pending gates are recorded in
+  [`docs/APPLE_PLATFORM_TEST_2026-08-12.md`](APPLE_PLATFORM_TEST_2026-08-12.md).
 
 ## Intended coverage
 
 | Platform | Package | Current gate | Intended status |
 | --- | --- | --- | --- |
-| Chrome desktop (Windows/macOS/Linux) | `prepisi-<version>-chromium.zip` | Final smoke test on all three OS families and Chrome Web Store submission | First-class |
+| Chrome desktop (Windows/macOS/Linux) | `prepisi-<version>-chromium.zip` | Core macOS RTS conversion/restoration/highlight checks pass; remaining three-OS smoke test and Chrome Web Store submission | First-class |
 | Edge desktop (Windows/macOS/Linux) | `prepisi-<version>-edge.zip` | Smoke test on all three OS families and Partner Center submission | First-class |
 | Edge Android/iOS | Same Edge Add-ons listing | Microsoft mobile certification/visibility and phone tests | First-class after validation |
-| Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint passes; three-OS smoke test and AMO signing remain | First-class |
+| Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint and partial macOS live checks pass; remaining macOS checklist, other OS smoke tests, and AMO signing remain | First-class |
 | Firefox Android | Same AMO package | Core phone smoke passed; remembered navigation, remaining mobile checks, AMO signing, and signed-build retest remain | First-class |
-| Safari macOS | `prepisi-<version>-safari-source.zip` | Apple wrapper, signing, and Mac test | First-class |
-| Safari iOS/iPadOS | Same Apple project | TestFlight/App Store packaging and phone/tablet tests | First-class |
+| Safari macOS | `prepisi-<version>-safari-source.zip` | Wrapper compiles; trusted normal loading and full Mac runtime test remain | First-class |
+| Safari iOS/iPadOS | Same Apple project | iPhone build/install/enable/core RTS pass; remaining phone runtime, iPad, TestFlight, and App Store tests remain | First-class |
 | Brave/Opera desktop | Chromium package | Compatibility smoke tests | Best effort |
 | Yandex Android | Published Chromium listing or unpacked test | Manual phone test | Exploratory |
 | Orion iOS/iPadOS | Compatible published package | Manual phone/tablet test | Exploratory |
