@@ -1,6 +1,13 @@
 (async function autoApplyRememberedSite() {
   "use strict";
 
+  if (globalThis.__PREPISI_AUTO_APPLY_PROMISE__) {
+    await globalThis.__PREPISI_AUTO_APPLY_PROMISE__;
+    return;
+  }
+
+  globalThis.__PREPISI_AUTO_APPLY_PROMISE__ = (async () => {
+
   const webext = globalThis.PrepisiWebExt;
   const persistence = globalThis.PrepisiSitePersistence;
   const site = persistence?.descriptorForUrl(globalThis.location?.href);
@@ -12,7 +19,7 @@
     respectForeignLanguageSpans: true
   };
   const stored = await webext.storage.local.get(defaults);
-  const rule = stored[persistence.STORAGE_KEY]?.[site.key];
+  const rule = persistence.ruleForSite(stored[persistence.STORAGE_KEY], site);
   if (!rule) return;
 
   await globalThis.__PREPISI__.apply({
@@ -20,6 +27,8 @@
     respectForeignLanguageSpans: stored.respectForeignLanguageSpans,
     ...rule
   });
+  })();
+  await globalThis.__PREPISI_AUTO_APPLY_PROMISE__;
 })().catch((error) => {
   globalThis.__PREPISI_AUTO_APPLY_ERROR__ = String(error?.message || error);
 });

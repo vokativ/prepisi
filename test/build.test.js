@@ -8,6 +8,8 @@ const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
 const baseManifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
+const curated = require("../src/curated-portals.js");
+const persistence = require("../src/site-persistence.js");
 
 function filesBelow(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -49,8 +51,27 @@ test("browser builds share one runtime and contain target-specific manifests", (
 
   for (const manifest of Object.values(manifests)) {
     assert.deepEqual(manifest.optional_host_permissions, ["http://*/*", "https://*/*"]);
-    assert.equal(manifest.host_permissions, undefined);
   }
+
+  for (const target of ["chromium", "edge", "safari"]) {
+    assert.equal(manifests[target].host_permissions, undefined);
+    assert.equal(manifests[target].content_scripts, undefined);
+  }
+  assert.equal(manifests.firefox.manifest_version, 3);
+  assert.equal(manifests.firefox.action.default_popup, "src/popup/popup.html");
+  assert.equal(manifests.firefox.browser_action, undefined);
+  assert.deepEqual(manifests.firefox.permissions, [
+    "activeTab", "scripting", "storage", "webNavigation"
+  ]);
+  assert.deepEqual(manifests.firefox.host_permissions, curated.matchPatterns());
+  assert.equal(manifests.firefox.content_scripts, undefined);
+  assert.deepEqual(manifests.firefox.background, {
+    scripts: [
+      "src/platform/webext.js", "src/curated-portals.js",
+      "src/site-persistence.js", "src/firefox-background.js"
+    ],
+    persistent: false
+  });
 
   assert.equal(manifests.chromium.minimum_chrome_version, "105");
   assert.equal(manifests.chromium.browser_specific_settings, undefined);

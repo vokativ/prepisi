@@ -4,13 +4,25 @@ This file separates packages that can be generated now from platforms that have
 actually passed human testing. Store acceptance and a successful device test are
 required before changing a platform from **candidate** to **supported**.
 
-Repository validation completed on Windows on 2026-08-11:
+Repository and Firefox Android validation completed on Windows on 2026-08-12:
 
-- The shared automated suite passes 76/76, including frozen samples from
+- The shared automated suite passes 82/82, including frozen samples from
   Index.hr, NSPM, Vijesti.me, and Klix.ba.
 - Chromium, Edge, Firefox, and Safari-source packages build successfully.
 - Mozilla `web-ext lint` reports 0 errors, 0 notices, and 0 warnings for the
   Firefox/Android package.
+- A Pixel 7 running Android 17 and Firefox 153.0.3 passed the temporary-install,
+  portrait UI, conversion, restore, highlighting, protected-content, dynamic-text,
+  tab-local-state, and live RTS checks. The exact results are in
+  [`docs/FIREFOX_ANDROID_TEST.md`](FIREFOX_ANDROID_TEST.md).
+- Firefox Android did not automatically apply either the original dynamically
+  registered hostname rule or either of two reviewed static-catalog variants on
+  the next document in initial temporary MV3 tests. The current candidate follows
+  Mozilla's event-page pattern: generated `host_permissions`, a synchronous
+  `webNavigation.onCompleted` listener, and conditional `scripting.executeScript()`.
+  The exact temporary build also left a fresh RTS Latin homepage unchanged despite
+  retaining the remembered Cyrillic rule. Firefox desktop and a signed-Android
+  regression test remain before support can be claimed.
 - The source contains no native binary or operating-system integration. The same
   Chrome/Edge/Firefox packages are therefore expected to run on Windows, macOS,
   and Linux, but the current 0.9 build still needs a fresh human runtime pass on
@@ -26,7 +38,7 @@ Repository validation completed on Windows on 2026-08-11:
 | Edge desktop (Windows/macOS/Linux) | `prepisi-<version>-edge.zip` | Smoke test on all three OS families and Partner Center submission | First-class |
 | Edge Android/iOS | Same Edge Add-ons listing | Microsoft mobile certification/visibility and phone tests | First-class after validation |
 | Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint passes; three-OS smoke test and AMO signing remain | First-class |
-| Firefox Android | Same AMO package | Android compatibility flag, AMO approval, and phone test | First-class |
+| Firefox Android | Same AMO package | Core phone smoke passed; remembered navigation, remaining mobile checks, AMO signing, and signed-build retest remain | First-class |
 | Safari macOS | `prepisi-<version>-safari-source.zip` | Apple wrapper, signing, and Mac test | First-class |
 | Safari iOS/iPadOS | Same Apple project | TestFlight/App Store packaging and phone/tablet tests | First-class |
 | Brave/Opera desktop | Chromium package | Compatibility smoke tests | Best effort |
@@ -48,8 +60,9 @@ Run this checklist independently on each platform that will be called supported:
 - Change Ekavian, Ijekavian, and Ikavian forms in both scripts.
 - Confirm one-click changes and tab-local state.
 - With **Remember on this site** off, confirm a new document starts from its
-  source state. Turn it on, accept the hostname-only prompt, and confirm same-host
-  links reapply the three selected modes while cross-host links do not.
+  source state. On Firefox, verify a curated portal needs no second host prompt
+  and that its explicit apex/`www` aliases share the rule; elsewhere accept the
+  exact-host prompt. Confirm unrelated hosts do not inherit the rule.
 - Toggle dialect highlighting and confirm script-only changes are not highlighted.
 - Check protected brands, foreign names, URLs, email addresses, form controls,
   and explicitly foreign-language spans.
@@ -83,5 +96,7 @@ review, a long-article performance check, and a tab-discard/low-memory check.
    TestFlight for iPhone and iPad.
 5. Test Brave, Opera, Yandex, and Orion only after the primary packages are stable.
 
-No store submission should add broader host permissions, telemetry, remote code,
-or a network service. The local-only architecture is part of the release contract.
+No store submission should add all-sites or country-TLD host permissions,
+telemetry, remote code, or a network service. Changes to Firefox's finite portal
+catalog require research, privacy review, and release testing. The local-only
+architecture is part of the release contract.

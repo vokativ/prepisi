@@ -20,8 +20,10 @@ forking the conversion rules or vocabulary.
   immediately to the active page.
 - Page-specific controls: reopening the popup reads the active tab's real state;
   a different tab starts at the source settings by default.
-- Optional per-site continuity: **Remember on this site** requests access only to
-  the current hostname and reapplies the selected modes after same-site navigation.
+- Per-site continuity: **Remember on this site** reapplies the selected modes
+  after navigation. Firefox includes a reviewed portal catalog intended to make
+  this durable on desktop and Android; other sites and browsers request only
+  exact-host access when enabled. Signed-build validation is still pending.
 - A one-click Latin/Cyrillic interface switch, stored locally and independent of
   the script selected for the web page.
 - Optional dialect-only highlighting through browser-native text ranges; page HTML
@@ -33,8 +35,10 @@ forking the conversion rules or vocabulary.
 - Official-capitalization protection for 711 unique company names from the 2026
   Fortune 500, FTSE 100, CAC 40, DAX 40, and IBEX 35 snapshots.
 - No server, telemetry, analytics, account, or network request.
-- Minimal required permissions: the extension can touch only the active page after
-  a click. Persistent access is optional and requested one hostname at a time.
+- Minimal platform-appropriate permissions: Chrome, Edge, and Safari touch only
+  the active page until an exact host is remembered. Firefox additionally
+  predeclares a reviewed editorial-portal batch, surfaced by Firefox through its
+  install, settings, or first-use permission UI.
 
 ## Load it in a Chromium browser
 
@@ -50,8 +54,9 @@ exact Firefox temporary-add-on steps—see [`docs/LOCAL_INSTALL.md`](docs/LOCAL_
 
 The extension cannot run on browser system pages, extension stores, or other pages
 where browsers forbid extensions. Temporary access normally ends when the user
-leaves the page. A user may opt into one hostname so links on that site keep the
-selected conversion; Prepiši never requests required access to every site.
+leaves the page. A user may opt into a hostname (or explicit curated portal
+aliases in Firefox) so links keep the selected conversion. Prepiši never requests
+required access to every site. See the [Firefox portal catalog and research](research/CURATED_EDITORIAL_PORTALS.md).
 
 ## Run the checks
 

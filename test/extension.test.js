@@ -41,7 +41,8 @@ test("extension source makes no network requests", () => {
   const sources = [
     "src/generated/company-names.js", "src/generated/comtext-pairs.js", "src/generated/lexicon-pairs.js",
     "src/dialect-data.js", "src/platform/webext.js", "src/ui-strings.js",
-    "src/converter.js", "src/content.js", "src/site-persistence.js", "src/auto-apply.js",
+    "src/converter.js", "src/content.js", "src/curated-portals.js", "src/firefox-background.js",
+    "src/site-persistence.js", "src/auto-apply.js",
     "src/popup/popup.js", "src/options/options.js"
   ].map((relativePath) => fs.readFileSync(path.join(root, relativePath), "utf8")).join("\n");
   assert.doesNotMatch(sources, /\bfetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon/u);
@@ -85,6 +86,12 @@ test("site persistence is optional, hostname-scoped, and initiated by its own co
   assert.match(popup, /id="remember-site"/u);
   assert.doesNotMatch(popupScript, /<all_urls>/u);
   assert.doesNotMatch(manifest.optional_host_permissions.join("\n"), /<all_urls>/u);
+});
+
+test("Firefox uses its MV3 navigation event page while other targets stay dynamic", () => {
+  const popupScript = fs.readFileSync(path.join(root, "src/popup/popup.js"), "utf8");
+  assert.match(popupScript, /if \(firefoxBuild\) return;/u);
+  assert.match(popupScript, /registerContentScripts/u);
 });
 
 test("popup scripts are external, preserving the default extension CSP", () => {

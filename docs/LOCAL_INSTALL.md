@@ -65,10 +65,42 @@ test session ends.
 
 ## Firefox for Android
 
-Use the same `build/firefox` source and declared Android minimum. For development,
-Mozilla documents `web-ext run -t firefox-android` with an Android device exposed
-through ADB. For a normal device install, sign the package through AMO first;
-Firefox Android can then install the signed add-on from a file or an AMO listing.
+Use the same `build/firefox` source and declared Android minimum.
+
+1. Enable Android **Developer options** and **USB debugging**, connect the phone,
+   accept its USB-debugging prompt, and verify it is listed:
+
+   ```powershell
+   adb devices
+   ```
+
+2. In Firefox Android, enable **Settings → Advanced → Remote debugging via USB**.
+3. Build and start the temporary add-on, replacing the serial when more than one
+   ADB device is present:
+
+   ```powershell
+   npm run build:firefox
+   npx --yes web-ext run -t firefox-android --source-dir build/firefox --adb-device <serial> --firefox-apk org.mozilla.firefox --no-reload
+   ```
+
+4. Accept Firefox's **Prepiši was added** confirmation. On the page under test,
+   open **Menu → Extensions → Prepiši / Препиши**. Firefox shows the popup as a
+   full-screen extension view on a phone.
+5. Keep the command running for the test session. Rebuild and restart it after
+   source changes; the temporary add-on disappears when the development session
+   is removed or Firefox's temporary state is cleared.
+
+The Firefox MV3 build declares the reviewed editorial-portal batch and uses a
+non-persistent navigation event page to inject the converter only for remembered
+sites. A temporary Android installation may not enumerate the batch on its
+confirmation screen; Firefox can instead request the explicit apex/`www` portal
+aliases on first use. Conversion remains off until a portal is remembered. The catalog is documented in
+[`research/CURATED_EDITORIAL_PORTALS.md`](../research/CURATED_EDITORIAL_PORTALS.md).
+
+For a normal device install, sign the package through AMO first; Firefox Android
+can then install the signed add-on from a file or an AMO listing. See the dated
+[device-test report](FIREFOX_ANDROID_TEST.md) for the verified environment and
+the original dynamic-registration failure plus curated-build retest gates.
 
 Official instructions:
 

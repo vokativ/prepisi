@@ -9,17 +9,28 @@ browsing activity, settings, or identifiers to a server.
 - `scripting`: runs the packaged, local converter on that active page.
 - `storage`: stores protected-name and foreign-language-span preferences locally.
 
-By default, these remain the only effective website permissions. If the user
-turns on **Remember on this site**, Prepiši asks for optional access to that
-hostname over HTTP/HTTPS. That access lets the packaged local converter run on
-later pages of the same site without another click. It is never requested for
-all sites at installation, does not apply to a different hostname, and is
-removed when the switch is turned off.
+Chrome, Edge, and Safari request persistent website access only when the user
+turns on **Remember on this site**, and scope it to that exact hostname.
 
-The extension requests no required persistent website access, makes no network
+Firefox desktop and Android predeclare access to a reviewed catalog of editorial
+portals to support automatic application after navigation and browser restarts.
+Firefox may expose these permissions at installation, in
+add-on settings, or in a first-use request; the temporary Android installer tested
+on 2026-08-12 did not enumerate the full batch and requested the explicit RTS
+portal aliases on first use. The Firefox event page checks local storage after
+navigation and loads the packaged converter only when a Remember rule exists.
+A curated portal rule covers
+only its explicitly listed aliases (for example, an apex and `www` host). Turning
+Remember off deletes the rule and stops automatic conversion; the catalog access
+remains part of the installed Firefox manifest and can be managed in Firefox's
+add-on permissions. Non-catalog Firefox sites keep the exact-host optional prompt.
+The dated catalog and selection policy are documented in
+[`research/CURATED_EDITORIAL_PORTALS.md`](research/CURATED_EDITORIAL_PORTALS.md).
+
+Prepiši never requests access to all sites at installation. It makes no network
 requests, contains no analytics or advertising, and does not sell or share user
-data. Optional site access changes when the local converter may run; it does not
-allow page text to leave the browser.
+data. Website access changes only when the packaged local converter may inspect
+and alter page text; page text never leaves the browser.
 
 ## Data retention
 
