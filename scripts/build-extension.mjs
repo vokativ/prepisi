@@ -38,7 +38,7 @@ async function manifestFor(target) {
     manifest.host_permissions = curatedPortals.matchPatterns();
     manifest.background = {
       scripts: [
-        "src/platform/webext.js", "src/curated-portals.js",
+        "src/platform/webext.js", "src/firefox-diagnostics.js", "src/curated-portals.js",
         "src/site-persistence.js", "src/firefox-background.js"
       ],
       persistent: false

@@ -40,7 +40,7 @@ test("package and manifest versions stay aligned", () => {
 test("extension source makes no network requests", () => {
   const sources = [
     "src/generated/company-names.js", "src/generated/comtext-pairs.js", "src/generated/lexicon-pairs.js",
-    "src/dialect-data.js", "src/platform/webext.js", "src/ui-strings.js",
+    "src/dialect-data.js", "src/platform/webext.js", "src/firefox-diagnostics.js", "src/ui-strings.js",
     "src/converter.js", "src/content.js", "src/curated-portals.js", "src/firefox-background.js",
     "src/site-persistence.js", "src/auto-apply.js",
     "src/popup/popup.js", "src/options/options.js"

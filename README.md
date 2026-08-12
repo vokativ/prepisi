@@ -55,8 +55,15 @@ exact Firefox temporary-add-on steps—see [`docs/LOCAL_INSTALL.md`](docs/LOCAL_
 The extension cannot run on browser system pages, extension stores, or other pages
 where browsers forbid extensions. Temporary access normally ends when the user
 leaves the page. A user may opt into a hostname (or explicit curated portal
-aliases in Firefox) so links keep the selected conversion. Prepiši never requests
+  aliases in Firefox) so links keep the selected conversion. Prepiši never requests
 required access to every site. See the [Firefox portal catalog and research](research/CURATED_EDITORIAL_PORTALS.md).
+
+Firefox Android manual conversion has passed, but automatic remembered
+navigation has not yet passed in an unsigned temporary installation. Firefox's
+settings page includes an opt-in, single-host local diagnostic log for the next
+device pass. The log is limited to technical stages and stores neither page text
+nor full URLs. See the [dated Android test](docs/FIREFOX_ANDROID_TEST.md) and
+[MV3 event-page research](research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md).
 
 ## Run the checks
 
@@ -95,6 +102,8 @@ research candidates visibly separate:
   browser support decisions and official vendor sources;
 - [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) is the concise machine-handoff
   note with the verified baseline and next release work;
+- [`AGENTS.md`](AGENTS.md) gives coding agents the repository guardrails and the
+  current Firefox Android/macOS handoff;
 - [`SECURITY.md`](SECURITY.md), [`PRIVACY.md`](PRIVACY.md), and
   [`ATTRIBUTIONS.md`](ATTRIBUTIONS.md) make the local-only boundary and source
   responsibilities explicit.
