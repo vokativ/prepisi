@@ -58,8 +58,9 @@ reports, unless they also create one of the impacts above.
 
 - Keep conversion local and dependency-free unless a reviewed design explicitly
   changes that architecture.
-- Avoid `innerHTML`, remote code, dynamically fetched rules, broad host
-  permissions, and persistent access to browsing history.
+- Avoid `innerHTML`, remote code, dynamically fetched rules, country-TLD or
+  all-sites host permissions, and persistent access to browsing history. Firefox
+  catalog hosts must be individually researched, enumerated, and release-reviewed.
 - Treat page text as hostile input and preserve the existing skipped-node and
   protected-span boundaries.
 - Pin, integrity-check, and attribute networked research inputs. Source corpora
@@ -67,4 +68,3 @@ reports, unless they also create one of the impacts above.
 - Inspect `dist/` contents before release. The current package is expected to
   contain only the manifest, runtime source, raster assets, privacy and attribution
   notices, and the project license.
-

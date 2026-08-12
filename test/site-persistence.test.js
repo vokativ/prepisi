@@ -8,6 +8,7 @@ const vm = require("node:vm");
 
 const root = path.resolve(__dirname, "..");
 const persistence = require("../src/site-persistence.js");
+const curated = require("../src/curated-portals.js");
 
 test("creates a narrow HTTP/HTTPS registration for one hostname", () => {
   const site = persistence.descriptorForUrl("https://www.nspm.rs/hronika/article.html");
@@ -18,6 +19,50 @@ test("creates a narrow HTTP/HTTPS registration for one hostname", () => {
   assert.match(site.id, /^prepisi-site-[0-9a-f]{8}$/u);
   assert.equal(persistence.descriptorForUrl("about:debugging"), null);
   assert.equal(persistence.descriptorForUrl("file:///tmp/article.html"), null);
+});
+
+test("curated portal aliases share one rule key and explicit permissions", () => {
+  const apex = persistence.descriptorForUrl("https://index.hr/vijesti", { curated: true });
+  const www = persistence.descriptorForUrl("https://www.index.hr/vijesti", { curated: true });
+  assert.equal(apex.key, "index.hr");
+  assert.equal(www.key, "index.hr");
+  assert.equal(apex.curated, true);
+  assert.deepEqual(Array.from(www.matches), [
+    "http://index.hr/*", "https://index.hr/*",
+    "http://www.index.hr/*", "https://www.index.hr/*"
+  ]);
+  assert.equal(persistence.ruleForSite({ "www.index.hr": { targetScript: "latin" } }, apex).targetScript,
+    "latin");
+});
+
+test("non-Firefox builds keep exact-host persistence even for catalog sites", () => {
+  const site = persistence.descriptorForUrl("https://www.index.hr/vijesti");
+  assert.equal(site.key, "www.index.hr");
+  assert.equal(site.curated, false);
+  assert.deepEqual(Array.from(site.matches), [
+    "http://www.index.hr/*", "https://www.index.hr/*"
+  ]);
+});
+
+test("curated catalog is normalized, non-overlapping, and below the reviewed cap", () => {
+  assert.ok(curated.portals.length >= 70);
+  assert.ok(curated.portals.length <= 100);
+  const ids = new Set();
+  const hosts = new Set();
+  for (const portal of curated.portals) {
+    assert.match(portal.id, /^[a-z0-9-]+$/u);
+    assert.equal(ids.has(portal.id), false, portal.id);
+    ids.add(portal.id);
+    assert.ok(portal.hosts.includes(portal.canonicalHost));
+    for (const host of portal.hosts) {
+      assert.match(host, /^(?!www\.www\.)[a-z0-9.-]+$/u);
+      assert.doesNotMatch(host, /[*\/]/u);
+      assert.equal(hosts.has(host), false, host);
+      hosts.add(host);
+      assert.equal(curated.portalForHostname(host), portal);
+    }
+  }
+  assert.equal(curated.matchPatterns().length, hosts.size * 2);
 });
 
 test("registered site scripts are ordered, local, persistent, and top-frame only", () => {

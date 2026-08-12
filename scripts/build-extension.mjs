@@ -1,8 +1,12 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const require = createRequire(import.meta.url);
+const curatedPortals = require(path.join(root, "src", "curated-portals.js"));
+const persistence = require(path.join(root, "src", "site-persistence.js"));
 const buildRoot = path.join(root, "build");
 const targets = Object.freeze(["chromium", "edge", "firefox", "safari"]);
 const runtimeEntries = Object.freeze([
@@ -28,7 +32,19 @@ async function manifestFor(target) {
 
   const overlay = JSON.parse(await fs.readFile(path.join(root, "manifests", `${target}.json`), "utf8"));
   for (const key of overlay.remove || []) delete base[key];
-  return merge(base, overlay.manifest || {});
+  const manifest = merge(base, overlay.manifest || {});
+  if (target === "firefox") {
+    manifest.permissions = [...manifest.permissions, "webNavigation"];
+    manifest.host_permissions = curatedPortals.matchPatterns();
+    manifest.background = {
+      scripts: [
+        "src/platform/webext.js", "src/curated-portals.js",
+        "src/site-persistence.js", "src/firefox-background.js"
+      ],
+      persistent: false
+    };
+  }
+  return manifest;
 }
 
 async function build(target) {

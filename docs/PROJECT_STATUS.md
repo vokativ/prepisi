@@ -18,7 +18,7 @@ Last updated: 2026-08-12. Current extension version: 0.9.0.
 
 ## Verified baseline
 
-- `npm run check`: 76/76 tests pass.
+- `npm run check`: 82/82 tests pass.
 - All four browser targets build and package successfully.
 - Mozilla `web-ext lint`: 0 errors, 0 warnings, and 0 notices.
 - Frozen portal fixtures cover RTS, Index.hr, NSPM, Vijesti.me, and Klix.ba.

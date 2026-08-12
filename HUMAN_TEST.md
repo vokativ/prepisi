@@ -11,9 +11,11 @@ on real pages; it does not mean every dialect word is already in the reviewed vo
    `manifest.json`), or run `npm run build:chromium` and select `build/chromium`.
 4. Pin **Prepiši** to the toolbar.
 
-The browser should not request permanent access to all websites. Prepiši receives
-temporary access only after its toolbar action is opened on a page. The separate
-**Zapamti na ovom sajtu** switch may request access to the current hostname only.
+The browser should not request permanent access to all websites. Chrome, Edge,
+and Safari receive temporary access after the toolbar action is opened; Remember
+may request the current hostname. Firefox declares a finite reviewed editorial-
+portal batch, which its install, settings, or first-use UI may surface, and uses
+exact-host prompts elsewhere.
 
 ## Representative live pages
 
@@ -49,11 +51,13 @@ For each page, open one article rather than testing only the homepage.
       pronunciation. The same preference appears on the settings page.
 - [ ] With **Zapamti na ovom sajtu** off, reloading or navigating to a new
       document starts that document in its source state.
-- [ ] Turn **Zapamti na ovom sajtu** on and accept the hostname-only permission.
-      Follow a same-host article link: the selected script, dialect, and highlight
-      setting are reapplied without reopening the popup.
-- [ ] A cross-host link does not inherit the remembered rule. Turning site memory
-      off stops later automatic conversion and removes the optional site access.
+- [ ] Turn **Zapamti na ovom sajtu** on. Accept the exact-host permission when
+      shown; a curated Firefox portal should already have access. Follow an article
+      link: the selected script, dialect, and highlight setting are reapplied
+      without reopening the popup.
+- [ ] An unrelated host does not inherit the remembered rule. Turning site memory
+      off stops later automatic conversion. It removes optional exact-host access;
+      Firefox catalog access remains installed but dormant without a rule.
 - [ ] With **Istakni promenjene reči** enabled, dialect-changed words are marked;
       script-only changes are not marked and the page layout remains unchanged.
 - [ ] Ijekavian → Ekavian changes those forms in the opposite direction.
@@ -82,8 +86,8 @@ For each page, open one article rather than testing only the homepage.
       never become broken mixed forms such as `Рицхтерова`.
 - [ ] A custom protected company name entered in settings remains unchanged.
 - [ ] An explicitly English-language span remains unchanged.
-- [ ] Closing or navigating away removes temporary access; only a hostname that
-      was explicitly remembered keeps optional access.
+- [ ] Closing or navigating away removes temporary access except for Firefox's
+      disclosed catalog. Catalog pages remain unmodified unless explicitly remembered.
 
 ## Additional browser sign-off
 

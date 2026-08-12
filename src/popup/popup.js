@@ -3,6 +3,7 @@
 
   const webext = globalThis.PrepisiWebExt;
   const persistence = globalThis.PrepisiSitePersistence;
+  const firefoxBuild = Boolean(webext.runtime.getManifest().browser_specific_settings?.gecko);
 
   const DEFAULTS = {
     customProtectedTerms: [],
@@ -94,11 +95,13 @@
   }
 
   function supportsSitePersistence() {
+    if (firefoxBuild) return Boolean(webext.permissions?.request && webext.permissions?.contains);
     return Boolean(webext.permissions?.request && webext.permissions?.contains &&
       webext.scripting?.registerContentScripts && webext.scripting?.unregisterContentScripts);
   }
 
   async function unregisterSite(site) {
+    if (firefoxBuild) return;
     if (!site || !webext.scripting?.unregisterContentScripts) return;
     try {
       await webext.scripting.unregisterContentScripts({ ids: [site.id] });
@@ -109,6 +112,7 @@
 
   async function registerSite(site) {
     if (!supportsSitePersistence()) throw new Error(t("sitePersistenceUnsupported"));
+    if (firefoxBuild) return;
     await unregisterSite(site);
     await webext.scripting.registerContentScripts([persistence.registrationFor(site)]);
   }
@@ -116,9 +120,11 @@
   async function saveSiteRule(settings) {
     if (!currentSite || !rememberSite.checked) return;
     const stored = await webext.storage.local.get({ [persistence.STORAGE_KEY]: {} });
+    const rules = { ...stored[persistence.STORAGE_KEY] };
+    for (const key of currentSite.legacyKeys) delete rules[key];
     await webext.storage.local.set({
       [persistence.STORAGE_KEY]: {
-        ...stored[persistence.STORAGE_KEY],
+        ...rules,
         [currentSite.key]: persistence.targetSettings(settings)
       }
     });
@@ -128,10 +134,12 @@
     if (!site) return;
     const stored = await webext.storage.local.get({ [persistence.STORAGE_KEY]: {} });
     const rules = { ...stored[persistence.STORAGE_KEY] };
-    delete rules[site.key];
+    for (const key of new Set([site.key, ...site.legacyKeys])) delete rules[key];
     await webext.storage.local.set({ [persistence.STORAGE_KEY]: rules });
     await unregisterSite(site);
-    await webext.permissions?.remove?.({ origins: Array.from(site.matches) });
+    if (!(firefoxBuild && site.curated)) {
+      await webext.permissions?.remove?.({ origins: Array.from(site.matches) });
+    }
   }
 
   async function loadPageSettings() {
@@ -142,7 +150,7 @@
     currentTab = tab;
     currentSite = persistence.descriptorForUrl(tab.url);
     let rememberedRule = currentSite
-      ? preferences[persistence.STORAGE_KEY]?.[currentSite.key] || null : null;
+      ? persistence.ruleForSite(preferences[persistence.STORAGE_KEY], currentSite) : null;
     let isRemembered = false;
     if (!supportsSitePersistence()) {
       rememberSite.dataset.unsupported = "true";
