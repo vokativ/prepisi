@@ -84,6 +84,16 @@ changed text parts. With the popup closed, opening the valid
 after ten seconds. The event-page design therefore also fails the automatic-
 navigation requirement in this unsigned temporary Android session.
 
+Follow-up research found prior Firefox defects in which suspended MV3 event
+pages did not wake, but no report that exactly matches Firefox Android 153.0.3
+and this listener/injection sequence. Mozilla's current documentation and
+Firefox source both support the synchronous, top-level
+`webNavigation.onCompleted` design used here. The most important remaining
+ambiguity is that a temporary `web-ext` installation does not reproduce a
+signed install's permission flow and can retain local storage after removal.
+The evidence, ranked hypotheses, and durable diagnostic plan are in
+[`research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`](../research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md).
+
 This negative result does not invalidate Mozilla's MV3 design, but it means this
 repository cannot claim Android durability from the documentation alone. Retest
 the exact signed AMO artifact and Firefox desktop. If the signed Android build
@@ -99,6 +109,7 @@ will then be the appropriate next engineering step.
 - Tab discard or low-memory recovery on a browser profile with many existing tabs
 - The complete five-site live sweep; RTS plus the deterministic fixture were used
 - Firefox Desktop regression after signing
+- Durable stage-by-stage background diagnostics without an attached toolbox
 
 Firefox Android remains a **candidate**, not a supported release target, until
 the curated build and remaining mobile checks pass on the signed artifact.
