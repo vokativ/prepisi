@@ -1,0 +1,6 @@
+::highlight(prepisi-dialect-change) {
+  color: inherit;
+  background-color: rgb(255 215 64 / 48%);
+  text-decoration: underline 2px solid rgb(8 124 104 / 75%);
+  text-underline-offset: 0.14em;
+}

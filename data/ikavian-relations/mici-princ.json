@@ -1,0 +1,42 @@
+{
+  "name": "Mići Princ-attested Ikavian jat relations",
+  "status": "corpus-attested-reviewed",
+  "role": "supplementary-ikavian",
+  "exhaustive": false,
+  "license": "CC BY-SA 4.0",
+  "source": "https://hdl.handle.net/11356/1765",
+  "sourceArchive": {
+    "filename": "MP.json.tgz",
+    "md5": "984df31d6c5df7027dc188a714a17f15",
+    "words": 11591
+  },
+  "method": "The Ekavian/Ijekavian lemma relation is independently validated by the existing srLex/hrLex pipeline. The Ikavian candidate is a jat-only transformation and occurs verbatim in the Mići Princ Chakavian micro-dialect corpus. Obvious reverse-direction homographs and semantic collisions are excluded.",
+  "pairs": [
+    ["mesec", "mjesec", "misec", 3],
+    ["telo", "tijelo", "tilo", 2],
+    ["vrednost", "vrijednost", "vridnost", 2],
+    ["delo", "djelo", "dilo", 5],
+    ["leto", "ljeto", "lito", 4],
+    ["vredan", "vrijedan", "vridan", 2],
+    ["zvezda", "zvijezda", "zvizda", 2],
+    ["lepota", "ljepota", "lipota", 1],
+    ["dole", "dolje", "doli", 4],
+    ["svetlost", "svjetlost", "svitlost", 1],
+    ["drugde", "drugdje", "drugdi", 1],
+    ["cev", "cijev", "civ", 1],
+    ["čovečanstvo", "čovječanstvo", "čovičanstvo", 1],
+    ["vredno", "vrijedno", "vridno", 2],
+    ["zver", "zvijer", "zvir", 3]
+  ],
+  "excludedAfterReview": [
+    ["svet", "svijet", "svit", "Ekavian svet is also a common non-jat adjective"],
+    ["povest", "povijest", "povist", "source form has competing verbal readings"],
+    ["preko", "prijeko", "priko", "the Ekavian/Ijekavian relation is already semantically blocked"],
+    ["umeren", "umjeren", "umiren", "Ikavian target collides with a common participle/adjective"],
+    ["plen", "plijen", "plin", "Ikavian target collides with the word for gas"],
+    ["dobronameran", "dobronamjeran", "dobronamiran", "single attestation; regional form needs review"],
+    ["breg", "brijeg", "brig", "inflected Ikavian briga collides with the common unrelated word briga"],
+    ["večno", "vječno", "vično", "Ikavian target can collide with forms of vičan"],
+    ["belo", "bijelo", "bilo", "Ikavian target collides with the extremely common verb form bilo"]
+  ]
+}

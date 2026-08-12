@@ -1,0 +1,10 @@
+{
+  "name": "Prepiši reviewed semantic rejections",
+  "pairs": [
+    {
+      "ekavian": "preko",
+      "ijekavian": "prijeko",
+      "reason": "Semantic lookalikes: ordinary preko is not the Ekavian counterpart of prijeko."
+    }
+  ]
+}

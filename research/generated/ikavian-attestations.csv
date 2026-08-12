@@ -1,0 +1,38 @@
+review_state,review_reason,attestations,generated_status,hr_rank,ekavian_lemma,ijekavian_lemma,ikavian_suggestion,rule,reasons
+covered-or-defer,,29,known,59,čovek,čovjek,čovik,je→e,
+covered-or-defer,,10,known,64,vreme,vrijeme,vrime,ije→e,ambiguous-surface-variants
+covered-or-defer,,2,known,84,dete,dijete,dite,ije→e,no-higher-trust-family-anchor
+covered-or-defer,,2,known,103,mesto,mjesto,misto,je→e,ambiguous-surface-variants
+excluded,Ekavian svet is also a common non-jat adjective,2,review,113,svet,svijet,svit,ije→e,ambiguous-surface-variants
+selected,,3,known,141,mesec,mjesec,misec,je→e,ambiguous-surface-variants
+covered-or-defer,,12,known,212,ovde,ovdje,ovdi,je→e,no-higher-trust-family-anchor|fewer-than-three-compatible-msd-slots|fewer-than-two-changed-surface-pairs
+selected,,2,known,316,telo,tijelo,tilo,ije→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+covered-or-defer,,3,known,418,lep,lijep,lip,ije→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+covered-or-defer,,13,accepted,636,lepo,lijepo,lipo,ije→e,
+selected,,2,known,642,vrednost,vrijednost,vridnost,ije→e,ambiguous-surface-variants
+selected,,5,known,645,delo,djelo,dilo,je→e,ambiguous-surface-variants
+excluded,source form has competing verbal readings,1,review,715,povest,povijest,povist,ije→e,ambiguous-surface-variants
+selected,,4,review,917,leto,ljeto,lito,je→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+selected,,2,review,985,vredan,vrijedan,vridan,ije→e,ambiguous-surface-variants
+selected,,2,review,1292,zvezda,zvijezda,zvizda,ije→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+selected,,1,review,1424,lepota,ljepota,lipota,je→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+covered-or-defer,,4,review,1598,nigde,nigdje,nigdi,je→e,fewer-than-three-compatible-msd-slots|fewer-than-two-changed-surface-pairs
+covered-or-defer,,1,known,1768,vetar,vjetar,vitar,je→e,no-higher-trust-family-anchor
+selected,,4,known,2232,dole,dolje,doli,je→e,no-higher-trust-family-anchor|fewer-than-three-compatible-msd-slots|fewer-than-two-changed-surface-pairs
+covered-or-defer,,5,review,2480,smešan,smiješan,smišan,ije→e,ambiguous-surface-variants
+selected,,1,review,2625,svetlost,svjetlost,svitlost,je→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+covered-or-defer,,3,known,2755,smeh,smijeh,smih,ije→e,no-higher-trust-family-anchor
+selected,,1,review,3151,drugde,drugdje,drugdi,je→e,fewer-than-three-compatible-msd-slots|fewer-than-two-changed-surface-pairs
+selected,,1,review,3497,cev,cijev,civ,ije→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+selected,,1,review,3560,čovečanstvo,čovječanstvo,čovičanstvo,je→e,ambiguous-surface-variants
+covered-or-defer,,2,known,3639,pesak,pijesak,pisak,ije→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+excluded,Ikavian target can collide with forms of vičan,1,review,5053,večno,vječno,vično,je→e,fewer-than-three-compatible-msd-slots
+selected,,2,accepted,5445,vredno,vrijedno,vridno,ije→e,
+excluded,Ikavian target collides with a common participle/adjective,1,review,5499,umeren,umjeren,umiren,je→e,ambiguous-surface-variants
+excluded,inflected Ikavian briga collides with the common unrelated word briga,2,review,6565,breg,brijeg,brig,ije→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+excluded,the Ekavian/Ijekavian relation is already semantically blocked,1,review,7695,preko,prijeko,priko,ije→e,manually-blocked-semantic-lookalike
+excluded,Ikavian target collides with the word for gas,1,review,7816,plen,plijen,plin,ije→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+covered-or-defer,,4,review,8114,smešno,smiješno,smišno,ije→e,fewer-than-three-compatible-msd-slots|fewer-than-two-changed-surface-pairs
+selected,,3,review,8553,zver,zvijer,zvir,ije→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+excluded,single attestation; regional form needs review,1,review,8616,dobronameran,dobronamjeran,dobronamiran,je→e,no-higher-trust-family-anchor|ambiguous-surface-variants
+excluded,Ikavian target collides with the extremely common verb form bilo,36,review,9051,belo,bijelo,bilo,ije→e,fewer-than-three-compatible-msd-slots|fewer-than-two-changed-surface-pairs

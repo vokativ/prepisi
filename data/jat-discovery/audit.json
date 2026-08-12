@@ -1,0 +1,12 @@
+{
+  "methodVersion": 1,
+  "reviewedOn": "2026-08-11",
+  "reviewer": "Codex implementation audit",
+  "acceptedPairCount": 58,
+  "acceptedPairsSha256": "1954716791f71534311d9861719d463914094f7c1ac547189c37b209b1ddc4fa",
+  "sourceArchives": {
+    "srLex": "1177ab49a60965fca0ab12d2c901d54e843bff82e805b33fd4c2d0c49a6ecdf9",
+    "hrLex": "94fcccc237cccf2256f382ece8d4ccc523bf80fd73f5e32b858f43412f46f9df"
+  },
+  "notes": "All 59 initially eligible pairs were inspected. preko/prijeko was moved to the semantic blocklist; the remaining 58 were approved."
+}

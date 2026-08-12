@@ -1,0 +1,37 @@
+name: Dialect data contribution
+description: Propose an attested Ekavian, Ijekavian, or Ikavian relationship.
+title: "[dialect data] "
+labels: ["dialect-data", "needs-review"]
+body:
+  - type: input
+    id: forms
+    attributes:
+      label: Proposed forms
+      placeholder: Ekavian / Ijekavian / Ikavian
+    validations:
+      required: true
+  - type: textarea
+    id: meanings
+    attributes:
+      label: Meaning and ambiguity
+      description: Explain the intended meaning and any unrelated words with the same spelling.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources
+      description: Give dictionary, corpus, publication, or parallel-text links and relevant excerpts.
+    validations:
+      required: true
+  - type: input
+    id: region
+    attributes:
+      label: Language, region, or local variety
+      placeholder: Neo-Štokavian Ikavian, Dalmatia
+  - type: textarea
+    id: inflections
+    attributes:
+      label: Known inflected forms
+      description: Add plural, case, gender, tense, or derived forms if known.
+

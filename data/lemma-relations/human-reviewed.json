@@ -1,0 +1,21 @@
+{
+  "name": "Prepiši human-reviewed jat relations",
+  "status": "reviewed",
+  "role": "primary-human-review",
+  "exhaustive": false,
+  "generatedFrom": "data/jat-discovery/reviews.csv",
+  "pairs": [
+    [
+      "sudelovanje",
+      "sudjelovanje"
+    ]
+  ],
+  "reviews": [
+    {
+      "ekavian": "sudelovanje",
+      "ijekavian": "sudjelovanje",
+      "reviewer": "Nemanja",
+      "notes": ""
+    }
+  ]
+}

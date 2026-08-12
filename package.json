@@ -1,0 +1,26 @@
+{
+  "name": "prepisi-browser-extension",
+  "version": "0.9.0",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "description": "Privacy-first in-page script and pronunciation converter for BCMS text.",
+  "scripts": {
+    "test": "node --test",
+    "build:comtext": "node scripts/build-comtext-data.mjs",
+    "apply:jat-reviews": "node scripts/apply-jat-reviews.mjs",
+    "discover:jat": "node scripts/apply-jat-reviews.mjs && node scripts/discover-jat-candidates.mjs",
+    "discover:ikavian": "node scripts/discover-ikavian-attestations.mjs",
+    "audit:countries": "node scripts/audit-country-demonyms.mjs",
+    "audit:territories": "node scripts/audit-cldr-territories.mjs",
+    "build:lexicons": "node scripts/build-lexicon-data.mjs",
+    "render:brand": "python scripts/render-brand-assets.py",
+    "build:chromium": "node scripts/build-extension.mjs chromium",
+    "build:edge": "node scripts/build-extension.mjs edge",
+    "build:firefox": "node scripts/build-extension.mjs firefox",
+    "build:safari": "node scripts/build-extension.mjs safari",
+    "build:all": "node scripts/build-extension.mjs all",
+    "build:data": "npm run build:comtext && node scripts/build-data.mjs",
+    "check": "node --check scripts/lib/lexicon-utils.mjs && node --check scripts/apply-jat-reviews.mjs && node --check scripts/discover-jat-candidates.mjs && node --check scripts/discover-ikavian-attestations.mjs && node --check scripts/audit-country-demonyms.mjs && node --check scripts/audit-cldr-territories.mjs && node --check scripts/build-lexicon-data.mjs && node --check scripts/build-data.mjs && node --check scripts/build-extension.mjs && node --check src/generated/company-names.js && node --check src/generated/comtext-pairs.js && node --check src/generated/lexicon-pairs.js && node --check src/dialect-data.js && node --check src/converter.js && node --check src/content.js && node --check src/platform/webext.js && node --check src/site-persistence.js && node --check src/auto-apply.js && node --check src/ui-strings.js && node --check src/popup/popup.js && node --check src/options/options.js && node --test",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1"
+  }
+}
