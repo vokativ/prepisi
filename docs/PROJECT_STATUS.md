@@ -28,12 +28,15 @@ Last updated: 2026-08-12. Current extension version: 0.9.0.
   iPhone. The development-signed iOS app installs and launches on an iPhone 14
   running iOS 26.5.2.
 - Firefox 153.0.4 on macOS passed core RTS/Klix conversion, restoration,
-  highlighting, tab/host isolation, and remembered RTS navigation. The complete
+  highlighting, dynamic and protected-content fixtures, tab/host isolation, and
+  remembered navigation after an idle event-page interval. The complete
   platform checklist remains open; see
   [`docs/APPLE_PLATFORM_TEST_2026-08-12.md`](APPLE_PLATFORM_TEST_2026-08-12.md).
-- Chrome 151 on macOS passed the core RTS Cyrillic conversion, protected-name
-  sample, readable-layout, and exact-restoration checks after a manual Developer
-  mode load. The remaining Chrome checklist is still open.
+- Chrome 151 on macOS passed core RTS and Klix conversion/restoration,
+  highlighting, repeated modes, dynamic and protected-content fixtures,
+  tab/host isolation, and remembered same-host navigation after a manual
+  Developer mode load. The restricted/offline checks and blocked live sites
+  remain open.
 
 Run after cloning on another machine:
 
@@ -62,12 +65,13 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 
 ## Next release work
 
-1. Finish the dated macOS/iPhone pass: complete Chrome's remaining live matrix,
-   establish a trusted macOS Safari development identity/Xcode-run context, and
-   complete the iPhone extension's remaining runtime, layout, recovery,
-   protected-text, and offline checks.
-2. Investigate the Klix protected-text concerns and retry the live NSPM and
-   Vijesti pages from the dated macOS report.
+1. Finish the dated macOS/iPhone pass: run the remaining Chrome/Firefox
+   restricted-page and offline checks, establish a trusted macOS Safari
+   development identity/Xcode-run context, and complete the iPhone extension's
+   remaining runtime, layout, recovery, protected-text, and offline checks.
+2. Investigate the Chrome/Firefox Klix protected-text concerns and Chrome's
+   first-permission-flow concern, then retry Index.hr, NSPM, and Vijesti from the
+   dated macOS report.
 3. On the next Firefox Android session, enable the options-page diagnostic log
    for the explicit test domain and compare a clean temporary install with a
    clean Mozilla-signed XPI; add Nightly if the signed Release build still fails.

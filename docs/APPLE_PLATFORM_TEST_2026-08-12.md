@@ -51,6 +51,21 @@ Test method: official `web-ext` temporary profile using `build/firefox`.
 
 Observed passes:
 
+- In a fresh isolated profile, a local QA fixture passed one-click Cyrillic and
+  combined Cyrillic plus Ijekavian conversion. Highlighting visibly marked all
+  seven changed fixture words.
+- Text inserted after conversion was converted automatically. Protected Google,
+  Apple, and GitHub names, a URL, an email address, an explicit `lang="en"`
+  span, and code remained unchanged.
+- The popup switched fully to Cyrillic while the selected page modes remained
+  Cyrillic plus Ijekavian, confirming that interface language is independent of
+  page conversion.
+- The exact-host permission prompt named only `127.0.0.1`. After permission was
+  allowed and the event page had about 30 seconds to become idle, a new
+  same-host document automatically opened in Cyrillic plus Ijekavian with
+  highlighting. Turning Remember off reported that automatic application was
+  disabled.
+
 - RTS Latin to Cyrillic changed 260 text parts in one click. The article heading
   and body changed while the Latin URL and visible `RTS`, `iOS`, `YouTube`,
   `Facebook`, and `Twitter` names remained intact.
@@ -90,9 +105,9 @@ Observed limitations and failures:
   containing `choditi` rendered with a mixed-script `цходити`. The page markup's
   language annotations were not audited during this pass, so these are recorded
   as concerns rather than accepted protected-text behavior.
-- The restricted-page friendly error, exact memory-off permission revocation,
-  live load-more/form/editable behavior, and offline conversion were not
-  completed in this pass.
+- The restricted-page friendly error, permission-panel proof that disabling
+  Remember revoked the exact-host grant, live load-more/form/editable behavior,
+  and offline conversion were not completed in this pass.
 
 Result: useful Firefox macOS runtime coverage passed, including the previously
 pending remembered-navigation behavior, but the full acceptance checklist did
@@ -107,6 +122,22 @@ Chrome 137. The user then loaded `build/chromium` manually through Developer
 mode. The initial disposable process was stopped after inspection.
 
 Observed passes after the manual load:
+
+- A local QA fixture passed one-click combined Cyrillic plus Ijekavian,
+  independent interface-language switching, repeated changes through Latin plus
+  Ikavian without visible compounding, and dialect highlighting of 21 words.
+- Dynamically appended text converted automatically. Protected Google, Apple,
+  and GitHub names, a URL, an email address, a nested `lang="en"` span, and code
+  remained unchanged.
+- The website-access prompt requested only `127.0.0.1`. After the permission had
+  been granted, enabling Remember stored the exact-host rule and a new same-host
+  document automatically opened in the selected Ikavian mode. An unrelated
+  Klix tab remained in source modes with Remember off. Turning Remember off
+  disabled auto-apply, and another same-host document stayed in exact source
+  text.
+- On the live Klix article, Cyrillic conversion changed 314 text parts. The
+  captured heading, six paragraphs, and ten link targets matched their exact
+  pre-conversion values after restoration.
 
 - On the RTS Latin parity article, one-click Cyrillic conversion changed the
   heading and sampled article paragraphs fully. The live URL and article link
@@ -126,16 +157,24 @@ Observed passes after the manual load:
   embedded player, three-column layout, brands, iframes, and form/control
   elements remained present and readable.
 
-The user also completed Index.hr's human-verification screen in Chrome. The
-remaining live-site, remembered-navigation, restricted-page, dynamic-content,
-and offline checks are not yet complete. NSPM refused the connection. New
-Index.hr and Klix QA tabs encountered Cloudflare human checks; these were not
-bypassed by automation. Vijesti.me reset the connection. After the highlighted
-dialect pass, returning to source with highlighting off again matched the same
-captured baseline; no visible compounding occurred across the repeated modes.
+The user also completed Index.hr's human-verification screen in Chrome. A fresh
+unattended Index.hr tab later stopped at Cloudflare's verification screen; it
+was not bypassed. NSPM refused the connection and Vijesti.me reset it. The
+restricted-page and offline checks were not attempted.
 
-Result: core Chrome macOS conversion, protected-name sampling, layout, and exact
-restoration pass. The complete runtime checklist remains pending. See the
+The first gesture that both requested host permission and enabled Remember did
+not retain the rule. Repeating Remember after host permission already existed
+stored it successfully. This is recorded as a one-off permission-flow concern,
+not an unqualified first-try pass. Live Klix also exposed protected-text
+concerns: its brand rendered partly as `Klix.ба`, and several foreign company,
+job, English, and German snippets were transliterated. These cases need markup
+and protection-policy investigation.
+
+Result: Chrome macOS passes core conversion and exact restoration, repeated
+modes, highlighting, dynamic fixture content, protected fixture content,
+tab/host isolation, and remembered same-host navigation. The complete runtime
+checklist remains pending on the restricted/offline checks, blocked live sites,
+and the protected-text and first-permission-flow concerns. See the
 [Chrome extension update](https://developer.chrome.com/blog/extension-news-june-2025)
 for the branded-build flag change that prevented command-line isolated loading.
 
@@ -152,6 +191,12 @@ The user completed Index.hr's human-verification screen in Safari, but website
 access prompts, conversion/restoration, remembered navigation, ordinary/flex
 highlighting, and offline behavior were not observable with the regenerated
 wrapper.
+
+An unattended Xcode-run retry was started after the Chrome and Firefox passes,
+without enabling Safari's unsigned-extension bypass or weakening system
+security. The Mac locked while the user was away, and macOS would not permit
+further Safari/Xcode inspection or operation. The retry was stopped at that
+point; it produced no additional Safari runtime evidence.
 
 Result: source, wrapper, compilation, registration, and privacy setup are good;
 normal Safari loading remains blocked on a trusted macOS development identity or
@@ -193,6 +238,10 @@ the portrait layout, article player, and social controls remained readable.
   visible Latin baseline and removed the highlight styling without a layout
   change.
 
+At the end of the unattended desktop pass, Xcode's device service still listed
+the iPhone as connected. No additional phone UI interactions were attempted
+while the Mac was locked.
+
 Xcode's device surface can capture the phone but cannot operate its touch UI, so
 the remaining extension interactions require phone-side taps.
 
@@ -206,13 +255,15 @@ performed.
 The 0.9 release is not yet accepted for macOS/iPhone support. The following
 remain explicitly pending:
 
-- Chrome macOS completion of the remaining live matrix, remembered-navigation,
-  restricted-page, dynamic-content, and offline checks.
+- Chrome macOS restricted-page and offline checks, retrying the blocked live
+  matrix, and investigation of its protected-text and first-permission-flow
+  concerns.
 - Safari macOS normal extension loading and full runtime pass.
 - iPhone Safari completion of enlarged-text, long-page, backgrounding, tab
   restoration, low-memory, hostname-permission, protected-text, and offline
   checks.
-- Firefox macOS completion of the remaining checklist and investigation of the
+- Firefox macOS completion of its restricted-page, permission-revocation,
+  live-form/editable, and offline checks, plus investigation of the
   protected-text concerns.
 - Edge macOS, iPadOS, store-signed Firefox, and TestFlight/App Store distribution.
 

@@ -31,13 +31,17 @@ Repository, Firefox Android, and partial Apple-platform validation completed on
 - Safari and all mobile targets require the corresponding Apple/Android device
   environment. A Windows-only check cannot honestly promote them to supported.
 - On macOS 26.5.2, Firefox 153.0.4 passed live RTS/Klix conversion,
-  restoration, highlighting, tab/host isolation, and remembered RTS navigation.
-  NSPM was unreachable, Vijesti failed with `PR_CONNECT_RESET_ERROR`, and
-  protected-text concerns on Klix plus several checklist items remain open.
+  restoration, highlighting, dynamic/protected-content fixtures, tab/host
+  isolation, and remembered navigation after an idle event-page interval. NSPM
+  was unreachable, Vijesti failed with `PR_CONNECT_RESET_ERROR`, and
+  protected-text concerns on Klix plus restricted-page, permission-revocation,
+  live-form/editable, and offline checks remain open.
 - Chrome 151 did not load through the removed branded `--load-extension` flag,
-  then passed core RTS conversion, protected-name sampling, layout, and exact
-  restoration after the user performed a manual Developer mode load. The
-  remaining Chrome macOS checklist is still required.
+  then passed core RTS/Klix conversion and exact restoration, highlighting,
+  repeated modes, dynamic/protected-content fixtures, tab/host isolation, and
+  remembered same-host navigation after the user performed a manual Developer
+  mode load. Restricted-page/offline checks, blocked live sites, and
+  protected-text and first-permission-flow concerns remain.
 - Xcode 26.6 compiled the generated Safari wrapper. A development-signed iOS app
   installed and launched on an iPhone 14 running iOS 26.5.2. The enabled iPhone
   extension passed core RTS Cyrillic conversion, portrait readability, protected
@@ -51,10 +55,10 @@ Repository, Firefox Android, and partial Apple-platform validation completed on
 
 | Platform | Package | Current gate | Intended status |
 | --- | --- | --- | --- |
-| Chrome desktop (Windows/macOS/Linux) | `prepisi-<version>-chromium.zip` | Core macOS RTS conversion/restoration/highlight checks pass; remaining three-OS smoke test and Chrome Web Store submission | First-class |
+| Chrome desktop (Windows/macOS/Linux) | `prepisi-<version>-chromium.zip` | Broad macOS runtime pass; restricted/offline and blocked-site checks, other-OS smoke tests, and Chrome Web Store submission remain | First-class |
 | Edge desktop (Windows/macOS/Linux) | `prepisi-<version>-edge.zip` | Smoke test on all three OS families and Partner Center submission | First-class |
 | Edge Android/iOS | Same Edge Add-ons listing | Microsoft mobile certification/visibility and phone tests | First-class after validation |
-| Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint and partial macOS live checks pass; remaining macOS checklist, other OS smoke tests, and AMO signing remain | First-class |
+| Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint and broad macOS runtime pass; remaining restricted/offline/form checks, other-OS smoke tests, and AMO signing remain | First-class |
 | Firefox Android | Same AMO package | Core phone smoke passed; remembered navigation, remaining mobile checks, AMO signing, and signed-build retest remain | First-class |
 | Safari macOS | `prepisi-<version>-safari-source.zip` | Wrapper compiles; trusted normal loading and full Mac runtime test remain | First-class |
 | Safari iOS/iPadOS | Same Apple project | iPhone build/install/enable/core RTS pass; remaining phone runtime, iPad, TestFlight, and App Store tests remain | First-class |
