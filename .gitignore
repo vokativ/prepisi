@@ -1,0 +1,41 @@
+# Dependencies and test output
+node_modules/
+coverage/
+*.log
+npm-debug.log*
+
+# Built extension archives
+build/
+dist/
+artifacts/
+
+# Large local research inputs and caches; generated reports remain tracked
+research/cache/
+srLex_v1.3.gz
+hrLex_v1.3.gz
+
+# Privately licensed Balkan Sans source files
+*BalkanSans*.zip
+*.otf
+*.ttf
+
+# Secrets and signing material
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.key
+
+# Python tooling
+__pycache__/
+*.py[cod]
+
+# Editor and operating-system files
+.codex/
+.agents/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="sr-Latn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prepiši — probna stranica</title>
+    <link rel="stylesheet" href="../src/highlight.css">
+    <style>
+      body { max-width: 760px; margin: 48px auto; padding: 0 24px; color: #202b27; font: 18px/1.65 Georgia, serif; }
+      h1 { color: #126b4f; }
+      article { padding: 24px; border: 1px solid #d8d2c5; border-radius: 16px; }
+      code, pre { padding: 3px 6px; border-radius: 5px; background: #eeeae1; }
+      .note { color: #69736e; font: 14px/1.5 system-ui, sans-serif; }
+      button { padding: 10px 14px; border: 0; border-radius: 8px; background: #126b4f; color: white; font-weight: 700; }
+      .harness { margin-bottom: 20px; padding: 14px; border-radius: 12px; background: #e5f2eb; font: 13px/1.5 system-ui, sans-serif; }
+      .harness p { margin: 0 0 9px; }
+    </style>
+  </head>
+  <body>
+    <aside class="harness" data-prepisi-ignore>
+      <p><strong>Razvojna proba istog mehanizma koji dodatak ubrizgava u stranicu</strong></p>
+      <button id="apply-cyr-ijek" type="button">Ćirilica + ijekavski</button>
+      <button id="apply-lat-ek" type="button">Latinica + ekavski</button>
+      <button id="apply-lat-ik" type="button">Latinica + ikavski + isticanje</button>
+      <button id="restore-original" type="button">Vrati izvorno</button>
+      <span id="harness-status" role="status"></span>
+    </aside>
+    <h1>Probna stranica / Пробна страница</h1>
+    <p class="note">Otvori dodatak, izaberi pismo i izgovor, pa proveri svaki red.</p>
+    <article>
+      <h2>Latinica i ekavica</h2>
+      <p>Njegoš čita lepu vest: mleko stiže u sledeće mesto u ponedeljak.</p>
+      <h2>Ћирилица и ијекавица</h2>
+      <p>Дијете чита лијепу вијест: млијеко стиже у сљедеће мјесто.</p>
+      <p>Mjeseca, tijela, vrijednosti, djela, ljepota, zvijezde, svjetlost, cijevi i zvijeri.</p>
+      <h2>Zaštita</h2>
+      <p>Google, Apple i GitHub ostaju brendovi. Veza https://primer.rs/mjesto i adresa test@primer.rs ostaju iste.</p>
+      <p lang="en">This explicitly English sentence should remain untouched.</p>
+      <p>Kôd ostaje: <code>const mjesto = "vrijeme";</code></p>
+      <button id="dynamic" type="button">Dodaj dinamički tekst</button>
+      <div id="dynamic-output"></div>
+    </article>
+    <script src="../src/generated/company-names.js"></script>
+    <script src="../src/generated/comtext-pairs.js"></script>
+    <script src="../src/generated/lexicon-pairs.js"></script>
+    <script src="../src/dialect-data.js"></script>
+    <script src="../src/converter.js"></script>
+    <script src="../src/content.js"></script>
+    <script>
+      function applyFixture(options) {
+        const result = globalThis.__PREPISI__.apply(options);
+        document.querySelector("#harness-status").textContent = ` Promenjeno: ${result.changedTextNodes || 0}; vraćeno: ${result.restoredTextNodes || 0}.`;
+      }
+      document.querySelector("#apply-cyr-ijek").addEventListener("click", () => applyFixture({
+        targetScript: "cyrillic", targetDialect: "ijekavian", respectForeignLanguageSpans: true
+      }));
+      document.querySelector("#apply-lat-ek").addEventListener("click", () => applyFixture({
+        targetScript: "latin", targetDialect: "ekavian", respectForeignLanguageSpans: true
+      }));
+      document.querySelector("#apply-lat-ik").addEventListener("click", () => applyFixture({
+        targetScript: "latin", targetDialect: "ikavian", highlightDialectChanges: true,
+        respectForeignLanguageSpans: true
+      }));
+      document.querySelector("#restore-original").addEventListener("click", () => applyFixture({
+        targetScript: "original", targetDialect: "original", respectForeignLanguageSpans: true
+      }));
+      document.querySelector("#dynamic").addEventListener("click", () => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = "Novo mleko i lepo cveće pojavili su se kasnije.";
+        document.querySelector("#dynamic-output").append(paragraph);
+      });
+    </script>
+  </body>
+</html>

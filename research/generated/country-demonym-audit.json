@@ -1,0 +1,1336 @@
+{
+  "generatedOn": "2026-08-11T11:04:42.597Z",
+  "scope": "Jat-sensitive country names, demonyms, and geographic modifiers; deliberately not a list of every country.",
+  "sources": {
+    "srLex": {
+      "name": "srLex 1.3",
+      "handle": "11356/1233",
+      "rows": 6905941,
+      "sha256": "1177ab49a60965fca0ab12d2c901d54e843bff82e805b33fd4c2d0c49a6ecdf9"
+    },
+    "hrLex": {
+      "name": "hrLex 1.3",
+      "handle": "11356/1232",
+      "rows": 6427709,
+      "sha256": "94fcccc237cccf2256f382ece8d4ccc523bf80fd73f5e32b858f43412f46f9df"
+    }
+  },
+  "candidates": [
+    {
+      "concept": "Germany",
+      "kind": "country",
+      "ekavian": "nemačka",
+      "ijekavian": "njemačka",
+      "srLex": {
+        "present": true,
+        "rows": 26,
+        "frequency": 77261,
+        "upos": [
+          "PROPN"
+        ],
+        "msdSlots": 13,
+        "forms": 12
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 13,
+        "frequency": 151093,
+        "upos": [
+          "PROPN"
+        ],
+        "msdSlots": 13,
+        "forms": 6
+      },
+      "compatibleMsdSlots": 13,
+      "changedSurfacePairs": 13,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": [
+        [
+          "nemačka",
+          "njemačka"
+        ],
+        [
+          "nemačka",
+          "njemačka"
+        ],
+        [
+          "nemačkama",
+          "njemačkama"
+        ],
+        [
+          "nemačkama",
+          "njemačkama"
+        ],
+        [
+          "nemačkama",
+          "njemačkama"
+        ],
+        [
+          "nemačke",
+          "njemačke"
+        ],
+        [
+          "nemačke",
+          "njemačke"
+        ],
+        [
+          "nemačke",
+          "njemačke"
+        ],
+        [
+          "nemačke",
+          "njemačke"
+        ],
+        [
+          "nemačkoj",
+          "njemačkoj"
+        ],
+        [
+          "nemačkoj",
+          "njemačkoj"
+        ],
+        [
+          "nemačkom",
+          "njemačkom"
+        ],
+        [
+          "nemačku",
+          "njemačku"
+        ]
+      ]
+    },
+    {
+      "concept": "Germany",
+      "kind": "male demonym",
+      "ekavian": "nemac",
+      "ijekavian": "nijemac",
+      "srLex": {
+        "present": true,
+        "rows": 56,
+        "frequency": 17640,
+        "upos": [
+          "NOUN",
+          "PROPN"
+        ],
+        "msdSlots": 42,
+        "forms": 18
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 14,
+        "frequency": 17972,
+        "upos": [
+          "NOUN"
+        ],
+        "msdSlots": 14,
+        "forms": 9
+      },
+      "compatibleMsdSlots": 14,
+      "changedSurfacePairs": 14,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": [
+        [
+          "nemac",
+          "nijemac"
+        ],
+        [
+          "nemaca",
+          "nijemaca"
+        ],
+        [
+          "nemca",
+          "nijemca"
+        ],
+        [
+          "nemca",
+          "nijemca"
+        ],
+        [
+          "nemce",
+          "nijemce"
+        ],
+        [
+          "nemcem",
+          "nijemcem"
+        ],
+        [
+          "nemci",
+          "nijemci"
+        ],
+        [
+          "nemci",
+          "nijemci"
+        ],
+        [
+          "nemcima",
+          "nijemcima"
+        ],
+        [
+          "nemcima",
+          "nijemcima"
+        ],
+        [
+          "nemcima",
+          "nijemcima"
+        ],
+        [
+          "nemcu",
+          "nijemcu"
+        ],
+        [
+          "nemcu",
+          "nijemcu"
+        ],
+        [
+          "nemče",
+          "nijemče"
+        ]
+      ]
+    },
+    {
+      "concept": "Germany",
+      "kind": "female demonym",
+      "ekavian": "nemica",
+      "ijekavian": "njemica",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 14,
+        "frequency": 2226,
+        "upos": [
+          "PROPN"
+        ],
+        "msdSlots": 14,
+        "forms": 6
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "Germany",
+      "kind": "adjective",
+      "ekavian": "nemački",
+      "ijekavian": "njemački",
+      "srLex": {
+        "present": true,
+        "rows": 128,
+        "frequency": 72398,
+        "upos": [
+          "ADJ",
+          "ADV"
+        ],
+        "msdSlots": 44,
+        "forms": 28
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 184,
+        "frequency": 186536,
+        "upos": [
+          "ADJ",
+          "ADV"
+        ],
+        "msdSlots": 132,
+        "forms": 40
+      },
+      "compatibleMsdSlots": 28,
+      "changedSurfacePairs": 28,
+      "ambiguousMsdSlots": 16,
+      "surfacePairs": [
+        [
+          "nemačka",
+          "njemačka"
+        ],
+        [
+          "nemačka",
+          "njemačka"
+        ],
+        [
+          "nemačka",
+          "njemačka"
+        ],
+        [
+          "nemačka",
+          "njemačka"
+        ],
+        [
+          "nemačka",
+          "njemačka"
+        ],
+        [
+          "nemačke",
+          "njemačke"
+        ],
+        [
+          "nemačke",
+          "njemačke"
+        ],
+        [
+          "nemačke",
+          "njemačke"
+        ],
+        [
+          "nemačke",
+          "njemačke"
+        ],
+        [
+          "nemačke",
+          "njemačke"
+        ],
+        [
+          "nemački",
+          "njemački"
+        ],
+        [
+          "nemački",
+          "njemački"
+        ],
+        [
+          "nemački",
+          "njemački"
+        ],
+        [
+          "nemački",
+          "njemački"
+        ],
+        [
+          "nemački",
+          "njemački"
+        ],
+        [
+          "nemački",
+          "njemački"
+        ],
+        [
+          "nemačkih",
+          "njemačkih"
+        ],
+        [
+          "nemačkih",
+          "njemačkih"
+        ],
+        [
+          "nemačkih",
+          "njemačkih"
+        ],
+        [
+          "nemačkim",
+          "njemačkim"
+        ],
+        [
+          "nemačkim",
+          "njemačkim"
+        ],
+        [
+          "nemačko",
+          "njemačko"
+        ],
+        [
+          "nemačko",
+          "njemačko"
+        ],
+        [
+          "nemačko",
+          "njemačko"
+        ],
+        [
+          "nemačkoj",
+          "njemačkoj"
+        ],
+        [
+          "nemačkoj",
+          "njemačkoj"
+        ],
+        [
+          "nemačkom",
+          "njemačkom"
+        ],
+        [
+          "nemačku",
+          "njemačku"
+        ]
+      ]
+    },
+    {
+      "concept": "Belarus",
+      "kind": "country",
+      "ekavian": "belorusija",
+      "ijekavian": "bjelorusija",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 15,
+        "frequency": 6848,
+        "upos": [
+          "PROPN"
+        ],
+        "msdSlots": 14,
+        "forms": 7
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "Belarus",
+      "kind": "male demonym",
+      "ekavian": "belorus",
+      "ijekavian": "bjelorus",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "Belarus",
+      "kind": "female demonym",
+      "ekavian": "beloruskinja",
+      "ijekavian": "bjeloruskinja",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "Belarus",
+      "kind": "adjective",
+      "ekavian": "beloruski",
+      "ijekavian": "bjeloruski",
+      "srLex": {
+        "present": true,
+        "rows": 128,
+        "frequency": 1694,
+        "upos": [
+          "ADJ",
+          "ADV"
+        ],
+        "msdSlots": 44,
+        "forms": 28
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 184,
+        "frequency": 2146,
+        "upos": [
+          "ADJ",
+          "ADV"
+        ],
+        "msdSlots": 132,
+        "forms": 40
+      },
+      "compatibleMsdSlots": 28,
+      "changedSurfacePairs": 28,
+      "ambiguousMsdSlots": 16,
+      "surfacePairs": [
+        [
+          "beloruska",
+          "bjeloruska"
+        ],
+        [
+          "beloruska",
+          "bjeloruska"
+        ],
+        [
+          "beloruska",
+          "bjeloruska"
+        ],
+        [
+          "beloruska",
+          "bjeloruska"
+        ],
+        [
+          "beloruska",
+          "bjeloruska"
+        ],
+        [
+          "beloruske",
+          "bjeloruske"
+        ],
+        [
+          "beloruske",
+          "bjeloruske"
+        ],
+        [
+          "beloruske",
+          "bjeloruske"
+        ],
+        [
+          "beloruske",
+          "bjeloruske"
+        ],
+        [
+          "beloruske",
+          "bjeloruske"
+        ],
+        [
+          "beloruski",
+          "bjeloruski"
+        ],
+        [
+          "beloruski",
+          "bjeloruski"
+        ],
+        [
+          "beloruski",
+          "bjeloruski"
+        ],
+        [
+          "beloruski",
+          "bjeloruski"
+        ],
+        [
+          "beloruski",
+          "bjeloruski"
+        ],
+        [
+          "beloruski",
+          "bjeloruski"
+        ],
+        [
+          "beloruskih",
+          "bjeloruskih"
+        ],
+        [
+          "beloruskih",
+          "bjeloruskih"
+        ],
+        [
+          "beloruskih",
+          "bjeloruskih"
+        ],
+        [
+          "beloruskim",
+          "bjeloruskim"
+        ],
+        [
+          "beloruskim",
+          "bjeloruskim"
+        ],
+        [
+          "belorusko",
+          "bjelorusko"
+        ],
+        [
+          "belorusko",
+          "bjelorusko"
+        ],
+        [
+          "belorusko",
+          "bjelorusko"
+        ],
+        [
+          "beloruskoj",
+          "bjeloruskoj"
+        ],
+        [
+          "beloruskoj",
+          "bjeloruskoj"
+        ],
+        [
+          "beloruskom",
+          "bjeloruskom"
+        ],
+        [
+          "belorusku",
+          "bjelorusku"
+        ]
+      ]
+    },
+    {
+      "concept": "North",
+      "kind": "geographic modifier",
+      "ekavian": "severni",
+      "ijekavian": "sjeverni",
+      "srLex": {
+        "present": true,
+        "rows": 126,
+        "frequency": 32318,
+        "upos": [
+          "ADJ"
+        ],
+        "msdSlots": 43,
+        "forms": 28
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 63,
+        "frequency": 70983,
+        "upos": [
+          "ADJ"
+        ],
+        "msdSlots": 43,
+        "forms": 14
+      },
+      "compatibleMsdSlots": 27,
+      "changedSurfacePairs": 27,
+      "ambiguousMsdSlots": 16,
+      "surfacePairs": [
+        [
+          "severna",
+          "sjeverna"
+        ],
+        [
+          "severna",
+          "sjeverna"
+        ],
+        [
+          "severna",
+          "sjeverna"
+        ],
+        [
+          "severna",
+          "sjeverna"
+        ],
+        [
+          "severna",
+          "sjeverna"
+        ],
+        [
+          "severne",
+          "sjeverne"
+        ],
+        [
+          "severne",
+          "sjeverne"
+        ],
+        [
+          "severne",
+          "sjeverne"
+        ],
+        [
+          "severne",
+          "sjeverne"
+        ],
+        [
+          "severne",
+          "sjeverne"
+        ],
+        [
+          "severni",
+          "sjeverni"
+        ],
+        [
+          "severni",
+          "sjeverni"
+        ],
+        [
+          "severni",
+          "sjeverni"
+        ],
+        [
+          "severni",
+          "sjeverni"
+        ],
+        [
+          "severni",
+          "sjeverni"
+        ],
+        [
+          "severnih",
+          "sjevernih"
+        ],
+        [
+          "severnih",
+          "sjevernih"
+        ],
+        [
+          "severnih",
+          "sjevernih"
+        ],
+        [
+          "severnim",
+          "sjevernim"
+        ],
+        [
+          "severnim",
+          "sjevernim"
+        ],
+        [
+          "severno",
+          "sjeverno"
+        ],
+        [
+          "severno",
+          "sjeverno"
+        ],
+        [
+          "severno",
+          "sjeverno"
+        ],
+        [
+          "severnoj",
+          "sjevernoj"
+        ],
+        [
+          "severnoj",
+          "sjevernoj"
+        ],
+        [
+          "severnom",
+          "sjevernom"
+        ],
+        [
+          "severnu",
+          "sjevernu"
+        ]
+      ]
+    },
+    {
+      "concept": "North",
+      "kind": "direction noun",
+      "ekavian": "sever",
+      "ijekavian": "sjever",
+      "srLex": {
+        "present": true,
+        "rows": 59,
+        "frequency": 32204,
+        "upos": [
+          "NOUN",
+          "PROPN"
+        ],
+        "msdSlots": 42,
+        "forms": 17
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 15,
+        "frequency": 41863,
+        "upos": [
+          "NOUN"
+        ],
+        "msdSlots": 14,
+        "forms": 8
+      },
+      "compatibleMsdSlots": 13,
+      "changedSurfacePairs": 13,
+      "ambiguousMsdSlots": 1,
+      "surfacePairs": [
+        [
+          "sever",
+          "sjever"
+        ],
+        [
+          "sever",
+          "sjever"
+        ],
+        [
+          "severa",
+          "sjevera"
+        ],
+        [
+          "severe",
+          "sjevere"
+        ],
+        [
+          "severe",
+          "sjevere"
+        ],
+        [
+          "severi",
+          "sjeveri"
+        ],
+        [
+          "severi",
+          "sjeveri"
+        ],
+        [
+          "severima",
+          "sjeverima"
+        ],
+        [
+          "severima",
+          "sjeverima"
+        ],
+        [
+          "severima",
+          "sjeverima"
+        ],
+        [
+          "severom",
+          "sjeverom"
+        ],
+        [
+          "severu",
+          "sjeveru"
+        ],
+        [
+          "severu",
+          "sjeveru"
+        ]
+      ]
+    },
+    {
+      "concept": "North Korea",
+      "kind": "male demonym",
+      "ekavian": "severnokorejac",
+      "ijekavian": "sjevernokorejac",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "North Korea",
+      "kind": "female demonym",
+      "ekavian": "severnokorejka",
+      "ijekavian": "sjevernokorejka",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "North Korea",
+      "kind": "adjective",
+      "ekavian": "severnokorejski",
+      "ijekavian": "sjevernokorejski",
+      "srLex": {
+        "present": true,
+        "rows": 128,
+        "frequency": 805,
+        "upos": [
+          "ADJ",
+          "ADV"
+        ],
+        "msdSlots": 44,
+        "forms": 28
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 64,
+        "frequency": 3405,
+        "upos": [
+          "ADJ",
+          "ADV"
+        ],
+        "msdSlots": 44,
+        "forms": 14
+      },
+      "compatibleMsdSlots": 28,
+      "changedSurfacePairs": 28,
+      "ambiguousMsdSlots": 16,
+      "surfacePairs": [
+        [
+          "severnokorejska",
+          "sjevernokorejska"
+        ],
+        [
+          "severnokorejska",
+          "sjevernokorejska"
+        ],
+        [
+          "severnokorejska",
+          "sjevernokorejska"
+        ],
+        [
+          "severnokorejska",
+          "sjevernokorejska"
+        ],
+        [
+          "severnokorejska",
+          "sjevernokorejska"
+        ],
+        [
+          "severnokorejske",
+          "sjevernokorejske"
+        ],
+        [
+          "severnokorejske",
+          "sjevernokorejske"
+        ],
+        [
+          "severnokorejske",
+          "sjevernokorejske"
+        ],
+        [
+          "severnokorejske",
+          "sjevernokorejske"
+        ],
+        [
+          "severnokorejske",
+          "sjevernokorejske"
+        ],
+        [
+          "severnokorejski",
+          "sjevernokorejski"
+        ],
+        [
+          "severnokorejski",
+          "sjevernokorejski"
+        ],
+        [
+          "severnokorejski",
+          "sjevernokorejski"
+        ],
+        [
+          "severnokorejski",
+          "sjevernokorejski"
+        ],
+        [
+          "severnokorejski",
+          "sjevernokorejski"
+        ],
+        [
+          "severnokorejski",
+          "sjevernokorejski"
+        ],
+        [
+          "severnokorejskih",
+          "sjevernokorejskih"
+        ],
+        [
+          "severnokorejskih",
+          "sjevernokorejskih"
+        ],
+        [
+          "severnokorejskih",
+          "sjevernokorejskih"
+        ],
+        [
+          "severnokorejskim",
+          "sjevernokorejskim"
+        ],
+        [
+          "severnokorejskim",
+          "sjevernokorejskim"
+        ],
+        [
+          "severnokorejsko",
+          "sjevernokorejsko"
+        ],
+        [
+          "severnokorejsko",
+          "sjevernokorejsko"
+        ],
+        [
+          "severnokorejsko",
+          "sjevernokorejsko"
+        ],
+        [
+          "severnokorejskoj",
+          "sjevernokorejskoj"
+        ],
+        [
+          "severnokorejskoj",
+          "sjevernokorejskoj"
+        ],
+        [
+          "severnokorejskom",
+          "sjevernokorejskom"
+        ],
+        [
+          "severnokorejsku",
+          "sjevernokorejsku"
+        ]
+      ]
+    },
+    {
+      "concept": "North Macedonia",
+      "kind": "male demonym",
+      "ekavian": "severnomakedonac",
+      "ijekavian": "sjevernomakedonac",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "North Macedonia",
+      "kind": "female demonym",
+      "ekavian": "severnomakedonka",
+      "ijekavian": "sjevernomakedonka",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "North Macedonia",
+      "kind": "adjective",
+      "ekavian": "severnomakedonski",
+      "ijekavian": "sjevernomakedonski",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "Northern Mariana Islands",
+      "kind": "adjective",
+      "ekavian": "severnomarijanski",
+      "ijekavian": "sjevernomarijanski",
+      "srLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "hrLex": {
+        "present": false,
+        "rows": 0,
+        "frequency": 0,
+        "upos": [],
+        "msdSlots": 0,
+        "forms": 0
+      },
+      "compatibleMsdSlots": 0,
+      "changedSurfacePairs": 0,
+      "ambiguousMsdSlots": 0,
+      "surfacePairs": []
+    },
+    {
+      "concept": "Virgin Islands",
+      "kind": "noun anchor",
+      "ekavian": "devica",
+      "ijekavian": "djevica",
+      "srLex": {
+        "present": true,
+        "rows": 37,
+        "frequency": 4994,
+        "upos": [
+          "NOUN",
+          "PROPN"
+        ],
+        "msdSlots": 21,
+        "forms": 14
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 15,
+        "frequency": 20629,
+        "upos": [
+          "NOUN"
+        ],
+        "msdSlots": 14,
+        "forms": 7
+      },
+      "compatibleMsdSlots": 13,
+      "changedSurfacePairs": 13,
+      "ambiguousMsdSlots": 1,
+      "surfacePairs": [
+        [
+          "devica",
+          "djevica"
+        ],
+        [
+          "devicama",
+          "djevicama"
+        ],
+        [
+          "devicama",
+          "djevicama"
+        ],
+        [
+          "devicama",
+          "djevicama"
+        ],
+        [
+          "device",
+          "djevice"
+        ],
+        [
+          "device",
+          "djevice"
+        ],
+        [
+          "device",
+          "djevice"
+        ],
+        [
+          "device",
+          "djevice"
+        ],
+        [
+          "device",
+          "djevice"
+        ],
+        [
+          "devici",
+          "djevici"
+        ],
+        [
+          "devici",
+          "djevici"
+        ],
+        [
+          "devicom",
+          "djevicom"
+        ],
+        [
+          "devicu",
+          "djevicu"
+        ]
+      ]
+    },
+    {
+      "concept": "Virgin Islands",
+      "kind": "adjective",
+      "ekavian": "devičanski",
+      "ijekavian": "djevičanski",
+      "srLex": {
+        "present": true,
+        "rows": 120,
+        "frequency": 802,
+        "upos": [
+          "ADJ"
+        ],
+        "msdSlots": 43,
+        "forms": 27
+      },
+      "hrLex": {
+        "present": true,
+        "rows": 62,
+        "frequency": 4132,
+        "upos": [
+          "ADJ"
+        ],
+        "msdSlots": 43,
+        "forms": 14
+      },
+      "compatibleMsdSlots": 27,
+      "changedSurfacePairs": 27,
+      "ambiguousMsdSlots": 16,
+      "surfacePairs": [
+        [
+          "devičanska",
+          "djevičanska"
+        ],
+        [
+          "devičanska",
+          "djevičanska"
+        ],
+        [
+          "devičanska",
+          "djevičanska"
+        ],
+        [
+          "devičanska",
+          "djevičanska"
+        ],
+        [
+          "devičanska",
+          "djevičanska"
+        ],
+        [
+          "devičanske",
+          "djevičanske"
+        ],
+        [
+          "devičanske",
+          "djevičanske"
+        ],
+        [
+          "devičanske",
+          "djevičanske"
+        ],
+        [
+          "devičanske",
+          "djevičanske"
+        ],
+        [
+          "devičanski",
+          "djevičanski"
+        ],
+        [
+          "devičanski",
+          "djevičanski"
+        ],
+        [
+          "devičanski",
+          "djevičanski"
+        ],
+        [
+          "devičanski",
+          "djevičanski"
+        ],
+        [
+          "devičanski",
+          "djevičanski"
+        ],
+        [
+          "devičanskih",
+          "djevičanskih"
+        ],
+        [
+          "devičanskih",
+          "djevičanskih"
+        ],
+        [
+          "devičanskih",
+          "djevičanskih"
+        ],
+        [
+          "devičanskim",
+          "djevičanskim"
+        ],
+        [
+          "devičanskim",
+          "djevičanskim"
+        ],
+        [
+          "devičansko",
+          "djevičansko"
+        ],
+        [
+          "devičansko",
+          "djevičansko"
+        ],
+        [
+          "devičansko",
+          "djevičansko"
+        ],
+        [
+          "devičansko",
+          "djevičansko"
+        ],
+        [
+          "devičanskoj",
+          "djevičanskoj"
+        ],
+        [
+          "devičanskoj",
+          "djevičanskoj"
+        ],
+        [
+          "devičanskom",
+          "djevičanskom"
+        ],
+        [
+          "devičansku",
+          "djevičansku"
+        ]
+      ]
+    }
+  ]
+}

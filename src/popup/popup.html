@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="sr-Latn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="popupTitle">Prepiši</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <img src="../../assets/icons/icon-48.png" width="42" height="42" alt="">
+        <div class="brand-copy">
+          <img class="wordmark" src="../../assets/wordmark.png" width="118" height="42" alt="Prepiši / Препиши">
+          <p data-i18n="tagline">Čitaj kako ti odgovara.</p>
+        </div>
+        <button id="ui-script-toggle" class="ui-script-toggle" type="button"
+          data-i18n-aria-label="switchInterface" data-i18n-title="switchInterface">Ћ</button>
+      </header>
+
+      <section aria-labelledby="script-heading">
+        <div class="section-heading">
+          <h2 id="script-heading" data-i18n="scriptHeading">Pismo</h2>
+          <span data-i18n="twoWay">obostrano</span>
+        </div>
+        <div class="segments" role="radiogroup" aria-label="Ciljno pismo" data-i18n-aria-label="targetScriptLabel">
+          <label><input type="radio" name="targetScript" value="original"><span data-i18n="scriptOriginal">Izvorno</span></label>
+          <label><input type="radio" name="targetScript" value="latin"><span data-i18n="scriptLatin">Latinica</span></label>
+          <label><input type="radio" name="targetScript" value="cyrillic"><span data-i18n="scriptCyrillic">Ћирилица</span></label>
+        </div>
+      </section>
+
+      <section aria-labelledby="dialect-heading">
+        <div class="section-heading">
+          <h2 id="dialect-heading" data-i18n="dialectHeading">Izgovor jata</h2>
+          <span data-i18n="lexicalTwoWay">rečnički · obostrano</span>
+        </div>
+        <div class="segments segments--dialect" role="radiogroup" aria-label="Ciljni izgovor" data-i18n-aria-label="targetDialectLabel">
+          <label><input type="radio" name="targetDialect" value="original"><span data-i18n="dialectOriginal">Izvorni</span></label>
+          <label><input type="radio" name="targetDialect" value="ekavian"><span data-i18n="dialectEkavian">Ekavski</span></label>
+          <label><input type="radio" name="targetDialect" value="ijekavian"><span data-i18n="dialectIjekavian">Ijekavski</span></label>
+          <label class="experimental"><input type="radio" name="targetDialect" value="ikavian"><span><span class="segment-text" data-i18n="dialectIkavian">Ikavski</span><small data-i18n="beta">beta</small></span></label>
+        </div>
+        <p class="dialect-help"><span data-i18n="dialectHelpPrefix">Menja istorijski jat:</span> <b data-i18n="dialectHelpJatExample">vetar ↔ vjetar</b><span data-i18n="dialectHelpMiddle">. Pisanje stranih imena, npr.</span> <b data-i18n="dialectHelpNameExample">Richter ↔ Rihter</b><span data-i18n="dialectHelpSuffix">, zasebno je pravilo.</span></p>
+        <label class="highlight-toggle" for="highlight-dialect">
+          <input id="highlight-dialect" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+          <span><b data-i18n="highlightWords">Istakni promenjene reči</b><small data-i18n="highlightHelp">Samo promene izgovora, ne pisma</small></span>
+        </label>
+        <label class="site-toggle" for="remember-site">
+          <input id="remember-site" type="checkbox">
+          <span class="switch" aria-hidden="true"></span>
+          <span><b data-i18n="rememberSite">Zapamti na ovom sajtu</b><small data-i18n="rememberSiteHelp">Isti izbor se primenjuje posle otvaranja linka</small></span>
+        </label>
+      </section>
+
+      <button id="restore" class="secondary" type="button" data-i18n="restore">Vrati izvorni tekst</button>
+      <p id="status" class="status" role="status" aria-live="polite" data-i18n="initialStatus">Izbor se primenjuje odmah · tekst ostaje u tvom pregledaču.</p>
+
+      <footer>
+        <button id="settings" class="link" type="button" data-i18n="settings">Zaštićeni nazivi i podešavanja</button>
+        <span aria-hidden="true">·</span>
+        <span data-i18n="localOnly">bez slanja podataka</span>
+      </footer>
+    </main>
+    <script src="../platform/webext.js"></script>
+    <script src="../site-persistence.js"></script>
+    <script src="../ui-strings.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

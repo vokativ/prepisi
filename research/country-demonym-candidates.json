@@ -1,0 +1,25 @@
+{
+  "scope": "Jat-sensitive country names, demonyms, and geographic modifiers; deliberately not a list of every country.",
+  "reviewedOn": "2026-08-11",
+  "candidates": [
+    { "concept": "Germany", "kind": "country", "ekavian": "nemačka", "ijekavian": "njemačka" },
+    { "concept": "Germany", "kind": "male demonym", "ekavian": "nemac", "ijekavian": "nijemac" },
+    { "concept": "Germany", "kind": "female demonym", "ekavian": "nemica", "ijekavian": "njemica" },
+    { "concept": "Germany", "kind": "adjective", "ekavian": "nemački", "ijekavian": "njemački" },
+    { "concept": "Belarus", "kind": "country", "ekavian": "belorusija", "ijekavian": "bjelorusija" },
+    { "concept": "Belarus", "kind": "male demonym", "ekavian": "belorus", "ijekavian": "bjelorus" },
+    { "concept": "Belarus", "kind": "female demonym", "ekavian": "beloruskinja", "ijekavian": "bjeloruskinja" },
+    { "concept": "Belarus", "kind": "adjective", "ekavian": "beloruski", "ijekavian": "bjeloruski" },
+    { "concept": "North", "kind": "geographic modifier", "ekavian": "severni", "ijekavian": "sjeverni" },
+    { "concept": "North", "kind": "direction noun", "ekavian": "sever", "ijekavian": "sjever" },
+    { "concept": "North Korea", "kind": "male demonym", "ekavian": "severnokorejac", "ijekavian": "sjevernokorejac" },
+    { "concept": "North Korea", "kind": "female demonym", "ekavian": "severnokorejka", "ijekavian": "sjevernokorejka" },
+    { "concept": "North Korea", "kind": "adjective", "ekavian": "severnokorejski", "ijekavian": "sjevernokorejski" },
+    { "concept": "North Macedonia", "kind": "male demonym", "ekavian": "severnomakedonac", "ijekavian": "sjevernomakedonac" },
+    { "concept": "North Macedonia", "kind": "female demonym", "ekavian": "severnomakedonka", "ijekavian": "sjevernomakedonka" },
+    { "concept": "North Macedonia", "kind": "adjective", "ekavian": "severnomakedonski", "ijekavian": "sjevernomakedonski" },
+    { "concept": "Northern Mariana Islands", "kind": "adjective", "ekavian": "severnomarijanski", "ijekavian": "sjevernomarijanski" },
+    { "concept": "Virgin Islands", "kind": "noun anchor", "ekavian": "devica", "ijekavian": "djevica" },
+    { "concept": "Virgin Islands", "kind": "adjective", "ekavian": "devičanski", "ijekavian": "djevičanski" }
+  ]
+}

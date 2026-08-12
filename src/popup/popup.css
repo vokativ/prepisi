@@ -1,0 +1,111 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #15251f;
+  background: #f5f1e8;
+}
+
+* { box-sizing: border-box; }
+
+/* A fixed intrinsic width is required for Firefox desktop popups. A
+   viewport-relative maximum creates a circular intrinsic-size calculation
+   there and can collapse the panel to a thin vertical strip. */
+body { width: 370px; margin: 0; }
+
+main { padding: 20px; }
+
+.brand { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.brand > img { filter: drop-shadow(0 4px 8px rgb(16 76 59 / 18%)); }
+.brand-copy { min-height: 48px; }
+.wordmark { display: block; width: auto; height: 30px; object-fit: contain; object-position: left center; }
+.brand p { margin: 5px 0 0; color: #65716c; font-size: 12px; }
+.ui-script-toggle {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  border: 1px solid #c9c9bf;
+  border-radius: 9px;
+  padding: 0;
+  background: #fffdf8;
+  color: #245545;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+}
+.ui-script-toggle:hover { border-color: #126b4f; background: #edf6f1; }
+.ui-script-toggle:focus-visible { outline: 3px solid #f2b544; outline-offset: 2px; }
+
+section { margin-bottom: 18px; }
+.section-heading { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+h2 { margin: 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.section-heading > span { color: #77827d; font-size: 11px; }
+
+.segments { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+.segments--dialect { grid-template-columns: repeat(2, 1fr); }
+.segments label { position: relative; }
+.segments input { position: absolute; opacity: 0; pointer-events: none; }
+.segments label > span {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid #d8d5ca;
+  border-radius: 10px;
+  background: #fffdf8;
+  color: #53615b;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 120ms ease;
+}
+.segments input:checked + span { border-color: #126b4f; background: #dff1e9; color: #0e5a42; box-shadow: inset 0 0 0 1px #126b4f; font-weight: 650; }
+.segments input:focus-visible + span { outline: 3px solid #f2b544; outline-offset: 2px; }
+.segments small { padding: 2px 4px; border-radius: 5px; background: #f4dca7; color: #715216; font-size: 8px; text-transform: uppercase; }
+.dialect-help { margin: 7px 2px 0; color: #69746f; font-size: 10px; line-height: 1.35; }
+.dialect-help b { color: #3e4f48; font-weight: 650; }
+
+.highlight-toggle, .site-toggle { display: flex; align-items: center; gap: 9px; margin: 12px 2px 0; color: #405149; cursor: pointer; }
+.site-toggle { padding-top: 10px; border-top: 1px solid #dedbd1; }
+.highlight-toggle > input, .site-toggle > input { position: absolute; opacity: 0; pointer-events: none; }
+.highlight-toggle > span:last-child, .site-toggle > span:last-child { display: flex; flex-direction: column; gap: 1px; }
+.highlight-toggle b, .site-toggle b { font-size: 11px; }
+.highlight-toggle small, .site-toggle small { color: #77817d; font-size: 9px; }
+.switch { position: relative; flex: 0 0 auto; width: 31px; height: 18px; border: 1px solid #bfc5bf; border-radius: 99px; background: #d9dcd7; transition: 120ms ease; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / 20%); transition: 120ms ease; }
+.highlight-toggle input:checked + .switch, .site-toggle input:checked + .switch { border-color: #126b4f; background: #126b4f; }
+.highlight-toggle input:checked + .switch::after, .site-toggle input:checked + .switch::after { transform: translateX(13px); }
+.highlight-toggle input:focus-visible + .switch, .site-toggle input:focus-visible + .switch { outline: 3px solid #f2b544; outline-offset: 2px; }
+.site-toggle input:disabled + .switch { opacity: .55; }
+.site-toggle:has(input:disabled) { cursor: not-allowed; opacity: .65; }
+
+button { font: inherit; }
+.secondary { width: 100%; min-height: 43px; border: 1px solid #d1cec3; border-radius: 11px; margin-top: 2px; background: transparent; color: #4f5c57; font-weight: 700; cursor: pointer; }
+.secondary:disabled, .segments input:disabled + span, .highlight-toggle input:disabled + .switch { cursor: wait; opacity: .65; }
+
+.status { min-height: 32px; margin: 12px 3px 8px; color: #66726d; font-size: 11px; line-height: 1.45; text-align: center; }
+.status.error { color: #a13d32; }
+.status.success { color: #0d6548; }
+
+footer { display: flex; justify-content: center; gap: 6px; padding-top: 10px; border-top: 1px solid #dedbd1; color: #7a837f; font-size: 10px; }
+.link { border: 0; padding: 0; background: none; color: #315e50; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+@media (max-width: 360px) {
+  main { padding: 14px; }
+  .brand { gap: 9px; margin-bottom: 18px; }
+  .brand > img { width: 38px; height: 38px; }
+  .wordmark { max-width: 105px; height: 27px; }
+  .ui-script-toggle { width: 40px; height: 40px; line-height: 38px; }
+  .segments label > span { min-height: 44px; font-size: 12px; }
+  footer { flex-wrap: wrap; }
+}
+
+/* Firefox for Android and other touch-only mobile surfaces already provide a
+   real viewport, so they can use the available width without affecting the
+   desktop popup's intrinsic-size calculation. */
+@media (hover: none) and (pointer: coarse) {
+  body { width: 100%; min-width: 0; }
+}

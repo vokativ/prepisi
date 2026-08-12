@@ -1,0 +1,51 @@
+name: Bad conversion
+description: Report one reproducible script, dialect, or protected-name problem.
+title: "[conversion] "
+labels: ["conversion"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      placeholder: https://example.com/article
+    validations:
+      required: true
+  - type: dropdown
+    id: source-script
+    attributes:
+      label: Source script
+      options: [Latin, Cyrillic, Mixed]
+    validations:
+      required: true
+  - type: input
+    id: settings
+    attributes:
+      label: Prepiši choices
+      description: Target script, target jat pronunciation, and whether highlighting was enabled.
+      placeholder: Cyrillic + Ijekavian + highlighting
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Exact example
+      description: Put the original, actual result, and expected result on separate lines.
+      placeholder: |
+        Original:
+        Actual:
+        Expected:
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: What kind of text is this?
+      options: [Ordinary word, Brand or company, Personal or place name, Foreign-language text, Interface or code, Unsure]
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context or screenshot
+      description: Add enough surrounding text to resolve meaning; drag in a screenshot if helpful.
+

@@ -1,0 +1,2142 @@
+{
+  "generatedOn": "2026-08-11T10:58:57.900Z",
+  "source": "Unicode CLDR territory display names",
+  "version": "48.1.0",
+  "license": "Unicode-3.0",
+  "urls": {
+    "sr-Latn": "https://raw.githubusercontent.com/unicode-org/cldr-json/48.1.0/cldr-json/cldr-localenames-full/main/sr-Latn/territories.json",
+    "hr": "https://raw.githubusercontent.com/unicode-org/cldr-json/48.1.0/cldr-json/cldr-localenames-full/main/hr/territories.json",
+    "bs": "https://raw.githubusercontent.com/unicode-org/cldr-json/48.1.0/cldr-json/cldr-localenames-full/main/bs/territories.json"
+  },
+  "territoryCount": 264,
+  "identicalCount": 174,
+  "differingCount": 90,
+  "differences": [
+    {
+      "code": "AC",
+      "srLatn": "Ostrvo Asension",
+      "hr": "Otok Uzašašća",
+      "bs": "Ostrvo Ascension"
+    },
+    {
+      "code": "AF",
+      "srLatn": "Avganistan",
+      "hr": "Afganistan",
+      "bs": "Afganistan"
+    },
+    {
+      "code": "AM",
+      "srLatn": "Jermenija",
+      "hr": "Armenija",
+      "bs": "Armenija"
+    },
+    {
+      "code": "AQ",
+      "srLatn": "Antarktik",
+      "hr": "Antarktika",
+      "bs": "Antarktika"
+    },
+    {
+      "code": "AX",
+      "srLatn": "Olandska Ostrva",
+      "hr": "Ålandski otoci",
+      "bs": "Olandska ostrva"
+    },
+    {
+      "code": "AZ",
+      "srLatn": "Azerbejdžan",
+      "hr": "Azerbajdžan",
+      "bs": "Azerbejdžan"
+    },
+    {
+      "code": "BL",
+      "srLatn": "Sveti Bartolomej",
+      "hr": "Saint Barthélemy",
+      "bs": "Sveti Bartolomej"
+    },
+    {
+      "code": "BM",
+      "srLatn": "Bermudi",
+      "hr": "Bermudi",
+      "bs": "Bermuda"
+    },
+    {
+      "code": "BQ",
+      "srLatn": "Karipska Holandija",
+      "hr": "Karipski otoci Nizozemske",
+      "bs": "Karipska Holandija"
+    },
+    {
+      "code": "BV",
+      "srLatn": "Ostrvo Buve",
+      "hr": "Otok Bouvet",
+      "bs": "Ostrvo Buve"
+    },
+    {
+      "code": "BY",
+      "srLatn": "Belorusija",
+      "hr": "Bjelorusija",
+      "bs": "Bjelorusija"
+    },
+    {
+      "code": "CC",
+      "srLatn": "Kokosova (Kilingova) Ostrva",
+      "hr": "Kokosovi (Keelingovi) Otoci",
+      "bs": "Kokosova (Keelingova) ostrva"
+    },
+    {
+      "code": "CD",
+      "srLatn": "Kongo - Kinšasa",
+      "hr": "Kongo - Kinshasa",
+      "bs": "Demokratska Republika Kongo"
+    },
+    {
+      "code": "CF",
+      "srLatn": "Centralnoafrička Republika",
+      "hr": "Srednjoafrička Republika",
+      "bs": "Centralnoafrička Republika"
+    },
+    {
+      "code": "CG",
+      "srLatn": "Kongo - Brazavil",
+      "hr": "Kongo - Brazzaville",
+      "bs": "Kongo"
+    },
+    {
+      "code": "CH",
+      "srLatn": "Švajcarska",
+      "hr": "Švicarska",
+      "bs": "Švicarska"
+    },
+    {
+      "code": "CI",
+      "srLatn": "Obala Slonovače (Kot d’Ivoar)",
+      "hr": "Obala Bjelokosti",
+      "bs": "Obala Slonovače"
+    },
+    {
+      "code": "CK",
+      "srLatn": "Kukova Ostrva",
+      "hr": "Cookovi Otoci",
+      "bs": "Kukova ostrva"
+    },
+    {
+      "code": "CP",
+      "srLatn": "Ostrvo Kliperton",
+      "hr": "Otok Clipperton",
+      "bs": "Ostrvo Clipperton"
+    },
+    {
+      "code": "CV",
+      "srLatn": "Zelenortska Ostrva",
+      "hr": "Zelenortska Republika",
+      "bs": "Zelenortska Ostrva"
+    },
+    {
+      "code": "CW",
+      "srLatn": "Kurasao",
+      "hr": "Curaçao",
+      "bs": "Kurasao"
+    },
+    {
+      "code": "CX",
+      "srLatn": "Božićno Ostrvo",
+      "hr": "Božićni Otok",
+      "bs": "Božićno ostrvo"
+    },
+    {
+      "code": "CY",
+      "srLatn": "Kipar",
+      "hr": "Cipar",
+      "bs": "Kipar"
+    },
+    {
+      "code": "DE",
+      "srLatn": "Nemačka",
+      "hr": "Njemačka",
+      "bs": "Njemačka"
+    },
+    {
+      "code": "DG",
+      "srLatn": "Dijego Garsija",
+      "hr": "Diego Garcia",
+      "bs": "Dijego Garsija"
+    },
+    {
+      "code": "EA",
+      "srLatn": "Seuta i Melilja",
+      "hr": "Ceuta i Melilla",
+      "bs": "Seuta i Melilja"
+    },
+    {
+      "code": "ES",
+      "srLatn": "Španija",
+      "hr": "Španjolska",
+      "bs": "Španija"
+    },
+    {
+      "code": "EU",
+      "srLatn": "Evropska unija",
+      "hr": "Europska unija",
+      "bs": "Evropska unija"
+    },
+    {
+      "code": "EZ",
+      "srLatn": "Evrozona",
+      "hr": "eurozona",
+      "bs": "Eurozona"
+    },
+    {
+      "code": "FK",
+      "srLatn": "Foklandska Ostrva",
+      "hr": "Falklandski Otoci",
+      "bs": "Folklandska ostrva"
+    },
+    {
+      "code": "FO",
+      "srLatn": "Farska Ostrva",
+      "hr": "Farski Otoci",
+      "bs": "Farska ostrva"
+    },
+    {
+      "code": "GF",
+      "srLatn": "Francuska Gvajana",
+      "hr": "Francuska Gijana",
+      "bs": "Francuska Gvajana"
+    },
+    {
+      "code": "GG",
+      "srLatn": "Gernzi",
+      "hr": "Guernsey",
+      "bs": "Guernsey"
+    },
+    {
+      "code": "GP",
+      "srLatn": "Gvadelup",
+      "hr": "Guadalupe",
+      "bs": "Gvadalupe"
+    },
+    {
+      "code": "GQ",
+      "srLatn": "Ekvatorijalna Gvineja",
+      "hr": "Ekvatorska Gvineja",
+      "bs": "Ekvatorijalna Gvineja"
+    },
+    {
+      "code": "GS",
+      "srLatn": "Južna Džordžija i Južna Sendvička Ostrva",
+      "hr": "Južna Georgia i Otoci Južni Sandwich",
+      "bs": "Južna Džordžija i Južna Sendvič ostrva"
+    },
+    {
+      "code": "GW",
+      "srLatn": "Gvineja-Bisao",
+      "hr": "Gvineja Bisau",
+      "bs": "Gvineja-Bisao"
+    },
+    {
+      "code": "HK",
+      "srLatn": "SAR Hongkong (Kina)",
+      "hr": "PUP Hong Kong Kina",
+      "bs": "Hong Kong (SAR Kina)"
+    },
+    {
+      "code": "HM",
+      "srLatn": "Ostrvo Herd i Mekdonaldova ostrva",
+      "hr": "Otoci Heard i McDonald",
+      "bs": "Ostrvo Heard i arhipelag McDonald"
+    },
+    {
+      "code": "IC",
+      "srLatn": "Kanarska Ostrva",
+      "hr": "Kanari",
+      "bs": "Kanarska ostrva"
+    },
+    {
+      "code": "IM",
+      "srLatn": "Ostrvo Man",
+      "hr": "Otok Man",
+      "bs": "Ostrvo Man"
+    },
+    {
+      "code": "IO",
+      "srLatn": "Britanska teritorija Indijskog okeana",
+      "hr": "Britanski Indijskooceanski Teritorij",
+      "bs": "Britanska Teritorija u Indijskom Okeanu"
+    },
+    {
+      "code": "JE",
+      "srLatn": "Džerzi",
+      "hr": "Jersey",
+      "bs": "Jersey"
+    },
+    {
+      "code": "KM",
+      "srLatn": "Komorska Ostrva",
+      "hr": "Komori",
+      "bs": "Komori"
+    },
+    {
+      "code": "KN",
+      "srLatn": "Sent Kits i Nevis",
+      "hr": "Sveti Kristofor i Nevis",
+      "bs": "Sveti Kits i Nevis"
+    },
+    {
+      "code": "KP",
+      "srLatn": "Severna Koreja",
+      "hr": "Sjeverna Koreja",
+      "bs": "Sjeverna Koreja"
+    },
+    {
+      "code": "KY",
+      "srLatn": "Kajmanska Ostrva",
+      "hr": "Kajmanski Otoci",
+      "bs": "Kajmanska ostrva"
+    },
+    {
+      "code": "LB",
+      "srLatn": "Liban",
+      "hr": "Libanon",
+      "bs": "Liban"
+    },
+    {
+      "code": "LT",
+      "srLatn": "Litvanija",
+      "hr": "Litva",
+      "bs": "Litvanija"
+    },
+    {
+      "code": "LV",
+      "srLatn": "Letonija",
+      "hr": "Latvija",
+      "bs": "Latvija"
+    },
+    {
+      "code": "MF",
+      "srLatn": "Sveti Martin (Francuska)",
+      "hr": "Saint Martin",
+      "bs": "Sveti Martin"
+    },
+    {
+      "code": "MH",
+      "srLatn": "Maršalska Ostrva",
+      "hr": "Maršalovi Otoci",
+      "bs": "Maršalova ostrva"
+    },
+    {
+      "code": "MK",
+      "srLatn": "Severna Makedonija",
+      "hr": "Sjeverna Makedonija",
+      "bs": "Sjeverna Makedonija"
+    },
+    {
+      "code": "MM",
+      "srLatn": "Mijanmar (Burma)",
+      "hr": "Mjanmar (Burma)",
+      "bs": "Mijanmar"
+    },
+    {
+      "code": "MO",
+      "srLatn": "SAR Makao (Kina)",
+      "hr": "PUP Makao Kina",
+      "bs": "Makao (SAR Kina)"
+    },
+    {
+      "code": "MP",
+      "srLatn": "Severna Marijanska Ostrva",
+      "hr": "Sjevernomarijanski Otoci",
+      "bs": "Sjeverna Marijanska ostrva"
+    },
+    {
+      "code": "MR",
+      "srLatn": "Mauritanija",
+      "hr": "Mauretanija",
+      "bs": "Mauritanija"
+    },
+    {
+      "code": "MS",
+      "srLatn": "Monserat",
+      "hr": "Montserrat",
+      "bs": "Monserat"
+    },
+    {
+      "code": "NF",
+      "srLatn": "Ostrvo Norfok",
+      "hr": "Otok Norfolk",
+      "bs": "Ostrvo Norfolk"
+    },
+    {
+      "code": "NL",
+      "srLatn": "Holandija",
+      "hr": "Nizozemska",
+      "bs": "Nizozemska"
+    },
+    {
+      "code": "PM",
+      "srLatn": "Sen Pjer i Mikelon",
+      "hr": "Sveti Petar i Mikelon",
+      "bs": "Sveti Petar i Mikelon"
+    },
+    {
+      "code": "PN",
+      "srLatn": "Pitkern",
+      "hr": "Pitcairnovi Otoci",
+      "bs": "Pitkernska Ostrva"
+    },
+    {
+      "code": "PR",
+      "srLatn": "Portoriko",
+      "hr": "Portoriko",
+      "bs": "Porto Riko"
+    },
+    {
+      "code": "PS",
+      "srLatn": "Palestinske teritorije",
+      "hr": "Palestinsko područje",
+      "bs": "Palestinska Teritorija"
+    },
+    {
+      "code": "PT",
+      "srLatn": "Portugalija",
+      "hr": "Portugal",
+      "bs": "Portugal"
+    },
+    {
+      "code": "QO",
+      "srLatn": "udaljena ostrva Okeanije",
+      "hr": "Vanjska područja Oceanije",
+      "bs": "Vanjska Okeanija"
+    },
+    {
+      "code": "RE",
+      "srLatn": "Reinion",
+      "hr": "Réunion",
+      "bs": "Reunion"
+    },
+    {
+      "code": "RO",
+      "srLatn": "Rumunija",
+      "hr": "Rumunjska",
+      "bs": "Rumunija"
+    },
+    {
+      "code": "SB",
+      "srLatn": "Solomonska Ostrva",
+      "hr": "Salomonovi Otoci",
+      "bs": "Solomonska Ostrva"
+    },
+    {
+      "code": "SH",
+      "srLatn": "Sveta Jelena",
+      "hr": "Sveta Helena",
+      "bs": "Sveta Helena"
+    },
+    {
+      "code": "SJ",
+      "srLatn": "Svalbard i Jan Majen",
+      "hr": "Svalbard i Jan Mayen",
+      "bs": "Svalbard i Jan Mayen"
+    },
+    {
+      "code": "ST",
+      "srLatn": "Sao Tome i Principe",
+      "hr": "Sveti Toma i Princip",
+      "bs": "Sao Tome i Principe"
+    },
+    {
+      "code": "SX",
+      "srLatn": "Sveti Martin (Holandija)",
+      "hr": "Sint Maarten",
+      "bs": "Sint Marten"
+    },
+    {
+      "code": "SZ",
+      "srLatn": "Svazilend",
+      "hr": "Esvatini",
+      "bs": "Esvatini"
+    },
+    {
+      "code": "TA",
+      "srLatn": "Tristan da Kunja",
+      "hr": "Tristan da Cunha",
+      "bs": "Tristan da Cunha"
+    },
+    {
+      "code": "TC",
+      "srLatn": "Ostrva Turks i Kaikos",
+      "hr": "Otoci Turks i Caicos",
+      "bs": "Ostrva Turks i Kaikos"
+    },
+    {
+      "code": "TF",
+      "srLatn": "Francuske Južne Teritorije",
+      "hr": "Francuski Južni Teritoriji",
+      "bs": "Francuske Južne Teritorije"
+    },
+    {
+      "code": "TL",
+      "srLatn": "Timor-Leste (Istočni Timor)",
+      "hr": "Timor-Leste",
+      "bs": "Istočni Timor"
+    },
+    {
+      "code": "UM",
+      "srLatn": "Udaljena ostrva SAD",
+      "hr": "Mali udaljeni otoci SAD-a",
+      "bs": "Američka Vanjska Ostrva"
+    },
+    {
+      "code": "UN",
+      "srLatn": "Ujedinjene nacije",
+      "hr": "Ujedinjeni narodi",
+      "bs": "Ujedinjene Nacije"
+    },
+    {
+      "code": "US",
+      "srLatn": "Sjedinjene Države",
+      "hr": "Sjedinjene Američke Države",
+      "bs": "Sjedinjene Države"
+    },
+    {
+      "code": "VC",
+      "srLatn": "Sent Vinsent i Grenadini",
+      "hr": "Sveti Vincent i Grenadini",
+      "bs": "Sveti Vinsent i Grenadin"
+    },
+    {
+      "code": "VE",
+      "srLatn": "Venecuela",
+      "hr": "Venezuela",
+      "bs": "Venecuela"
+    },
+    {
+      "code": "VG",
+      "srLatn": "Britanska Devičanska Ostrva",
+      "hr": "Britanski Djevičanski Otoci",
+      "bs": "Britanska Djevičanska ostrva"
+    },
+    {
+      "code": "VI",
+      "srLatn": "Američka Devičanska Ostrva",
+      "hr": "Američki Djevičanski Otoci",
+      "bs": "Američka Djevičanska ostrva"
+    },
+    {
+      "code": "WF",
+      "srLatn": "Valis i Futuna",
+      "hr": "Wallis i Futuna",
+      "bs": "Ostrva Valis i Futuna"
+    },
+    {
+      "code": "XA",
+      "srLatn": "simulirane dijakritike",
+      "hr": "pseudo naglasci",
+      "bs": "Pseudo naglasci"
+    },
+    {
+      "code": "XB",
+      "srLatn": "Pseudobidi",
+      "hr": "pseudo bidi",
+      "bs": "Pseudo bidi"
+    },
+    {
+      "code": "YT",
+      "srLatn": "Majot",
+      "hr": "Mayotte",
+      "bs": "Majote"
+    },
+    {
+      "code": "ZZ",
+      "srLatn": "nepoznat region",
+      "hr": "nepoznato područje",
+      "bs": "Nepoznata oblast"
+    }
+  ],
+  "territories": [
+    {
+      "code": "AC",
+      "srLatn": "Ostrvo Asension",
+      "hr": "Otok Uzašašća",
+      "bs": "Ostrvo Ascension"
+    },
+    {
+      "code": "AD",
+      "srLatn": "Andora",
+      "hr": "Andora",
+      "bs": "Andora"
+    },
+    {
+      "code": "AE",
+      "srLatn": "Ujedinjeni Arapski Emirati",
+      "hr": "Ujedinjeni Arapski Emirati",
+      "bs": "Ujedinjeni Arapski Emirati"
+    },
+    {
+      "code": "AF",
+      "srLatn": "Avganistan",
+      "hr": "Afganistan",
+      "bs": "Afganistan"
+    },
+    {
+      "code": "AG",
+      "srLatn": "Antigva i Barbuda",
+      "hr": "Antigva i Barbuda",
+      "bs": "Antigva i Barbuda"
+    },
+    {
+      "code": "AI",
+      "srLatn": "Angvila",
+      "hr": "Angvila",
+      "bs": "Angvila"
+    },
+    {
+      "code": "AL",
+      "srLatn": "Albanija",
+      "hr": "Albanija",
+      "bs": "Albanija"
+    },
+    {
+      "code": "AM",
+      "srLatn": "Jermenija",
+      "hr": "Armenija",
+      "bs": "Armenija"
+    },
+    {
+      "code": "AO",
+      "srLatn": "Angola",
+      "hr": "Angola",
+      "bs": "Angola"
+    },
+    {
+      "code": "AQ",
+      "srLatn": "Antarktik",
+      "hr": "Antarktika",
+      "bs": "Antarktika"
+    },
+    {
+      "code": "AR",
+      "srLatn": "Argentina",
+      "hr": "Argentina",
+      "bs": "Argentina"
+    },
+    {
+      "code": "AS",
+      "srLatn": "Američka Samoa",
+      "hr": "Američka Samoa",
+      "bs": "Američka Samoa"
+    },
+    {
+      "code": "AT",
+      "srLatn": "Austrija",
+      "hr": "Austrija",
+      "bs": "Austrija"
+    },
+    {
+      "code": "AU",
+      "srLatn": "Australija",
+      "hr": "Australija",
+      "bs": "Australija"
+    },
+    {
+      "code": "AW",
+      "srLatn": "Aruba",
+      "hr": "Aruba",
+      "bs": "Aruba"
+    },
+    {
+      "code": "AX",
+      "srLatn": "Olandska Ostrva",
+      "hr": "Ålandski otoci",
+      "bs": "Olandska ostrva"
+    },
+    {
+      "code": "AZ",
+      "srLatn": "Azerbejdžan",
+      "hr": "Azerbajdžan",
+      "bs": "Azerbejdžan"
+    },
+    {
+      "code": "BA",
+      "srLatn": "Bosna i Hercegovina",
+      "hr": "Bosna i Hercegovina",
+      "bs": "Bosna i Hercegovina"
+    },
+    {
+      "code": "BB",
+      "srLatn": "Barbados",
+      "hr": "Barbados",
+      "bs": "Barbados"
+    },
+    {
+      "code": "BD",
+      "srLatn": "Bangladeš",
+      "hr": "Bangladeš",
+      "bs": "Bangladeš"
+    },
+    {
+      "code": "BE",
+      "srLatn": "Belgija",
+      "hr": "Belgija",
+      "bs": "Belgija"
+    },
+    {
+      "code": "BF",
+      "srLatn": "Burkina Faso",
+      "hr": "Burkina Faso",
+      "bs": "Burkina Faso"
+    },
+    {
+      "code": "BG",
+      "srLatn": "Bugarska",
+      "hr": "Bugarska",
+      "bs": "Bugarska"
+    },
+    {
+      "code": "BH",
+      "srLatn": "Bahrein",
+      "hr": "Bahrein",
+      "bs": "Bahrein"
+    },
+    {
+      "code": "BI",
+      "srLatn": "Burundi",
+      "hr": "Burundi",
+      "bs": "Burundi"
+    },
+    {
+      "code": "BJ",
+      "srLatn": "Benin",
+      "hr": "Benin",
+      "bs": "Benin"
+    },
+    {
+      "code": "BL",
+      "srLatn": "Sveti Bartolomej",
+      "hr": "Saint Barthélemy",
+      "bs": "Sveti Bartolomej"
+    },
+    {
+      "code": "BM",
+      "srLatn": "Bermudi",
+      "hr": "Bermudi",
+      "bs": "Bermuda"
+    },
+    {
+      "code": "BN",
+      "srLatn": "Brunej",
+      "hr": "Brunej",
+      "bs": "Brunej"
+    },
+    {
+      "code": "BO",
+      "srLatn": "Bolivija",
+      "hr": "Bolivija",
+      "bs": "Bolivija"
+    },
+    {
+      "code": "BQ",
+      "srLatn": "Karipska Holandija",
+      "hr": "Karipski otoci Nizozemske",
+      "bs": "Karipska Holandija"
+    },
+    {
+      "code": "BR",
+      "srLatn": "Brazil",
+      "hr": "Brazil",
+      "bs": "Brazil"
+    },
+    {
+      "code": "BS",
+      "srLatn": "Bahami",
+      "hr": "Bahami",
+      "bs": "Bahami"
+    },
+    {
+      "code": "BT",
+      "srLatn": "Butan",
+      "hr": "Butan",
+      "bs": "Butan"
+    },
+    {
+      "code": "BV",
+      "srLatn": "Ostrvo Buve",
+      "hr": "Otok Bouvet",
+      "bs": "Ostrvo Buve"
+    },
+    {
+      "code": "BW",
+      "srLatn": "Bocvana",
+      "hr": "Bocvana",
+      "bs": "Bocvana"
+    },
+    {
+      "code": "BY",
+      "srLatn": "Belorusija",
+      "hr": "Bjelorusija",
+      "bs": "Bjelorusija"
+    },
+    {
+      "code": "BZ",
+      "srLatn": "Belize",
+      "hr": "Belize",
+      "bs": "Belize"
+    },
+    {
+      "code": "CA",
+      "srLatn": "Kanada",
+      "hr": "Kanada",
+      "bs": "Kanada"
+    },
+    {
+      "code": "CC",
+      "srLatn": "Kokosova (Kilingova) Ostrva",
+      "hr": "Kokosovi (Keelingovi) Otoci",
+      "bs": "Kokosova (Keelingova) ostrva"
+    },
+    {
+      "code": "CD",
+      "srLatn": "Kongo - Kinšasa",
+      "hr": "Kongo - Kinshasa",
+      "bs": "Demokratska Republika Kongo"
+    },
+    {
+      "code": "CF",
+      "srLatn": "Centralnoafrička Republika",
+      "hr": "Srednjoafrička Republika",
+      "bs": "Centralnoafrička Republika"
+    },
+    {
+      "code": "CG",
+      "srLatn": "Kongo - Brazavil",
+      "hr": "Kongo - Brazzaville",
+      "bs": "Kongo"
+    },
+    {
+      "code": "CH",
+      "srLatn": "Švajcarska",
+      "hr": "Švicarska",
+      "bs": "Švicarska"
+    },
+    {
+      "code": "CI",
+      "srLatn": "Obala Slonovače (Kot d’Ivoar)",
+      "hr": "Obala Bjelokosti",
+      "bs": "Obala Slonovače"
+    },
+    {
+      "code": "CK",
+      "srLatn": "Kukova Ostrva",
+      "hr": "Cookovi Otoci",
+      "bs": "Kukova ostrva"
+    },
+    {
+      "code": "CL",
+      "srLatn": "Čile",
+      "hr": "Čile",
+      "bs": "Čile"
+    },
+    {
+      "code": "CM",
+      "srLatn": "Kamerun",
+      "hr": "Kamerun",
+      "bs": "Kamerun"
+    },
+    {
+      "code": "CN",
+      "srLatn": "Kina",
+      "hr": "Kina",
+      "bs": "Kina"
+    },
+    {
+      "code": "CO",
+      "srLatn": "Kolumbija",
+      "hr": "Kolumbija",
+      "bs": "Kolumbija"
+    },
+    {
+      "code": "CP",
+      "srLatn": "Ostrvo Kliperton",
+      "hr": "Otok Clipperton",
+      "bs": "Ostrvo Clipperton"
+    },
+    {
+      "code": "CQ",
+      "srLatn": "Sark",
+      "hr": "Sark",
+      "bs": "Sark"
+    },
+    {
+      "code": "CR",
+      "srLatn": "Kostarika",
+      "hr": "Kostarika",
+      "bs": "Kostarika"
+    },
+    {
+      "code": "CU",
+      "srLatn": "Kuba",
+      "hr": "Kuba",
+      "bs": "Kuba"
+    },
+    {
+      "code": "CV",
+      "srLatn": "Zelenortska Ostrva",
+      "hr": "Zelenortska Republika",
+      "bs": "Zelenortska Ostrva"
+    },
+    {
+      "code": "CW",
+      "srLatn": "Kurasao",
+      "hr": "Curaçao",
+      "bs": "Kurasao"
+    },
+    {
+      "code": "CX",
+      "srLatn": "Božićno Ostrvo",
+      "hr": "Božićni Otok",
+      "bs": "Božićno ostrvo"
+    },
+    {
+      "code": "CY",
+      "srLatn": "Kipar",
+      "hr": "Cipar",
+      "bs": "Kipar"
+    },
+    {
+      "code": "CZ",
+      "srLatn": "Češka",
+      "hr": "Češka",
+      "bs": "Češka"
+    },
+    {
+      "code": "DE",
+      "srLatn": "Nemačka",
+      "hr": "Njemačka",
+      "bs": "Njemačka"
+    },
+    {
+      "code": "DG",
+      "srLatn": "Dijego Garsija",
+      "hr": "Diego Garcia",
+      "bs": "Dijego Garsija"
+    },
+    {
+      "code": "DJ",
+      "srLatn": "Džibuti",
+      "hr": "Džibuti",
+      "bs": "Džibuti"
+    },
+    {
+      "code": "DK",
+      "srLatn": "Danska",
+      "hr": "Danska",
+      "bs": "Danska"
+    },
+    {
+      "code": "DM",
+      "srLatn": "Dominika",
+      "hr": "Dominika",
+      "bs": "Dominika"
+    },
+    {
+      "code": "DO",
+      "srLatn": "Dominikanska Republika",
+      "hr": "Dominikanska Republika",
+      "bs": "Dominikanska Republika"
+    },
+    {
+      "code": "DZ",
+      "srLatn": "Alžir",
+      "hr": "Alžir",
+      "bs": "Alžir"
+    },
+    {
+      "code": "EA",
+      "srLatn": "Seuta i Melilja",
+      "hr": "Ceuta i Melilla",
+      "bs": "Seuta i Melilja"
+    },
+    {
+      "code": "EC",
+      "srLatn": "Ekvador",
+      "hr": "Ekvador",
+      "bs": "Ekvador"
+    },
+    {
+      "code": "EE",
+      "srLatn": "Estonija",
+      "hr": "Estonija",
+      "bs": "Estonija"
+    },
+    {
+      "code": "EG",
+      "srLatn": "Egipat",
+      "hr": "Egipat",
+      "bs": "Egipat"
+    },
+    {
+      "code": "EH",
+      "srLatn": "Zapadna Sahara",
+      "hr": "Zapadna Sahara",
+      "bs": "Zapadna Sahara"
+    },
+    {
+      "code": "ER",
+      "srLatn": "Eritreja",
+      "hr": "Eritreja",
+      "bs": "Eritreja"
+    },
+    {
+      "code": "ES",
+      "srLatn": "Španija",
+      "hr": "Španjolska",
+      "bs": "Španija"
+    },
+    {
+      "code": "ET",
+      "srLatn": "Etiopija",
+      "hr": "Etiopija",
+      "bs": "Etiopija"
+    },
+    {
+      "code": "EU",
+      "srLatn": "Evropska unija",
+      "hr": "Europska unija",
+      "bs": "Evropska unija"
+    },
+    {
+      "code": "EZ",
+      "srLatn": "Evrozona",
+      "hr": "eurozona",
+      "bs": "Eurozona"
+    },
+    {
+      "code": "FI",
+      "srLatn": "Finska",
+      "hr": "Finska",
+      "bs": "Finska"
+    },
+    {
+      "code": "FJ",
+      "srLatn": "Fidži",
+      "hr": "Fidži",
+      "bs": "Fidži"
+    },
+    {
+      "code": "FK",
+      "srLatn": "Foklandska Ostrva",
+      "hr": "Falklandski Otoci",
+      "bs": "Folklandska ostrva"
+    },
+    {
+      "code": "FM",
+      "srLatn": "Mikronezija",
+      "hr": "Mikronezija",
+      "bs": "Mikronezija"
+    },
+    {
+      "code": "FO",
+      "srLatn": "Farska Ostrva",
+      "hr": "Farski Otoci",
+      "bs": "Farska ostrva"
+    },
+    {
+      "code": "FR",
+      "srLatn": "Francuska",
+      "hr": "Francuska",
+      "bs": "Francuska"
+    },
+    {
+      "code": "GA",
+      "srLatn": "Gabon",
+      "hr": "Gabon",
+      "bs": "Gabon"
+    },
+    {
+      "code": "GB",
+      "srLatn": "Ujedinjeno Kraljevstvo",
+      "hr": "Ujedinjeno Kraljevstvo",
+      "bs": "Ujedinjeno Kraljevstvo"
+    },
+    {
+      "code": "GD",
+      "srLatn": "Grenada",
+      "hr": "Grenada",
+      "bs": "Grenada"
+    },
+    {
+      "code": "GE",
+      "srLatn": "Gruzija",
+      "hr": "Gruzija",
+      "bs": "Gruzija"
+    },
+    {
+      "code": "GF",
+      "srLatn": "Francuska Gvajana",
+      "hr": "Francuska Gijana",
+      "bs": "Francuska Gvajana"
+    },
+    {
+      "code": "GG",
+      "srLatn": "Gernzi",
+      "hr": "Guernsey",
+      "bs": "Guernsey"
+    },
+    {
+      "code": "GH",
+      "srLatn": "Gana",
+      "hr": "Gana",
+      "bs": "Gana"
+    },
+    {
+      "code": "GI",
+      "srLatn": "Gibraltar",
+      "hr": "Gibraltar",
+      "bs": "Gibraltar"
+    },
+    {
+      "code": "GL",
+      "srLatn": "Grenland",
+      "hr": "Grenland",
+      "bs": "Grenland"
+    },
+    {
+      "code": "GM",
+      "srLatn": "Gambija",
+      "hr": "Gambija",
+      "bs": "Gambija"
+    },
+    {
+      "code": "GN",
+      "srLatn": "Gvineja",
+      "hr": "Gvineja",
+      "bs": "Gvineja"
+    },
+    {
+      "code": "GP",
+      "srLatn": "Gvadelup",
+      "hr": "Guadalupe",
+      "bs": "Gvadalupe"
+    },
+    {
+      "code": "GQ",
+      "srLatn": "Ekvatorijalna Gvineja",
+      "hr": "Ekvatorska Gvineja",
+      "bs": "Ekvatorijalna Gvineja"
+    },
+    {
+      "code": "GR",
+      "srLatn": "Grčka",
+      "hr": "Grčka",
+      "bs": "Grčka"
+    },
+    {
+      "code": "GS",
+      "srLatn": "Južna Džordžija i Južna Sendvička Ostrva",
+      "hr": "Južna Georgia i Otoci Južni Sandwich",
+      "bs": "Južna Džordžija i Južna Sendvič ostrva"
+    },
+    {
+      "code": "GT",
+      "srLatn": "Gvatemala",
+      "hr": "Gvatemala",
+      "bs": "Gvatemala"
+    },
+    {
+      "code": "GU",
+      "srLatn": "Guam",
+      "hr": "Guam",
+      "bs": "Guam"
+    },
+    {
+      "code": "GW",
+      "srLatn": "Gvineja-Bisao",
+      "hr": "Gvineja Bisau",
+      "bs": "Gvineja-Bisao"
+    },
+    {
+      "code": "GY",
+      "srLatn": "Gvajana",
+      "hr": "Gvajana",
+      "bs": "Gvajana"
+    },
+    {
+      "code": "HK",
+      "srLatn": "SAR Hongkong (Kina)",
+      "hr": "PUP Hong Kong Kina",
+      "bs": "Hong Kong (SAR Kina)"
+    },
+    {
+      "code": "HM",
+      "srLatn": "Ostrvo Herd i Mekdonaldova ostrva",
+      "hr": "Otoci Heard i McDonald",
+      "bs": "Ostrvo Heard i arhipelag McDonald"
+    },
+    {
+      "code": "HN",
+      "srLatn": "Honduras",
+      "hr": "Honduras",
+      "bs": "Honduras"
+    },
+    {
+      "code": "HR",
+      "srLatn": "Hrvatska",
+      "hr": "Hrvatska",
+      "bs": "Hrvatska"
+    },
+    {
+      "code": "HT",
+      "srLatn": "Haiti",
+      "hr": "Haiti",
+      "bs": "Haiti"
+    },
+    {
+      "code": "HU",
+      "srLatn": "Mađarska",
+      "hr": "Mađarska",
+      "bs": "Mađarska"
+    },
+    {
+      "code": "IC",
+      "srLatn": "Kanarska Ostrva",
+      "hr": "Kanari",
+      "bs": "Kanarska ostrva"
+    },
+    {
+      "code": "ID",
+      "srLatn": "Indonezija",
+      "hr": "Indonezija",
+      "bs": "Indonezija"
+    },
+    {
+      "code": "IE",
+      "srLatn": "Irska",
+      "hr": "Irska",
+      "bs": "Irska"
+    },
+    {
+      "code": "IL",
+      "srLatn": "Izrael",
+      "hr": "Izrael",
+      "bs": "Izrael"
+    },
+    {
+      "code": "IM",
+      "srLatn": "Ostrvo Man",
+      "hr": "Otok Man",
+      "bs": "Ostrvo Man"
+    },
+    {
+      "code": "IN",
+      "srLatn": "Indija",
+      "hr": "Indija",
+      "bs": "Indija"
+    },
+    {
+      "code": "IO",
+      "srLatn": "Britanska teritorija Indijskog okeana",
+      "hr": "Britanski Indijskooceanski Teritorij",
+      "bs": "Britanska Teritorija u Indijskom Okeanu"
+    },
+    {
+      "code": "IQ",
+      "srLatn": "Irak",
+      "hr": "Irak",
+      "bs": "Irak"
+    },
+    {
+      "code": "IR",
+      "srLatn": "Iran",
+      "hr": "Iran",
+      "bs": "Iran"
+    },
+    {
+      "code": "IS",
+      "srLatn": "Island",
+      "hr": "Island",
+      "bs": "Island"
+    },
+    {
+      "code": "IT",
+      "srLatn": "Italija",
+      "hr": "Italija",
+      "bs": "Italija"
+    },
+    {
+      "code": "JE",
+      "srLatn": "Džerzi",
+      "hr": "Jersey",
+      "bs": "Jersey"
+    },
+    {
+      "code": "JM",
+      "srLatn": "Jamajka",
+      "hr": "Jamajka",
+      "bs": "Jamajka"
+    },
+    {
+      "code": "JO",
+      "srLatn": "Jordan",
+      "hr": "Jordan",
+      "bs": "Jordan"
+    },
+    {
+      "code": "JP",
+      "srLatn": "Japan",
+      "hr": "Japan",
+      "bs": "Japan"
+    },
+    {
+      "code": "KE",
+      "srLatn": "Kenija",
+      "hr": "Kenija",
+      "bs": "Kenija"
+    },
+    {
+      "code": "KG",
+      "srLatn": "Kirgistan",
+      "hr": "Kirgistan",
+      "bs": "Kirgistan"
+    },
+    {
+      "code": "KH",
+      "srLatn": "Kambodža",
+      "hr": "Kambodža",
+      "bs": "Kambodža"
+    },
+    {
+      "code": "KI",
+      "srLatn": "Kiribati",
+      "hr": "Kiribati",
+      "bs": "Kiribati"
+    },
+    {
+      "code": "KM",
+      "srLatn": "Komorska Ostrva",
+      "hr": "Komori",
+      "bs": "Komori"
+    },
+    {
+      "code": "KN",
+      "srLatn": "Sent Kits i Nevis",
+      "hr": "Sveti Kristofor i Nevis",
+      "bs": "Sveti Kits i Nevis"
+    },
+    {
+      "code": "KP",
+      "srLatn": "Severna Koreja",
+      "hr": "Sjeverna Koreja",
+      "bs": "Sjeverna Koreja"
+    },
+    {
+      "code": "KR",
+      "srLatn": "Južna Koreja",
+      "hr": "Južna Koreja",
+      "bs": "Južna Koreja"
+    },
+    {
+      "code": "KW",
+      "srLatn": "Kuvajt",
+      "hr": "Kuvajt",
+      "bs": "Kuvajt"
+    },
+    {
+      "code": "KY",
+      "srLatn": "Kajmanska Ostrva",
+      "hr": "Kajmanski Otoci",
+      "bs": "Kajmanska ostrva"
+    },
+    {
+      "code": "KZ",
+      "srLatn": "Kazahstan",
+      "hr": "Kazahstan",
+      "bs": "Kazahstan"
+    },
+    {
+      "code": "LA",
+      "srLatn": "Laos",
+      "hr": "Laos",
+      "bs": "Laos"
+    },
+    {
+      "code": "LB",
+      "srLatn": "Liban",
+      "hr": "Libanon",
+      "bs": "Liban"
+    },
+    {
+      "code": "LC",
+      "srLatn": "Sveta Lucija",
+      "hr": "Sveta Lucija",
+      "bs": "Sveta Lucija"
+    },
+    {
+      "code": "LI",
+      "srLatn": "Lihtenštajn",
+      "hr": "Lihtenštajn",
+      "bs": "Lihtenštajn"
+    },
+    {
+      "code": "LK",
+      "srLatn": "Šri Lanka",
+      "hr": "Šri Lanka",
+      "bs": "Šri Lanka"
+    },
+    {
+      "code": "LR",
+      "srLatn": "Liberija",
+      "hr": "Liberija",
+      "bs": "Liberija"
+    },
+    {
+      "code": "LS",
+      "srLatn": "Lesoto",
+      "hr": "Lesoto",
+      "bs": "Lesoto"
+    },
+    {
+      "code": "LT",
+      "srLatn": "Litvanija",
+      "hr": "Litva",
+      "bs": "Litvanija"
+    },
+    {
+      "code": "LU",
+      "srLatn": "Luksemburg",
+      "hr": "Luksemburg",
+      "bs": "Luksemburg"
+    },
+    {
+      "code": "LV",
+      "srLatn": "Letonija",
+      "hr": "Latvija",
+      "bs": "Latvija"
+    },
+    {
+      "code": "LY",
+      "srLatn": "Libija",
+      "hr": "Libija",
+      "bs": "Libija"
+    },
+    {
+      "code": "MA",
+      "srLatn": "Maroko",
+      "hr": "Maroko",
+      "bs": "Maroko"
+    },
+    {
+      "code": "MC",
+      "srLatn": "Monako",
+      "hr": "Monako",
+      "bs": "Monako"
+    },
+    {
+      "code": "MD",
+      "srLatn": "Moldavija",
+      "hr": "Moldavija",
+      "bs": "Moldavija"
+    },
+    {
+      "code": "ME",
+      "srLatn": "Crna Gora",
+      "hr": "Crna Gora",
+      "bs": "Crna Gora"
+    },
+    {
+      "code": "MF",
+      "srLatn": "Sveti Martin (Francuska)",
+      "hr": "Saint Martin",
+      "bs": "Sveti Martin"
+    },
+    {
+      "code": "MG",
+      "srLatn": "Madagaskar",
+      "hr": "Madagaskar",
+      "bs": "Madagaskar"
+    },
+    {
+      "code": "MH",
+      "srLatn": "Maršalska Ostrva",
+      "hr": "Maršalovi Otoci",
+      "bs": "Maršalova ostrva"
+    },
+    {
+      "code": "MK",
+      "srLatn": "Severna Makedonija",
+      "hr": "Sjeverna Makedonija",
+      "bs": "Sjeverna Makedonija"
+    },
+    {
+      "code": "ML",
+      "srLatn": "Mali",
+      "hr": "Mali",
+      "bs": "Mali"
+    },
+    {
+      "code": "MM",
+      "srLatn": "Mijanmar (Burma)",
+      "hr": "Mjanmar (Burma)",
+      "bs": "Mijanmar"
+    },
+    {
+      "code": "MN",
+      "srLatn": "Mongolija",
+      "hr": "Mongolija",
+      "bs": "Mongolija"
+    },
+    {
+      "code": "MO",
+      "srLatn": "SAR Makao (Kina)",
+      "hr": "PUP Makao Kina",
+      "bs": "Makao (SAR Kina)"
+    },
+    {
+      "code": "MP",
+      "srLatn": "Severna Marijanska Ostrva",
+      "hr": "Sjevernomarijanski Otoci",
+      "bs": "Sjeverna Marijanska ostrva"
+    },
+    {
+      "code": "MQ",
+      "srLatn": "Martinik",
+      "hr": "Martinik",
+      "bs": "Martinik"
+    },
+    {
+      "code": "MR",
+      "srLatn": "Mauritanija",
+      "hr": "Mauretanija",
+      "bs": "Mauritanija"
+    },
+    {
+      "code": "MS",
+      "srLatn": "Monserat",
+      "hr": "Montserrat",
+      "bs": "Monserat"
+    },
+    {
+      "code": "MT",
+      "srLatn": "Malta",
+      "hr": "Malta",
+      "bs": "Malta"
+    },
+    {
+      "code": "MU",
+      "srLatn": "Mauricijus",
+      "hr": "Mauricijus",
+      "bs": "Mauricijus"
+    },
+    {
+      "code": "MV",
+      "srLatn": "Maldivi",
+      "hr": "Maldivi",
+      "bs": "Maldivi"
+    },
+    {
+      "code": "MW",
+      "srLatn": "Malavi",
+      "hr": "Malavi",
+      "bs": "Malavi"
+    },
+    {
+      "code": "MX",
+      "srLatn": "Meksiko",
+      "hr": "Meksiko",
+      "bs": "Meksiko"
+    },
+    {
+      "code": "MY",
+      "srLatn": "Malezija",
+      "hr": "Malezija",
+      "bs": "Malezija"
+    },
+    {
+      "code": "MZ",
+      "srLatn": "Mozambik",
+      "hr": "Mozambik",
+      "bs": "Mozambik"
+    },
+    {
+      "code": "NA",
+      "srLatn": "Namibija",
+      "hr": "Namibija",
+      "bs": "Namibija"
+    },
+    {
+      "code": "NC",
+      "srLatn": "Nova Kaledonija",
+      "hr": "Nova Kaledonija",
+      "bs": "Nova Kaledonija"
+    },
+    {
+      "code": "NE",
+      "srLatn": "Niger",
+      "hr": "Niger",
+      "bs": "Niger"
+    },
+    {
+      "code": "NF",
+      "srLatn": "Ostrvo Norfok",
+      "hr": "Otok Norfolk",
+      "bs": "Ostrvo Norfolk"
+    },
+    {
+      "code": "NG",
+      "srLatn": "Nigerija",
+      "hr": "Nigerija",
+      "bs": "Nigerija"
+    },
+    {
+      "code": "NI",
+      "srLatn": "Nikaragva",
+      "hr": "Nikaragva",
+      "bs": "Nikaragva"
+    },
+    {
+      "code": "NL",
+      "srLatn": "Holandija",
+      "hr": "Nizozemska",
+      "bs": "Nizozemska"
+    },
+    {
+      "code": "NO",
+      "srLatn": "Norveška",
+      "hr": "Norveška",
+      "bs": "Norveška"
+    },
+    {
+      "code": "NP",
+      "srLatn": "Nepal",
+      "hr": "Nepal",
+      "bs": "Nepal"
+    },
+    {
+      "code": "NR",
+      "srLatn": "Nauru",
+      "hr": "Nauru",
+      "bs": "Nauru"
+    },
+    {
+      "code": "NU",
+      "srLatn": "Niue",
+      "hr": "Niue",
+      "bs": "Niue"
+    },
+    {
+      "code": "NZ",
+      "srLatn": "Novi Zeland",
+      "hr": "Novi Zeland",
+      "bs": "Novi Zeland"
+    },
+    {
+      "code": "OM",
+      "srLatn": "Oman",
+      "hr": "Oman",
+      "bs": "Oman"
+    },
+    {
+      "code": "PA",
+      "srLatn": "Panama",
+      "hr": "Panama",
+      "bs": "Panama"
+    },
+    {
+      "code": "PE",
+      "srLatn": "Peru",
+      "hr": "Peru",
+      "bs": "Peru"
+    },
+    {
+      "code": "PF",
+      "srLatn": "Francuska Polinezija",
+      "hr": "Francuska Polinezija",
+      "bs": "Francuska Polinezija"
+    },
+    {
+      "code": "PG",
+      "srLatn": "Papua Nova Gvineja",
+      "hr": "Papua Nova Gvineja",
+      "bs": "Papua Nova Gvineja"
+    },
+    {
+      "code": "PH",
+      "srLatn": "Filipini",
+      "hr": "Filipini",
+      "bs": "Filipini"
+    },
+    {
+      "code": "PK",
+      "srLatn": "Pakistan",
+      "hr": "Pakistan",
+      "bs": "Pakistan"
+    },
+    {
+      "code": "PL",
+      "srLatn": "Poljska",
+      "hr": "Poljska",
+      "bs": "Poljska"
+    },
+    {
+      "code": "PM",
+      "srLatn": "Sen Pjer i Mikelon",
+      "hr": "Sveti Petar i Mikelon",
+      "bs": "Sveti Petar i Mikelon"
+    },
+    {
+      "code": "PN",
+      "srLatn": "Pitkern",
+      "hr": "Pitcairnovi Otoci",
+      "bs": "Pitkernska Ostrva"
+    },
+    {
+      "code": "PR",
+      "srLatn": "Portoriko",
+      "hr": "Portoriko",
+      "bs": "Porto Riko"
+    },
+    {
+      "code": "PS",
+      "srLatn": "Palestinske teritorije",
+      "hr": "Palestinsko područje",
+      "bs": "Palestinska Teritorija"
+    },
+    {
+      "code": "PT",
+      "srLatn": "Portugalija",
+      "hr": "Portugal",
+      "bs": "Portugal"
+    },
+    {
+      "code": "PW",
+      "srLatn": "Palau",
+      "hr": "Palau",
+      "bs": "Palau"
+    },
+    {
+      "code": "PY",
+      "srLatn": "Paragvaj",
+      "hr": "Paragvaj",
+      "bs": "Paragvaj"
+    },
+    {
+      "code": "QA",
+      "srLatn": "Katar",
+      "hr": "Katar",
+      "bs": "Katar"
+    },
+    {
+      "code": "QO",
+      "srLatn": "udaljena ostrva Okeanije",
+      "hr": "Vanjska područja Oceanije",
+      "bs": "Vanjska Okeanija"
+    },
+    {
+      "code": "RE",
+      "srLatn": "Reinion",
+      "hr": "Réunion",
+      "bs": "Reunion"
+    },
+    {
+      "code": "RO",
+      "srLatn": "Rumunija",
+      "hr": "Rumunjska",
+      "bs": "Rumunija"
+    },
+    {
+      "code": "RS",
+      "srLatn": "Srbija",
+      "hr": "Srbija",
+      "bs": "Srbija"
+    },
+    {
+      "code": "RU",
+      "srLatn": "Rusija",
+      "hr": "Rusija",
+      "bs": "Rusija"
+    },
+    {
+      "code": "RW",
+      "srLatn": "Ruanda",
+      "hr": "Ruanda",
+      "bs": "Ruanda"
+    },
+    {
+      "code": "SA",
+      "srLatn": "Saudijska Arabija",
+      "hr": "Saudijska Arabija",
+      "bs": "Saudijska Arabija"
+    },
+    {
+      "code": "SB",
+      "srLatn": "Solomonska Ostrva",
+      "hr": "Salomonovi Otoci",
+      "bs": "Solomonska Ostrva"
+    },
+    {
+      "code": "SC",
+      "srLatn": "Sejšeli",
+      "hr": "Sejšeli",
+      "bs": "Sejšeli"
+    },
+    {
+      "code": "SD",
+      "srLatn": "Sudan",
+      "hr": "Sudan",
+      "bs": "Sudan"
+    },
+    {
+      "code": "SE",
+      "srLatn": "Švedska",
+      "hr": "Švedska",
+      "bs": "Švedska"
+    },
+    {
+      "code": "SG",
+      "srLatn": "Singapur",
+      "hr": "Singapur",
+      "bs": "Singapur"
+    },
+    {
+      "code": "SH",
+      "srLatn": "Sveta Jelena",
+      "hr": "Sveta Helena",
+      "bs": "Sveta Helena"
+    },
+    {
+      "code": "SI",
+      "srLatn": "Slovenija",
+      "hr": "Slovenija",
+      "bs": "Slovenija"
+    },
+    {
+      "code": "SJ",
+      "srLatn": "Svalbard i Jan Majen",
+      "hr": "Svalbard i Jan Mayen",
+      "bs": "Svalbard i Jan Mayen"
+    },
+    {
+      "code": "SK",
+      "srLatn": "Slovačka",
+      "hr": "Slovačka",
+      "bs": "Slovačka"
+    },
+    {
+      "code": "SL",
+      "srLatn": "Sijera Leone",
+      "hr": "Sijera Leone",
+      "bs": "Sijera Leone"
+    },
+    {
+      "code": "SM",
+      "srLatn": "San Marino",
+      "hr": "San Marino",
+      "bs": "San Marino"
+    },
+    {
+      "code": "SN",
+      "srLatn": "Senegal",
+      "hr": "Senegal",
+      "bs": "Senegal"
+    },
+    {
+      "code": "SO",
+      "srLatn": "Somalija",
+      "hr": "Somalija",
+      "bs": "Somalija"
+    },
+    {
+      "code": "SR",
+      "srLatn": "Surinam",
+      "hr": "Surinam",
+      "bs": "Surinam"
+    },
+    {
+      "code": "SS",
+      "srLatn": "Južni Sudan",
+      "hr": "Južni Sudan",
+      "bs": "Južni Sudan"
+    },
+    {
+      "code": "ST",
+      "srLatn": "Sao Tome i Principe",
+      "hr": "Sveti Toma i Princip",
+      "bs": "Sao Tome i Principe"
+    },
+    {
+      "code": "SV",
+      "srLatn": "Salvador",
+      "hr": "Salvador",
+      "bs": "Salvador"
+    },
+    {
+      "code": "SX",
+      "srLatn": "Sveti Martin (Holandija)",
+      "hr": "Sint Maarten",
+      "bs": "Sint Marten"
+    },
+    {
+      "code": "SY",
+      "srLatn": "Sirija",
+      "hr": "Sirija",
+      "bs": "Sirija"
+    },
+    {
+      "code": "SZ",
+      "srLatn": "Svazilend",
+      "hr": "Esvatini",
+      "bs": "Esvatini"
+    },
+    {
+      "code": "TA",
+      "srLatn": "Tristan da Kunja",
+      "hr": "Tristan da Cunha",
+      "bs": "Tristan da Cunha"
+    },
+    {
+      "code": "TC",
+      "srLatn": "Ostrva Turks i Kaikos",
+      "hr": "Otoci Turks i Caicos",
+      "bs": "Ostrva Turks i Kaikos"
+    },
+    {
+      "code": "TD",
+      "srLatn": "Čad",
+      "hr": "Čad",
+      "bs": "Čad"
+    },
+    {
+      "code": "TF",
+      "srLatn": "Francuske Južne Teritorije",
+      "hr": "Francuski Južni Teritoriji",
+      "bs": "Francuske Južne Teritorije"
+    },
+    {
+      "code": "TG",
+      "srLatn": "Togo",
+      "hr": "Togo",
+      "bs": "Togo"
+    },
+    {
+      "code": "TH",
+      "srLatn": "Tajland",
+      "hr": "Tajland",
+      "bs": "Tajland"
+    },
+    {
+      "code": "TJ",
+      "srLatn": "Tadžikistan",
+      "hr": "Tadžikistan",
+      "bs": "Tadžikistan"
+    },
+    {
+      "code": "TK",
+      "srLatn": "Tokelau",
+      "hr": "Tokelau",
+      "bs": "Tokelau"
+    },
+    {
+      "code": "TL",
+      "srLatn": "Timor-Leste (Istočni Timor)",
+      "hr": "Timor-Leste",
+      "bs": "Istočni Timor"
+    },
+    {
+      "code": "TM",
+      "srLatn": "Turkmenistan",
+      "hr": "Turkmenistan",
+      "bs": "Turkmenistan"
+    },
+    {
+      "code": "TN",
+      "srLatn": "Tunis",
+      "hr": "Tunis",
+      "bs": "Tunis"
+    },
+    {
+      "code": "TO",
+      "srLatn": "Tonga",
+      "hr": "Tonga",
+      "bs": "Tonga"
+    },
+    {
+      "code": "TR",
+      "srLatn": "Turska",
+      "hr": "Turska",
+      "bs": "Turska"
+    },
+    {
+      "code": "TT",
+      "srLatn": "Trinidad i Tobago",
+      "hr": "Trinidad i Tobago",
+      "bs": "Trinidad i Tobago"
+    },
+    {
+      "code": "TV",
+      "srLatn": "Tuvalu",
+      "hr": "Tuvalu",
+      "bs": "Tuvalu"
+    },
+    {
+      "code": "TW",
+      "srLatn": "Tajvan",
+      "hr": "Tajvan",
+      "bs": "Tajvan"
+    },
+    {
+      "code": "TZ",
+      "srLatn": "Tanzanija",
+      "hr": "Tanzanija",
+      "bs": "Tanzanija"
+    },
+    {
+      "code": "UA",
+      "srLatn": "Ukrajina",
+      "hr": "Ukrajina",
+      "bs": "Ukrajina"
+    },
+    {
+      "code": "UG",
+      "srLatn": "Uganda",
+      "hr": "Uganda",
+      "bs": "Uganda"
+    },
+    {
+      "code": "UM",
+      "srLatn": "Udaljena ostrva SAD",
+      "hr": "Mali udaljeni otoci SAD-a",
+      "bs": "Američka Vanjska Ostrva"
+    },
+    {
+      "code": "UN",
+      "srLatn": "Ujedinjene nacije",
+      "hr": "Ujedinjeni narodi",
+      "bs": "Ujedinjene Nacije"
+    },
+    {
+      "code": "US",
+      "srLatn": "Sjedinjene Države",
+      "hr": "Sjedinjene Američke Države",
+      "bs": "Sjedinjene Države"
+    },
+    {
+      "code": "UY",
+      "srLatn": "Urugvaj",
+      "hr": "Urugvaj",
+      "bs": "Urugvaj"
+    },
+    {
+      "code": "UZ",
+      "srLatn": "Uzbekistan",
+      "hr": "Uzbekistan",
+      "bs": "Uzbekistan"
+    },
+    {
+      "code": "VA",
+      "srLatn": "Vatikan",
+      "hr": "Vatikan",
+      "bs": "Vatikan"
+    },
+    {
+      "code": "VC",
+      "srLatn": "Sent Vinsent i Grenadini",
+      "hr": "Sveti Vincent i Grenadini",
+      "bs": "Sveti Vinsent i Grenadin"
+    },
+    {
+      "code": "VE",
+      "srLatn": "Venecuela",
+      "hr": "Venezuela",
+      "bs": "Venecuela"
+    },
+    {
+      "code": "VG",
+      "srLatn": "Britanska Devičanska Ostrva",
+      "hr": "Britanski Djevičanski Otoci",
+      "bs": "Britanska Djevičanska ostrva"
+    },
+    {
+      "code": "VI",
+      "srLatn": "Američka Devičanska Ostrva",
+      "hr": "Američki Djevičanski Otoci",
+      "bs": "Američka Djevičanska ostrva"
+    },
+    {
+      "code": "VN",
+      "srLatn": "Vijetnam",
+      "hr": "Vijetnam",
+      "bs": "Vijetnam"
+    },
+    {
+      "code": "VU",
+      "srLatn": "Vanuatu",
+      "hr": "Vanuatu",
+      "bs": "Vanuatu"
+    },
+    {
+      "code": "WF",
+      "srLatn": "Valis i Futuna",
+      "hr": "Wallis i Futuna",
+      "bs": "Ostrva Valis i Futuna"
+    },
+    {
+      "code": "WS",
+      "srLatn": "Samoa",
+      "hr": "Samoa",
+      "bs": "Samoa"
+    },
+    {
+      "code": "XA",
+      "srLatn": "simulirane dijakritike",
+      "hr": "pseudo naglasci",
+      "bs": "Pseudo naglasci"
+    },
+    {
+      "code": "XB",
+      "srLatn": "Pseudobidi",
+      "hr": "pseudo bidi",
+      "bs": "Pseudo bidi"
+    },
+    {
+      "code": "XK",
+      "srLatn": "Kosovo",
+      "hr": "Kosovo",
+      "bs": "Kosovo"
+    },
+    {
+      "code": "YE",
+      "srLatn": "Jemen",
+      "hr": "Jemen",
+      "bs": "Jemen"
+    },
+    {
+      "code": "YT",
+      "srLatn": "Majot",
+      "hr": "Mayotte",
+      "bs": "Majote"
+    },
+    {
+      "code": "ZA",
+      "srLatn": "Južnoafrička Republika",
+      "hr": "Južnoafrička Republika",
+      "bs": "Južnoafrička Republika"
+    },
+    {
+      "code": "ZM",
+      "srLatn": "Zambija",
+      "hr": "Zambija",
+      "bs": "Zambija"
+    },
+    {
+      "code": "ZW",
+      "srLatn": "Zimbabve",
+      "hr": "Zimbabve",
+      "bs": "Zimbabve"
+    },
+    {
+      "code": "ZZ",
+      "srLatn": "nepoznat region",
+      "hr": "nepoznato područje",
+      "bs": "Nepoznata oblast"
+    }
+  ]
+}
