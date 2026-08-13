@@ -7,8 +7,11 @@ required before changing a platform from **candidate** to **supported**.
 Repository, Firefox Android, and partial Apple-platform validation completed on
 2026-08-12:
 
-- The shared automated suite passes 86/86, including frozen samples from
+- The shared offline automated suite passes 86/86, including frozen samples from
   Index.hr, NSPM, Vijesti.me, and Klix.ba.
+- The separate headless Chrome fixture passes 12/12 browser-DOM integration
+  checks. It loads repository source directly and therefore does not validate an
+  installed extension, its popup, manifest, or permission flow.
 - Chromium, Edge, Firefox, and Safari-source packages build successfully.
 - Mozilla `web-ext lint` reports 0 errors, 0 notices, and 0 warnings for the
   Firefox/Android package.
@@ -28,6 +31,11 @@ Repository, Firefox Android, and partial Apple-platform validation completed on
   Chrome/Edge/Firefox packages are therefore expected to run on Windows, macOS,
   and Linux, but the current 0.9 build still needs a fresh human runtime pass on
   every claimed browser/OS combination.
+- The project owner reports Windows desktop Chrome, Edge, and Firefox testing
+  completed via a mix of manual and AI-agent-assisted testing on the prior
+  development machine. No repository artifact captured exact versions or dates
+  at the time; see `docs/WINDOWS_DESKTOP_TEST_2026-08-13.md` for what is and
+  is not recorded, and a Linux smoke pass is still needed for all three.
 - Safari and all mobile targets require the corresponding Apple/Android device
   environment. A Windows-only check cannot honestly promote them to supported.
 - On macOS 26.5.2, Firefox 153.0.4 passed live RTS/Klix conversion,
@@ -53,8 +61,9 @@ Repository, Firefox Android, and partial Apple-platform validation completed on
   next-article navigation, backgrounding, and offline conversion. macOS and
   iPhone both failed to paint Custom Highlight ranges on an affected RTS layout,
   consistent with open WebKit bug 307455. The iPhone run also exposed the old
-  apex/`www` persistence split and Restore-overwrites-memory behavior. Their
-  automated corrections pass, but rebuilt Safari runtime confirmation remains.
+  apex/`www` persistence split and Restore-overwrites-memory behavior. The
+  rebuilt iPhone runtime and signed macOS 0.9.1 runtime now confirm the fixes:
+  Restore is page-local, RTS aliases share one rule, and Klix stays isolated.
 - Exact evidence and pending gates are recorded in
   [`docs/APPLE_PLATFORM_TEST_2026-08-12.md`](APPLE_PLATFORM_TEST_2026-08-12.md).
 
@@ -62,13 +71,13 @@ Repository, Firefox Android, and partial Apple-platform validation completed on
 
 | Platform | Package | Current gate | Intended status |
 | --- | --- | --- | --- |
-| Chrome desktop (Windows/macOS/Linux) | `prepisi-<version>-chromium.zip` | Broad macOS runtime pass; restricted/offline and blocked-site checks, other-OS smoke tests, and Chrome Web Store submission remain | First-class |
-| Edge desktop (Windows/macOS/Linux) | `prepisi-<version>-edge.zip` | Smoke test on all three OS families and Partner Center submission | First-class |
+| Chrome desktop (Windows/macOS/Linux) | `prepisi-<version>-chromium.zip` | Broad macOS runtime pass and an owner-reported Windows pass (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`, exact versions pending); Linux smoke test, blocked-site checks, and Chrome Web Store submission remain | First-class |
+| Edge desktop (Windows/macOS/Linux) | `prepisi-<version>-edge.zip` | Owner-reported Windows pass (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`, exact versions pending); macOS is explicitly deferred, Linux smoke test and Partner Center submission remain | First-class |
 | Edge Android/iOS | Same Edge Add-ons listing | Microsoft mobile certification/visibility and phone tests | First-class after validation |
-| Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint and broad macOS runtime pass; remaining restricted/offline/form checks, other-OS smoke tests, and AMO signing remain | First-class |
+| Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint, broad macOS runtime pass, and an owner-reported Windows pass (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`, exact versions pending); remaining restricted/offline/form checks, a Linux smoke test, and AMO signing remain | First-class |
 | Firefox Android | Same AMO package | Core phone smoke passed; remembered navigation, remaining mobile checks, AMO signing, and signed-build retest remain | First-class |
-| Safari macOS | `prepisi-<version>-safari-source.zip` | Wrapper loads and broad runtime passes; affected-layout highlighting and rebuilt alias/Restore retest remain | First-class |
-| Safari iOS/iPadOS | Same Apple project | iPhone build/install/enable/core RTS pass; rebuilt alias/Restore, recovery/protected-text, iPad, TestFlight, and App Store tests remain | First-class |
+| Safari macOS | `prepisi-<version>-safari-source.zip` | Signed 0.9.1 wrapper and broad runtime pass; affected-layout highlighting remains documented under WebKit bug 307455, and App Store packaging remains | First-class |
+| Safari iOS/iPadOS | Same Apple project | iPhone build/install/enable, rebuilt alias/Restore, isolation, background, long-page, and offline passes; forced low-memory discard, iPad, TestFlight, and App Store tests remain | First-class |
 | Brave/Opera desktop | Chromium package | Compatibility smoke tests | Best effort |
 | Yandex Android | Published Chromium listing or unpacked test | Manual phone test | Exploratory |
 | Orion iOS/iPadOS | Compatible published package | Manual phone/tablet test | Exploratory |

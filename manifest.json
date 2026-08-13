@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Prepiši",
   "short_name": "Prepiši",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Read Serbian, Croatian, Bosnian and Montenegrin pages in the script and pronunciation you prefer.",
   "minimum_chrome_version": "105",
   "permissions": [

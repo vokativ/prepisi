@@ -1,15 +1,73 @@
-# Prepiši 0.9.0 — human browser test
+# Prepiši 0.9.1 — browser and device test
 
 Use this checklist before publishing. A pass means the extension behaves correctly
 on real pages; it does not mean every dialect word is already in the reviewed vocabulary.
 
-## Install the unpacked build
+## How to run and record the test
 
-1. Open `chrome://extensions` or `edge://extensions`.
-2. Enable **Developer mode**.
-3. Choose **Load unpacked** and select the repository root (the folder containing
-   `manifest.json`), or run `npm run build:chromium` and select `build/chromium`.
-4. Pin **Prepiši** to the toolbar.
+This is an observation-based checklist. It may be run manually by a person or,
+in a later task, through computer control. A command-line build or the
+`npm run test:browser-dom` fixture run is supporting evidence, not a substitute
+for observing the installed extension, popup, browser permission UI, and page.
+
+Before starting, record the date, operating-system and browser versions, build
+artifact, test profile or window, and device model where relevant. Use an
+isolated QA profile/window and public test pages only. Do not expose private tabs,
+account pages, form contents, device identifiers, or private browsing data in the
+report. Record each item as **Pass**, **Fail**, **Blocked**, or **Not run**, with a
+short visible observation for failures and browser-specific behavior.
+
+For a computer-controlled run:
+
+1. The user first installs/enables the intended build and completes any signing,
+   device trust, unlock, login, or CAPTCHA step that requires them.
+2. Work in one named browser and one visible tab at a time. After every click,
+   navigation, reload, background/foreground action, or permission choice,
+   inspect the fresh visible state before continuing.
+3. Prefer controls identified by their visible label. If the accessibility view
+   is incomplete, use a screenshot and report uncertainty instead of inferring a
+   pass. Do not reuse a control position after the UI changes.
+4. Treat browser- or OS-owned wording as observed behavior. In particular,
+   Safari may offer access **once**, **for one day**, or **always** instead of a
+   site-saving prompt; record the choice shown and selected.
+5. Do not bypass browser security warnings, solve CAPTCHAs, enter credentials,
+   or accept an unexpected permission. Mark the item **Blocked — user action
+   needed** and continue with independent checks.
+6. A physical iPhone pass can be computer-controlled only while its screen is
+   available in a controllable Mac window. Unlocking, trust prompts, and actions
+   that appear only on the phone remain user-assisted.
+
+Use this compact record for every platform:
+
+```text
+Date and extension version:
+OS / device:
+Browser and exact version:
+Artifact and installation method:
+Permission duration/options observed:
+Checklist results (Pass / Fail / Blocked / Not run):
+Known issue references:
+```
+
+## Prepare the installed build
+
+Follow `docs/LOCAL_INSTALL.md` for the target browser. For Chrome or Edge, open
+its extensions page, enable **Developer mode**, choose **Load unpacked**, and
+select `build/chromium` or `build/edge`; then pin **Prepiši** to the toolbar.
+Firefox uses `build/firefox`. Safari uses the generated and compiled Apple
+wrapper, and iPhone Safari also requires the containing app to be installed and
+Prepiši to be enabled under Safari extensions.
+
+Before the first live-page check, confirm visibly that Prepiši is enabled and
+that its popup opens from the browser toolbar or Safari extensions menu. Record
+an installation or enablement failure as **Blocked** rather than testing the
+fixture as a substitute.
+
+For the controlled local fixture, serve `test/fixture.html` over local HTTP. To
+produce installed-extension evidence, make changes only through the Prepiši
+popup. Do not use the fixture's green development-harness buttons for that pass;
+those buttons are reserved for engine/content-controller checks such as
+`npm run test:browser-dom`.
 
 The browser should not request permanent access to all websites. Chrome, Edge,
 and Safari receive temporary access after the toolbar action is opened; Remember
@@ -24,10 +82,10 @@ browser-managed choice and is not selected by the extension.
 | Page | Main starting form | First test | What it covers |
 |---|---|---|---|
 | [RTS](https://www.rts.rs/) | Cyrillic, mostly Ekavian | Latin + original pronunciation | Cyrillic → Latin, digraph capitalization, large dynamic news page |
-| [N1 Serbia](https://n1info.rs/) | Latin, mostly Ekavian | Cyrillic + original pronunciation | Latin → Cyrillic, embedded media, foreign names |
+| [Index.hr](https://www.index.hr/) | Latin, mostly Ijekavian | Cyrillic + original pronunciation | Croatian news layout, protected names, and reviewed alias-family behavior |
+| [NSPM](https://www.nspm.rs/) | Cyrillic, mostly Ekavian | Latin + original pronunciation | Cyrillic → Latin on a smaller editorial site |
 | [Klix](https://www.klix.ba/) | Latin, Ijekavian | Cyrillic + original pronunciation | Bosnian Ijekavian and brand-heavy text |
 | [Vijesti](https://www.vijesti.me/) | Latin, Ijekavian | Cyrillic + original pronunciation | Montenegrin content and `ś / ź` when present |
-| [HRT](https://www.hrt.hr/) | Latin, Ijekavian | Cyrillic + original pronunciation | Croatian text, mixed regional and foreign names |
 
 For an exact script-parity check, use the same RTS article in
 [Latin](https://rts.rs/lat/vesti/drustvo/6017125/gornji-milanovac-restrikcije-voda-cacak.html)
@@ -92,35 +150,55 @@ For each page, open one article rather than testing only the homepage.
       never become broken mixed forms such as `Рицхтерова`.
 - [ ] A custom protected company name entered in settings remains unchanged.
 - [ ] An explicitly English-language span remains unchanged.
-- [ ] Closing or navigating away removes temporary access except for Firefox's
-      disclosed catalog. Catalog pages remain unmodified unless explicitly remembered.
+- [ ] Browser-granted temporary access expires according to the duration shown by
+      that browser. Do not fail the extension merely because Safari offers once,
+      one day, or always. After access expires or is revoked, pages remain
+      unmodified unless an active remembered rule and its required access remain;
+      Firefox's disclosed catalog permission remains dormant without a rule.
 
 ## Additional browser sign-off
 
 Run `npm run build:all` first. Firefox desktop and Android use `build/firefox`;
 Safari packaging begins from `build/safari` and still requires Apple's wrapper.
-For each claimed platform, repeat the required behavior above and also verify:
+For each claimed platform, repeat the required behavior above and also verify.
+Perform the ordinary-layout highlight check separately from a known affected
+flex layout so one result does not hide the other:
 
 - [ ] the popup fits a portrait phone viewport without horizontal scrolling;
 - [ ] the controls remain usable with touch and enlarged text;
-- [ ] highlighting works on Firefox 140+/Android 142+ and Safari 17.2+;
+- [ ] enlarged page text does not imply that the extension popup itself must
+      scale; record page text and popup text as separate observations;
+- [ ] highlighting paints on the ordinary local fixture in Firefox 140+,
+      Android Firefox 142+, and Safari 17.2+;
+- [ ] highlighting on the affected Safari flex-layout case is recorded
+      separately, including a reference to WebKit bug 307455 if reproduced;
 - [ ] conversion and restoration still work offline;
-- [ ] tab discard, navigation, and browser permission prompts never show another
-      page's state.
+- [ ] after about 30 minutes in the background, conversion, restoration, and the
+      current tab state remain correct;
+- [ ] tab discard or low-memory recovery, navigation, and browser permission
+      prompts never show another page's state;
+- [ ] on iPhone, a pull-to-refresh after **Vrati izvorni tekst** may reapply the
+      remembered rule; verify that this matches the saved rule and is not a
+      stale dialect from another host;
+- [ ] reviewed aliases such as `rts.rs`, `www.rts.rs`, and `oko.rts.rs` share the
+      intended rule, `/lat/` remains only a path variant, and an unrelated host
+      remains isolated.
 
 Generated Firefox and Safari source builds are not considered released support
 until these checks pass on the relevant desktop and mobile devices.
 
-## Human sign-off
+## Release sign-off
 
-Sign off version 0.9.0 only when:
+Sign off version 0.9.1 only when:
 
 1. All five pages remain readable and interactive after conversion.
 2. Restoration is exact on all five pages.
 3. No form field or code sample is modified.
 4. There is no repeatable severe mis-conversion outside the documented lexical
    limitations.
-5. At least one other speaker tests their preferred script and pronunciation.
+5. At least one other speaker performs the explicitly human linguistic/readability
+   review in their preferred script and pronunciation. Computer control can run
+   the behavioral checks but cannot replace this judgment.
 
 ## Report a bad conversion
 
