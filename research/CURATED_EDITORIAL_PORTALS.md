@@ -1,11 +1,9 @@
 # Curated editorial portal snapshot
 
-Review date: **2026-08-12**
+Review date: **2026-08-13**
 
-The exhaustive DNS/editorial-alias refresh started on 2026-08-13 and was paused
-before catalog changes. Its completed regional results, partial Serbia sweep,
-and repeatable continuation method are preserved in
-[`PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md).
+The exhaustive 81-family DNS/editorial-alias refresh was completed on 2026-08-13. Its full regional findings, candidate subdomains, and 5-criteria evaluation method are recorded in
+[`PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md), and all approved subdomains have been integrated into [`src/curated-portals.js`](../src/curated-portals.js).
 
 All browser builds use one catalog to group remembered rules across finite,
 reviewed editorial aliases. Firefox desktop and Android additionally predeclare

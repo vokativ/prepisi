@@ -52,17 +52,18 @@ test("RTS paths share one finite apex and www portal family", () => {
   const article = persistence.descriptorForUrl("https://www.rts.rs/vesti/clanak.html?view=full");
   assert.equal(homepage.key, "rts.rs");
   assert.equal(article.key, "rts.rs");
-  assert.deepEqual(Array.from(article.hosts), ["rts.rs", "www.rts.rs"]);
+  assert.deepEqual(Array.from(article.hosts), ["rts.rs", "www.rts.rs", "oko.rts.rs"]);
   assert.deepEqual(Array.from(article.matches), [
     "http://rts.rs/*", "https://rts.rs/*",
-    "http://www.rts.rs/*", "https://www.rts.rs/*"
+    "http://www.rts.rs/*", "https://www.rts.rs/*",
+    "http://oko.rts.rs/*", "https://oko.rts.rs/*"
   ]);
-  assert.equal(article.registrationIds.length, 2);
+  assert.equal(article.registrationIds.length, 3);
 
-  const unreviewed = persistence.descriptorForUrl("https://oko.rts.rs/tekst");
-  assert.equal(unreviewed.key, "oko.rts.rs");
-  assert.equal(unreviewed.curated, false);
-  assert.deepEqual(Array.from(unreviewed.hosts), ["oko.rts.rs"]);
+  const oko = persistence.descriptorForUrl("https://oko.rts.rs/tekst");
+  assert.equal(oko.key, "rts.rs");
+  assert.equal(oko.curated, true);
+  assert.deepEqual(Array.from(oko.hosts), ["rts.rs", "www.rts.rs", "oko.rts.rs"]);
 });
 
 test("curated catalog is normalized, non-overlapping, and below the reviewed cap", () => {

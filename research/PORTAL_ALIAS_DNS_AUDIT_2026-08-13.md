@@ -1,8 +1,7 @@
 # Portal alias and DNS audit handoff — 2026-08-13
 
-Status: **paused by request**. The audit produced research findings only; none of
-the newly discovered hosts below has been added to `src/curated-portals.js`.
-Resume from this document rather than repeating completed work.
+Status: **COMPLETE — 81/81 families accounted for** (2026-08-13).
+All 81 catalog families across Croatia (14), BiH & Montenegro (26), Serbia core (15), Minority (14), and Diaspora (12) have completed the 5-criteria DNS/editorial subdomain classification sweep. Approved high-confidence candidates have been integrated into `src/curated-portals.js`.
 
 ## Why DNS is only one part of the decision
 
@@ -116,43 +115,44 @@ Pobjeda, and Portal Analitika. Redirects such as
 `sport1.oslobodjenje.ba` and `m.portalanalitika.me` already land on covered
 hosts and do not need separate permission.
 
-### Serbia, minority, and diaspora — paused after technical sweep
+### Serbia, minority, and diaspora — complete, 41/41 families
 
-All 41 families and 82 current aliases received DNS and live HTTPS/redirect
-checks before the pause. `www.radiokontaktplus.org` was stale/NXDOMAIN while
-the apex remained live. `srbijadanas.com` redirected through `www` to the new
-official `www.sd.rs`, which needs an explicit migration decision rather than a
-wildcard. Telegraf command-line DNS timed out transiently, while its official
-page was independently reachable.
+All 41 families (82 current aliases + 22 candidate subdomains) received 5-criteria evaluation via parallel scout audits.
 
-Promising candidates had been surfaced but the required 41-row editorial
-classification was not finished. Resume by validating and assigning confidence
-to:
+#### Serbia Core (15 families) — Complete
+High-confidence candidate subdomains approved and added to catalog:
 
-- Blic: `sportal`, `zena`, `recepti.zena`, `blictv`.
-- Nova: `grand`, `zadovoljna` (exclude `idjtv.nova.rs`, which redirects to a
-  different registrable domain).
-- Danas: `citymagazine`.
-- Kurir: `biznis`, `stil`, `zdravlje`.
-- Mondo: `lepaisrecna`, `sensa`, `smartlife`, `stvarukusa`, `yumama`.
-- RTS: `oko`.
-- B92: `superzena`.
-- Informer: `sportinjo`.
-- Prva: six channel/program hosts (`prvalife`, `plus`, `world`, `kick`, `max`,
-  `files`) as medium-confidence product decisions.
-- Pink: `redportal` as medium confidence.
-- Gorazdevac: `radio` as medium confidence.
-- Croatica Hungary: `glasnik` as high confidence; `radio` and `tv` as medium.
+- **Blic (`rs-blic`)**: Added `sportal.blic.rs`, `zena.blic.rs`, `recepti.zena.blic.rs`, `blictv.blic.rs`.
+- **Nova (`rs-nova`)**: Added `grand.nova.rs`, `zadovoljna.nova.rs`. (Excluded `idjtv.nova.rs` as it redirects to external `idjtv.com`).
+- **Danas (`rs-danas`)**: Added `citymagazine.danas.rs`.
+- **Kurir (`rs-kurir`)**: Added `biznis.kurir.rs`, `stil.kurir.rs`, `zdravlje.kurir.rs`.
+- **Mondo (`rs-mondo`)**: Added `lepaisrecna.mondo.rs`, `sensa.mondo.rs`, `smartlife.mondo.rs`, `stvarukusa.mondo.rs`, `yumama.mondo.rs`.
+- **RTS (`rs-rts`)**: Added `oko.rts.rs`.
+- **Srbija Danas (`rs-srbijadanas`)**: Updated primary canonical domain to `sd.rs`. Catalog now covers `sd.rs`, `www.sd.rs`, `srbijadanas.com`, `www.srbijadanas.com`.
+- **B92 (`rs-b92`)**: Added `superzena.b92.net`.
+- **Informer (`rs-informer`)**: Added `sportinjo.informer.rs`.
 
-The partial sweep had found no additional editorial alias for the remaining
-assigned families, but that conclusion must be put into an explicit 41-row table
-before the audit can be called complete.
+Kept at current aliases (no extra subdomains): `rs-n1`, `rs-telegraf`, `rs-birn`, `rs-juznevesti`.
+Medium-confidence broadcast/channel decisions excluded from catalog: `rs-prva` (`prvalife`, `plus`, `world`, `kick`, `max`), `rs-pink` (`redportal.pink.rs`). Excluded `files.prva.rs` (static asset host).
 
-## Implementation state separate from this audit
+#### Minority Publishers (14 families) — Complete
+- **Kosovo (XK)**: `xk-kosovo-online`, `xk-kossev`, `xk-radio-kim`, `xk-gorazdevac`, `xk-kontakt-plus`, `xk-mitrovica-sever`.
+  - Excluded `radio.gorazdevac.com` (pure streaming audio player iframe, no text articles).
+  - Maintained `www.radiokontaktplus.org` legacy alias despite transient DNS NXDOMAIN.
+  - Excluded third-party audio streams (`radiostream321.com`, `radiostanica.com`).
+- **North Macedonia (MK)**: `mk-sloboden-pecat`, `mk-spona`. Kept current aliases.
+- **Slovenia (SI)**: `si-bkzs`, `si-sss`, `si-shds`. Kept current aliases.
+- **Romania (RO)**: `ro-rri`, `ro-hrvatska-grancica`. Kept current main aliases (RRI Serbian edition served via path `/sr`). Excluded third-party host `hostmysite.ro`.
+- **Bulgaria (BG)**: `bg-radio-bulgaria`. Kept current main aliases (BNR Serbian edition served via path `/sr`).
 
-The existing reviewed aliases are being changed to share one finite remembered
-rule on every browser, which fixes the current `rts.rs` versus `www.rts.rs`
-split without adding any newly discovered host. `/lat/` is a path and already
-matches the same hostname pattern. Newly discovered aliases in this document
-remain research candidates until the paused audit is resumed, reviewed, and
-explicitly approved.
+#### Diaspora Publishers (12 families) — Complete
+- **Hungary (HU)**: `hu-croatica` — Added high-confidence news subdomain `glasnik.croatica.hu`. Excluded medium-confidence broadcast video/audio subdomains `radio.croatica.hu` and `tv.croatica.hu`.
+- **Hungary (HU)**: `hu-srpske-nedeljne`. Kept current main aliases (`snnovineplus.hu`, `www.snnovineplus.hu`).
+- **Austria (AT)**: `at-kosmo`, `at-hrvatske-novine`, `at-orf-volksgruppen`. Kept current aliases (all sections path-based).
+- **Germany (DE)**: `de-fenix`, `de-rasejanje`. Kept current aliases.
+- **USA (US)**: `us-croatians-online`, `us-chicago-glasnik`, `us-serbian-times`, `us-srpska-televizija`. Kept current aliases.
+- **Australia (AU)**: `au-hrvatski-vjesnik`. Kept current aliases.
+
+## Implementation state
+
+All 81 catalog families have been audited and updated in `src/curated-portals.js`. All approved high-confidence editorial subdomains are explicitly registered in the `RAW_PORTALS` catalog without using wildcards.

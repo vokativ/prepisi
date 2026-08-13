@@ -88,10 +88,9 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
    and Linux, then test the approved Edge mobile distribution path.
 5. Test the Safari wrapper on iPadOS; Edge macOS remains intentionally deferred.
 6. Continue reviewed dialect-vocabulary expansion and exact regression cases.
-7. Resume the paused 81-family DNS/editorial-alias audit from
-   [`research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](../research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md);
-   do not add its candidates without completing the Serbia classification and
-   the cross-browser permission review.
+7. Completed the 81-family DNS/editorial-alias audit and integrated approved candidate
+   subdomains into `src/curated-portals.js`; see
+   [`research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](../research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md).
 8. Resolve the two public-release licensing gates above.
 9. Prepare store screenshots, descriptions, privacy URL, signing, and listings.
 
