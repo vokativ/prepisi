@@ -338,7 +338,7 @@ remain explicitly pending:
   live-form/editable, and offline checks, plus investigation of the
   protected-text concerns.
 - Edge macOS, iPadOS, store-signed Firefox, and TestFlight/App Store distribution.
-
+- **Pre-Publishing Apple Signing Check**: For physical device testing, `Vulcanus Holdings Inc.` was retained as the signing team because `com.vokativ.prepisi.dev` was initially registered to that team in Apple's provisioning database. Before final submission, if releasing under an individual developer account, verify team credentials and update bundle IDs to generate final signed production archives.
 Generated browser folders, wrapper projects, DerivedData, certificates,
 provisioning profiles, and device output were kept outside version control.
 The Firefox temporary `web-ext` session and disposable Chrome process were
