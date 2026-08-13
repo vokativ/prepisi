@@ -317,8 +317,7 @@ checkbox, and leaves the remembered next-document rule intact. This correction
 requires a rebuilt/reloaded Safari wrapper and physical-device retest before it
 is recorded as an observed pass.
 
-The broader 81-family DNS/editorial-alias search was paused without changing the
-catalog. Its repeatable method and completed/partial findings are in
+The broader 81-family DNS/editorial-alias audit has been completed and integrated into `src/curated-portals.js`. Its repeatable method and final findings are documented in
 [`research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](../research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md).
 
 ## Acceptance and remaining gates
