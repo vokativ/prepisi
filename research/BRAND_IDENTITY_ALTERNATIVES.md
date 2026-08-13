@@ -37,12 +37,15 @@ should be sent regardless of which fallback is chosen.
 
 ## Option 2 — Original artwork in the same two-script spirit (recommended fallback)
 
-Two concept directions were prototyped locally with Pillow against a
-Unicode-coverage system font (not Balkan Sans, not committed to the repo — the
-renders are reproducible from any OFL/redistributable Cyrillic+Latin font such
-as **PT Sans**, **Manrope**, **Inter**, or **IBM Plex Sans**, all of which
-ship a real Cyrillic character set and an explicit redistribution-friendly
-license):
+Two concept directions were prototyped with Pillow against a Unicode-coverage
+system font (not Balkan Sans — the renders are reproducible from any
+OFL/redistributable Cyrillic+Latin font such as **PT Sans**, **Manrope**,
+**Inter**, or **IBM Plex Sans**, all of which ship a real Cyrillic character
+set and an explicit redistribution-friendly license). The rough previews are
+saved at `design/brand-concepts/concept-a-stacked-wordmark-draft.png` and
+`design/brand-concepts/concept-b-homoglyph-monogram-draft.png` (first-pass
+drafts, not final art — see that folder's `README.md` for why they live
+outside `assets/`):
 
 - **Concept A — plain two-line lockup.** Latin `PRE` stacked directly over
   Cyrillic `ПРЕ` in the same bold weight, on the existing green field with the
@@ -72,6 +75,14 @@ OFL-licensed font instead of the private Balkan Sans archive, so the existing
 green/cream/gold identity and build step do not need to change, only the font
 source and glyph layout.
 
+### Producing Option 2 artwork with Gemini image generation
+
+The owner is generating candidate artwork with Gemini's Nano Banana image
+models rather than (or in addition to) the font-render script above. Full
+prompt text, model guidance, and a Cyrillic-text-rendering risk warning are in
+`research/BRAND_IDENTITY_GEMINI_PROMPTS.md`. Save raw exports to
+`design/brand-concepts/`, not `assets/`.
+
 ## Option 3 — Commission original bespoke artwork
 
 If the ambigram-style shared-stroke trick itself (not just a stacked
@@ -86,8 +97,10 @@ so it is a later upgrade, not a blocker for the first public release.
 
 1. Send the Typotheque logo-rights email now (Option 1); it costs nothing to
    ask and may make the rest of this moot.
-2. In parallel, prepare Concept A (and a refined Concept B for small sizes) as
-   the fallback so the release is not blocked on a foundry's response time.
+2. In parallel, generate candidates for Concept A/B (and any Track A
+   symbol-only variants) using the Gemini prompts in
+   `research/BRAND_IDENTITY_GEMINI_PROMPTS.md`, or the font-render approach
+   above, so the release is not blocked on a foundry's response time.
 3. Revisit Option 3 only if the team later wants to reclaim the exact
    ambigram effect as a distinctive trademark-able mark.
 
