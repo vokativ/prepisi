@@ -14,10 +14,10 @@ individual under their personal name, not through a company account.
   and privacy-policy URL after it becomes public.
 - Public release remains gated on confirming that the Balkan Sans-derived
   raster branding may be distributed, or replacing it with originally licensed
-  branding (see `research/BRAND_IDENTITY_ALTERNATIVES.md`), plus sanitizing the
-  personal email from Git history. The COMtext.SR redistribution decision was
-  resolved 2026-08-13 — CC BY 4.0 International, confirmed in the upstream
-  README. See `ATTRIBUTIONS.md` and `docs/PROJECT_STATUS.md`.
+  branding (see `research/BRAND_IDENTITY_ALTERNATIVES.md`). The COMtext.SR
+  redistribution decision was resolved 2026-08-13 — CC BY 4.0 International,
+  confirmed in the upstream README — and the personal email was sanitized from
+  Git history the same day. See `ATTRIBUTIONS.md` and `docs/PROJECT_STATUS.md`.
 
 ## Mailbox account check
 
@@ -50,21 +50,23 @@ Google Account is the safest approach.
 | Firefox AMO | The Mozilla Account login email is returned only to authenticated account access; the public author identity is the AMO display name. A separately supplied add-on support email is public. | Keep the login email private, use a project display name, and use the public GitHub support URL rather than a support email. |
 | Apple App Store | An Individual membership publicly shows the account holder's legal name as seller, but the Apple Account login email is not ordinarily the product-page support address. If the developer declares trader status and distributes in the EU, Apple publishes the verified address or P.O. Box, phone number, and email on the product page. | Keep the Apple login private. Use dedicated public contact details for trader information and a GitHub support/privacy URL. |
 
-The current local Git history contains the personal Gmail address in 12 commits,
-and the repository-level Git setting still uses that address. Before making the
-repository public:
+**Resolved 2026-08-13.** The Git history previously contained the personal
+Gmail address in 12 commits, and the repository-level Git setting used that
+address too.
 
-1. Obtain the GitHub-provided `noreply` address for the intended personal
-   account and set it for this repository.
-2. Rewrite the still-private repository history to replace the personal address
-   in existing commit metadata, then force-push the sanitized history only after
-   checking for collaborators or dependent branches.
-3. Verify the personal address no longer appears in any reachable commit, tag,
-   tracked file, or GitHub profile field.
+1. The repository-local commit identity now uses the GitHub-provided
+   `noreply` address, `vokativ@users.noreply.github.com` (already used by 3
+   commits before this cleanup).
+2. The repository history was rewritten with `git filter-repo`, replacing the
+   personal address with the `noreply` address in every commit's author and
+   committer metadata, and the sanitized history was force-pushed. A pre-
+   rewrite backup bundle was made first; there were no other collaborators or
+   branches to coordinate with (single-owner, still-private repository).
+3. Verified: `git log --format='%ae' origin/main | sort -u` returns only the
+   `noreply` address across all 17 commits on `origin/main`.
 
-History rewriting changes commit IDs and is intentionally not performed merely
-by documenting this issue. It should be a deliberate operation immediately
-before the first public release.
+This was performed while the repository is still private, ahead of the
+Balkan Sans branding decision that remains the last public-release gate.
 
 Official privacy references:
 
