@@ -61,9 +61,10 @@ Last updated: 2026-08-13. Current extension version: 0.9.1.
   its linguistic results without recording an issue. Edge-on-macOS testing is
   deferred and is not part of the current publishing pass.
 - The project owner reports Windows desktop Chrome, Edge, and Firefox testing
-  completed on the prior development machine, via a mix of manual and
-  AI-agent-assisted testing. No repository artifact captured exact versions or
-  dates at the time; see `docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`.
+  completed 2026-08-12 on the prior development machine (Windows 11 Pro 25H2,
+  Chrome 151.0.7922.138, Edge 151.0.4129.78, Firefox 153.0.3 — the current
+  stable releases for that date), via a mix of manual and AI-agent-assisted
+  testing; see `docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`.
 - The release owner chose individual publication under their personal legal
   name, not publication through the company account. Apple production signing,
   GitHub ownership, and store registrations must use the personal accounts.

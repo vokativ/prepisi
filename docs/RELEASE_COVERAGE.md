@@ -32,10 +32,12 @@ Repository, Firefox Android, and partial Apple-platform validation completed on
   and Linux, but the current 0.9 build still needs a fresh human runtime pass on
   every claimed browser/OS combination.
 - The project owner reports Windows desktop Chrome, Edge, and Firefox testing
-  completed via a mix of manual and AI-agent-assisted testing on the prior
-  development machine. No repository artifact captured exact versions or dates
-  at the time; see `docs/WINDOWS_DESKTOP_TEST_2026-08-13.md` for what is and
-  is not recorded, and a Linux smoke pass is still needed for all three.
+  completed on 2026-08-12 via a mix of manual and AI-agent-assisted testing on
+  the prior development machine: Windows 11 Pro 25H2, Chrome 151.0.7922.138,
+  Firefox 153.0.3, and Edge 151.0.4129.78 (current stable releases for that
+  date, confirmed by web research rather than captured live from the machine).
+  See `docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`. A Linux smoke pass is still
+  needed for all three.
 - Safari and all mobile targets require the corresponding Apple/Android device
   environment. A Windows-only check cannot honestly promote them to supported.
 - On macOS 26.5.2, Firefox 153.0.4 passed live RTS/Klix conversion,
@@ -71,10 +73,10 @@ Repository, Firefox Android, and partial Apple-platform validation completed on
 
 | Platform | Package | Current gate | Intended status |
 | --- | --- | --- | --- |
-| Chrome desktop (Windows/macOS/Linux) | `prepisi-<version>-chromium.zip` | Broad macOS runtime pass and an owner-reported Windows pass (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`, exact versions pending); Linux smoke test, blocked-site checks, and Chrome Web Store submission remain | First-class |
-| Edge desktop (Windows/macOS/Linux) | `prepisi-<version>-edge.zip` | Owner-reported Windows pass (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`, exact versions pending); macOS is explicitly deferred, Linux smoke test and Partner Center submission remain | First-class |
+| Chrome desktop (Windows/macOS/Linux) | `prepisi-<version>-chromium.zip` | Broad macOS runtime pass and an owner-reported Windows 11 pass on Chrome 151.0.7922.138 (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`); Linux smoke test, blocked-site checks, and Chrome Web Store submission remain | First-class |
+| Edge desktop (Windows/macOS/Linux) | `prepisi-<version>-edge.zip` | Owner-reported Windows 11 pass on Edge 151.0.4129.78 (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`); macOS is explicitly deferred, Linux smoke test and Partner Center submission remain | First-class |
 | Edge Android/iOS | Same Edge Add-ons listing | Microsoft mobile certification/visibility and phone tests | First-class after validation |
-| Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint, broad macOS runtime pass, and an owner-reported Windows pass (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`, exact versions pending); remaining restricted/offline/form checks, a Linux smoke test, and AMO signing remain | First-class |
+| Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint, broad macOS runtime pass, and an owner-reported Windows 11 pass on Firefox 153.0.3 (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`); remaining restricted/offline/form checks, a Linux smoke test, and AMO signing remain | First-class |
 | Firefox Android | Same AMO package | Core phone smoke passed; remembered navigation, remaining mobile checks, AMO signing, and signed-build retest remain | First-class |
 | Safari macOS | `prepisi-<version>-safari-source.zip` | Signed 0.9.1 wrapper and broad runtime pass; affected-layout highlighting remains documented under WebKit bug 307455, and App Store packaging remains | First-class |
 | Safari iOS/iPadOS | Same Apple project | iPhone build/install/enable, rebuilt alias/Restore, isolation, background, long-page, and offline passes; forced low-memory discard, iPad, TestFlight, and App Store tests remain | First-class |
