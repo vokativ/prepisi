@@ -6,6 +6,7 @@
   "description": "Privacy-first in-page script and pronunciation converter for BCMS text.",
   "scripts": {
     "test": "node --test",
+    "test:e2e": "node scripts/e2e-chrome-test.mjs",
     "build:comtext": "node scripts/build-comtext-data.mjs",
     "apply:jat-reviews": "node scripts/apply-jat-reviews.mjs",
     "discover:jat": "node scripts/apply-jat-reviews.mjs && node scripts/discover-jat-candidates.mjs",

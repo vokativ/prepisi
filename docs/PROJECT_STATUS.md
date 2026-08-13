@@ -20,7 +20,8 @@ Last updated: 2026-08-12. Current extension version: 0.9.0.
 
 ## Verified baseline
 
-- `npm run check`: 86/86 tests pass.
+- `npm run check`: 86/86 unit and integration tests pass.
+- `npm run test:e2e`: 12/12 automated E2E browser tests pass cleanly in headless Chrome on macOS (covering DOM conversion, script transliteration, dialect changes, brand/URL protection, dynamic content insertion, text restoration, and portal fixtures).
 - All four browser targets build and package successfully.
 - Mozilla `web-ext` 10.6.0 lint: 0 errors, 0 warnings, and 0 notices.
 - Frozen portal fixtures cover RTS, Index.hr, NSPM, Vijesti.me, and Klix.ba.
