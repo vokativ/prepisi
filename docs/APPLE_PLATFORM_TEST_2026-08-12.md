@@ -255,10 +255,10 @@ Observed setup passes:
 - Developer disk image services mounted and reported compatible/usable after the
   phone was unlocked.
 - Automatic signing produced a development-signed arm64 containing app with the
-  expected development bundle identifier and embedded extension.
+  expected development bundle identifier (`com.vokativ.prepisi.dev`) and embedded extension (`com.vokativ.prepisi.dev.Extension`).
+- Verified codesign authority via `codesign -dvvv`: Both `Prepisi.app` and `Prepisi Extension.appex` are signed with matching `Authority: Apple Development: appstore@vulcanusholdings.com (WP2ALBXBCB)` and matching `TeamIdentifier: H4H39V242H`.
 - The signed app passed deep verification, installed on the phone, appeared in
   the developer-app inventory, and launched successfully.
-
 Pending phone-side work:
 
 - Prepiši was enabled by the user in iPhone **Settings → Apps → Safari →
