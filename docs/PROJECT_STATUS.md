@@ -72,8 +72,9 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 ## Next release work
 
 1. **Manual Device Retest**: Run physical iPhone 14 check with the compiled `Prepisi (iOS)` Safari App Wrapper and complete desktop Chrome/Firefox/Safari manual sign-off checklist (`HUMAN_TEST.md`).
-2. **Make Repository Public**: Change GitHub repository visibility from private to public when ready.
-3. **Public Privacy Policy**: Provide the public `PRIVACY.md` URL (e.g. GitHub raw URL or GitHub Pages link) for Chrome Web Store, Mozilla AMO, and Apple App Store submission listings.
-4. **Store Packaging & Listings**: Upload built binaries (`build/chromium`, `build/firefox`, and Xcode iOS/macOS archives), prepare store screenshots, descriptions, and submit listings under GPL-3.0-only license.
+2. **Pre-Publishing Apple Signing Gate**: Before final App Store submission, if publishing under the personal Apple Developer account rather than `Vulcanus Holdings Inc.`, confirm Team assignment (`Nemanja Grujicic`) and Bundle Identifiers (`com.vokativ.prepisi` / `com.vokativ.prepisi.Extension`) under the personal team profile to generate signed production release archives.
+3. **Make Repository Public**: Change GitHub repository visibility from private to public when ready.
+4. **Public Privacy Policy**: Provide the public `PRIVACY.md` URL (e.g. GitHub raw URL or GitHub Pages link) for Chrome Web Store, Mozilla AMO, and Apple App Store submission listings.
+5. **Store Packaging & Listings**: Upload built binaries (`build/chromium`, `build/firefox`, and Xcode iOS/macOS archives), prepare store screenshots, descriptions, and submit listings under GPL-3.0-only license.
 `research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also
 summarized in `AGENTS.md`.
