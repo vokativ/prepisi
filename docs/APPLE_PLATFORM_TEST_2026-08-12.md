@@ -309,6 +309,7 @@ performed.
   independent causes in the tested build: the apex/`www` exact-host split, and
   **Vrati izvorni tekst** overwriting the remembered rule with source modes and
   disabling the highlight preference.
+- **iOS Pull-to-Refresh Behavior**: The user observed on physical iPhone Safari that when **Vrati izvorni tekst** (Restore original text) is clicked, the current page DOM correctly restores to original. However, performing a pull-down refresh in Mobile Safari reloads the document, causing the active **Zapamti na ovom sajtu** (Remember on this site) rule to automatically re-apply the saved script/dialect mode to the fresh page.
 
 A cross-browser correction is now under test: reviewed portal aliases share one
 finite explicit rule family on every browser, while unknown sites remain
