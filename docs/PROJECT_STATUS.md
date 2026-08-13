@@ -22,12 +22,10 @@ Last updated: 2026-08-12. Current extension version: 0.9.0.
 
 - `npm run check`: 86/86 unit and integration tests pass.
 - `npm run test:e2e`: 12/12 automated E2E browser tests pass cleanly in headless Chrome on macOS (covering DOM conversion, script transliteration, dialect changes, brand/URL protection, dynamic content insertion, text restoration, and portal fixtures).
-- All four browser targets build and package successfully.
+- All four browser targets build and package successfully (`scripts/verify-build-outputs.mjs`: 24/24 build checks pass).
 - Mozilla `web-ext` 10.6.0 lint: 0 errors, 0 warnings, and 0 notices.
 - Frozen portal fixtures cover RTS, Index.hr, NSPM, Vijesti.me, and Klix.ba.
-- Xcode 26.6 generates and compiles the Safari wrapper for macOS and a physical
-  iPhone. The development-signed iOS app installs and launches on an iPhone 14
-  running iOS 26.5.2.
+- Xcode 26.6 generates and compiles `Prepisi (macOS)` and `Prepisi (iOS)` Safari App Wrappers cleanly for macOS 26.5 and physical iPhone 14 (iOS 26.5.2).
 - Firefox 153.0.4 on macOS passed core RTS/Klix conversion, restoration,
   highlighting, dynamic and protected-content fixtures, tab/host isolation, and
   remembered navigation after an idle event-page interval. The complete
