@@ -115,9 +115,9 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
    remaining rights gate is the Balkan Sans-derived raster identity: confirm
    distribution rights with Typotheque or replace the icon/wordmark with
    originally licensed branding; see `research/BRAND_IDENTITY_ALTERNATIVES.md`.
-   The private Git history also contains the owner's personal Gmail address in
-   12 commit records; configure GitHub's `noreply` address and deliberately
-   sanitize history before public visibility.
+   The Git history's personal Gmail address was sanitized 2026-08-13 (rewritten
+   to the GitHub `noreply` address with `git filter-repo` and force-pushed);
+   the local commit identity now also uses that address for future commits.
 4. **Personal Repository and Privacy URL**: Reauthenticate GitHub as the intended
    personal owner, confirm whether `vokativ/prepisi` is the desired permanent
    repository, and publish `PRIVACY.md` at a stable public URL for the browser
