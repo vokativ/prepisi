@@ -32,23 +32,20 @@
     return (result >>> 0).toString(16).padStart(8, "0");
   }
 
-  function firefoxCuratedAccess() {
-    try {
-      return Boolean(global.PrepisiWebExt?.runtime?.getManifest?.().browser_specific_settings?.gecko);
-    } catch (_) {
-      return false;
-    }
-  }
-
   function descriptorForUrl(value, options = {}) {
     try {
       const url = new URL(value);
       if (!["http:", "https:"].includes(url.protocol) || !url.hostname) return null;
       const hostname = url.hostname.toLocaleLowerCase("en-US");
-      const useCurated = options.curated ?? firefoxCuratedAccess();
+      // A reviewed portal family is safe to share across builds because it is a
+      // finite list of explicit editorial aliases, never a registrable-domain
+      // wildcard. Unknown sites remain exact-host.
+      const useCurated = options.curated ?? true;
       const portal = useCurated ? curated?.portalForHostname(hostname) : null;
       const hosts = portal?.hosts || [hostname];
       const key = portal?.canonicalHost || hostname;
+      const registrationIds = Object.freeze(Array.from(new Set([key, ...hosts]))
+        .map((host) => `prepisi-site-${hash(host)}`));
       const matches = Object.freeze(hosts.flatMap((host) => [
         `http://${host}/*`, `https://${host}/*`
       ]));
@@ -59,7 +56,8 @@
         legacyKeys: Object.freeze(Array.from(hosts)),
         curated: Boolean(portal),
         matches,
-        id: `prepisi-site-${hash(key)}`
+        id: `prepisi-site-${hash(key)}`,
+        registrationIds
       });
     } catch (_) {
       return null;
@@ -90,7 +88,6 @@
     STORAGE_KEY,
     TARGET_KEYS,
     CONTENT_SCRIPTS,
-    firefoxCuratedAccess,
     descriptorForUrl,
     ruleForSite,
     targetSettings,

@@ -21,9 +21,10 @@ forking the conversion rules or vocabulary.
 - Page-specific controls: reopening the popup reads the active tab's real state;
   a different tab starts at the source settings by default.
 - Per-site continuity: **Remember on this site** reapplies the selected modes
-  after navigation. Firefox includes a reviewed portal catalog intended to make
-  this durable on desktop and Android; other sites and browsers request only
-  exact-host access when enabled. Signed-build validation is still pending.
+  after navigation. Reviewed news portals share rules across a finite list of
+  explicit editorial aliases such as the apex and `www` host; unknown sites
+  remain exact-host. Firefox predeclares the reviewed portal catalog for its
+  event page. Signed-build validation is still pending.
 - A one-click Latin/Cyrillic interface switch, stored locally and independent of
   the script selected for the web page.
 - Optional dialect-only highlighting through browser-native text ranges; page HTML
@@ -36,9 +37,9 @@ forking the conversion rules or vocabulary.
   Fortune 500, FTSE 100, CAC 40, DAX 40, and IBEX 35 snapshots.
 - No server, telemetry, analytics, account, or network request.
 - Minimal platform-appropriate permissions: Chrome, Edge, and Safari touch only
-  the active page until an exact host is remembered. Firefox additionally
-  predeclares a reviewed editorial-portal batch, surfaced by Firefox through its
-  install, settings, or first-use permission UI.
+  the active page until an exact host or finite reviewed portal family is
+  remembered. Firefox additionally predeclares that editorial-portal batch,
+  surfaced by Firefox through its install, settings, or first-use permission UI.
 
 ## Load it in a Chromium browser
 
@@ -54,9 +55,10 @@ exact Firefox temporary-add-on steps—see [`docs/LOCAL_INSTALL.md`](docs/LOCAL_
 
 The extension cannot run on browser system pages, extension stores, or other pages
 where browsers forbid extensions. Temporary access normally ends when the user
-leaves the page. A user may opt into a hostname (or explicit curated portal
-  aliases in Firefox) so links keep the selected conversion. Prepiši never requests
-required access to every site. See the [Firefox portal catalog and research](research/CURATED_EDITORIAL_PORTALS.md).
+leaves the page. A user may opt into a hostname, or a finite set of reviewed
+editorial aliases, so links keep the selected conversion. Prepiši never uses a
+registrable-domain wildcard and never requests required access to every site.
+See the [curated portal catalog and research](research/CURATED_EDITORIAL_PORTALS.md).
 
 Firefox Android manual conversion has passed, but automatic remembered
 navigation has not yet passed in an unsigned temporary installation. Firefox's
@@ -327,7 +329,7 @@ The privately licensed Balkan Sans font binaries are never part of this reposito
 - Add foreign-name orthography only as a separate, explicit user choice.
 - Keep optional Windows ML/Core ML name recognition as a research-only native
   companion possibility; see `research/ON_DEVICE_NAME_RECOGNITION.md`.
-- Human-test the optional hostname-scoped persistence prompt and navigation flow
+- Human-test the optional exact-host/finite-alias persistence prompt and navigation flow
   in every release browser.
 - Test shadow DOM, frames, very large pages, and accessibility with human testers.
 - Complete Firefox desktop/Android and Safari macOS/iOS device smoke tests before

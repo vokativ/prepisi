@@ -1,9 +1,16 @@
-# Firefox curated editorial portal snapshot
+# Curated editorial portal snapshot
 
 Review date: **2026-08-12**
 
-Firefox desktop and Android use the same package, so they use one catalog. The
-catalog currently contains **81 portal families**: 55 national publishers in
+The exhaustive DNS/editorial-alias refresh started on 2026-08-13 and was paused
+before catalog changes. Its completed regional results, partial Serbia sweep,
+and repeatable continuation method are preserved in
+[`PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md).
+
+All browser builds use one catalog to group remembered rules across finite,
+reviewed editorial aliases. Firefox desktop and Android additionally predeclare
+the catalog as host permissions for their shared event-page package. The catalog
+currently contains **81 portal families**: 55 national publishers in
 Serbia, Croatia, Bosnia and Herzegovina, and Montenegro; 18 minority publishers;
 and 8 diaspora publishers. The executable, alias-level source of truth is
 [`src/curated-portals.js`](../src/curated-portals.js).
@@ -24,7 +31,11 @@ Exclude social media, forums and community-only sites, search, webmail,
 collaboration and cloud tools, ecommerce, classifieds, betting, score and weather
 services, government utilities, pure link aggregators, automatically copied news,
 inactive publishers, and login-only products. Never grant a country-TLD wildcard
-or a multi-tenant host. Host aliases are enumerated explicitly in the catalog.
+or a multi-tenant host. Also exclude API, authentication, advertising, analytics,
+CDN/static-asset, and user-content hosts even when their DNS records or Safari's
+website-access UI associate them with a portal page. Host aliases are enumerated
+explicitly in the catalog and must serve top-level editorial reading pages or be
+their canonical redirect destination.
 
 ## Core national publishers
 
@@ -135,18 +146,22 @@ installation, so catalog changes require explicit release and privacy review.
 
 ## Runtime and privacy effect
 
-Only Firefox receives the catalog as a generated MV3 `host_permissions` list.
-Its non-persistent background event page synchronously registers a filtered
+Every build uses the catalog to describe an opted-in portal as a finite set of
+explicit aliases; Chrome, Edge, and Safari request those aliases only when the
+user enables site memory. Unknown sites remain exact-host. Only Firefox receives
+the catalog as a generated MV3 `host_permissions` list. Its non-persistent
+background event page synchronously registers a filtered
 `webNavigation.onCompleted` listener, checks the local remembered-rule map, and
 uses `scripting.executeScript()` only when a rule and permission are present.
 This follows Mozilla's documented MV3 event-page model: top-level listeners are
 persisted and wake the page after suspension. It also leaves the roughly 250 KiB
 offline conversion stack unloaded on catalog pages that have not been remembered.
 
-The catalog is the single source for both manifest permission patterns and
-portal-family aliases. Remembering a curated portal applies to its explicitly
-listed aliases; non-catalog sites remain exact-host opt-ins. Chromium, Edge, and
-Safari receive neither the catalog nor the Firefox navigation listener.
+The catalog is the single source for both Firefox manifest permission patterns
+and cross-browser portal-family aliases. Remembering a curated portal applies
+only to its explicitly listed editorial hosts; non-catalog sites remain
+exact-host opt-ins. Chromium, Edge, and Safari receive neither static catalog
+permissions nor the Firefox navigation listener.
 
 Two simpler manifest-only variants were tested first on Android: static
 `content_scripts.matches` by itself, and the same matches combined with explicit

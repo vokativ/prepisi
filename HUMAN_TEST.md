@@ -13,9 +13,11 @@ on real pages; it does not mean every dialect word is already in the reviewed vo
 
 The browser should not request permanent access to all websites. Chrome, Edge,
 and Safari receive temporary access after the toolbar action is opened; Remember
-may request the current hostname. Firefox declares a finite reviewed editorial-
-portal batch, which its install, settings, or first-use UI may surface, and uses
-exact-host prompts elsewhere.
+may request the current hostname or the portal's finite reviewed editorial
+aliases. Firefox declares the same reviewed batch, which its install, settings,
+or first-use UI may surface, and uses exact-host prompts elsewhere. Safari may
+separately ask whether access lasts once, one day, or always; that duration is a
+browser-managed choice and is not selected by the extension.
 
 ## Representative live pages
 
@@ -52,9 +54,11 @@ For each page, open one article rather than testing only the homepage.
 - [ ] With **Zapamti na ovom sajtu** off, reloading or navigating to a new
       document starts that document in its source state.
 - [ ] Turn **Zapamti na ovom sajtu** on. Accept the exact-host permission when
-      shown; a curated Firefox portal should already have access. Follow an article
-      link: the selected script, dialect, and highlight setting are reapplied
-      without reopening the popup.
+      shown, or the finite explicit alias-family request on a reviewed portal; a
+      curated Firefox portal should already have access. Follow an article link:
+      the selected script, dialect, and highlight setting are reapplied without
+      reopening the popup. On RTS, also cross between `rts.rs` and `www.rts.rs`;
+      `/lat/` is a path and must not create a separate saved rule.
 - [ ] An unrelated host does not inherit the remembered rule. Turning site memory
       off stops later automatic conversion. It removes optional exact-host access;
       Firefox catalog access remains installed but dormant without a rule.
@@ -72,7 +76,9 @@ For each page, open one article rather than testing only the homepage.
       `vrijednosti → vridnosti`, and can change them back.
 - [ ] A combined conversion works, for example Cyrillic Ijekavian → Latin Ekavian.
 - [ ] Switching modes repeatedly never compounds changes.
-- [ ] **Vrati izvorni tekst** restores the exact source text.
+- [ ] **Vrati izvorni tekst** restores the exact source text for the current
+      document, keeps the highlight checkbox unchanged, and does not replace the
+      remembered mode that should apply to the next document.
 - [ ] Text loaded after scrolling or clicking “load more” is converted too.
 - [ ] Inputs, textareas, editable content, code blocks, SVG, and embedded players
       remain usable and unchanged.

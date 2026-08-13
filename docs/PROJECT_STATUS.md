@@ -20,7 +20,7 @@ Last updated: 2026-08-12. Current extension version: 0.9.0.
 
 ## Verified baseline
 
-- `npm run check`: 83/83 tests pass.
+- `npm run check`: 86/86 tests pass.
 - All four browser targets build and package successfully.
 - Mozilla `web-ext` 10.6.0 lint: 0 errors, 0 warnings, and 0 notices.
 - Frozen portal fixtures cover RTS, Index.hr, NSPM, Vijesti.me, and Klix.ba.
@@ -37,6 +37,15 @@ Last updated: 2026-08-12. Current extension version: 0.9.0.
   tab/host isolation, and remembered same-host navigation after a manual
   Developer mode load. The restricted/offline checks and blocked live sites
   remain open.
+- Safari 26.5.2 on macOS subsequently loaded the development extension and
+  passed conversion, restoration, remembered next-article navigation,
+  backgrounding, and offline conversion. Custom Highlight ranges did not paint
+  on an affected RTS layout, consistent with open WebKit bug 307455.
+- The iPhone Safari follow-up reproduced that affected-layout highlighting
+  limitation and exposed an `rts.rs`/`www.rts.rs` remembered-rule split plus a
+  Restore action that overwrote the saved dialect. The code correction shares
+  existing finite portal aliases on every build and makes Restore page-local;
+  rebuilt Mac/iPhone runtime confirmation is pending.
 
 Run after cloning on another machine:
 
@@ -66,9 +75,9 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 ## Next release work
 
 1. Finish the dated macOS/iPhone pass: run the remaining Chrome/Firefox
-   restricted-page and offline checks, establish a trusted macOS Safari
-   development identity/Xcode-run context, and complete the iPhone extension's
-   remaining runtime, layout, recovery, protected-text, and offline checks.
+   restricted-page and offline checks, reload the rebuilt Safari wrapper and
+   confirm cross-alias/Restore behavior on macOS and iPhone, and complete the
+   iPhone extension's remaining recovery and protected-text checks.
 2. Investigate the Chrome/Firefox Klix protected-text concerns and Chrome's
    first-permission-flow concern, then retry Index.hr, NSPM, and Vijesti from the
    dated macOS report.
@@ -79,8 +88,12 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
    and Linux, then test the approved Edge mobile distribution path.
 5. Test the Safari wrapper on iPadOS; Edge macOS remains intentionally deferred.
 6. Continue reviewed dialect-vocabulary expansion and exact regression cases.
-7. Resolve the two public-release licensing gates above.
-8. Prepare store screenshots, descriptions, privacy URL, signing, and listings.
+7. Resume the paused 81-family DNS/editorial-alias audit from
+   [`research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](../research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md);
+   do not add its candidates without completing the Serbia classification and
+   the cross-browser permission review.
+8. Resolve the two public-release licensing gates above.
+9. Prepare store screenshots, descriptions, privacy URL, signing, and listings.
 
 Detailed instructions are in `HUMAN_TEST.md`, `docs/LOCAL_INSTALL.md`,
 `docs/RELEASE_COVERAGE.md`, and `research/BROWSER_COMPATIBILITY.md`. The exact

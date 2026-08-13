@@ -45,6 +45,13 @@ template gives the containing app a network-client entitlement, but the embedded
 Safari extension has no network-client entitlement. No browsing-time extension
 network request or telemetry was observed or found in source.
 
+On 2026-08-13, after correcting existing portal-family persistence and Restore
+semantics, `npm run check` passed 86/86, all four targets rebuilt, and `web-ext`
+10.6.0 again reported 0 errors, 0 warnings, and 0 notices for `build/firefox`.
+The refreshed Safari resources compiled unsigned for macOS and generic iOS, and
+the compiled extensions contained the corrected files. The regenerated build
+still requires the focused signed runtime retest described below.
+
 ## Firefox 153.0.4 on macOS
 
 Test method: official `web-ext` temporary profile using `build/firefox`.
@@ -202,6 +209,44 @@ Result: source, wrapper, compilation, registration, and privacy setup are good;
 normal Safari loading remains blocked on a trusted macOS development identity or
 an Xcode-run context. No Safari macOS runtime support claim is made.
 
+### 2026-08-13 follow-up
+
+The generated development extension subsequently appeared in Safari, was
+enabled, and was exercised by the user. This supersedes only the earlier loading
+block above; it does not erase the historical setup evidence.
+
+- Index.hr passed its human-verification screen and ordinary Prepiši conversion.
+- On RTS, remembered conversion survived navigation to another article. The
+  user also confirmed a roughly 30-minute background interval and conversion of
+  an already loaded page after network access was removed.
+- Safari's website-access UI offered a time choice such as one day or permanent
+  access, rather than a Prepiši-specific “save this site” prompt. This is expected:
+  [Safari manages](https://developer.apple.com/documentation/safariservices/managing-safari-web-extension-permissions)
+  its own once/day/always access duration separately from the extension's local
+  remembered rule.
+- Index.hr also caused Safari to surface access for additional hosts loaded by
+  the page. This is not evidence that those hosts belong in Prepiši's editorial
+  alias family. [Open WebKit bug 290508](https://bugs.webkit.org/show_bug.cgi?id=290508)
+  reports that broad optional URL patterns can make Safari ask about unrelated
+  subresource hosts. A release follow-up should revisit Safari's broad optional
+  host declaration; the extension cannot programmatically choose Safari's
+  access duration or approve those prompts.
+- Dialect words on a newly opened RTS article converted, but their highlights
+  did not paint. Restoring the article and enabling the dialect/highlight choices
+  again did not make them visible. The same extension build had painted ordinary
+  and wrapped flex-layout fixture text. [WebKit bug 307455](https://bugs.webkit.org/show_bug.cgi?id=307455)
+  documents that Custom Highlight ranges fail to paint for direct text in flex,
+  grid, and table layout;
+  the symptom is therefore recorded as a Safari/WebKit rendering limitation,
+  not a conversion or saved-setting failure. A DOM-wrapping fallback was not
+  introduced because it would change page structure and needs separate release
+  design and testing.
+
+Result after follow-up: Safari macOS loading, conversion, exact restoration,
+remembered next-article navigation, backgrounding, and offline conversion pass.
+Visible highlighting does not pass on affected live layouts, so full Safari
+acceptance remains open.
+
 ## Safari on iPhone 14 / iOS 26.5.2
 
 Observed setup passes:
@@ -250,6 +295,32 @@ restoration, highlighting, and portrait-readability checks pass. Full iPhone
 Safari acceptance remains pending until the rest of the phone checklist is
 performed.
 
+### 2026-08-13 follow-up
+
+- The user confirmed the same next-article conversion behavior and the same lack
+  of visible highlighting on the affected RTS layout as on desktop Safari.
+- Increasing Safari's website text size changed the article text while the
+  Prepiši popup stayed at its own size. The controls remained usable; popup text
+  does not participate in per-website text scaling.
+- The current build treated `rts.rs` and `www.rts.rs` as different remembered
+  hosts outside Firefox. `/lat/` is only a path and was not part of matching.
+- The user observed that an RTS page sometimes retained or skipped the saved
+  dialect during the restore/offline sequence. Code inspection found two
+  independent causes in the tested build: the apex/`www` exact-host split, and
+  **Vrati izvorni tekst** overwriting the remembered rule with source modes and
+  disabling the highlight preference.
+
+A cross-browser correction is now under test: reviewed portal aliases share one
+finite explicit rule family on every browser, while unknown sites remain
+exact-host; Restore changes only the current document, preserves the highlight
+checkbox, and leaves the remembered next-document rule intact. This correction
+requires a rebuilt/reloaded Safari wrapper and physical-device retest before it
+is recorded as an observed pass.
+
+The broader 81-family DNS/editorial-alias search was paused without changing the
+catalog. Its repeatable method and completed/partial findings are in
+[`research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](../research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md).
+
 ## Acceptance and remaining gates
 
 The 0.9 release is not yet accepted for macOS/iPhone support. The following
@@ -258,10 +329,10 @@ remain explicitly pending:
 - Chrome macOS restricted-page and offline checks, retrying the blocked live
   matrix, and investigation of its protected-text and first-permission-flow
   concerns.
-- Safari macOS normal extension loading and full runtime pass.
-- iPhone Safari completion of enlarged-text, long-page, backgrounding, tab
-  restoration, low-memory, hostname-permission, protected-text, and offline
-  checks.
+- Safari macOS affected-layout highlighting and a rebuilt alias/Restore retest.
+- iPhone Safari completion of long-page, tab restoration, low-memory,
+  protected-text, and rebuilt alias/Restore checks; affected-layout highlighting
+  remains a known WebKit limitation.
 - Firefox macOS completion of its restricted-page, permission-revocation,
   live-form/editable, and offline checks, plus investigation of the
   protected-text concerns.
