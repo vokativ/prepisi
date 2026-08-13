@@ -22,8 +22,8 @@ test("creates a narrow HTTP/HTTPS registration for one hostname", () => {
 });
 
 test("curated portal aliases share one rule key and explicit permissions", () => {
-  const apex = persistence.descriptorForUrl("https://index.hr/vijesti", { curated: true });
-  const www = persistence.descriptorForUrl("https://www.index.hr/vijesti", { curated: true });
+  const apex = persistence.descriptorForUrl("https://index.hr/vijesti");
+  const www = persistence.descriptorForUrl("https://www.index.hr/vijesti");
   assert.equal(apex.key, "index.hr");
   assert.equal(www.key, "index.hr");
   assert.equal(apex.curated, true);
@@ -31,17 +31,38 @@ test("curated portal aliases share one rule key and explicit permissions", () =>
     "http://index.hr/*", "https://index.hr/*",
     "http://www.index.hr/*", "https://www.index.hr/*"
   ]);
+  assert.equal(www.id, apex.id);
+  assert.ok(www.registrationIds.includes(www.id));
+  assert.equal(new Set(www.registrationIds).size, www.registrationIds.length);
   assert.equal(persistence.ruleForSite({ "www.index.hr": { targetScript: "latin" } }, apex).targetScript,
     "latin");
 });
 
-test("non-Firefox builds keep exact-host persistence even for catalog sites", () => {
-  const site = persistence.descriptorForUrl("https://www.index.hr/vijesti");
+test("an explicit non-curated descriptor remains exact-host", () => {
+  const site = persistence.descriptorForUrl("https://www.index.hr/vijesti", { curated: false });
   assert.equal(site.key, "www.index.hr");
   assert.equal(site.curated, false);
   assert.deepEqual(Array.from(site.matches), [
     "http://www.index.hr/*", "https://www.index.hr/*"
   ]);
+});
+
+test("RTS paths share one finite apex and www portal family", () => {
+  const homepage = persistence.descriptorForUrl("https://rts.rs/lat/");
+  const article = persistence.descriptorForUrl("https://www.rts.rs/vesti/clanak.html?view=full");
+  assert.equal(homepage.key, "rts.rs");
+  assert.equal(article.key, "rts.rs");
+  assert.deepEqual(Array.from(article.hosts), ["rts.rs", "www.rts.rs"]);
+  assert.deepEqual(Array.from(article.matches), [
+    "http://rts.rs/*", "https://rts.rs/*",
+    "http://www.rts.rs/*", "https://www.rts.rs/*"
+  ]);
+  assert.equal(article.registrationIds.length, 2);
+
+  const unreviewed = persistence.descriptorForUrl("https://oko.rts.rs/tekst");
+  assert.equal(unreviewed.key, "oko.rts.rs");
+  assert.equal(unreviewed.curated, false);
+  assert.deepEqual(Array.from(unreviewed.hosts), ["oko.rts.rs"]);
 });
 
 test("curated catalog is normalized, non-overlapping, and below the reviewed cap", () => {
@@ -79,6 +100,13 @@ test("registered site scripts are ordered, local, persistent, and top-frame only
     assert.equal(fs.existsSync(path.join(root, file)), true, file);
     assert.doesNotMatch(file, /^(?:https?:|\/)/u);
   }
+});
+
+test("registration uses one canonical ID for every explicit alias match", () => {
+  const site = persistence.descriptorForUrl("https://www.rts.rs/lat/");
+  const registration = persistence.registrationFor(site);
+  assert.equal(registration.id, persistence.descriptorForUrl("https://rts.rs/").id);
+  assert.deepEqual(registration.matches, Array.from(site.matches));
 });
 
 test("automatic content script applies only a stored rule for the current hostname", async () => {

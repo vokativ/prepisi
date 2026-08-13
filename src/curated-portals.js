@@ -3,9 +3,10 @@
 
   if (global.PrepisiCuratedPortals) return;
 
-  // Firefox predeclares these explicitly reviewed editorial hosts. Keep aliases
-  // explicit: a registrable-domain wildcard could cover unrelated account, ad,
-  // or user-content subdomains.
+  // Firefox predeclares these hosts; every browser uses the same reviewed alias
+  // families when the user opts into site memory. Keep aliases explicit: a
+  // registrable-domain wildcard could cover unrelated account, ad, or
+  // user-content subdomains.
   const RAW_PORTALS = [
     ["rs-n1", "n1info.rs", ["n1info.rs", "www.n1info.rs"], "core", ["RS"], ["sr"]],
     ["rs-blic", "blic.rs", ["blic.rs", "www.blic.rs"], "core", ["RS"], ["sr"]],

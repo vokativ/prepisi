@@ -103,10 +103,14 @@
   async function unregisterSite(site) {
     if (firefoxBuild) return;
     if (!site || !webext.scripting?.unregisterContentScripts) return;
-    try {
-      await webext.scripting.unregisterContentScripts({ ids: [site.id] });
-    } catch (_) {
-      // The script was not registered in this extension session.
+    for (const id of site.registrationIds || [site.id]) {
+      try {
+        await webext.scripting.unregisterContentScripts({ ids: [id] });
+      } catch (_) {
+        // The script was not registered in this extension session. Trying
+        // every reviewed legacy ID cleans up exact-host registrations created
+        // before portal aliases were shared across browser builds.
+      }
     }
   }
 
@@ -229,14 +233,14 @@
     }
   }
 
-  async function requestApply(settingsOverride) {
+  async function requestApply(settingsOverride, { persistSiteRule = true } = {}) {
     if (applying) return;
     applying = true;
     setBusy(true);
     try {
       const settings = settingsOverride || await settingsFromForm();
       await runApply(settings);
-      await saveSiteRule(settings);
+      if (persistSiteRule) await saveSiteRule(settings);
     } catch (error) {
       const restricted = /Cannot access|extensions gallery|chrome:\/\/|edge:\/\/|Missing host permission/i.test(error.message);
       setStatus(restricted ? "restrictedPage" : "applyFailed",
@@ -303,9 +307,16 @@
     await webext.storage.local.set({ uiScript });
   });
   restoreButton.addEventListener("click", async () => {
-    const settings = { ...await webext.storage.local.get(DEFAULTS), ...ORIGINAL_PAGE_STATE };
+    const settings = {
+      ...await webext.storage.local.get(DEFAULTS),
+      ...ORIGINAL_PAGE_STATE,
+      // Restore changes this document only. With no dialect conversion there
+      // are no visible ranges, but keeping the preference avoids a surprising
+      // toggle reset when the reader chooses a dialect again.
+      highlightDialectChanges: highlightDialect.checked
+    };
     fillForm(settings);
-    await requestApply(settings);
+    await requestApply(settings, { persistSiteRule: false });
   });
   document.querySelector("#settings").addEventListener("click", () => webext.runtime.openOptionsPage());
 

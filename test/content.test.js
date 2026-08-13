@@ -252,4 +252,5 @@ test("page controller highlights dialect changes without wrapping page content",
   controller.apply({ targetScript: "original", targetDialect: "original", highlightDialectChanges: true });
   assert.equal(highlight.size, 0);
   assert.equal(paragraph.text.nodeValue, "Vetar i lepo mesto.");
+  assert.equal(controller.getStatus().options.highlightDialectChanges, true);
 });

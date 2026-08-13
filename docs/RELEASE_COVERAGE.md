@@ -7,7 +7,7 @@ required before changing a platform from **candidate** to **supported**.
 Repository, Firefox Android, and partial Apple-platform validation completed on
 2026-08-12:
 
-- The shared automated suite passes 83/83, including frozen samples from
+- The shared automated suite passes 86/86, including frozen samples from
   Index.hr, NSPM, Vijesti.me, and Klix.ba.
 - Chromium, Edge, Firefox, and Safari-source packages build successfully.
 - Mozilla `web-ext lint` reports 0 errors, 0 notices, and 0 warnings for the
@@ -48,6 +48,13 @@ Repository, Firefox Android, and partial Apple-platform validation completed on
   `RTS`/hostname sampling, and source restoration; the rest of the phone runtime
   checklist remains. Safari macOS did not expose the regenerated wrapper in
   Extensions settings.
+- A 2026-08-13 follow-up superseded that Safari loading block: macOS Safari
+  loaded the extension and passed conversion, restoration, remembered
+  next-article navigation, backgrounding, and offline conversion. macOS and
+  iPhone both failed to paint Custom Highlight ranges on an affected RTS layout,
+  consistent with open WebKit bug 307455. The iPhone run also exposed the old
+  apex/`www` persistence split and Restore-overwrites-memory behavior. Their
+  automated corrections pass, but rebuilt Safari runtime confirmation remains.
 - Exact evidence and pending gates are recorded in
   [`docs/APPLE_PLATFORM_TEST_2026-08-12.md`](APPLE_PLATFORM_TEST_2026-08-12.md).
 
@@ -60,8 +67,8 @@ Repository, Firefox Android, and partial Apple-platform validation completed on
 | Edge Android/iOS | Same Edge Add-ons listing | Microsoft mobile certification/visibility and phone tests | First-class after validation |
 | Firefox desktop (Windows/macOS/Linux) | `prepisi-<version>-firefox.zip` | Lint and broad macOS runtime pass; remaining restricted/offline/form checks, other-OS smoke tests, and AMO signing remain | First-class |
 | Firefox Android | Same AMO package | Core phone smoke passed; remembered navigation, remaining mobile checks, AMO signing, and signed-build retest remain | First-class |
-| Safari macOS | `prepisi-<version>-safari-source.zip` | Wrapper compiles; trusted normal loading and full Mac runtime test remain | First-class |
-| Safari iOS/iPadOS | Same Apple project | iPhone build/install/enable/core RTS pass; remaining phone runtime, iPad, TestFlight, and App Store tests remain | First-class |
+| Safari macOS | `prepisi-<version>-safari-source.zip` | Wrapper loads and broad runtime passes; affected-layout highlighting and rebuilt alias/Restore retest remain | First-class |
+| Safari iOS/iPadOS | Same Apple project | iPhone build/install/enable/core RTS pass; rebuilt alias/Restore, recovery/protected-text, iPad, TestFlight, and App Store tests remain | First-class |
 | Brave/Opera desktop | Chromium package | Compatibility smoke tests | Best effort |
 | Yandex Android | Published Chromium listing or unpacked test | Manual phone test | Exploratory |
 | Orion iOS/iPadOS | Compatible published package | Manual phone/tablet test | Exploratory |
@@ -81,9 +88,10 @@ Run this checklist independently on each platform that will be called supported:
 - Change Ekavian, Ijekavian, and Ikavian forms in both scripts.
 - Confirm one-click changes and tab-local state.
 - With **Remember on this site** off, confirm a new document starts from its
-  source state. On Firefox, verify a curated portal needs no second host prompt
-  and that its explicit apex/`www` aliases share the rule; elsewhere accept the
-  exact-host prompt. Confirm unrelated hosts do not inherit the rule.
+  source state. Verify a curated portal's explicit apex/`www` aliases share the
+  rule on every browser; Firefox should need no second catalog-host prompt,
+  while other browsers may request that finite alias family. Confirm unrelated
+  hosts do not inherit the rule.
 - Toggle dialect highlighting and confirm script-only changes are not highlighted.
 - Check protected brands, foreign names, URLs, email addresses, form controls,
   and explicitly foreign-language spans.

@@ -80,7 +80,13 @@ test("popup prefers active-page state and stores navigation rules only after sit
   assert.match(popupScript, /registerContentScripts/u);
 });
 
-test("site persistence is optional, hostname-scoped, and initiated by its own control", () => {
+test("restore is page-local and preserves the highlight preference", () => {
+  const popupScript = fs.readFileSync(path.join(root, "src/popup/popup.js"), "utf8");
+  assert.match(popupScript, /highlightDialectChanges:\s*highlightDialect\.checked/u);
+  assert.match(popupScript, /requestApply\(settings, \{ persistSiteRule: false \}\)/u);
+});
+
+test("site persistence is optional, narrowly scoped, and initiated by its own control", () => {
   const popup = fs.readFileSync(path.join(root, manifest.action.default_popup), "utf8");
   const popupScript = fs.readFileSync(path.join(root, "src/popup/popup.js"), "utf8");
   assert.match(popup, /id="remember-site"/u);

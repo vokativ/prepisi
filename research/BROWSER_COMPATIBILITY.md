@@ -30,7 +30,7 @@ Google Chrome on Android is not a target: Google says extensions can only be ins
 | Firefox-only MV3 event page; no Chromium service worker | Firefox uses a synchronous top-level `webNavigation.onCompleted` listener for remembered navigation. Chromium keeps its existing popup/dynamic-registration path and does not gain a background worker. |
 | All conversion data and executable code are packaged locally | Compatible with Manifest V3 remote-code rules and with the extension's privacy claim. |
 | Conversion is ordinary JavaScript plus DOM APIs | The language engine itself should remain browser-neutral. |
-| Page code is normally injected only after the user opens and uses the popup | Fits the temporary permission model of `activeTab`. On Firefox, **Remember on this site** stores a local portal-family or exact-host rule; the MV3 event page reapplies it only after verifying host access. |
+| Page code is normally injected only after the user opens and uses the popup | Fits the temporary permission model of `activeTab`. On every browser, **Remember on this site** stores a local finite portal-family or exact-host rule; Firefox's MV3 event page reapplies it only after verifying host access. |
 | CSS Custom Highlight API is feature-detected | Conversion still works when highlighting is unavailable; only the optional visual emphasis is lost. |
 | Generated language files are classic scripts with ordered globals | Works with the current `scripting.executeScript({files: [...]})` approach without a browser-specific bundler. |
 
@@ -377,7 +377,7 @@ Mobile-specific gates:
 1. Add a tiny `webext` namespace adapter and replace direct API calls in popup/options code. **Implemented.**
 2. Make popup sizing responsive without changing the desktop visual identity. **Implemented.**
 3. Generate Chromium, Edge, Firefox, and Safari-source packages from the shared runtime; keep the explicit package allowlist. **Implemented.**
-4. Add optional hostname-scoped navigation continuity. Chromium uses dynamic content-script registration; Firefox uses a non-persistent MV3 event page plus its reviewed portal catalog. **Implemented; signed Firefox Android durability remains unverified.**
+4. Add optional exact-host or finite reviewed-alias navigation continuity. Chromium and Safari use dynamic content-script registration; Firefox uses a non-persistent MV3 event page plus its predeclared portal catalog. **Implemented; signed Firefox Android durability remains unverified.**
 5. Smoke-test the Edge package on desktop, submit it to Partner Center with mobile compatibility in the certification notes, then test the approved listing on Android and iOS.
 6. Lint the Firefox package with `web-ext`, test Firefox desktop, and obtain Mozilla signing.
 7. Test the same signed Firefox artifact on Android before enabling Android compatibility on the AMO listing.
