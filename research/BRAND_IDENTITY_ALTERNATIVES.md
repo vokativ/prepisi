@@ -12,14 +12,19 @@ public-release gate (`docs/PROJECT_STATUS.md`, `docs/PERSONAL_PUBLISHER_ACCOUNTS
 ## Why the current mark matters, not just what it is
 
 `scripts/render-brand-assets.py` renders the icon from **Balkan Sans One**, a
-Typotheque typeface built specifically so a single Cyrillic string and its
-Latin transliteration share structural strokes — one glyph set reads as
-`ПРЕ` and, rotated/mirrored, doubles as `PRE`. That is not decorative: it is
-the single clearest visual expression of what Prepiši does (pairing Cyrillic
-and Latin, and by extension Ekavian/Ijekavian/Ikavian, as the same underlying
-language). Losing that mechanism is a real design loss, not just a licensing
-inconvenience, so the goal below is to keep the *spirit* — visibly pairing two
-scripts in one mark — without depending on Typotheque's specific artwork.
+Typotheque typeface built specifically so typing a Cyrillic string produces a
+two-row mark: a Latin transliteration on top and the Cyrillic original below,
+in matching weight, engineered into the font so it works automatically for
+arbitrary input (not a glyph that reads two ways when rotated or mirrored —
+see `research/BRAND_IDENTITY_GEMINI_PROMPTS.md` → "The idea, precisely" for
+the corrected mechanics). That is not decorative: it is the single clearest
+visual expression of what Prepiši does (pairing Cyrillic and Latin, and by
+extension Ekavian/Ijekavian/Ikavian, as the same underlying language). Losing
+the font that automates it is a real design loss for arbitrary text, but the
+*fixed* three-letter brand mark doesn't need that automation — a manually
+stacked lockup in a different font gets the same visual result. The goal
+below is to keep that spirit without depending on Typotheque's specific
+artwork.
 
 ## Option 1 — Ask Typotheque for a logo-only usage rider (do this in parallel; low cost)
 
@@ -49,14 +54,13 @@ outside `assets/`):
 
 - **Concept A — plain two-line lockup.** Latin `PRE` stacked directly over
   Cyrillic `ПРЕ` in the same bold weight, on the existing green field with the
-  gold footer strip. This keeps the "two scripts, one word, stacked together"
-  reading that the user asked to preserve, without attempting Balkan Sans's
-  ambigram illusion (that specific glyph-sharing trick is the part that is
-  actually derived from Typotheque's design and the part worth not
-  recreating closely). It is legally clean because it uses only an ordinary,
-  openly licensed font in its normal form — no redesigned letterforms. The
-  first prototype ran the two lines slightly too tight (they touch); that is
-  a five-minute kerning/line-height fix, not a structural problem.
+  gold footer strip. This is the same structural logic Balkan Sans itself
+  uses (a stacked Latin-over-Cyrillic lockup, not a rotated/mirrored glyph —
+  see the correction above), reproduced with an ordinary, openly licensed
+  font instead of Typotheque's outlines. It's legally clean because nothing
+  about the letterforms themselves is redesigned or copied. The first
+  prototype ran the two lines slightly too tight (they touch); that is a
+  five-minute kerning/line-height fix, not a structural problem.
 - **Concept B — homoglyph monogram.** Cyrillic `Р` (er) and Latin `P` are the
   same shape in every standard typeface — a typographic fact, not anyone's
   intellectual property. A single bold `P/Р` glyph, with a small
@@ -85,13 +89,12 @@ prompt text, model guidance, and a Cyrillic-text-rendering risk warning are in
 
 ## Option 3 — Commission original bespoke artwork
 
-If the ambigram-style shared-stroke trick itself (not just a stacked
-two-script lockup) is important to keep, the safe way to keep it is to pay a
-type/logo designer for a small work-for-hire mark inspired by the same idea
-but independently drawn — style and genre are not protectable, only the
-specific outlines are, so an original redraw removes the licensing question
-permanently. This is more expensive than Option 2 and slower than Option 1,
-so it is a later upgrade, not a blocker for the first public release.
+If it's worth polishing further than an image-model or font-render draft can
+get — e.g. genuinely custom letterforms rather than an existing font's
+capitals — the safe way is to pay a type/logo designer for a small
+work-for-hire mark inspired by the same stacked-lockup idea but independently
+drawn. This is more expensive than Option 2 and slower than Option 1, so it
+is a later upgrade, not a blocker for the first public release.
 
 ## Suggested sequencing
 
