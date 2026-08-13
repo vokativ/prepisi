@@ -256,7 +256,10 @@ Observed setup passes:
   phone was unlocked.
 - Automatic signing produced a development-signed arm64 containing app with the
   expected development bundle identifier (`com.vokativ.prepisi.dev`) and embedded extension (`com.vokativ.prepisi.dev.Extension`).
-- Verified codesign authority via `codesign -dvvv`: Both `Prepisi.app` and `Prepisi Extension.appex` are signed with matching `Authority: Apple Development: appstore@vulcanusholdings.com (WP2ALBXBCB)` and matching `TeamIdentifier: H4H39V242H`.
+- Verified codesign authority via `codesign -dvvv`: `Prepisi.app` and
+  `Prepisi Extension.appex` used the same Apple development authority and team.
+  The account email, certificate suffix, and team identifier are intentionally
+  omitted from this public-facing test record.
 - The signed app passed deep verification, installed on the phone, appeared in
   the developer-app inventory, and launched successfully.
 Pending phone-side work:
@@ -338,7 +341,12 @@ remain explicitly pending:
   live-form/editable, and offline checks, plus investigation of the
   protected-text concerns.
 - Edge macOS, iPadOS, store-signed Firefox, and TestFlight/App Store distribution.
-- **Pre-Publishing Apple Signing Check**: For physical device testing, `Vulcanus Holdings Inc.` was retained as the signing team because `com.vokativ.prepisi.dev` was initially registered to that team in Apple's provisioning database. Before final submission, if releasing under an individual developer account, verify team credentials and update bundle IDs to generate final signed production archives.
+- **Pre-Publishing Apple Signing Check**: Physical-device testing used an
+  existing development team and the temporary `com.vokativ.prepisi.dev` bundle
+  family. The release owner subsequently chose individual publication under
+  their personal legal name. Before final submission, select that individual
+  team and replace the temporary identifiers with the permanent production
+  bundle IDs when generating signed release archives.
 Generated browser folders, wrapper projects, DerivedData, certificates,
 provisioning profiles, and device output were kept outside version control.
 The Firefox temporary `web-ext` session and disposable Chrome process were

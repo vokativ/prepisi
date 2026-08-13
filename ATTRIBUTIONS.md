@@ -1,6 +1,6 @@
 # Data attributions
 
-Prepiši 0.9.0 includes compact, generated Ekavian/Ijekavian/Ikavian form relationships.
+Prepiši 0.9.1 includes compact, generated Ekavian/Ijekavian/Ikavian form relationships.
 The extension performs all conversion locally and does not ship the source
 archives or contact these projects while a user browses.
 
@@ -68,11 +68,18 @@ Ijekavian legal corpus from ICEF-NLP/COMtext.SR, pinned to commit
 
 COMtext is treated as a secondary, non-exhaustive observation source. Its 316
 observed lemma relationships and 748 observed surface-form relationships are
-properties of this one corpus, not rules or limits for the language. The
-project's official site says its resources are intended to be available for any
-purpose, including commercial use, but the pinned corpus repository does not yet
-state explicit redistribution terms. Author confirmation or removal of the
-derived observations remains a gate before the repository becomes public:
+properties of this one corpus, not rules or limits for the language. Verified
+2026-08-13: the pinned commit's README and the current upstream `main` README
+both carry a `## Licence` section stating that every COMtext.SR dataset is
+published under CC BY 4.0 International and every fine-tuned model under
+Apache 2.0, "free to use for any purpose, including commercial, with
+attribution of authorship" (translated from the original Serbian). This
+attribution entry, the pinned commit, and the upstream project link fulfil the
+CC BY 4.0 attribution requirement, so this source no longer blocks the
+public-release decision. Project contact for optional written confirmation or
+collaboration: dr Vuk Batanović, COMtext.SR project lead,
+<vuk.batanovic@ic.etf.bg.ac.rs>. License text:
+<https://creativecommons.org/licenses/by/4.0/>. Project page:
 <https://www.ic.etf.bg.ac.rs/projects/comtext-sr/>.
 
 ## Prepiši reviewed relations

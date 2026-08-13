@@ -79,7 +79,7 @@ claim.
 
 | Operating system | Browsers in intended coverage | What can be verified in this repository | Physical test still required |
 | --- | --- | --- | --- |
-| Windows desktop | Chrome, Edge, Firefox | All target builds, manifest/API gates, offline converter/content tests, Firefox lint | Final 0.9 popup, navigation-permission, and real-site smoke pass in each browser |
+| Windows desktop | Chrome, Edge, Firefox | All target builds, manifest/API gates, offline converter/content tests, Firefox lint | Owner-reported complete (`docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`); exact versions/dates pending for a full dated report |
 | macOS desktop | Chrome, Edge, Firefox, Safari | Chrome/Edge/Firefox use the same OS-neutral packages; Safari source manifest is generated and version-gated | All four browsers on a Mac; Safari Xcode wrapper, signing, permissions, and highlight rendering |
 | Linux desktop | Chrome/Chromium, Edge, Firefox | Same OS-neutral Chromium/Edge/Firefox packages; no native dependency | Smoke pass on at least one supported distribution/window system per browser |
 | Android | Firefox; Edge mobile candidate; Yandex exploratory; Samsung partnership | Firefox Android minimum/API declarations and Edge package are generated | Phone install, popup/touch/text scale, permissions, navigation, tab discard, long-page performance, store visibility |

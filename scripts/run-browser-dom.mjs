@@ -7,7 +7,11 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 
-// 1. Start local HTTP server
+// Browser-DOM integration test for the conversion engine and content controller.
+// The fixture loads repository source files directly, so this does not validate
+// extension installation, manifests, popup controls, or browser permissions.
+
+// 1. Start the local fixture server.
 const MIME_TYPES = {
   ".html": "text/html",
   ".js": "text/javascript",
@@ -18,7 +22,7 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
   const safePath = path.normalize(req.url).replace(/^(\.\.[\/\\])+/, "");
   const filePath = path.join(root, safePath === "/" ? "test/fixture.html" : safePath);
-  
+
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(404, { "Content-Type": "text/plain" });
@@ -34,14 +38,13 @@ const server = http.createServer((req, res) => {
 await new Promise((resolve) => server.listen(8080, "127.0.0.1", resolve));
 console.log("Local HTTP server running on http://127.0.0.1:8080");
 
-// 2. Spawn Chrome with unpacked extension build/chromium
+// 2. Spawn headless Chrome. The fixture supplies the code under test directly.
 const chromePath = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const userDataDir = `/tmp/chrome-e2e-${Date.now()}`;
+const userDataDir = `/tmp/prepisi-browser-dom-${Date.now()}`;
 
 const chromeProcess = spawn(chromePath, [
   "--headless=new",
   "--remote-debugging-port=9222",
-  `--load-extension=${path.join(root, "build/chromium")}`,
   `--user-data-dir=${userDataDir}`,
   "--no-first-run",
   "--no-default-browser-check"
@@ -115,7 +118,7 @@ const evalInit = await sendCDP("Runtime.evaluate", {
 });
 results.push({ test: "Page Title Initialized", pass: evalInit.result.value.includes("Probna stranica") });
 
-// Step 2: Apply Cyrillic + Ijekavian via harness button
+// Step 2: Apply Cyrillic + Ijekavian through the fixture harness.
 await sendCDP("Runtime.evaluate", {
   expression: `document.querySelector("#apply-cyr-ijek").click()`
 });
@@ -169,7 +172,7 @@ for (const sample of portalSamples) {
     pass: evalSample.result.value === sample.expected
   });
 }
-console.log("\n=== Automated E2E Chromium Verification Report ===");
+console.log("\n=== Automated Browser-DOM Integration Report ===");
 let allPassed = true;
 for (const res of results) {
   const status = res.pass ? "PASS" : "FAIL";
@@ -185,9 +188,9 @@ server.close();
 
 console.log("\nServer & Chrome process shut down.");
 if (allPassed) {
-  console.log(`SUCCESS: All ${results.length} E2E browser tests passed cleanly!`);
+  console.log(`SUCCESS: All ${results.length} browser-DOM integration checks passed.`);
   process.exit(0);
 } else {
-  console.error("FAILURE: Some E2E tests failed.");
+  console.error("FAILURE: Some browser-DOM integration checks failed.");
   process.exit(1);
 }

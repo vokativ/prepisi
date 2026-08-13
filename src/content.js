@@ -1,7 +1,7 @@
 (function initialisePrepisiPageController(root) {
   "use strict";
 
-  const CONTROLLER_VERSION = "0.9.0";
+  const CONTROLLER_VERSION = "0.9.1";
   if (root.__PREPISI__?.version === CONTROLLER_VERSION) return;
   if (root.__PREPISI__) {
     try { root.__PREPISI__.apply({ targetScript: "original", targetDialect: "original" }); } catch (_) {}

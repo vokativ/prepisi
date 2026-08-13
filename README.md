@@ -104,6 +104,9 @@ research candidates visibly separate:
   browser support decisions and official vendor sources;
 - [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) is the concise machine-handoff
   note with the verified baseline and next release work;
+- [`docs/PERSONAL_PUBLISHER_ACCOUNTS.md`](docs/PERSONAL_PUBLISHER_ACCOUNTS.md)
+  records the personal-account setup, store-registration choices, and submission
+  order for Chrome, Edge, Firefox, and Safari;
 - [`AGENTS.md`](AGENTS.md) gives coding agents the repository guardrails and the
   current Firefox Android/macOS handoff;
 - [`SECURITY.md`](SECURITY.md), [`PRIVACY.md`](PRIVACY.md), and
@@ -114,8 +117,13 @@ Bad-conversion and dialect-data issue forms are included under `.github/`, and
 the continuous-integration workflow runs the complete offline test suite on every
 push and pull request.
 
-For a controlled human test, serve `test/fixture.html` from a local HTTP server,
-load the extension, and exercise the matrix below.
+For a controlled installed-extension test, serve `test/fixture.html` from a
+local HTTP server, load the extension, and exercise the matrix below through the
+extension popup—not the fixture's green development buttons. The separate
+`npm run test:browser-dom` command drives that built-in harness in headless
+Chrome; because the fixture imports repository source directly, that command
+does not validate extension installation, popup controls, the manifest, or
+browser permissions.
 
 For the pre-publication real-site pass, follow [`HUMAN_TEST.md`](HUMAN_TEST.md).
 
@@ -332,7 +340,9 @@ The privately licensed Balkan Sans font binaries are never part of this reposito
 - Human-test the optional exact-host/finite-alias persistence prompt and navigation flow
   in every release browser.
 - Test shadow DOM, frames, very large pages, and accessibility with human testers.
-- Complete Firefox desktop/Android and Safari macOS/iOS device smoke tests before
-  describing those generated packages as supported releases.
+- Test the exact store-signed Firefox package on desktop and Android and the
+  exact TestFlight/App Store Safari builds before describing those packages as
+  fully supported releases. The 0.9.1 local macOS/iPhone publishing smoke pass
+  is recorded in `docs/APPLE_PLATFORM_TEST_2026-08-13.md`.
 - Produce the required store icon sizes, screenshots, localized descriptions, and
   publish the privacy policy at a stable public URL.

@@ -395,7 +395,7 @@
       addedPairs: lexiconGroups.length
     }) : null
   });
-  const api = Object.freeze({ version: "0.9.0", FAMILIES, GROUPS, SOURCES });
+  const api = Object.freeze({ version: "0.9.1", FAMILIES, GROUPS, SOURCES });
 
   root.PrepisiDialectData = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;

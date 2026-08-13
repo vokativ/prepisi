@@ -6,6 +6,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const buildRoot = path.join(root, "build");
 const targets = ["chromium", "edge", "firefox", "safari"];
 const requiredEntries = ["manifest.json", "src", "assets", "PRIVACY.md", "ATTRIBUTIONS.md", "LICENSE"];
+const packageVersion = JSON.parse(
+  await fs.readFile(path.join(root, "package.json"), "utf8")
+).version;
 
 console.log("=== Verifying Build Output Targets ===");
 
@@ -49,6 +52,11 @@ for (const target of targets) {
     }
     if (manifest.name !== "Prepiši — pismo i izgovor" && manifest.name !== "Prepiši") {
       throw new Error(`Unexpected manifest name: ${manifest.name}`);
+    }
+    if (manifest.version !== packageVersion) {
+      throw new Error(
+        `Expected version ${packageVersion} from package.json, got ${manifest.version}`
+      );
     }
     
     // Target specific checks
