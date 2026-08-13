@@ -1,57 +1,99 @@
 # Gemini image-generation prompts for the brand identity replacement
 
 Companion to `research/BRAND_IDENTITY_ALTERNATIVES.md`. That note covers *why*
-a replacement is needed and three strategic options; this note is the
-practical prompt set for Option 2 (original artwork in the same two-script
-spirit), written for Google's Gemini/Nano Banana image models. Save raw
-exports to `design/brand-concepts/` — never directly into `assets/`, which
-ships inside the packaged extension.
+a replacement is needed; this note is the practical prompt set, written for
+the actual Google AI Studio model catalog. Save raw exports to
+`design/brand-concepts/` — never directly into `assets/`, which ships inside
+the packaged extension.
+
+## The idea, precisely, before any prompt
+
+What Balkan Sans actually does for the current icon is not a rotated/mirrored
+single-glyph ambigram. Typing the Cyrillic string `ПРЕ` produces a two-row
+mark: a Latin transliteration on top (`PRE`) and the Cyrillic original below
+(`ПРЕ`), in matching weight, with the row for `Е` visually collapsing since
+Cyrillic `Е` and Latin `E` are already the same shape. It is a **stacked
+Latin-over-Cyrillic lockup that leans on real homoglyphs where they exist**,
+engineered as a font so it works automatically for arbitrary input — not a
+letterform that reads two different ways when flipped.
+
+Per the owner's direction: don't overengineer a new rotational-ambigram
+invention. **Copy that same logic — a stacked Latin/Cyrillic lockup — with a
+different, openly licensed font**, not Balkan Sans's outlines. That is Track B
+below, and it's now the primary recommended path, not a fallback.
+
+Worth knowing while prompting: Cyrillic `Е` (position 3 of `ПРЕ`) is an exact
+homoglyph of Latin `E` — free, no risk. Cyrillic `Р` (position 2) is an exact
+homoglyph of Latin `P`, but that's a *cross-position* coincidence (position 2
+of `ПРЕ` looks like Latin `P`, not like Latin `R`), so it doesn't let you
+collapse the whole word into one shared row — the two-row stack is still the
+right structure, exactly like Balkan Sans uses.
 
 ## Which model to use
 
-As of 2026-08, Google's native image-generation family is branded **Nano
-Banana**, built on Gemini image models, accessible through the Gemini app
-(gemini.google.com) or Google AI Studio (aistudio.google.com):
+Per Google's own documentation (`ai.google.dev/gemini-api/docs/image-generation`,
+`ai.google.dev/gemini-api/docs/imagen`) and product announcements, checked
+2026-08-13:
 
-- **Nano Banana Pro** (Gemini 3 Pro Image) — best for studio-quality control
-  and precise brand consistency. Use this for the candidates you're actually
-  comparing/keeping.
-- **Nano Banana 2** (Gemini 3.1 Flash Image) — faster, cheaper, and
-  specifically noted for more reliable text rendering than earlier models.
-  Good for quick iteration, especially on the wordmark prompts below.
+| Model (AI Studio name) | Model ID | Use it for | Why |
+| --- | --- | --- | --- |
+| **Nano Banana Pro** | `gemini-3-pro-image` | The wordmark (Track B) and any candidate you're refining toward final | Google's own model card (`deepmind.google/models/model-cards/gemini-3-pro-image/`) reports human-eval benchmark leads over Gemini 2.5 Flash Image, GPT-Image 1, Seedream v4, and Flux specifically in Text Rendering, Text Editing, Multi-Turn, and Visual Design categories; supports genuine multi-turn conversational editing (upload/reference a prior generation and ask for a targeted fix) and up to 4K, 1:1 included |
+| **Nano Banana 2** | `gemini-3.1-flash-image` | Fast iteration on Track A symbol concepts, and generating several first-pass Track B drafts before switching to Pro to fix specific glyphs | Its own model page lists "improved i18n text rendering" explicitly; also supports multi-turn editing; 4K, 1:1 included |
+| Nano Banana 2 Lite | `gemini-3.1-flash-lite-image` | Cheap bulk exploration only | Google's docs explicitly say it is **not optimized for multi-turn sequential editing** — skip it once you're iterating on a specific candidate |
+| Nano Banana (legacy) | `gemini-2.5-flash-image` | Skip | 1024px cap only; Google's own docs recommend migrating off it |
 
-Both are conversational/multimodal: after a first generation you can reply
-with follow-ups like "keep this composition but simplify the arrows" or
-"regenerate with a slightly bolder stroke weight" instead of rewriting the
-whole prompt. Every generated image carries an invisible SynthID watermark;
-that doesn't affect using it as your own icon artwork.
+**Do not use the Imagen 4 family** (`imagen-4.0-generate-001` / `-ultra` /
+`-fast`) for this, despite the "significantly better text rendering" label
+you saw in AI Studio. Three concrete, documented reasons:
 
-## Read this before generating anything: text rendering is the risk
+1. Google's Imagen API docs explicitly say prompts are **English only**.
+   There is no documented support for prompting it to render Cyrillic text at
+   all, let alone accurately.
+2. Imagen is a **one-shot text-to-image API with no multi-turn editing** —
+   there's no way to upload a draft and say "fix the second line," only
+   regenerate from scratch. Track B needs that correction loop.
+3. Google's Imagen docs state the whole Imagen model family is **being
+   deprecated and shut down on 2026-08-17**, with an explicit migration path
+   to the Nano Banana/Gemini image models. It is being retired in days, not a
+   model worth building a workflow around right now.
 
-AI image models are unreliable at rendering precise custom lettering,
-**especially non-Latin scripts like Cyrillic**, and especially inside a
-stylized logo/icon composition rather than a plain sentence. Even models
-marketed for "reliable text rendering" routinely invent, mirror, or garble
-individual Cyrillic glyphs. Do not accept a generated wordmark on trust:
+Google's own Gemini 3 Pro Image model card lists concrete limitations worth
+planning around: **small text is often blurry at 1K** (generate at 2K or 4K
+for anything with letterforms this small), long paragraphs/page-length text
+can fail, editing sometimes copy-pastes input rather than truly redrawing it,
+and it can show **spatial left/right confusion** — worth an explicit check
+that a stacked or mirrored layout didn't get flipped. No official source,
+including that model card, provides a Cyrillic-specific accuracy metric, and
+no independent, verifiable benchmark for Cyrillic text was found either —
+treat any blog post claiming a precise percentage (e.g. "94% Cyrillic
+accuracy") as unsupported marketing copy, not evidence. This is exactly why
+the verification steps below are not optional.
+
+All Nano Banana models are conversational/multimodal in Google AI Studio and
+the Gemini app (gemini.google.com): after a first generation, reply with
+follow-ups like "keep this composition but simplify the arrows" instead of
+rewriting the whole prompt. Every generated image carries an invisible SynthID
+watermark; that doesn't affect using it as your own icon artwork. None of
+these models has a documented alpha-transparency output — always ask for a
+solid background color and mask/crop it afterward.
+
+## Read this before generating anything: text rendering is still the risk
+
+Even the best-suited model here has no documented, verified Cyrillic-accuracy
+guarantee. Do not accept a generated wordmark on trust:
 
 1. Zoom in and check every Cyrillic letter in `ПРЕ` (П, Р, Е) individually
-   against a reference font. A single wrong glyph make the mark unusable, not
+   against a reference font. A single wrong glyph makes the mark unusable, not
    just imperfect.
-2. If a letter is wrong, ask Gemini to redo just the text (conversational
-   follow-up: "keep the layout and colors, redraw the Cyrillic text on the
-   second line exactly as ПРЕ") rather than accepting close-enough.
-3. If it can't get all three Cyrillic letters right after a few attempts,
-   fall back to the **Concept A** approach from
-   `research/BRAND_IDENTITY_ALTERNATIVES.md`: typeset the real word with an
-   actual openly licensed Cyrillic font (PT Sans, Manrope, Inter, IBM Plex
-   Sans) instead of asking an image model to draw it — that is the reliable
-   path, not a downgrade.
-
-Because of this, the prompt set below is split into a **symbol-only track**
-(no literal text — the reliable, lower-risk path, good for the small toolbar
-icon) and a **wordmark track** (literal Latin/Cyrillic text — experimental,
-verify carefully, best suited to the larger popup header where a mistake is
-easier to catch and regenerate).
+2. If a letter is wrong, use Nano Banana Pro's conversational editing rather
+   than restarting: "keep the layout, colors, and Latin line exactly the
+   same; redraw only the Cyrillic line as the three capital letters П, Р, Е."
+3. If it can't get all three Cyrillic letters right after a few attempts on
+   Pro, fall back to typesetting the real word with an actual openly licensed
+   Cyrillic font (PT Sans, Manrope, Inter, IBM Plex Sans) instead of asking an
+   image model to draw it — that is the reliable path, not a downgrade, and
+   `scripts/render-brand-assets.py` is already most of the way to a script
+   that could do this mechanically.
 
 ## Shared technical brief
 
@@ -72,15 +114,47 @@ transparency — output a solid background color, it will be masked/cropped
 afterward).
 ```
 
-Gemini cannot output real alpha transparency; always ask for a solid
-background in the brand green (`#10231E`) and remove/mask it afterward in an
-image editor, matching the existing rounded-square mask that
-`scripts/render-brand-assets.py` applies.
+## Track B — stacked Latin/Cyrillic wordmark (primary recommendation)
 
-## Track A — symbol-only icon concepts (reliable; use for the 16–128px icon)
+Same logic as Balkan Sans, different font. Use **Nano Banana Pro**, and
+explicitly request 2K or 4K output — Google's model card notes small text is
+often blurry at the default 1K.
 
-Generate each of these as its own conversation/prompt, then ask for 3–4
-variations of whichever one you like best before moving to post-processing.
+**B1 — Two-line stacked wordmark**, for the icon and popup header alike.
+
+```
+Design a two-line wordmark logo. Top line: the Latin word "PRE" in bold
+geometric sans-serif capitals. Bottom line, directly below and same width:
+the Cyrillic word "ПРЕ" (capital letters, Cyrillic Пе-Эр-Е — П, Р, Е) in the
+exact same bold geometric sans-serif style, same weight, same size. Both
+lines centered, tightly stacked with a small gap between them, cream
+(#F8F0DD) text on a solid deep green (#10231E) background. No decoration, no
+outline effects. This is for a browser extension that converts between Latin
+and Cyrillic Serbian script — the two lines should look like the same word
+written twice, once per script, in matching type.
+```
+
+Correction follow-up if the Cyrillic is wrong: `The Cyrillic line has an
+error. Keep the layout, colors, and Latin line exactly the same; redraw only
+the second line as the three Cyrillic capital letters П, Р, Е.`
+
+**B2 — Single-line lockup for a wider header.**
+
+```
+Design a horizontal wordmark: the Latin word "PREPISI" in bold geometric
+sans-serif capitals, immediately followed by a small gold (#E8AD38) two-arrow
+swap icon, followed by the Cyrillic word "ПРЕПИШИ" (capitals: П, Р, Е, П, И,
+Ш, И) in the same bold sans-serif style and weight as the Latin word. Cream
+(#F8F0DD) text on a solid deep green (#10231E) background, single horizontal
+line, flat vector style, no decoration.
+```
+
+## Track A — symbol-only icon concepts (backup/companion; no literal text)
+
+Lower risk since there's no text to get wrong, and reads better than any
+wordmark at 16px. Use **Nano Banana 2** for fast variation, then Pro on the
+winner. Generate each as its own conversation, then ask for 3–4 variations of
+whichever one you like best.
 
 **A1 — Homoglyph monogram.** Cyrillic `Р` and Latin `P` are literally the same
 shape in every standard typeface — use that fact instead of asking the model
@@ -98,35 +172,8 @@ geometric, no serifs, no decoration. It must read clearly as a single shape
 even when shrunk to the size of a small app icon.
 ```
 
-**A2 — Script-bridge / mirror motif.** No literal letters at all — a pure
-symbol for "two writing systems, one meaning."
-
-```
-Design an abstract geometric icon symbolizing two different alphabets or
-writing systems being the same underlying language: two simple angular
-letterform-like shapes facing each other, mirrored across a vertical center
-line, almost touching or overlapping slightly in the middle, like a visual
-rhyme rather than actual readable letters. Cream (#F8F0DD) shapes on a solid
-deep green (#10231E) background, with a thin gold (#E8AD38) line marking the
-mirror axis. Flat, minimal, geometric, bold enough to read at 16 pixels.
-```
-
-**A3 — Split-glyph texture.** A single letterform built from two visibly
-different construction styles, without claiming to be two different real
-alphabets.
-
-```
-Design an icon of one large, bold, abstract letterform-like glyph split
-vertically down the middle: the left half built from straight geometric
-strokes, the right half built from slightly curved, more calligraphic
-strokes, joined seamlessly into one shape — implying two different scripts
-merging into one word. Cream (#F8F0DD) on solid deep green (#10231E)
-background, one thin gold (#E8AD38) vertical seam marking the split. Flat
-vector, no gradients, legible at small sizes.
-```
-
-**A4 — Circular conversion badge.** A safer, more conventional "sync/convert"
-motif if A1–A3 feel too abstract.
+**A2 — Circular conversion badge.** A safer, more conventional "sync/convert"
+motif if A1 feels too abstract.
 
 ```
 Design a circular badge icon: two simple curved arrows forming a closed loop
@@ -136,41 +183,16 @@ green (#10231E) background, with a gold (#E8AD38) accent on one arrow tip.
 Flat geometric vector style, bold strokes, must stay legible at 16x16 pixels.
 ```
 
-## Track B — wordmark concepts (experimental; verify every Cyrillic glyph)
+## A harder idea, deliberately not pursued here
 
-Use these for the larger popup header/settings mark, where there's room to
-read text and room to fix mistakes before shipping. Do not use an unverified
-result for the small toolbar icon.
-
-**B1 — Two-line stacked wordmark**, matching the current layout without the
-Balkan Sans ambigram trick.
-
-```
-Design a two-line wordmark logo. Top line: the Latin word "PRE" in bold
-geometric sans-serif capitals. Bottom line, directly below and same width:
-the Cyrillic word "ПРЕ" (capital letters, Cyrillic Пе-Эр-Е — П, Р, Е) in the
-exact same bold geometric sans-serif style, same weight, same size. Both
-lines centered, tightly stacked with a small gap between them, cream
-(#F8F0DD) text on a solid deep green (#10231E) background. No decoration, no
-outline effects. This is for a browser extension that converts between Latin
-and Cyrillic Serbian script — the two lines should look like the same word
-written twice, once per script, in matching type.
-```
-
-Follow-up if the Cyrillic is wrong: `The Cyrillic line has an error. Redraw
-only the second line as the three Cyrillic capital letters П, Р, Е — keep
-everything else (layout, colors, Latin line) exactly the same.`
-
-**B2 — Single-line lockup for a wider header.**
-
-```
-Design a horizontal wordmark: the Latin word "PREPISI" in bold geometric
-sans-serif capitals, immediately followed by a small gold (#E8AD38) two-arrow
-swap icon, followed by the Cyrillic word "ПРЕПИШИ" (capitals: П, Р, Е, П, И,
-Ш, И) in the same bold sans-serif style and weight as the Latin word. Cream
-(#F8F0DD) text on a solid deep green (#10231E) background, single horizontal
-line, flat vector style, no decoration.
-```
+A true single-glyph ambigram — one custom shape that reads as a correct Latin
+`R` in one orientation and a correct Cyrillic `П` in another (the only letter
+pair in `PRE`/`ПРЕ` without a natural homoglyph) — was considered and set
+aside. It isn't a documented or reliably reproducible capability of any of
+these image models; it's a bespoke type-design problem that would need a
+human letterer regardless of model choice. The two-row stack above already
+delivers the "two scripts, one word" spirit without that risk, per the
+owner's direction to keep this simple.
 
 ## After generating: promotion checklist
 
