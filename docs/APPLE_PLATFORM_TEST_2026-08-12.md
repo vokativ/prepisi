@@ -310,13 +310,14 @@ performed.
   **Vrati izvorni tekst** overwriting the remembered rule with source modes and
   disabling the highlight preference.
 - **iOS Pull-to-Refresh Behavior**: The user observed on physical iPhone Safari that when **Vrati izvorni tekst** (Restore original text) is clicked, the current page DOM correctly restores to original. However, performing a pull-down refresh in Mobile Safari reloads the document, causing the active **Zapamti na ovom sajtu** (Remember on this site) rule to automatically re-apply the saved script/dialect mode to the fresh page.
+- **Product & UX Decision Note (Restore vs Site Memory)**:
+  * **Question**: Should clicking **Vrati izvorni tekst** only restore the current document, or should it also clear/update the stored website preference ("Zapamti na ovom sajtu")?
+  * **Best Practice Analysis**:
+    1. *Page-Local Scope (Recommended)*: **Vrati izvorni tekst** acts solely as an instant, page-local toggle for the active tab's DOM. Users frequently check original spellings or foreign names on a single article without wanting to wipe out their site-wide preference to read that portal (e.g. RTS or Vijesti) in Cyrillic/Ijekavian on subsequent articles.
+    2. *Site Rule Scope*: To permanently stop automatic conversion on a website, the user toggles off **Zapamti na ovom sajtu** or selects "Izvorno" as the target mode in the popup.
+    3. *UX Clarity*: Maintaining explicit separation between *Document Actions* (Restore page) and *Site Memory Rules* ("Zapamti na ovom sajtu") prevents accidental rule loss and follows standard WebExtension persistence patterns.
 
-A cross-browser correction is now under test: reviewed portal aliases share one
-finite explicit rule family on every browser, while unknown sites remain
-exact-host; Restore changes only the current document, preserves the highlight
-checkbox, and leaves the remembered next-document rule intact. This correction
-requires a rebuilt/reloaded Safari wrapper and physical-device retest before it
-is recorded as an observed pass.
+A cross-browser implementation is documented above: reviewed portal aliases share one finite explicit rule family on every browser, while unknown sites remain exact-host; Restore changes only the current document, preserves the highlight checkbox, and leaves the remembered next-document rule intact. This correction requires a rebuilt/reloaded Safari wrapper and physical-device retest before it is recorded as an observed pass.
 
 The broader 81-family DNS/editorial-alias audit has been completed and integrated into `src/curated-portals.js`. Its repeatable method and final findings are documented in
 [`research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](../research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md).
