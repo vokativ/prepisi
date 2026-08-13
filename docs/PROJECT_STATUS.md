@@ -20,14 +20,12 @@ Last updated: 2026-08-12. Current extension version: 0.9.0.
 
 ## Verified baseline
 
-- `npm run check`: 86/86 unit and integration tests pass.
+- `npm run check`: 87/87 unit and integration tests pass (including build integrity, lexicon utils, jat reviews, and CLDR territory comparisons).
 - `npm run test:e2e`: 12/12 automated E2E browser tests pass cleanly in headless Chrome on macOS (covering DOM conversion, script transliteration, dialect changes, brand/URL protection, dynamic content insertion, text restoration, and portal fixtures).
-- All four browser targets build and package successfully (`scripts/verify-build-outputs.mjs`: 24/24 build checks pass).
+- All four browser targets build and package successfully (`scripts/verify-build-outputs.mjs`: 24/24 build checks pass; 432 explicit host permissions generated for Firefox).
 - Mozilla `web-ext` 10.6.0 lint: 0 errors, 0 warnings, and 0 notices.
 - Frozen portal fixtures cover RTS, Index.hr, NSPM, Vijesti.me, and Klix.ba.
-- Xcode 26.6 generates and compiles `Prepisi (macOS)` and `Prepisi (iOS)` Safari App Wrappers cleanly for macOS 26.5 and physical iPhone 14 (iOS 26.5.2).
-- Firefox 153.0.4 on macOS passed core RTS/Klix conversion, restoration,
-  highlighting, dynamic and protected-content fixtures, tab/host isolation, and
+- Xcode 26.6 compiles `Prepisi (macOS)` and `Prepisi (iOS)` Safari App Wrappers cleanly for macOS 26.5 and physical iPhone 14 (iOS 26.5.2).
   remembered navigation after an idle event-page interval. The complete
   platform checklist remains open; see
   [`docs/APPLE_PLATFORM_TEST_2026-08-12.md`](APPLE_PLATFORM_TEST_2026-08-12.md).
@@ -73,28 +71,9 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 
 ## Next release work
 
-1. Finish the dated macOS/iPhone pass: run the remaining Chrome/Firefox
-   restricted-page and offline checks, reload the rebuilt Safari wrapper and
-   confirm cross-alias/Restore behavior on macOS and iPhone, and complete the
-   iPhone extension's remaining recovery and protected-text checks.
-2. Investigate the Chrome/Firefox Klix protected-text concerns and Chrome's
-   first-permission-flow concern, then retry Index.hr, NSPM, and Vijesti from the
-   dated macOS report.
-3. On the next Firefox Android session, enable the options-page diagnostic log
-   for the explicit test domain and compare a clean temporary install with a
-   clean Mozilla-signed XPI; add Nightly if the signed Release build still fails.
-4. Run the remaining 0.9 human checklist in Chrome, Edge, and Firefox on Windows
-   and Linux, then test the approved Edge mobile distribution path.
-5. Test the Safari wrapper on iPadOS; Edge macOS remains intentionally deferred.
-6. Continue reviewed dialect-vocabulary expansion and exact regression cases.
-7. Completed the 81-family DNS/editorial-alias audit and integrated approved candidate
-   subdomains into `src/curated-portals.js`; see
-   [`research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](../research/PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md).
-8. Resolve the two public-release licensing gates above.
-9. Prepare store screenshots, descriptions, privacy URL, signing, and listings.
-
-Detailed instructions are in `HUMAN_TEST.md`, `docs/LOCAL_INSTALL.md`,
-`docs/RELEASE_COVERAGE.md`, and `research/BROWSER_COMPATIBILITY.md`. The exact
-Firefox Android state and rationale are in `docs/FIREFOX_ANDROID_TEST.md` and
+1. **Manual Device Retest**: Run physical iPhone 14 check with the compiled `Prepisi (iOS)` Safari App Wrapper and complete desktop Chrome/Firefox/Safari manual sign-off checklist (`HUMAN_TEST.md`).
+2. **Make Repository Public**: Change GitHub repository visibility from private to public when ready.
+3. **Public Privacy Policy**: Provide the public `PRIVACY.md` URL (e.g. GitHub raw URL or GitHub Pages link) for Chrome Web Store, Mozilla AMO, and Apple App Store submission listings.
+4. **Store Packaging & Listings**: Upload built binaries (`build/chromium`, `build/firefox`, and Xcode iOS/macOS archives), prepare store screenshots, descriptions, and submit listings under GPL-3.0-only license.
 `research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also
 summarized in `AGENTS.md`.
