@@ -46,11 +46,9 @@ Two concept directions were prototyped with Pillow against a Unicode-coverage
 system font (not Balkan Sans — the renders are reproducible from any
 OFL/redistributable Cyrillic+Latin font such as **PT Sans**, **Manrope**,
 **Inter**, or **IBM Plex Sans**, all of which ship a real Cyrillic character
-set and an explicit redistribution-friendly license). The rough previews are
-saved at `design/brand-concepts/concept-a-stacked-wordmark-draft.png` and
-`design/brand-concepts/concept-b-homoglyph-monogram-draft.png` (first-pass
-drafts, not final art — see that folder's `README.md` for why they live
-outside `assets/`):
+set and an explicit redistribution-friendly license). Real candidates are
+now in `design/brand-concepts/` — see that folder's `README.md` for the
+current file list, status, and verification notes:
 
 - **Concept A — plain two-line lockup.** Latin `PRE` stacked directly over
   Cyrillic `ПРЕ` in the same bold weight, on the existing green field with the
