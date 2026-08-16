@@ -1,6 +1,6 @@
 # Project status and machine handoff
 
-Last updated: 2026-08-13. Current extension version: 0.9.1.
+Last updated: 2026-08-16. Current extension version: 0.9.1.
 
 ## Current state
 
@@ -66,13 +66,16 @@ Last updated: 2026-08-13. Current extension version: 0.9.1.
   stable releases for that date), via a mix of manual and AI-agent-assisted
   testing; see `docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`.
 - The release owner chose individual publication under their personal legal
-  name, not publication through the company account. Apple production signing,
-  GitHub ownership, and store registrations must use the personal accounts.
-- Personal Chrome, Mozilla, and Microsoft publisher-account setup and the
-  recommended submission order are documented in
-  `docs/PERSONAL_PUBLISHER_ACCOUNTS.md`. A read-only Gmail search found no prior
-  registration evidence for those three developer programs in the connected
-  mailbox.
+  name, using the dedicated project identity `hepsesus@gmail.com` across all four
+  developer programs to preserve personal email privacy.
+- On 2026-08-16, the individual Apple Developer account was signed into and
+  verified under `hepsesus@gmail.com`.
+- Google developer accounts were clarified: the existing account under
+  `hepsesus@gmail.com` is for Google Play Console, whereas the Chrome Web Store
+  Developer Console requires its own separate one-time $5 enrollment and Non-Trader
+  declaration.
+- Mozilla AMO and Microsoft Partner Center enrollments are queued under the same
+  identity; see `docs/PERSONAL_PUBLISHER_ACCOUNTS.md`.
 
 Run after cloning on another machine:
 
@@ -106,11 +109,11 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 1. **Finalize the 0.9.1 Candidate**: Review the release diff and generate clean
    store artifacts. The current publishing pass includes macOS Chrome, Firefox,
    and Safari plus physical iPhone Safari; Edge-on-macOS is explicitly deferred.
-2. **Pre-Publishing Apple Signing Gate**: Enroll or sign in to the individual
-   Apple Developer membership, select that personal team for every target, and
-   register permanent Bundle Identifiers (`com.vokativ.prepisi` /
-   `com.vokativ.prepisi.Extension`) before generating signed production release
-   archives. The tested wrapper still uses temporary `.dev` identifiers.
+2. **Pre-Publishing Apple Signing Gate**: The individual Apple Developer account
+   under `hepsesus@gmail.com` is active. Register the permanent Bundle Identifiers
+   (`com.vokativ.prepisi` / `com.vokativ.prepisi.Extension`), obtain the personal
+   Team ID, and update Xcode project targets before generating production signed
+   archives.
 3. **Resolve Public-Release Rights**: COMtext.SR's redistribution terms were
    confirmed 2026-08-13 (CC BY 4.0 International); see `ATTRIBUTIONS.md`. The
    remaining rights gate is the Balkan Sans-derived raster identity: confirm

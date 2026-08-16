@@ -1,8 +1,8 @@
 # Personal publisher account guide
 
-Last checked: 2026-08-13. This guide assumes Prepiši will be published by an
-individual under their personal name, not through a company account.
-
+Last checked: 2026-08-16. This guide documents publisher account setup using the
+dedicated project identity `hepsesus@gmail.com` across all four browser platforms
+to ensure privacy and unified management.
 ## Current release position
 
 - Chrome/Chromium, Edge, Firefox, and Safari source packages are built as
@@ -19,19 +19,29 @@ individual under their personal name, not through a company account.
   confirmed in the upstream README — and the personal email was sanitized from
   Git history the same day. See `ATTRIBUTIONS.md` and `docs/PROJECT_STATUS.md`.
 
-## Mailbox account check
+## Account status and findings (2026-08-16)
 
-A read-only search of the connected Gmail mailbox on 2026-08-13 found no
-registration, verification, submission, or signing messages for:
+A review across all four developer portals confirmed the following account state:
 
-- Chrome Web Store developer accounts;
-- addons.mozilla.org / Mozilla Add-ons developer accounts; or
-- Microsoft Partner Center / Microsoft Edge extension developer accounts.
-
-This is not proof that no account exists: an account may use another email
-address, and old messages may have been deleted. Plan for new personal
-registrations unless logging into a dashboard shows an existing account.
-
+1. **Dedicated Project Identity**: `hepsesus@gmail.com` was chosen across all
+   four platforms to shield personal email addresses from store listing footers,
+   WHOIS/DSA registries, and public support scrapes.
+2. **Apple Developer Program**: Successfully verified and signed in with
+   `hepsesus@gmail.com` as an Individual Developer membership.
+3. **Google Developer Accounts (Chrome Web Store vs. Google Play)**: The existing
+   registration under `hepsesus@gmail.com` is for the Google Play Developer
+   Console (Android apps), which is separate from the Chrome Web Store Developer
+   Dashboard. Chrome Web Store requires its own one-time $5 enrollment fee,
+   developer agreement, and Trader declaration.
+4. **Trader vs. Non-Trader Status**: Prepiši is a free, non-commercial, open-source
+   (GPL-3.0) utility with no ads, purchases, or tracking. Select **Non-Trader**
+   on Chrome Web Store (and other platforms). Non-Trader status prevents the public
+   display of personal residential addresses and personal phone numbers on the
+   store listing.
+5. **Mozilla Add-ons (AMO)**: Queued for registration with `hepsesus@gmail.com`
+   (free, direct XPI signing).
+6. **Microsoft Partner Center (Edge)**: Queued for Individual Edge program
+   enrollment with `hepsesus@gmail.com` (free).
 ## Email privacy and public exposure
 
 Use one durable, project-only mailbox for public publisher and support contact,
@@ -102,14 +112,9 @@ GPL-3.0 source links.
 
 ### Account to use
 
-Use a dedicated project Google Account controlled personally. Chrome does not present the same explicit
-Individual-versus-Company choice used by Microsoft or Apple; the Google Account
-becomes a Chrome Web Store publisher account. Google recommends an address that
-will remain available and be monitored because the developer-account identity
-cannot simply be changed later. The verified contact email appears under the
-extension's contact information.
-
-### Registration
+Use the dedicated project Google Account `hepsesus@gmail.com`. Note that Google
+Play Console and Chrome Web Store are separate developer programs; signing in to
+the Chrome Web Store Developer Dashboard initiates the extension registration flow.
 
 1. Open the Chrome Web Store Developer Dashboard while signed in to the chosen
    personal Google Account.
