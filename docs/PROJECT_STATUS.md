@@ -71,9 +71,9 @@ Last updated: 2026-08-16. Current extension version: 0.9.1.
 - On 2026-08-16, the individual Apple Developer account was signed into and
   verified under `hepsesus@gmail.com`.
 - Google developer accounts were clarified: the existing account under
-  `hepsesus@gmail.com` is for Google Play Console, whereas the Chrome Web Store
-  Developer Console requires its own separate one-time $5 enrollment and Non-Trader
-  declaration.
+  `hepsesus@gmail.com` is for Google Play Console. On 2026-08-16, the account holder
+  completed the Chrome Web Store Non-Trader declaration. Paying the one-time $5
+  enrollment fee and completing the publisher profile remain.
 - Mozilla AMO and Microsoft Partner Center enrollments are queued under the same
   identity; see `docs/PERSONAL_PUBLISHER_ACCOUNTS.md`.
 

@@ -31,13 +31,14 @@ A review across all four developer portals confirmed the following account state
 3. **Google Developer Accounts (Chrome Web Store vs. Google Play)**: The existing
    registration under `hepsesus@gmail.com` is for the Google Play Developer
    Console (Android apps), which is separate from the Chrome Web Store Developer
-   Dashboard. Chrome Web Store requires its own one-time $5 enrollment fee,
-   developer agreement, and Trader declaration.
-4. **Trader vs. Non-Trader Status**: Prepiši is a free, non-commercial, open-source
-   (GPL-3.0) utility with no ads, purchases, or tracking. Select **Non-Trader**
-   on Chrome Web Store (and other platforms). Non-Trader status prevents the public
-   display of personal residential addresses and personal phone numbers on the
-   store listing.
+   Dashboard. Chrome Web Store requires its own one-time $5 enrollment fee and
+   developer agreement.
+4. **Trader vs. Non-Trader Status Completed**: On 2026-08-16, the account holder
+   completed the Chrome Web Store Non-Trader declaration under `hepsesus@gmail.com`.
+   Declaring Non-Trader status matches Prepiši's free, non-commercial, GPL-3.0
+   status and ensures personal residential address and phone number are not
+   publicly displayed on the store listing. Remaining setup: paying the $5
+   registration fee and completing the publisher profile.
 5. **Mozilla Add-ons (AMO)**: Queued for registration with `hepsesus@gmail.com`
    (free, direct XPI signing).
 6. **Microsoft Partner Center (Edge)**: Queued for Individual Edge program
@@ -116,18 +117,13 @@ Use the dedicated project Google Account `hepsesus@gmail.com`. Note that Google
 Play Console and Chrome Web Store are separate developer programs; signing in to
 the Chrome Web Store Developer Dashboard initiates the extension registration flow.
 
-1. Open the Chrome Web Store Developer Dashboard while signed in to the chosen
-   personal Google Account.
-2. Accept the developer agreement and pay the one-time registration fee shown
-   during registration.
-3. Set the public publisher name. Use either the personal name or the Prepiši
-   project name consistently across the listing and support material.
-4. Add and verify the contact email.
-5. Declare Trader or Non-Trader status when asked. This is a legal
-   classification based on whether the publishing activity relates to a trade,
-   business, craft, or profession; choosing a personal account does not decide
-   the classification automatically.
-6. Upload `dist/prepisi-0.9.1-chromium.zip` and complete the listing, privacy,
+1. Open the Chrome Web Store Developer Dashboard while signed in to
+   `hepsesus@gmail.com`.
+2. Non-Trader status declaration was completed on 2026-08-16.
+3. Accept the developer agreement and pay the one-time $5 registration fee.
+4. Set the public publisher name (`Prepiši` or personal handle) and confirm
+   contact email `hepsesus@gmail.com`.
+5. Upload `dist/prepisi-0.9.1-chromium.zip` and complete the listing, privacy,
    permission-justification, and distribution fields.
 
 Official guidance:
