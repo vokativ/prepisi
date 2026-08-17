@@ -100,7 +100,9 @@ never requested while a user browses.
 
 ## Brand identity
 
-The toolbar mark and popup wordmark feature an original stacked Latin and
-Cyrillic typographic lockup (`PRE` / `ПРЕ`), pairing both scripts through a
-shared homoglyph. The raster marks are rendered independently and are freely
-distributed under the project's GPL-3.0 license.
+Toolbar icons are original raster `PRE` / `ПРЕ` lockups, independently rendered
+without Balkan Sans outlines. The popup wordmark (`assets/wordmark.png`) remains
+a Balkan Sans-derived raster from the project owner's Typotheque-licensed font.
+The OTF/ZIP font files are not included in this repository or extension package.
+Public distribution of that remaining wordmark stays subject to confirmation of
+the applicable Typotheque raster-output right or a replacement wordmark.

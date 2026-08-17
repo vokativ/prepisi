@@ -56,19 +56,29 @@ What each panel must show:
 
 | File | Size | Use |
 | --- | --- | --- |
-| `docs/images/preview-three-portals.png` | 1200×1760 | README and mobile posts (four stacked cards) |
-| `docs/images/preview-conversion.png` | same stacked card | README hero |
-| `docs/images/social-card-1200x630.png` | 1200×630 | LinkedIn and X attachment (2×2) |
+| `docs/images/live/n1-source.png` | 1754×2040 | N1 source, Latin/Ekavian |
+| `docs/images/live/n1-dialect.png` | 1754×2040 | N1 after Ekavian → Ijekavian |
+| `docs/images/live/n1-script.png` | 1754×2040 | N1 after Latinica → Ćirilica |
+| `docs/images/live/index-source.png` / `index-script.png` | 1754×2040 each | Actual Index.hr source → Cyrillic pair |
+| `docs/images/live/klix-source.png` / `klix-script.png` | 1754×2040 each | Actual Klix.ba source → Cyrillic pair |
+| `docs/images/preview-conversion.png` | before/after collage | README convenience only |
+| `docs/images/social-card-1200x630.png` | 1200×630 | Compact overview only |
 
-Verified copy, 2026-08-17:
+Use the individual files as a **four-image carousel** on LinkedIn or X: N1
+source → N1 Ijekavian, then Index.hr source → Index.hr Cyrillic; make Klix a
+second carousel or a later post. Actual side-by-side screenshots are clearer
+than an illustrated explainer on a phone.
+
+These are actual browser screenshots made after accepting each portal's cookie
+banner and applying the shipped converter. They show ordinary public portal
+layout and advertising; no account UI, comments, or private content is present.
+
+The headline fixtures below establish converter behavior. They are not claimed
+to be the exact visible headline in every live screenshot:
 
 - **N1, dialect.** `Zamenik načelnika kaže da će u Deliblatskoj peščari najveći problem biti vetar promenljivog pravca.` → `Zamjenik načelnika kaže da će u Deliblatskoj pješčari najveći problem biti vjetar promjenljivog pravca.` Pinned in `test/converter.test.js`.
 - **N1, script.** Same source → `Заменик начелника каже да ће у Делиблатској пешчари највећи проблем бити ветар променљивог правца.`
-- **Index.hr, script.** Frozen fixture in `test/fixtures/portal-samples.json`.
-- **Klix.ba, script.** Same fixture file; Latin → Cyrillic.
-
-Do not attach live page captures that include private UI, account chrome, or
-comment threads.
+- **Index.hr and Klix.ba, script.** Current live article views were converted from Latin to Cyrillic; frozen fixtures remain in `test/fixtures/portal-samples.json`.
 
 ## Social drafts
 
@@ -100,8 +110,9 @@ Klix.ba: latinica → ćirilica
 https://github.com/vokativ/prepisi
 ```
 
-Attach `docs/images/social-card-1200x630.png`. On a phone, the taller
-`docs/images/preview-three-portals.png` is easier to read.
+Attach the individual N1 source and N1 Ijekavian screenshots first; add the
+Index.hr source/Cyrillic pair as the next carousel items. They remain legible
+on a phone. The 1200×630 card is only a compact alternative.
 
 ### X / Twitter scaffold
 

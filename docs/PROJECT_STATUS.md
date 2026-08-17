@@ -70,7 +70,9 @@ Last updated: 2026-08-17. Current extension version: 0.9.1.
 - GitHub `vokativ/prepisi` is public. Privacy URL:
   `https://github.com/vokativ/prepisi/blob/main/PRIVACY.md`.
 - Toolbar icons shipped 2026-08-17 use the original `PRE` / `ПРЕ` lockup, not
-  Balkan Sans outlines. Apple Developer Program enrollment remains postponed.
+  Balkan Sans outlines. **The popup wordmark remains Balkan Sans-derived**;
+  confirm its raster-output right or replace it before treating the branding
+  release gate as closed. Apple Developer Program enrollment remains postponed.
 - Store submissions on 2026-08-17: Chrome Web Store item
   `lgcbhfgbbjdhglmomlgkbeikcngjhikb` is **Pending review** (auto-publish);
   Firefox AMO slug `prepisi-converter` validated with 0 errors and is in
@@ -98,27 +100,29 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 - Never commit the privately licensed Balkan Sans ZIP/OTF files, corpus caches,
   signing keys, generated browser folders, or packaged extension ZIPs. The
   repository ignore rules enforce these boundaries.
-- The GitHub repository is public. Balkan Sans OTF/ZIP files stay uncommitted;
-  shipped icons use the original `PRE` / `ПРЕ` lockup. COMtext.SR terms were
-  confirmed 2026-08-13 (CC BY 4.0 International); see `ATTRIBUTIONS.md`.
+- The GitHub repository is public. Balkan Sans OTF/ZIP files stay uncommitted.
+  Toolbar icons are original, but the popup wordmark remains Balkan Sans-derived;
+  see `ATTRIBUTIONS.md` for the remaining distribution-rights gate.
 - A future non-GPL integration can be discussed with maintainers, but would
   require author permission for affected data or replacement data.
 
 ## Next release work
 
-1. **Watch store reviews** using the dates in
+1. **Resolve the popup-wordmark rights gate.** Confirm Typotheque permits
+   distribution of the existing Balkan Sans-derived raster, or replace
+   `assets/wordmark.png` with independently sourced artwork. Do not call the
+   branding release gate closed before then.
+2. **Watch store reviews** using the dates in
    [`docs/LAUNCH_AND_SOCIAL.md`](LAUNCH_AND_SOCIAL.md). Firefox ~24 hours,
    Edge ~7 business days, Chrome weekly until published.
-2. **After the Mozilla-signed XPI exists**, retest Firefox desktop and Android
+3. **After the Mozilla-signed XPI exists**, retest Firefox desktop and Android
    remembered navigation on that exact file before claiming signed support.
-3. **After a store URL exists**, add it to the README and a follow-up social
+4. **After a store URL exists**, add it to the README and a follow-up social
    post. Do not claim all browsers until Chrome, Firefox, and Edge have all
    listed.
-4. **Apple remains postponed.** Enroll in the paid Developer Program only when
+5. **Apple remains postponed.** Enroll in the paid Developer Program only when
    there are more apps to publish; then register `com.vokativ.prepisi` /
    `com.vokativ.prepisi.Extension`.
-5. **Optional later:** replace remaining Balkan Sans references in research
-   notes, and restock store promo tiles if a reviewer asks for new screenshots.
 
 Firefox Android event-page research is recorded in
 `research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also

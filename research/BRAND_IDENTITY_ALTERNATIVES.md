@@ -1,13 +1,12 @@
 # Brand identity alternatives to the Balkan Sans-derived mark
 
-Status: researched 2026-08-13. This is a decision-support note, not a finished
-design. It exists because the current toolbar icon and popup wordmark are
-rendered from a privately licensed font (`ATTRIBUTIONS.md` → "Balkan Sans
-identity"), and the project owner has not yet confirmed that the purchased
-Typotheque license permits distributing the *raster output* of that font
-inside a public, freely redistributable browser extension. Until that is
-confirmed or the mark is replaced, the current icon/wordmark stays a
-public-release gate (`docs/PROJECT_STATUS.md`, `docs/PERSONAL_PUBLISHER_ACCOUNTS.md`).
+**Partly resolved 2026-08-17.** Toolbar icons now use an original raster
+`PRE` / `ПРЕ` lockup and no longer use Balkan Sans outlines. The popup wordmark
+still uses a Balkan Sans-derived raster, so the public-release gate is not fully
+closed until its Typotheque raster-output right is confirmed or it is replaced.
+The private font archive remains excluded from Git and extension packages.
+
+This document is decision history for the outstanding wordmark choice.
 
 ## Why the current mark matters, not just what it is
 
