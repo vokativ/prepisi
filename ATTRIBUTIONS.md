@@ -98,10 +98,9 @@ embedded in `src/generated/company-names.js`; official index pages are retained
 there as methodology links. These facts are compiled into the extension and are
 never requested while a user browses.
 
-## Balkan Sans identity
+## Brand identity
 
-The toolbar mark and popup wordmark were rendered from Balkan Sans font files
-licensed by the project owner from Typotheque. The OTF files and the source ZIP
-are not included in the extension package; only the resulting icon and wordmark
-images ship. Balkan Sans remains the intellectual property of its respective
-designer and publisher.
+The toolbar mark and popup wordmark feature an original stacked Latin and
+Cyrillic typographic lockup (`PRE` / `ПРЕ`), pairing both scripts through a
+shared homoglyph. The raster marks are rendered independently and are freely
+distributed under the project's GPL-3.0 license.
