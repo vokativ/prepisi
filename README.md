@@ -1,8 +1,11 @@
 # Prepiši
 
+<p align="center">
+  <img src="docs/images/preview-conversion.png" alt="Prepiši — In-page script and pronunciation conversion preview" width="100%">
+</p>
+
 Prepiši is a privacy-first browser extension for reading Serbian, Croatian,
 Bosnian, and Montenegrin web text in a preferred script and pronunciation.
-
 The Chromium Manifest V3 build is working today. Firefox and Safari builds are
 generated from the same offline engine so browser support can grow without
 forking the conversion rules or vocabulary.
