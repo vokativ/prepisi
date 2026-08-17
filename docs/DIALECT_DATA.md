@@ -234,7 +234,7 @@ evaluated.
 | srLex/hrLex-derived generated forms | GPL-3.0-only distribution through CC BY-SA 4.0 → GPLv3 compatibility | Keep provenance, transformation record, and source attribution in `ATTRIBUTIONS.md` |
 | Mići Princ-derived Ikavian evidence | GPL-3.0-only distribution through CC BY-SA 4.0 → GPLv3 compatibility | Keep dataset handle, creators, method, and license attribution |
 | COMtext.SR observations | CC BY 4.0 International, confirmed 2026-08-13 in upstream `## Licence` section (any purpose incl. commercial, with attribution) | Resolved — keep pinned provenance, license link, and attribution in `ATTRIBUTIONS.md` |
-| Balkan Sans source font | Privately purchased license | Never commit ZIP/OTF files; publish raster outputs only after confirming the font license permits that distribution |
+| Balkan Sans source font | Privately purchased license | Never commit ZIP/OTF files. Toolbar icons are original as of 2026-08-17; the popup wordmark still needs a raster-output-right confirmation or replacement |
 | Company-name snapshots | Compiled names and source links | Retain snapshot methodology and avoid copying protected editorial content |
 
 The repository-level GPL-3.0-only license gives the project one primary license,
@@ -242,11 +242,11 @@ but it does not erase source attribution, compatibility, or asset obligations.
 Every new source needs an explicit compatibility check. “Available online” and
 “downloadable” do not mean redistributable.
 
-Before making the repository public, maintainers should confirm the permitted
-distribution of the Balkan Sans-derived raster marks (or replace them with
-originally licensed branding) and verify that ignored private source files are
-absent from the initial Git history. The COMtext.SR redistribution status was
-resolved 2026-08-13; see `ATTRIBUTIONS.md`.
+The repository is public. Toolbar icons use an original `PRE` / `ПРЕ` lockup;
+the popup wordmark is still Balkan Sans-derived and remains the outstanding
+raster-output-right or replacement gate. Balkan Sans ZIP/OTF files stay ignored
+and uncommitted. COMtext.SR redistribution was resolved 2026-08-13; see
+`ATTRIBUTIONS.md`.
 
 ## Review questions
 

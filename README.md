@@ -262,9 +262,10 @@ case-sensitively, so `Orange` can remain a company while ordinary lowercase
 `orange` is still convertible. The list is bundled and never refreshed while a
 user browses.
 
-The popup wordmark and toolbar icon are rendered from the user-licensed Balkan
-Sans files. The version 0.6 toolbar mark uses the font's paired `PRE / ПРЕ`
-treatment. Font binaries are deliberately excluded from the extension archive.
+Toolbar icons are original stacked `PRE` / `ПРЕ` lockups. The popup wordmark is
+currently a Balkan Sans-derived raster; its distribution right is outstanding
+until confirmed with Typotheque or replaced. Font binaries are not part of the
+repository or extension archive.
 
 ## Sources used for the first rules
 

@@ -18,6 +18,9 @@ display name: `Nemanja G`.
   `https://github.com/vokativ/prepisi/blob/main/PRIVACY.md`.
 - Check-back dates, reviewer IDs, and social drafts:
   [`docs/LAUNCH_AND_SOCIAL.md`](LAUNCH_AND_SOCIAL.md).
+- Branding audit: toolbar icons are original, but `assets/wordmark.png` remains
+  Balkan Sans-derived. Confirm its raster-output right or replace it before
+  treating the public-release branding gate as closed.
 
 ## Account status (2026-08-17)
 
@@ -61,12 +64,14 @@ address too.
    personal address with the `noreply` address in every commit's author and
    committer metadata, and the sanitized history was force-pushed. A pre-
    rewrite backup bundle was made first; there were no other collaborators or
-   branches to coordinate with (single-owner, still-private repository).
+   branches to coordinate with (single-owner repository).
 3. Verified: `git log --format='%ae' origin/main | sort -u` returns only the
-   `noreply` address across all 17 commits on `origin/main`.
+   `noreply` address across commits on `origin/main`.
 
-This was performed while the repository is still private, ahead of the
-Balkan Sans branding decision that remains the last public-release gate.
+The repository is public as of 2026-08-17. Toolbar icons are original `PRE` /
+`ПРЕ` lockups, but the popup wordmark still uses a Balkan Sans-derived raster.
+OTF/ZIP font files remain uncommitted. Confirm the wordmark's raster-output
+right or replace it before treating the branding gate as closed.
 
 Official privacy references:
 
@@ -84,19 +89,14 @@ the intended personal GitHub account, keep that remote and reauthenticate the
 GitHub CLI as that user. Otherwise, create or transfer the repository to the
 intended personal account before publishing it.
 
-After the rights gate is resolved and release files are reviewed:
+Done 2026-08-17: `vokativ/prepisi` is the public personal repository, tagged
+`v0.9.1`. Privacy and support URLs:
 
-1. Commit the 0.9.1 release changes and push them.
-2. Make the repository public.
-3. Tag the exact store source as `v0.9.1`.
-4. Use the rendered GitHub privacy page as the initial policy URL:
-   `https://github.com/vokativ/prepisi/blob/main/PRIVACY.md`.
-5. Use the repository home page as the project and support URL unless a separate
-   website is created later.
+- `https://github.com/vokativ/prepisi/blob/main/PRIVACY.md`
+- `https://github.com/vokativ/prepisi`
 
-A public GitHub repository is not required merely to register for the extension
-stores. It is useful here because it supplies stable privacy, support, and
-GPL-3.0 source links.
+Keep using the GitHub `noreply` commit address. A later store-URL update to the
+README is enough after Chrome, Firefox, or Edge publish.
 
 ## Chrome Web Store
 
@@ -106,14 +106,10 @@ Use the dedicated project Google Account `hepsesus@gmail.com`. Note that Google
 Play Console and Chrome Web Store are separate developer programs; signing in to
 the Chrome Web Store Developer Dashboard initiates the extension registration flow.
 
-1. Open the Chrome Web Store Developer Dashboard while signed in to
-   `hepsesus@gmail.com`.
-2. Non-Trader status declaration was completed on 2026-08-16.
-3. Accept the developer agreement and pay the one-time $5 registration fee.
-4. Set the public publisher name (`Prepiši` or personal handle) and confirm
-   contact email `hepsesus@gmail.com`.
-5. Upload `dist/prepisi-0.9.1-chromium.zip` and complete the listing, privacy,
-   permission-justification, and distribution fields.
+Completed 2026-08-17 under `hepsesus@gmail.com`: Non-Trader declaration, $5
+fee, publisher name `Nemanja G`, verified contact email, and upload of
+`dist/prepisi-0.9.1-chromium.zip`. Item
+`lgcbhfgbbjdhglmomlgkbeikcngjhikb` is pending review with auto-publish.
 
 Official guidance:
 
@@ -136,19 +132,16 @@ enrollment. Individual matches publication as a genuinely personal, non-business
 project. Microsoft treats publishing related to a trade, profession, freelance
 work, or business differently, so confirm that characterization during signup.
 
-### Registration
+### Submission status
 
-1. Sign in to Partner Center with the personal MSA or personal GitHub account.
-2. Open **Account settings → Programs → Microsoft Edge → Get started**.
-3. Select the correct country or region and **Individual** account type.
-4. Choose the available publisher display name and provide the required private
-   account contact information. For the public optional support contact, enter
-   the GitHub support URL rather than the login email.
-5. Accept the developer agreement and wait for verification.
-6. There is no Microsoft Edge extension-program registration fee.
-7. Upload `dist/prepisi-0.9.1-edge.zip` only after the deferred Edge runtime pass
-   is completed, or publish conservatively without claiming the deferred macOS
-   combination as verified.
+Completed 2026-08-17: Individual enrollment in Singapore, publisher profile,
+public GitHub support URL, package validation, Productivity category, privacy
+disclosures, English listing, real screenshots, and certification notes. The
+public Edge listing is **In review**; Microsoft quoted 7 business days. Edge
+runtime testing on macOS remains deferred, so do not claim that combination as
+verified.
+
+There is no Microsoft Edge extension-program registration fee.
 
 Official guidance:
 
@@ -164,20 +157,15 @@ type. After signing in to addons.mozilla.org, set the AMO developer-profile
 display name separately; the Mozilla Account display name does not automatically
 become the AMO display name.
 
-### Registration and signing
+### Submission status
 
-1. Sign in or register at addons.mozilla.org with the personal Mozilla Account.
-2. Open the Add-ons Developer Hub and choose **Submit a New Add-on**.
-3. Choose **On this site** for a normal public AMO listing.
-4. Upload `dist/prepisi-0.9.1-firefox.zip`.
-5. If AMO asks whether the submitted extension contains generated or
-   preprocessed files, provide the tagged repository source plus reviewer build
-   instructions. The target package is produced from repository source by
-   `npm run build:all`; generated linguistic files retain their documented
-   provenance and review workflow.
-6. Complete the listing and wait for Mozilla signing/review.
-7. Test the exact Mozilla-signed XPI on Firefox desktop and Android before
-   calling the signed package fully supported.
+Completed 2026-08-17: AMO agreement accepted, public listing selected, Firefox
+desktop and Android compatibility enabled, `dist/prepisi-0.9.1-firefox.zip`
+validated with 0 errors or warnings, metadata and reviewer notes completed, and
+a tagged source archive uploaded. AMO slug: `prepisi-converter`.
+
+Next real gate: after Mozilla signs the XPI, test that exact file on Firefox
+desktop and Android before describing the signed package as fully supported.
 
 Official guidance:
 
@@ -214,19 +202,15 @@ Official guidance:
 
 ## Recommended order
 
-1. Resolve the Balkan Sans-derived branding gate (confirm distribution rights
-   or replace the icon/wordmark). COMtext.SR is resolved as of 2026-08-13.
-2. Reauthenticate the intended personal GitHub account and review the complete
-   public-repository contents.
-3. Commit, push, make the repository public, and tag `v0.9.1`.
-4. Confirm the public privacy and support links work while logged out.
-5. Register the Chrome, Mozilla, and Microsoft individual publisher accounts in
-   parallel. Confirm the Apple individual membership separately.
-6. Prepare consistent descriptions, screenshots, privacy answers, permission
-   explanations, and reviewer notes.
-7. Submit Chrome first, obtain Firefox signing and retest the signed XPI, submit
-   Safari through TestFlight/App Store Connect, and return to Edge after its
-   deferred runtime pass.
+Done for 0.9.1: branding replacement, public GitHub repo, `v0.9.1` tag, privacy
+URL, Chrome/Firefox/Edge individual accounts, and store submissions. See
+[`docs/LAUNCH_AND_SOCIAL.md`](LAUNCH_AND_SOCIAL.md) for review wait dates.
+
+Still open:
+
+1. Wait for Chrome, Firefox, and Edge review; retest the Mozilla-signed XPI.
+2. Apple paid membership remains postponed.
+3. After a store URL exists, add it to the README and a follow-up social post.
 
 ## Where the account owner must step in
 
