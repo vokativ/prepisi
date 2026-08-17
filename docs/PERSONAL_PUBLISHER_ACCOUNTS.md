@@ -1,48 +1,37 @@
 # Personal publisher account guide
 
-Last checked: 2026-08-16. This guide documents publisher account setup using the
-dedicated project identity `hepsesus@gmail.com` across all four browser platforms
-to ensure privacy and unified management.
+Last checked: 2026-08-17. Publisher identity: `hepsesus@gmail.com`. Public
+display name: `Nemanja G`.
+
 ## Current release position
 
-- Chrome/Chromium, Edge, Firefox, and Safari source packages are built as
-  version 0.9.1.
-- The Safari macOS and iOS containing apps, their embedded extensions, and their
-  embedded manifests also build as version 0.9.1.
-- Browser upload ZIPs are generated locally under ignored `dist/`.
-- The repository can supply the project homepage, support page, source archive,
-  and privacy-policy URL after it becomes public.
-- Public release remains gated on confirming that the Balkan Sans-derived
-  raster branding may be distributed, or replacing it with originally licensed
-  branding (see `research/BRAND_IDENTITY_ALTERNATIVES.md`). The COMtext.SR
-  redistribution decision was resolved 2026-08-13 — CC BY 4.0 International,
-  confirmed in the upstream README — and the personal email was sanitized from
-  Git history the same day. See `ATTRIBUTIONS.md` and `docs/PROJECT_STATUS.md`.
+- Version 0.9.1 packages were submitted on 2026-08-17.
+- Chrome Web Store: **Pending review** (auto-publish). Item
+  `lgcbhfgbbjdhglmomlgkbeikcngjhikb`.
+- Firefox AMO: validated, 0 errors, in review, Firefox for Android enabled.
+  Slug `prepisi-converter`.
+- Microsoft Edge: **In review**. Product
+  `0575918a-bf45-4fee-9f26-f28fcdf02398`, Store ID `0RDCK9XMTNZC`.
+- Apple paid membership is postponed. The free Apple ID is enough for local
+  Xcode/iPhone testing only.
+- GitHub `vokativ/prepisi` is public. Privacy:
+  `https://github.com/vokativ/prepisi/blob/main/PRIVACY.md`.
+- Check-back dates, reviewer IDs, and social drafts:
+  [`docs/LAUNCH_AND_SOCIAL.md`](LAUNCH_AND_SOCIAL.md).
 
-## Account status and findings (2026-08-16)
+## Account status (2026-08-17)
 
-A review across all four developer portals confirmed the following account state:
+1. Dedicated project mailbox `hepsesus@gmail.com` is the login and Chrome
+   public contact email.
+2. Apple ID under that mailbox is a **free** developer account (`Enroll today`
+   still shown). Not in the paid program.
+3. Chrome Web Store: $5 paid, Non-Trader declared, contact email **verified**,
+   publisher name `Nemanja G`.
+4. Mozilla AMO: agreement accepted, display name `Nemanja G`, first add-on
+   submitted.
+5. Microsoft Partner Center: Individual enrollment complete (Singapore), Edge
+   package verified and listing submitted.
 
-1. **Dedicated Project Identity**: `hepsesus@gmail.com` was chosen across all
-   four platforms to shield personal email addresses from store listing footers,
-   WHOIS/DSA registries, and public support scrapes.
-2. **Apple Developer Program**: Successfully verified and signed in with
-   `hepsesus@gmail.com` as an Individual Developer membership.
-3. **Google Developer Accounts (Chrome Web Store vs. Google Play)**: The existing
-   registration under `hepsesus@gmail.com` is for the Google Play Developer
-   Console (Android apps), which is separate from the Chrome Web Store Developer
-   Dashboard. Chrome Web Store requires its own one-time $5 enrollment fee and
-   developer agreement.
-4. **Trader vs. Non-Trader Status Completed**: On 2026-08-16, the account holder
-   completed the Chrome Web Store Non-Trader declaration under `hepsesus@gmail.com`.
-   Declaring Non-Trader status matches Prepiši's free, non-commercial, GPL-3.0
-   status and ensures personal residential address and phone number are not
-   publicly displayed on the store listing. Remaining setup: paying the $5
-   registration fee and completing the publisher profile.
-5. **Mozilla Add-ons (AMO)**: Queued for registration with `hepsesus@gmail.com`
-   (free, direct XPI signing).
-6. **Microsoft Partner Center (Edge)**: Queued for Individual Edge program
-   enrollment with `hepsesus@gmail.com` (free).
 ## Email privacy and public exposure
 
 Use one durable, project-only mailbox for public publisher and support contact,

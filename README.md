@@ -1,7 +1,7 @@
 # Prepiši
 
 <p align="center">
-  <img src="docs/images/preview-conversion.png" alt="Prepiši — In-page script and pronunciation conversion preview" width="100%">
+  <img src="docs/images/preview-conversion.png" alt="Prepiši on N1, Index.hr, and Klix — dialect and script conversion" width="100%">
 </p>
 
 Prepiši is a privacy-first browser extension for reading Serbian, Croatian,
@@ -110,6 +110,8 @@ research candidates visibly separate:
 - [`docs/PERSONAL_PUBLISHER_ACCOUNTS.md`](docs/PERSONAL_PUBLISHER_ACCOUNTS.md)
   records the personal-account setup, store-registration choices, and submission
   order for Chrome, Edge, Firefox, and Safari;
+- [`docs/LAUNCH_AND_SOCIAL.md`](docs/LAUNCH_AND_SOCIAL.md) is the 0.9.1 review
+  wait list, check-back dates, and social-post drafts;
 - [`AGENTS.md`](AGENTS.md) gives coding agents the repository guardrails and the
   current Firefox Android/macOS handoff;
 - [`SECURITY.md`](SECURITY.md), [`PRIVACY.md`](PRIVACY.md), and

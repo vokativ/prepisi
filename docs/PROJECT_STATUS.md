@@ -1,6 +1,6 @@
 # Project status and machine handoff
 
-Last updated: 2026-08-16. Current extension version: 0.9.1.
+Last updated: 2026-08-17. Current extension version: 0.9.1.
 
 ## Current state
 
@@ -65,17 +65,19 @@ Last updated: 2026-08-16. Current extension version: 0.9.1.
   Chrome 151.0.7922.138, Edge 151.0.4129.78, Firefox 153.0.3 — the current
   stable releases for that date), via a mix of manual and AI-agent-assisted
   testing; see `docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`.
-- The release owner chose individual publication under their personal legal
-  name, using the dedicated project identity `hepsesus@gmail.com` across all four
-  developer programs to preserve personal email privacy.
-- On 2026-08-16, the individual Apple Developer account was signed into and
-  verified under `hepsesus@gmail.com`.
-- Google developer accounts were clarified: the existing account under
-  `hepsesus@gmail.com` is for Google Play Console. On 2026-08-16, the account holder
-  completed the Chrome Web Store Non-Trader declaration. Paying the one-time $5
-  enrollment fee and completing the publisher profile remain.
-- Mozilla AMO and Microsoft Partner Center enrollments are queued under the same
-  identity; see `docs/PERSONAL_PUBLISHER_ACCOUNTS.md`.
+- The release owner publishes as an individual under the dedicated project
+  identity `hepsesus@gmail.com`. Public publisher display name is `Nemanja G`.
+- GitHub `vokativ/prepisi` is public. Privacy URL:
+  `https://github.com/vokativ/prepisi/blob/main/PRIVACY.md`.
+- Toolbar icons shipped 2026-08-17 use the original `PRE` / `ПРЕ` lockup, not
+  Balkan Sans outlines. Apple Developer Program enrollment remains postponed.
+- Store submissions on 2026-08-17: Chrome Web Store item
+  `lgcbhfgbbjdhglmomlgkbeikcngjhikb` is **Pending review** (auto-publish);
+  Firefox AMO slug `prepisi-converter` validated with 0 errors and is in
+  Mozilla signing/review, including Firefox for Android; Microsoft Edge product
+  `0575918a-bf45-4fee-9f26-f28fcdf02398` is **In review** (7 business days).
+  Check-back dates and social copy live in
+  [`docs/LAUNCH_AND_SOCIAL.md`](LAUNCH_AND_SOCIAL.md).
 
 Run after cloning on another machine:
 
@@ -96,39 +98,27 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 - Never commit the privately licensed Balkan Sans ZIP/OTF files, corpus caches,
   signing keys, generated browser folders, or packaged extension ZIPs. The
   repository ignore rules enforce these boundaries.
-- Keep the GitHub repository private until the right to distribute the Balkan
-  Sans-derived raster identity is confirmed, or that branding is replaced.
-  COMtext.SR's dataset redistribution terms were confirmed 2026-08-13 (CC BY
-  4.0 International, any purpose including commercial, with attribution); see
-  `ATTRIBUTIONS.md`.
+- The GitHub repository is public. Balkan Sans OTF/ZIP files stay uncommitted;
+  shipped icons use the original `PRE` / `ПРЕ` lockup. COMtext.SR terms were
+  confirmed 2026-08-13 (CC BY 4.0 International); see `ATTRIBUTIONS.md`.
 - A future non-GPL integration can be discussed with maintainers, but would
   require author permission for affected data or replacement data.
 
 ## Next release work
 
-1. **Finalize the 0.9.1 Candidate**: Review the release diff and generate clean
-   store artifacts. The current publishing pass includes macOS Chrome, Firefox,
-   and Safari plus physical iPhone Safari; Edge-on-macOS is explicitly deferred.
-2. **Pre-Publishing Apple Signing Gate**: The individual Apple Developer account
-   under `hepsesus@gmail.com` is active. Register the permanent Bundle Identifiers
-   (`com.vokativ.prepisi` / `com.vokativ.prepisi.Extension`), obtain the personal
-   Team ID, and update Xcode project targets before generating production signed
-   archives.
-3. **Resolve Public-Release Rights**: COMtext.SR's redistribution terms were
-   confirmed 2026-08-13 (CC BY 4.0 International); see `ATTRIBUTIONS.md`. The
-   remaining rights gate is the Balkan Sans-derived raster identity: confirm
-   distribution rights with Typotheque or replace the icon/wordmark with
-   originally licensed branding; see `research/BRAND_IDENTITY_ALTERNATIVES.md`.
-   The Git history's personal Gmail address was sanitized 2026-08-13 (rewritten
-   to the GitHub `noreply` address with `git filter-repo` and force-pushed);
-   the local commit identity now also uses that address for future commits.
-4. **Personal Repository and Privacy URL**: Reauthenticate GitHub as the intended
-   personal owner, confirm whether `vokativ/prepisi` is the desired permanent
-   repository, and publish `PRIVACY.md` at a stable public URL for the browser
-   and Apple store listings.
-5. **Store Packaging & Listings**: Upload built binaries (`build/chromium`,
-   `build/firefox`, and Xcode iOS/macOS archives), prepare store screenshots and
-   descriptions, and submit listings under the GPL-3.0-only license.
+1. **Watch store reviews** using the dates in
+   [`docs/LAUNCH_AND_SOCIAL.md`](LAUNCH_AND_SOCIAL.md). Firefox ~24 hours,
+   Edge ~7 business days, Chrome weekly until published.
+2. **After the Mozilla-signed XPI exists**, retest Firefox desktop and Android
+   remembered navigation on that exact file before claiming signed support.
+3. **After a store URL exists**, add it to the README and a follow-up social
+   post. Do not claim all browsers until Chrome, Firefox, and Edge have all
+   listed.
+4. **Apple remains postponed.** Enroll in the paid Developer Program only when
+   there are more apps to publish; then register `com.vokativ.prepisi` /
+   `com.vokativ.prepisi.Extension`.
+5. **Optional later:** replace remaining Balkan Sans references in research
+   notes, and restock store promo tiles if a reviewer asks for new screenshots.
 
 Firefox Android event-page research is recorded in
 `research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also
