@@ -73,12 +73,11 @@ These are actual browser screenshots made after accepting each portal's cookie
 banner and applying the shipped converter. They show ordinary public portal
 layout and advertising; no account UI, comments, or private content is present.
 
-The headline fixtures below establish converter behavior. They are not claimed
-to be the exact visible headline in every live screenshot:
-
-- **N1, dialect.** `Zamenik načelnika kaže da će u Deliblatskoj peščari najveći problem biti vetar promenljivog pravca.` → `Zamjenik načelnika kaže da će u Deliblatskoj pješčari najveći problem biti vjetar promjenljivog pravca.` Pinned in `test/converter.test.js`.
-- **N1, script.** Same source → `Заменик начелника каже да ће у Делиблатској пешчари највећи проблем бити ветар променљивог правца.`
-- **Index.hr and Klix.ba, script.** Current live article views were converted from Latin to Cyrillic; frozen fixtures remain in `test/fixtures/portal-samples.json`.
+- **N1 (Srbija), dialect & script.** Article *"Polarni put svile"* (`https://n1info.rs/svet/polarni-ledeni-put-svile-rusija-kina/`).
+  - Dialect: `nedeljnu liniju ... Severni morski put` → `nedjeljnu liniju ... Sjeverni morski put`.
+  - Script: `Kina se priprema ...` → `Кина се припрема ...`.
+- **Index.hr (Hrvatska), script.** `Taron Egerton otkrio reakciju Toma Hardyja ...` → `Тарон Егертон открио реакцију Toma Hardyja ...`.
+- **Klix.ba (BiH), script.** `"Hadžićko ljeto 2026" ...` → `"Хаџићко љето 2026" ...`.
 
 ## Social drafts
 
