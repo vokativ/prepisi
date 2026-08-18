@@ -1,9 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Prepiši",
+  "name": "__MSG_extName__",
   "short_name": "Prepiši",
   "version": "0.9.1",
-  "description": "Read Serbian, Croatian, Bosnian and Montenegrin pages in the script and pronunciation you prefer.",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
   "minimum_chrome_version": "105",
   "permissions": [
     "activeTab",

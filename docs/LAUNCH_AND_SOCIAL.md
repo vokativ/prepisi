@@ -1,6 +1,6 @@
 # Launch status, review reminders, and social posts
 
-Last updated: 2026-08-17. Extension version: 0.9.1.
+Last updated: 2026-08-18. Extension version: 0.9.1.
 Publisher display name: `Nemanja G`. Store mailbox: `hepsesus@gmail.com`.
 
 Promo lines below were produced by `src/converter.js`, not invented by hand.
@@ -9,7 +9,7 @@ Promo lines below were produced by `src/converter.js`, not invented by hand.
 
 | Store | Submitted | Status | Typical wait | Where to check |
 | --- | --- | --- | --- | --- |
-| Chrome Web Store | 2026-08-17 | **Pending review**, auto-publish after approval | Days to a few weeks | `hepsesus@gmail.com` and the [item status page](https://chrome.google.com/webstore/devconsole/e2337773-4e37-4a9e-bfa7-ee518efec7f0/lgcbhfgbbjdhglmomlgkbeikcngjhikb/edit/status) |
+| Chrome Web Store | 2026-08-17 | **Approved & Live** (published 2026-08-18) | — | [Public Store Listing](https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb) |
 | Firefox AMO (desktop + Android) | 2026-08-17 | Validated with 0 errors; in Mozilla signing/review | Often ~24 hours; longer if picked for manual review | Inbox and [AMO developer listing](https://addons.mozilla.org/developers/addon/prepisi-converter/) |
 | Microsoft Edge Add-ons | 2026-08-17 | **In review**, public, Productivity, EN-US | Microsoft quoted **7 business days** | Inbox and [Edge overview](https://partner.microsoft.com/en-us/dashboard/microsoftedge/0575918a-bf45-4fee-9f26-f28fcdf02398/overview) |
 | Apple Safari / App Store | Not submitted | Paid Developer Program postponed | After a later $99/year enrollment | [developer.apple.com/account](https://developer.apple.com/account) |
@@ -19,9 +19,9 @@ Already live for reviewers and the public repo:
 - Project / support: <https://github.com/vokativ/prepisi>
 - Privacy: <https://github.com/vokativ/prepisi/blob/main/PRIVACY.md>
 
-Chrome item ID: `lgcbhfgbbjdhglmomlgkbeikcngjhikb`. Firefox slug: `prepisi-converter`.
+Chrome item ID: `lgcbhfgbbjdhglmomlgkbeikcngjhikb` (Live: <https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb>).
+Firefox slug: `prepisi-converter`.
 Edge Store ID: `0RDCK9XMTNZC`. Edge product: `0575918a-bf45-4fee-9f26-f28fcdf02398`.
-Store install URLs appear only after each review finishes.
 
 ## When to go look
 
@@ -31,8 +31,7 @@ and Promotions.
 1. **Around 2026-08-18 (24 hours after the Firefox submit).** Open AMO. If the
    version is signed, download that exact XPI and retest Firefox desktop plus
    Android remembered navigation before calling the signed package supported.
-2. **2026-08-24, then weekly.** Open the Chrome status page. Chrome can take
-   multiple weeks. The listing is set to publish automatically after approval.
+2. **Chrome Web Store published.** The extension is live on the Chrome Web Store.
 3. **2026-08-26 (seven business days after the Edge submit).** Open Partner
    Center. If it is still "In review", wait. If published, add the public URL
    to the README and to a follow-up social post.
@@ -56,14 +55,21 @@ What each panel must show:
 
 | File | Size | Use |
 | --- | --- | --- |
-| `docs/images/live/n1-source.png` | 1754×2040 | N1 source, Latin/Ekavian |
-| `docs/images/live/n1-dialect.png` | 1754×2040 | N1 after Ekavian → Ijekavian |
-| `docs/images/live/n1-script.png` | 1754×2040 | N1 after Latinica → Ćirilica |
-| `docs/images/live/index-source.png` / `index-script.png` | 1754×2040 each | Actual Index.hr source → Cyrillic pair |
-| `docs/images/live/klix-source.png` / `klix-script.png` | 1754×2040 each | Actual Klix.ba source → Cyrillic pair |
-| `docs/images/preview-conversion.png` | before/after collage | README convenience only |
+| `docs/images/badges/badge-chrome.svg` | Vector SVG | README & web store badge (Chrome) |
+| `docs/images/badges/badge-firefox.svg` | Vector SVG | README & web store badge (Firefox) |
+| `docs/images/badges/badge-edge.svg` | Vector SVG | README & web store badge (Edge) |
+| `docs/images/store/screenshot-1-dialect-n1.png` | 1280×800 | Store Slide 1: Dialect Conversion (Ekavica ↔ Ijekavica) |
+| `docs/images/store/screenshot-2-script-n1.png` | 1280×800 | Store Slide 2: Script Conversion (Latinica ↔ Ćirilica) |
+| `docs/images/store/screenshot-3-script-index.png` | 1280×800 | Store Slide 3: Regional Reading & Name Protection (Index.hr) |
+| `docs/images/store/screenshot-4-privacy-klix.png` | 1280×800 | Store Slide 4: Regional Coverage & 100% Privacy (Klix.ba) |
+| `docs/images/live/n1-source.png` | 950×540 | N1 source, Latin/Ekavian |
+| `docs/images/live/n1-dialect.png` | 950×540 | N1 after Ekavian → Ijekavian |
+| `docs/images/live/n1-script.png` | 950×540 | N1 after Latinica → Ćirilica |
+| `docs/images/live/index-source.png` / `index-script.png` | 1305×760 each | Index.hr source → Cyrillic pair |
+| `docs/images/live/klix-source.png` / `klix-script.png` | 900×510 each | Klix.ba source → Cyrillic pair |
+| `docs/images/preview-conversion.png` | 1600×2042 | README full vertical collage |
 | `docs/images/social-card-1200x630.png` | 1200×630 | Compact overview only |
-
+| `docs/images/store-promo-tile-440x280.png` | 440×280 | Chrome Web Store small promo tile |
 Use the individual files as a **four-image carousel** on LinkedIn or X: N1
 source → N1 Ijekavian, then Index.hr source → Index.hr Cyrillic; make Klix a
 second carousel or a later post. Actual side-by-side screenshots are clearer

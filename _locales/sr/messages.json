@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Prepiši",
+    "description": "Extension name shown in the browser toolbar and store listing."
+  },
+  "extDescription": {
+    "message": "Читајте српске, хрватске, бошњачке и црногорске странице у писму и изговору који вам одговара.",
+    "description": "Short one-line description shown under the extension name."
+  }
+}

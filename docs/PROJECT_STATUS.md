@@ -1,6 +1,6 @@
 # Project status and machine handoff
 
-Last updated: 2026-08-17. Current extension version: 0.9.1.
+Last updated: 2026-08-18. Current extension version: 0.9.1.
 
 ## Current state
 
@@ -73,8 +73,9 @@ Last updated: 2026-08-17. Current extension version: 0.9.1.
   Balkan Sans outlines. **The popup wordmark remains Balkan Sans-derived**;
   confirm its raster-output right or replace it before treating the branding
   release gate as closed. Apple Developer Program enrollment remains postponed.
-- Store submissions on 2026-08-17: Chrome Web Store item
-  `lgcbhfgbbjdhglmomlgkbeikcngjhikb` is **Pending review** (auto-publish);
+- Store status: Chrome Web Store item `lgcbhfgbbjdhglmomlgkbeikcngjhikb` is
+  **Approved & Published** (live at
+  `https://chromewebstore.google.com/detail/prepiši/lgcbhfgbbjdhglmomlgkbeikcngjhikb`);
   Firefox AMO slug `prepisi-converter` validated with 0 errors and is in
   Mozilla signing/review, including Firefox for Android; Microsoft Edge product
   `0575918a-bf45-4fee-9f26-f28fcdf02398` is **In review** (7 business days).
@@ -123,6 +124,16 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 5. **Apple remains postponed.** Enroll in the paid Developer Program only when
    there are more apps to publish; then register `com.vokativ.prepisi` /
    `com.vokativ.prepisi.Extension`.
+6. **Ship the pending Chrome/Edge name+description localization.** Serbian
+   (`sr`) and Croatian (`hr`) store listings are already live on AMO
+   (verified in its dashboard). The matching Chromium-side localization is
+   code-complete but held back deliberately: `_locales/{en,sr,hr}/messages.json`
+   plus `manifest.json`'s `__MSG_extName__` / `__MSG_extDescription__` /
+   `default_locale` are committed and pass `npm run check`, `npm run build:all`,
+   and Firefox `web-ext lint` (0/0/0), but shipping it requires a version bump
+   and a new package upload to Chrome and Firefox. Do this only after the
+   current Chrome first-review and Firefox signing both clear, to avoid
+   disrupting either in-flight review.
 
 Firefox Android event-page research is recorded in
 `research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also

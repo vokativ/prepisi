@@ -10,7 +10,7 @@ const persistence = require(path.join(root, "src", "site-persistence.js"));
 const buildRoot = path.join(root, "build");
 const targets = Object.freeze(["chromium", "edge", "firefox", "safari"]);
 const runtimeEntries = Object.freeze([
-  "src", "assets", "PRIVACY.md", "ATTRIBUTIONS.md", "LICENSE"
+  "src", "assets", "_locales", "PRIVACY.md", "ATTRIBUTIONS.md", "LICENSE"
 ]);
 
 function merge(base, overlay) {

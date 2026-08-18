@@ -1,13 +1,13 @@
 # Personal publisher account guide
 
-Last checked: 2026-08-17. Publisher identity: `hepsesus@gmail.com`. Public
+Last checked: 2026-08-18. Publisher identity: `hepsesus@gmail.com`. Public
 display name: `Nemanja G`.
 
 ## Current release position
 
 - Version 0.9.1 packages were submitted on 2026-08-17.
-- Chrome Web Store: **Pending review** (auto-publish). Item
-  `lgcbhfgbbjdhglmomlgkbeikcngjhikb`.
+- Chrome Web Store: **Approved & Published** (2026-08-18). Item
+  `lgcbhfgbbjdhglmomlgkbeikcngjhikb` (<https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb>).
 - Firefox AMO: validated, 0 errors, in review, Firefox for Android enabled.
   Slug `prepisi-converter`.
 - Microsoft Edge: **In review**. Product
@@ -109,7 +109,7 @@ the Chrome Web Store Developer Dashboard initiates the extension registration fl
 Completed 2026-08-17 under `hepsesus@gmail.com`: Non-Trader declaration, $5
 fee, publisher name `Nemanja G`, verified contact email, and upload of
 `dist/prepisi-0.9.1-chromium.zip`. Item
-`lgcbhfgbbjdhglmomlgkbeikcngjhikb` is pending review with auto-publish.
+`lgcbhfgbbjdhglmomlgkbeikcngjhikb` was **approved and published** on 2026-08-18.
 
 Official guidance:
 
