@@ -1,6 +1,18 @@
 # Prepiši
 
 <p align="center">
+  <a href="https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb">
+    <img src="docs/images/badges/badge-chrome.svg" alt="Available in the Chrome Web Store" height="48">
+  </a>
+  <a href="https://addons.mozilla.org/developers/addon/prepisi-converter/">
+    <img src="docs/images/badges/badge-firefox.svg" alt="Firefox Add-ons (In Review)" height="48">
+  </a>
+  <a href="https://partner.microsoft.com/en-us/dashboard/microsoftedge/0575918a-bf45-4fee-9f26-f28fcdf02398/overview">
+    <img src="docs/images/badges/badge-edge.svg" alt="Microsoft Edge Add-ons (In Review)" height="48">
+  </a>
+</p>
+
+<p align="center">
   <img src="docs/images/preview-conversion.png" alt="Prepiši on N1, Index.hr, and Klix — dialect and script conversion" width="100%">
 </p>
 
@@ -44,7 +56,26 @@ forking the conversion rules or vocabulary.
   remembered. Firefox additionally predeclares that editorial-portal batch,
   surfaced by Firefox through its install, settings, or first-use permission UI.
 
-## Load it in a Chromium browser
+## Install
+
+<p align="left">
+  <a href="https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb">
+    <img src="docs/images/badges/badge-chrome.svg" alt="Available in the Chrome Web Store" height="44">
+  </a>
+  <a href="https://addons.mozilla.org/developers/addon/prepisi-converter/">
+    <img src="docs/images/badges/badge-firefox.svg" alt="Firefox Add-ons (In Review)" height="44">
+  </a>
+  <a href="https://partner.microsoft.com/en-us/dashboard/microsoftedge/0575918a-bf45-4fee-9f26-f28fcdf02398/overview">
+    <img src="docs/images/badges/badge-edge.svg" alt="Microsoft Edge Add-ons (In Review)" height="44">
+  </a>
+</p>
+
+- **Chrome / Chromium:** [**Chrome Web Store**](https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb) (v0.9.1 — published)
+- **Firefox (Desktop & Android):** In review / signing on Mozilla Add-ons (slug `prepisi-converter`)
+- **Microsoft Edge:** In review on Microsoft Edge Add-ons (Product ID `0575918a-bf45-4fee-9f26-f28fcdf02398`)
+
+## Load unpacked for development
+
 
 1. Open `chrome://extensions` (or `edge://extensions`).
 2. Enable **Developer mode**.
