@@ -1,6 +1,8 @@
 # Curated editorial portal snapshot
 
-Review date: **2026-08-13**
+Review dates: **2026-08-13** (national/minority/diaspora news), **2026-08-24**
+(IT/technology specialist press and user-directed outreach-site additions; see
+below).
 
 The exhaustive 81-family DNS/editorial-alias refresh was completed on 2026-08-13. Its full regional findings, candidate subdomains, and 5-criteria evaluation method are recorded in
 [`PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md), and all approved subdomains have been integrated into [`src/curated-portals.js`](../src/curated-portals.js).
@@ -8,15 +10,18 @@ The exhaustive 81-family DNS/editorial-alias refresh was completed on 2026-08-13
 All browser builds use one catalog to group remembered rules across finite,
 reviewed editorial aliases. Firefox desktop and Android additionally predeclare
 the catalog as host permissions for their shared event-page package. The catalog
-currently contains **81 portal families**: 55 national publishers in
-Serbia, Croatia, Bosnia and Herzegovina, and Montenegro; 18 minority publishers;
-and 8 diaspora publishers. The executable, alias-level source of truth is
+currently contains **112 portal families**: 70 national publishers in
+Serbia, Croatia, Bosnia and Herzegovina, and Montenegro (55 general news +
+15 IT/technology specialist press added 2026-08-24); 18 minority publishers;
+8 diaspora publishers; and 16 exact, user-directed outreach-site families.
+The executable, alias-level source of truth is
 [`src/curated-portals.js`](../src/curated-portals.js).
 
 This is a popularity-informed curated snapshot, not a claim that these are the
-81 objectively “best” publishers. The research began with country top-100 and
+objectively "best" publishers. The research began with country top-100 and
 news-category rankings, then retained active original editorial publishers and
-broadcasters. The number 100 was a research ceiling, not a quota to fill.
+broadcasters. The reviewed cap (`test/site-persistence.test.js`, currently
+70-125 families) is a sanity ceiling, not a quota to fill.
 
 ## Inclusion policy
 
@@ -25,19 +30,33 @@ broadcast, or specialist editorial material in Serbian, Croatian, Bosnian, or
 Montenegrin. Editorial viewpoint is not a criterion and inclusion is not an
 endorsement.
 
-Exclude social media, forums and community-only sites, search, webmail,
-collaboration and cloud tools, ecommerce, classifieds, betting, score and weather
-services, government utilities, pure link aggregators, automatically copied news,
-inactive publishers, and login-only products. Never grant a country-TLD wildcard
-or a multi-tenant host. Also exclude API, authentication, advertising, analytics,
-CDN/static-asset, and user-content hosts even when their DNS records or Safari's
-website-access UI associate them with a portal page. Host aliases are enumerated
-explicitly in the catalog and must serve top-level editorial reading pages or be
-their canonical redirect destination.
+**User-directed outreach-site exception (2026-08-24):** Include the exact own
+website of an entity explicitly named in
+[`docs/LAUNCH_AND_SOCIAL.md`](../docs/LAUNCH_AND_SOCIAL.md), even when it is an
+academic, cultural, civil-society, or Wikimedia institution rather than an
+editorial publisher. These entries use the distinct `outreach` tier. This is
+not a general institutional-site expansion or an endorsement. The three
+language-project Wikipedia subdomains are an explicit, narrow exception: they
+are community-editable, but are the exact sites of the named Wikipedia
+communities. No broad `wikipedia.org` or other user-content host is included.
+
+The exception does not include a social network, Discord, Reddit, Google Group,
+mailing list, broad parent domain, wildcard, ad, API, authentication, analytics,
+CDN/static-asset, or unrelated user-content host merely because the outreach
+entity uses it. Every host must still be exact and must serve the entity's
+top-level reading surface or be its canonical redirect destination.
+
+**Permission effect:** The 16 `outreach` families contain 23 hosts. Firefox
+generates 46 HTTP/HTTPS install-time permission patterns from them; source
+v0.9.3 generates 522 patterns across the entire catalog, not 522 distinct
+sites. Firefox is technically authorized on matched pages, but Prepiši makes no
+browsing-time network request and injects only after a local remembered rule
+exists. Chrome, Edge, and Safari request a matching host only when the user
+chooses **Remember on this site**.
 
 ## Core national publishers
 
-Serbia (15):
+Serbia (21):
 
 ```text
 n1info.rs              blic.rs              telegraf.rs
@@ -45,26 +64,31 @@ nova.rs                birn.rs              danas.rs
 kurir.rs               mondo.rs             rts.rs
 srbijadanas.com        juznevesti.com       b92.net
 informer.rs            prva.rs              pink.rs
+startit.rs             sk.rs                buffgaming.rs
+itnetwork.rs           sajbersfera.in.rs    netokracija.rs
 ```
 
-Croatia (14):
+Croatia (22):
 
 ```text
 index.hr               24sata.hr            dnevnik.hr
 jutarnji.hr            net.hr               tportal.hr
 vecernji.hr            hrt.hr               dnevno.hr
 rtl.hr                 telegram.hr          slobodnadalmacija.hr
-direktno.hr            n1info.hr
+direktno.hr            n1info.hr            netokracija.com
+bug.hr                 pcchip.hr            vidi.hr
+hcl.hr                 pcekspert.com        mob.hr
+ictbusiness.info
 ```
 
-Bosnia and Herzegovina (13):
+Bosnia and Herzegovina (14):
 
 ```text
 klix.ba                avaz.ba              sportsport.ba
 srpskainfo.com         nezavisne.com        vijesti.ba
 hercegovina.info       n1info.ba            slobodna-bosna.ba
 oslobodjenje.ba        vecernji.ba          radiosarajevo.ba
-bljesak.info
+bljesak.info           itportal.ba
 ```
 
 Montenegro (13):
@@ -76,6 +100,71 @@ borba.me               rtcg.me              standard.co.me
 portalanalitika.me     aktuelno.me          mondo.me
 kolektiv.me
 ```
+
+### IT/technology specialist press addition (2026-08-24)
+
+These fifteen active specialist publications were separately researched for the
+0.9.3 catalog update. Each retained host served a top-level editorial surface
+or its canonical redirect under a desktop browser user-agent; every `www`
+alias below was directly checked. No wildcard, account, ad, asset, or
+third-party host was added. The catalog's canonical host is apex-form for
+consistent lookup; it is not a claim that the apex is the publisher's preferred
+redirect target.
+
+| Market | Publisher | Catalog hosts | Editorial evidence |
+| --- | --- | --- | --- |
+| RS | Startit | `startit.rs`, `www.startit.rs` | Multiple independent Serbian articles on 18, 17, 16, 14, 12, 11, and 10 August 2026, including named interview/reporting pieces. |
+| RS | Svet Kompjutera | `sk.rs`, `www.sk.rs` | The requested publisher's current domain is `sk.rs`, not `svet-kompjutera.com`; bylined review `Soundcore Boom 3i` (22 August 2026), further review (16 July), and August issue (1 August). |
+| RS | BuffGaming | `buffgaming.rs`, `www.buffgaming.rs` | Serbian gaming news and original-review publication; named `Blue Lock Live-Action` review (14 August) plus reviews/news from 13–21 August 2026. |
+| HR | Netokracija | `netokracija.com`, `www.netokracija.com` | Official page declares Croatian (`inLanguage: hr`) and shows independently bylined articles on 21, 20, 19, 18, 17, 14, and 13 August 2026. |
+| HR | BUG / Mreža | `bug.hr`, `www.bug.hr`, `mreza.bug.hr` | BUG declares daily ICT news, analysis, video, commentary, and reviews; direct home-page entries are bylined 18 and 17 August. Mreža is its separately branded ICT-professional editorial surface with direct August 2026 article entries. |
+| HR | PC CHIP | `pcchip.hr`, `www.pcchip.hr` | Croatian bylined consumer-tech coverage on 23 August 2026, alongside fresh hardware and AI articles on 18 August. |
+| HR | VIDI | `vidi.hr`, `www.vidi.hr` | Croatian technology publication with recurring dated articles on 21 August 2026 and a current computer-coverage list. |
+| HR | HCL | `hcl.hr`, `www.hcl.hr` | Croatian gaming-news/review publisher; its home page carried the dated recurring series `Vikend je – što igrate?` on 23 August 2026 alongside daily news/reviews. |
+| HR | PC Ekspert | `pcekspert.com`, `www.pcekspert.com` | Croatian hardware-review publication; current `Gigabyte Aorus GeForce RTX 5070 Ti` review and `Intel Core Ultra 7` review dated 6 August 2026. `.com` does not change its Croatian editorial language. |
+| HR | Mob.hr | `mob.hr` | Croatian mobile-technology publisher with authored entries dated 17, 14, and 13 August 2026. `www.mob.hr` returned HTTP 403 and is intentionally absent. |
+| BA | IT Portal | `itportal.ba`, `www.itportal.ba` | Bosnia-targeted publication with dated advice/review coverage on 12 August 2026. Its own HTML and JSON-LD explicitly declare Croatian (`lang` / `inLanguage: hr`), so the catalog records `HR`, not an inferred Bosnian locale. |
+
+Browser CDP audit resolved four prior reader/WAF deferrals:
+
+| Market | Publisher | Catalog hosts | Live-browser evidence |
+| --- | --- | --- | --- |
+| RS | ITNetwork | `itnetwork.rs`, `www.itnetwork.rs` | Local Chrome loaded the live Serbian multi-section portal; apex canonicalized to `www`; reviews/news dated 20–23 August 2026 spanned Hardware, AI, Games, and Business. |
+| RS | Sajber Sfera | `sajbersfera.in.rs` | Cloudflare completed in the real browser after ten seconds; named author Mihailo Ivanjac and security, hardware, AI, software, and gaming articles were dated 11–22 August 2026. `www` remains unverified and is absent. |
+| RS | Netokracija Srbija | `netokracija.rs`, `www.netokracija.rs` | Local Chrome loaded apex → `www`; live Serbian digital/technology reporting names Marko Crnjanski, Anastasija Uspenski, Matija Jovanović, and Aleksandra Čvorović. |
+| HR | ICT Business | `ictbusiness.info`, `www.ictbusiness.info` | Local Chrome loaded active Croatian ICT reporting, named interviews, own ICTbusiness TV coverage, and business/telecom/Internet sections; prior direct checks showed apex → `www`. |
+
+`benchmark.rs` remains deferred: even the local Chrome agent reached a
+Cloudflare “Sorry, you have been blocked” page, with no readable editorial
+content. `portalanalitika.me` was already in the catalog and is not a second
+family. `pcpress.rs` is retained in the separate user-directed `outreach` tier:
+the local Chrome agent completed its challenge and showed current, bylined
+Serbian Business & ICT News on 21 August 2026; stale `pc.pcpress.rs` remains
+excluded.
+
+### User-directed outreach-site addition (2026-08-24)
+
+The outreach plan named these entities. Their own sites are intentionally in
+the catalog so that a user can apply and remember Prepiši there; the list does
+not imply that any entity endorses the extension. It adds 16 families / 23
+hosts, or 46 Firefox HTTP/HTTPS host-permission patterns. Reddit, Discord,
+Google Groups, and the CLASSLA mailing list remain absent because they are
+social/shared platforms rather than the entity's own site.
+
+| Outreach entity | Exact catalog hosts | Verification boundary |
+| --- | --- | --- |
+| Wikimedia Serbia | `wikimedia.rs` | `www` has a TLS name mismatch; omitted. |
+| Serbian, Croatian, Bosnian Wikipedia | `sr.wikipedia.org`; `hr.wikipedia.org`; `bs.wikipedia.org` | Language-project hosts only; no broad `wikipedia.org`, no Discord host. |
+| CLASSLA / CLARIN.SI | `clarin.si`, `www.clarin.si` | Apex redirects to the verified `www` site; no `mailman.ijs.si` or Discord. |
+| SIGSLAV; SlavNLP/BSNLP | `sigslav.cs.helsinki.fi`; `bsnlp.cs.helsinki.fi` | Narrow program/workshop subdomains only; no parent Helsinki host. |
+| FFZG NLP section; AIRI | `inf.ffzg.unizg.hr`; `airi.uniri.hr`, `www.airi.uniri.hr` | Narrow department/lab hosts only; no parent university hosts. |
+| SHARE Foundation | `sharefoundation.info`, `www.sharefoundation.info` | `www` canonically redirects to apex. |
+| Institut za srpski jezik SANU | `www.isj.sanu.ac.rs` | The official `www` host was verified; apex timed out and is omitted. |
+| Matica srpska | `maticasrpska.org.rs`, `www.maticasrpska.org.rs` | Both exact aliases serve the institution. |
+| FCJK | `fcjk.ac.me` | The entity's named own host is retained; its TLS certificate was invalid at review time, so `www` is omitted. |
+| Udruženje „Dobrica Erić“ | `cirilica-beograd.rs`, `www.cirilica-beograd.rs` | Both exact aliases serve the association. |
+| PC Press | `pcpress.rs`, `www.pcpress.rs` | Local Chrome completed its challenge and showed current bylined news; stale `pc.pcpress.rs` is explicitly excluded. |
+| NSPM | `nspm.rs`, `www.nspm.rs` | Both aliases resolve; a January 2026 editorial article was read directly. |
 
 ## Minority and diaspora publishers
 

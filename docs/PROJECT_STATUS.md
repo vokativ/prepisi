@@ -3,8 +3,9 @@
 Last updated: 2026-08-24. Current live extension version: 0.9.1 on all three
 stores. Version 0.9.2 (i18n release) is submitted to Edge (in review, ~7
 business days) and Firefox AMO (in review, up to 24h+); Chrome upload is
-blocked until its in-flight promo-tile-only review clears (see "Next
-release work" below).
+blocked until its in-flight promo-tile-only review clears. Source HEAD is
+**0.9.3**, the next unsubmitted catalog update; it must not be substituted for
+the already-built 0.9.2 upload.
 
 ## Current state
 
@@ -25,14 +26,16 @@ release work" below).
 
 ## Verified baseline
 
-- `npm run check`: 88/88 offline unit and integration tests pass (including
-  build integrity, lexicon utils, jat reviews, and CLDR territory comparisons).
+- `npm run check`: 91/91 offline unit and integration tests pass (including
+  build integrity, curated-catalog invariants, exact outreach-site and
+  browser-verified technology-site boundaries, lexicon utils, jat reviews, and
+  CLDR territory comparisons).
 - `npm run test:browser-dom`: 12/12 browser-DOM integration checks pass in
   headless Chrome on macOS. The fixture covers the conversion engine and content
   controller, including protected text, dynamic insertion, restoration, and
   frozen portal samples. It does not validate extension installation, manifests,
   popup controls, or browser permission flows.
-- All four browser targets build and package successfully (`scripts/verify-build-outputs.mjs`: 24/24 build checks pass; 432 explicit host permissions generated for Firefox). This script now validates the tokenized `__MSG_extName__` manifest name against the resolved default-locale message rather than a hardcoded literal string.
+- All four browser targets build and package successfully (`scripts/verify-build-outputs.mjs`: 24/24 build checks pass; 536 explicit host permission patterns generated for Firefox by source v0.9.3). This script validates the tokenized `__MSG_extName__` manifest name against the resolved default-locale message rather than a hardcoded literal string.
 - Mozilla `web-ext` 10.6.0 lint: 0 errors, 0 warnings, and 0 notices.
 - Frozen portal fixtures cover RTS, Index.hr, NSPM, Vijesti.me, and Klix.ba.
 - Xcode 26.6 compiles `Prepisi (macOS)` and `Prepisi (iOS)` Safari App Wrappers cleanly for macOS 26.5 and physical iPhone 14 (iOS 26.5.2).
@@ -130,7 +133,31 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 5. **Apple remains postponed.** Enroll in the paid Developer Program only when
    there are more apps to publish; then register `com.vokativ.prepisi` /
    `com.vokativ.prepisi.Extension`.
-6. **Shipped v0.9.2: Chrome/Edge/Firefox name+description i18n, submitted to
+6. **Prepare v0.9.3 only after the v0.9.2 store path is resolved.** Source
+   version 0.9.3 expands the remembered-site catalog from 81 to **112**
+   families. It adds fifteen vetted regional IT/technology specialist portal
+   families (Startit, Svet Kompjutera, BuffGaming, ITNetwork, Sajber Sfera,
+   Netokracija Croatia/Serbia, BUG/Mreža, PC CHIP, VIDI, HCL, PC Ekspert,
+   Mob.hr, ICT Business, IT Portal) plus **16** exact `outreach` families /
+   **23** hosts for entities named in the outreach plan. Reader/WAF failures
+   were rechecked in the local Chrome CDP browser: PC Press, ITNetwork, Sajber
+   Sfera, Netokracija Srbija, and ICT Business are now browser-verified; only
+   Benchmark remains blocked even in the real browser. The outreach tier
+   excludes Reddit, Discord, Google Groups, mailing lists, broad parent
+   domains, and other shared/social surfaces; the three exact language-project
+   Wikipedia subdomains are the stated community-editable exception. Firefox's
+   predeclared **536** explicit host-permission patterns cover the whole catalog
+   (not 536 sites), including 46 patterns from outreach hosts. Firefox is
+   technically authorized on declared pages, but Prepiši makes no browsing-time
+   network request and injects only after a local remembered rule;
+   Chromium/Edge/Safari request a host only after the user opts into
+   **Remember on this site**. The full dated evidence, alias checks, and
+   exceptions (notably TLS-broken FCJK and Benchmark's persistent Cloudflare
+   block) are in
+   [`research/CURATED_EDITORIAL_PORTALS.md`](../research/CURATED_EDITORIAL_PORTALS.md).
+   Before submission, manually re-check the documented hosts and Firefox
+   signed-package behavior.
+7. **Shipped v0.9.2: Chrome/Edge/Firefox name+description i18n, submitted to
    all three stores.** `_locales/{en,sr,hr,bs}/messages.json` plus
    `manifest.json`'s `__MSG_extName__` / `__MSG_extDescription__` /
    `default_locale` shipped in v0.9.2. `npm run check` 88/88 (incl. two new

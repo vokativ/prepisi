@@ -73,7 +73,14 @@ than an illustrated explainer on a phone.
 
 These are actual browser screenshots made after accepting each portal's cookie
 banner and applying the shipped converter. They show ordinary public portal
-layout and advertising; no account UI, comments, or private content is present.
+layout and advertising; no account UI, comments, or private content is
+present. N1, Index.hr, Klix.ba, RTS, NSPM, and Vijesti.me are **not
+partners**, have not endorsed Prepiši, and were not asked for permission to
+depict their public page layout. Any caption or post using these images must
+say so explicitly (e.g. "unaffiliated example, no endorsement implied") and
+must not be phrased as a joint announcement. Do not pitch these six outlets'
+editorial desks about Prepiši while their screenshots remain unlabeled this
+way — see "Outreach: who to inform" below.
 
 - **N1 (Srbija), dialect & script.** Article *"Polarni put svile"* (`https://n1info.rs/svet/polarni-ledeni-put-svile-rusija-kina/`).
   - Dialect: `nedeljnu liniju ... Severni morski put` → `nedjeljnu liniju ... Sjeverni morski put`.
@@ -127,3 +134,90 @@ https://github.com/vokativ/prepisi
 After the first store publishes, make a second post with that install URL. Do
 not claim every browser until Chrome, Firefox, and Edge have all listed. Do
 not claim Safari until the paid Apple program is enrolled.
+
+## Outreach: who to inform
+
+Researched 2026-08-24 with live web verification (URLs/emails confirmed
+reachable, not invented). No paid marketing; every channel below is free or
+organic. Prioritized by fit and risk, not chronology — work top-down, do not
+do all tiers in one day, and space out subreddit/press pitches.
+
+All verified **own websites** named below are catalogued in source v0.9.3's
+distinct `outreach` tier (or already covered as editorial portals). The three
+language-project Wikipedia sites are intentionally included as the exact,
+community-editable homes of the named communities; no broad `wikipedia.org` is
+included. Reddit, Discord, Google Groups, and the CLASSLA mailing list are not
+entity-owned sites and remain excluded. This is exact-host coverage only; it
+does not imply endorsement or grant access to a parent, social, ad, account, or
+unrelated user-content domain. The audited host list and exceptions are in
+[`research/CURATED_EDITORIAL_PORTALS.md`](../research/CURATED_EDITORIAL_PORTALS.md).
+
+### Tier 1 — language & Wikipedia communities (best fit, do first)
+
+These groups will recognize the corpus-based, reviewed-lexicon approach as
+real work, not a toy. Post/email once, plainly, invite scrutiny of edge
+cases; do not claim any affiliation.
+
+- **Wikimedia Serbia** — `kancelarija@vikimedija.org`, <https://wikimedia.rs/kontakt/>. Free-knowledge/digital-literacy NGO; equal-access mission overlaps directly.
+- **Serbian Wikipedia village pump (Трг)** — <https://sr.wikipedia.org/wiki/Википедија:Трг>. Editors hit mixed Latin/Cyrillic and Ekavian/Ijekavian sourcing constantly.
+- **Croatian Wikipedia (Kafić)** — <https://hr.wikipedia.org/wiki/Wikipedija:Kafić>.
+- **Bosnian Wikipedia (Čaršija / Discord)** — <https://bs.wikipedia.org/wiki/Wikipedia:Čaršija>, <https://bs.wikipedia.org/wiki/Wikipedia:Discord>.
+- **CLASSLA (CLARIN Knowledge Centre for South Slavic Languages)** — `helpdesk.classla@clarin.si`; mailing list <https://mailman.ijs.si/mailman/listinfo/classla>; Discord <https://discord.com/invite/vQDRpGMU7C>. Direct fit: reviewed BCMS corpora/lexicons is their core subject.
+- **SIGSLAV (ACL Slavic NLP)** — <https://sigslav.cs.helsinki.fi/contact.html>, Google Group via <https://sigslav.cs.helsinki.fi/>. **SlavNLP/BSNLP workshop** — `bsnlp@cs.helsinki.fi`, <https://bsnlp.cs.helsinki.fi/>. Worth a short write-up: rule-based script/dialect conversion plus name-recognition protection is a citable applied case.
+- **University of Zagreb FFZG NLP/Lexicography section** — <https://inf.ffzg.unizg.hr/index.php/en/department-profile/department-sections/natural-language-processing-lexicography-and-encyclopedic-science>.
+- **University of Rijeka AIRI speech/language lab** — `jlerga@airi.uniri.hr`.
+
+### Tier 2 — reader communities (need prior mod permission; one post, no repeats)
+
+Every subreddit below treats an extension link as self-promotion even though
+it is free/GPL. Read the rules, engage normally first, then ask via modmail
+before posting; expect exactly one allowed post, ever, per subreddit.
+
+- **r/AskBalkans** — <https://www.reddit.com/r/AskBalkans/>; modmail <https://www.reddit.com/message/compose?to=/r/AskBalkans>. No-advertising rule; ask first.
+- **r/serbia** — <https://www.reddit.com/r/serbia/>; rules <https://www.reddit.com/r/serbia/wiki/rules-srp/> explicitly cap self-content at one post ever, then no further promotion.
+- **r/croatia** — <https://www.reddit.com/r/croatia/>; self-promo policy <https://www.reddit.com/r/croatia/wiki/subreddit_rules/self_promo-policy/> (200 comment-karma threshold, max 2 promo posts/month, non-commercial exception is discretionary and does not clearly cover a product).
+
+### Tier 3 — regional technology press (now covered in source 0.9.3)
+
+The outlets below are in the same curated catalog that powers remembered-site
+behavior. They are fair demo surfaces after 0.9.3 ships; state that the
+extension works on their public pages, never that they endorse it.
+
+- **Startit.rs** — `kontakt@startit.rs` / `komunikacije@startit.rs`, <https://startit.rs/kontakt/>. Has covered domestic OSS projects (Mainflux, Superplane); closest precedent match.
+- **Netokracija** — Croatian: `crnjanski@netokracija.com` / `info@netokracija.com`; Serbian edition is now browser-verified at `netokracija.rs`, but contact research is still required for it.
+- **BUG.hr** — `pisma@bug.hr`, <https://www.bug.hr/kontakt>. **Mreža** (BUG's IT-professional title) — `mreza@bug.hr`; use a technical/architecture-angle pitch.
+- **PC Press** (Serbia) — `pc@pcpress.rs`. Local Chrome completed the bot challenge and confirmed current, bylined Business & ICT News, so it is now a valid 0.9.3 demo surface.
+- **Additional catalog candidates for later regional outreach:** Svet Kompjutera (`sk.rs`), BuffGaming, PC CHIP, VIDI, HCL, PC Ekspert, Mob.hr, Bosnia-targeted IT Portal, ITNetwork, Sajber Sfera, and ICT Business. Contact research is still required before pitching them.
+- **Still deferred:** Benchmark — Cloudflare blocked even the local Chrome session; do not say Prepiši supports it.
+
+### Tier 4 — regional privacy / open-source outreach
+
+- **SHARE Foundation (Serbia)** — `info@sharedefense.org`, <https://sharefoundation.info/en/about-us/>. Digital-rights NGO; pitch as a resource/newsletter item, not a review request.
+
+English-language press and launch venues are intentionally out of scope for this
+campaign: no TechRadar, PCWorld, Hacker News, Product Hunt, Privacy Guides, or
+English-language “awesome” directories.
+
+### Tier 5 — script/language advocacy and standardization bodies (highest symbolic value, most sensitive)
+
+Script and dialect choice is politically and culturally loaded in the region.
+Frame Prepiši strictly as a neutral, optional, reader-side accessibility
+tool that supports every direction (Latin↔Cyrillic, Ekavian↔Ijekavian↔Ikavian)
+equally — never as advocacy for one script or standard over another, and
+never implying institutional endorsement.
+
+- **Institut za srpski jezik SANU** — `marija.djindjic@isj.sanu.ac.rs`, <https://www.isj.sanu.ac.rs/>.
+- **Matica srpska, Odeljenje za književnost i jezik** — `mkulic@maticasrpska.org.rs`, `ljdrazic@maticasrpska.org.rs`.
+- **Fakultet za crnogorski jezik i književnost (FCJK)** — `info@fcjk.me`, <https://fcjk.ac.me/>. Best point of contact for the Montenegrin ś/ź handling specifically.
+- **Udruženje za odbranu ćirilice „Dobrica Erić"** — `info@cirilica-beograd.rs`. Cyrillic-preservation association; likely receptive but the most politically loaded single contact on this list — lead with "supports both scripts equally," not "helps Cyrillic."
+
+### Deliberately deferred — the six portals shown in screenshots
+
+**Do not contact N1, Index.hr, Klix.ba, RTS, NSPM, or Vijesti.me yet.**
+Their pages appear unlabeled in Prepiši's own screenshots; reaching out to
+their web desks (`webredakcija@n1info.com`, `desk@index.hr`,
+`redakcija@klix.ba`, `webdesk@rts.rs`, `nspm@tsbest.net`, `portal@vijesti.me`)
+before that is fixed risks reading as an unsolicited endorsement claim. Add
+the disclaimer above (done, see "Promo graphics") to every place a screenshot
+is posted publicly first, then treat these as low-priority general-desk tips,
+not partnership pitches — none has a confirmed dedicated tech desk.
