@@ -1,8 +1,9 @@
 # Curated editorial portal snapshot
 
 Review dates: **2026-08-13** (national/minority/diaspora news), **2026-08-24**
-(IT/technology specialist press, sport, betting-linked sports press, and
-user-directed outreach-site additions; see below).
+(IT/technology specialist press, sport, betting-linked sports press,
+user-directed outreach-site additions, and a long-form culture/analysis press
+addition; see below).
 
 The exhaustive 81-family DNS/editorial-alias refresh was completed on 2026-08-13. Its full regional findings, candidate subdomains, and 5-criteria evaluation method are recorded in
 [`PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md), and all approved subdomains have been integrated into [`src/curated-portals.js`](../src/curated-portals.js).
@@ -10,10 +11,11 @@ The exhaustive 81-family DNS/editorial-alias refresh was completed on 2026-08-13
 All browser builds use one catalog to group remembered rules across finite,
 reviewed editorial aliases. Firefox desktop and Android additionally predeclare
 the catalog as host permissions for their shared event-page package. The catalog
-currently contains **125 portal families**: 78 national publishers in
-Serbia, Croatia, Bosnia and Herzegovina, and Montenegro (55 general news +
-15 IT/technology specialist press + 8 sports specialist press); 5
-betting-linked sports editorial publishers; 18 minority publishers; 8 diaspora
+currently contains **137 portal families**: 87 national publishers in
+Serbia, Croatia, Bosnia and Herzegovina, and Montenegro (64 general news +
+15 IT/technology specialist press + 8 sports specialist press); 2
+large multi-language international broadcasters; 5
+betting-linked sports editorial publishers; 18 minority publishers; 9 diaspora
 publishers; and 16 exact, user-directed outreach-site families.
 The executable, alias-level source of truth is
 [`src/curated-portals.js`](../src/curated-portals.js).
@@ -22,7 +24,7 @@ This is a popularity-informed curated snapshot, not a claim that these are the
 objectively "best" publishers. The research began with country top-100 and
 news-category rankings, then retained active original editorial publishers and
 broadcasters. The reviewed cap (`test/site-persistence.test.js`, currently
-70-125 families) is a sanity ceiling, not a quota to fill.
+70-140 families) is a sanity ceiling, not a quota to fill.
 
 ## Inclusion policy
 
@@ -30,6 +32,19 @@ Include an active publisher that produces recurring news, analysis, magazine,
 broadcast, or specialist editorial material in Serbian, Croatian, Bosnian, or
 Montenegrin. Editorial viewpoint is not a criterion and inclusion is not an
 endorsement.
+
+**Large multi-language broadcaster exception (2026-08-24):** Include a large
+international broadcaster's Serbian, Croatian, or Bosnian section even though
+it is served from one shared host that also carries many unrelated-language
+editions (German, English, Arabic, Chinese, and dozens more for Deutsche
+Welle; the flagship English service and dozens of other language sections for
+BBC News; Bosnian, Croatian, and Serbian sections alongside dozens of other
+SBS Language sections for Australia's SBS). `curated-portals.js` matches and
+predeclares Firefox permissions per hostname, with no path-scoping mechanism,
+so this necessarily grants matching across the whole shared host, not just
+its Balkan-language paths. This is a deliberate, informed trade-off: a user
+enabling **Remember on this site** for `dw.com`, `bbc.com`, or `sbs.com.au`
+knows which language section they are on and opts in accordingly.
 
 **Betting-linked sports-publication exception (2026-08-24):** A betting
 operator's separately hosted, recurring sports-news publication can enter the
@@ -57,7 +72,7 @@ top-level reading surface or be its canonical redirect destination.
 
 **Permission effect:** The 16 `outreach` families contain 23 hosts. Firefox
 generates 46 HTTP/HTTPS install-time permission patterns from them; source
-v0.9.3 generates 566 patterns across the entire catalog, not 566 distinct
+v0.9.3 generates 600 patterns across the entire catalog, not 600 distinct
 sites. Firefox is technically authorized on matched pages, but Prepiši makes no
 browsing-time network request and injects only after a local remembered rule
 exists. Chrome, Edge, and Safari request a matching host only when the user
@@ -65,7 +80,7 @@ chooses **Remember on this site**.
 
 ## Core national publishers
 
-Serbia (24):
+Serbia (28):
 
 ```text
 n1info.rs              blic.rs              telegraf.rs
@@ -76,9 +91,11 @@ informer.rs            prva.rs              pink.rs
 sportske.net           sportklub.n1info.rs  zurnal.politika.rs
 startit.rs             sk.rs                buffgaming.rs
 itnetwork.rs           sajbersfera.in.rs    netokracija.rs
+velikeprice.com        vreme.com            nedeljnik.rs
+pescanik.net
 ```
 
-Croatia (24):
+Croatia (28):
 
 ```text
 index.hr               24sata.hr            dnevnik.hr
@@ -89,9 +106,11 @@ direktno.hr            n1info.hr            sportklub.n1info.hr
 sportnet.hr            netokracija.com      bug.hr
 pcchip.hr              vidi.hr              hcl.hr
 pcekspert.com          mob.hr               ictbusiness.info
+lupiga.com             kritika-hdp.hr       booksa.hr
+portalnovosti.com
 ```
 
-Bosnia and Herzegovina (15):
+Bosnia and Herzegovina (16):
 
 ```text
 klix.ba                avaz.ba              sportsport.ba
@@ -99,6 +118,7 @@ reprezentacija.ba      srpskainfo.com       nezavisne.com
 vijesti.ba             hercegovina.info     n1info.ba
 slobodna-bosna.ba      oslobodjenje.ba       vecernji.ba
 radiosarajevo.ba       bljesak.info          itportal.ba
+prometej.ba
 ```
 
 Montenegro (15):
@@ -203,6 +223,46 @@ social/shared platforms rather than the entity's own site.
 | PC Press | `pcpress.rs`, `www.pcpress.rs` | Local Chrome completed its challenge and showed current bylined news; stale `pc.pcpress.rs` is explicitly excluded. |
 | NSPM | `nspm.rs`, `www.nspm.rs` | Both aliases resolve; a January 2026 editorial article was read directly. |
 
+### Long-form culture and analysis press addition (2026-08-24)
+
+A user-supplied shortlist of regional long-form essay, analysis, and literary-
+criticism outlets (similar in character to Velike priče) was individually
+read-verified for this addition, following the same host-, language-, and
+`core` families: four in Serbia, four in Croatia, one in Bosnia and
+Herzegovina.
+
+| Market | Publisher | Catalog hosts | Verification boundary |
+| --- | --- | --- | --- |
+| RS | Velike priče | `velikeprice.com` | Live subscription-based long-form/essay magazine; `www` redirects to the apex and is excluded. Dated Serbian bylined articles through 24 August 2026 (e.g. Pavle Zelić, Željko Pantelić, Veljko Miladinović). |
+| RS | Vreme | `vreme.com` | Long-standing independent Serbian analytical weekly. Direct fetch of both apex and `www` returns HTTP 403 (WAF); a rendering read-through proxy confirmed live Serbian articles dated 22–24 August 2026 and an archive of numbered weekly issues back to 1847, all linked from the apex host only, so `www` is excluded for lack of independent evidence. |
+| RS | Nedeljnik | `nedeljnik.rs`, `www.nedeljnik.rs` | Serbian weekly, direct fetch of both hosts returns HTTP 403 (WAF); a read-through proxy confirmed live Serbian articles (current issue no. 762, dated 2 July 2026, recurring columnists including Zoran Panović and Marko Prelević) with internal links consistently using `www`. |
+| RS | Peščanik | `pescanik.net` | Regional Serbian sociopolitical/legal essay platform founded by Dejan Ilić et al. Direct fetch of apex and `www` returns HTTP 403 (WAF); syndicated Naslovi.net entries confirmed two distinct Peščanik essays dated 18 and 21 August 2026 linking back to the apex host; `www` has no supporting evidence and is excluded. |
+| HR | Lupiga | `lupiga.com`, `www.lupiga.com` | Croatian independent crowd-funded journalism/culture outlet; both hosts independently serve the same content (each with its own matching `og:url`). Dated Croatian obituary/culture piece 18 August 2026. |
+| HR | Kritika HDP | `kritika-hdp.hr` | Hrvatsko društvo pisaca's Croatian literary-criticism portal; `www` redirects to the apex and is excluded. Dated Croatian review 24 August 2026 (Katarina Luketić). |
+| HR | Booksa | `booksa.hr`, `www.booksa.hr` | Zagreb literary/cultural-criticism portal; both hosts independently serve the same current Croatian editorial content. Dated review 18 August 2026 (Vida Terze) plus recurring news/columns through late August 2026. |
+| BA | Prometej.ba | `prometej.ba`, `www.prometej.ba` | Sarajevo social-commentary/literature/reconciliation essay portal; both hosts serve the same content, with the site's own metadata declaring `www` canonical. Dated Bosnian essays 21–23 August 2026 (Adna Muslija, Omer Ramić, Enver Kazaz). |
+| HR | Portal Novosti | `portalnovosti.com`, `www.portalnovosti.com` | SNV's Serbian-minority weekly in Croatia. Automated read (direct fetch, a rendering proxy, and a real headless browser) was stopped by a Cloudflare Turnstile challenge, so this entry rests on direct owner-side confirmation: a live real-browser screenshot of `www.portalnovosti.com` (a dated 24 August 2026 ДРУШТВО article, byline Dejan Kožul) showing the site's own Ćirilica/Latinica (`Ж`/`Ж`) script toggle. Apex `portalnovosti.com` resolves to `www` and is retained as the redirect source. |
+
+Four other sites from the same user shortlist were checked and not newly
+added, for different reasons:
+
+- **Telegram.hr** (`telegram.hr`) is already in the catalog as `hr-telegram`
+  from the 2026-08-13 refresh; no change was needed.
+- **Radar** (`radar.rs`) redirects to `radar.nova.rs`, which is already a
+  catalog host inside the existing `rs-nova` family (Nova media group). Adding
+  `radar.rs`/`www.radar.rs` would only register two more redirect-only hosts
+  for a family already covered, so no new entry was added.
+- **Balkan Insight** (`balkaninsight.com`) is BIRN's regional outlet, but its
+  read-verified editorial content is predominantly English (confirmed article,
+  navigation, and metadata), not Serbian, Croatian, Bosnian, or Montenegrin.
+  It fails the base inclusion policy's language requirement; unlike the SBS/DW/
+  BBC broadcasters above, `balkaninsight.com` itself has no dedicated Serbian,
+  Croatian, Bosnian, or Montenegrin section to point the exception at.
+- **Mešanac** (`mesanac.com`) is live but is not an editorial publication: its
+  homepage is a single unrelated page and its post archive is dominated by
+  English/German/Russian online-casino affiliate content, not journalism or
+  criticism. Excluded as non-editorial.
+
 ## Minority and diaspora publishers
 
 Kosovo (Serbian):
@@ -227,18 +287,31 @@ Austria, Germany/DACH, USA, and Australia:
 kosmo.at               hrvatskenovine.at    volksgruppen.orf.at
 fenix-magazin.de       rasejanje.info       croatiansonline.com
 chicagoglasnik.com     serbiantimes.info    srpskatelevizija.com
-vjesnik.com.au
+vjesnik.com.au         sbs.com.au
 ```
 
 No UK-specific publisher met the current-language, activity, and original
 editorial bar. No Latin American host qualified: the current Croatia-focused
 publishers found there primarily publish in Spanish or Portuguese. This is a
-documented empty result, not a reason to add marginal domains. Australia’s SBS
-has strong current Bosnian, Croatian, and Serbian sections, but `sbs.com.au` is a
-large predominantly English host; WebExtension host permissions cannot be
-limited to `/language/...`, so it is deliberately excluded. `vjesnik.com.au` is
-the sole confident Australian inclusion. `srpskiglas.com.au` and `domovina.info`
-remain candidates pending proof of a current regular web publishing cadence.
+documented empty result, not a reason to add marginal domains. `srpskiglas.com.au`
+and `domovina.info` remain candidates pending proof of a current regular web
+publishing cadence.
+
+### Large multi-language broadcaster exception (2026-08-24)
+
+Australia's SBS has strong current Bosnian, Croatian, and Serbian sections
+under `www.sbs.com.au/language/{bosnian,croatian,serbian}`; each was read
+directly and showed dated August 2026 news and podcast episodes in the
+matching script (Latin for Bosnian/Croatian, Cyrillic for Serbian's default
+`/sr` path). Deutsche Welle's `www.dw.com/sr/` and `www.dw.com/hr/` sections
+and BBC News na srpskom (`www.bbc.com/serbian`) were likewise read directly
+and showed dated 24 August 2026 Serbian/Croatian articles. All three are large
+multi-language hosts — `sbs.com.au` also serves dozens of other SBS Language
+editions, `dw.com` serves German/English/Arabic/Chinese/Spanish/Russian and
+more, `bbc.com` serves BBC's flagship English service and dozens of other
+language editions — so each catalog entry's Firefox host permission and
+"Remember on this site" rule necessarily covers the whole shared host, not
+only its Balkan-language path. See the inclusion-policy exception above.
 
 ## Evidence and method
 
