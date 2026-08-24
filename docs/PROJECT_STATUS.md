@@ -35,7 +35,7 @@ the already-built 0.9.2 upload.
   controller, including protected text, dynamic insertion, restoration, and
   frozen portal samples. It does not validate extension installation, manifests,
   popup controls, or browser permission flows.
-- All four browser targets build and package successfully (`scripts/verify-build-outputs.mjs`: 24/24 build checks pass; 536 explicit host permission patterns generated for Firefox by source v0.9.3). This script validates the tokenized `__MSG_extName__` manifest name against the resolved default-locale message rather than a hardcoded literal string.
+- All four browser targets build and package successfully (`scripts/verify-build-outputs.mjs`: 24/24 build checks pass; 600 explicit host permission patterns generated for Firefox by source v0.9.3, covering 137 catalog families). This script validates the tokenized `__MSG_extName__` manifest name against the resolved default-locale message rather than a hardcoded literal string.
 - Mozilla `web-ext` 10.6.0 lint: 0 errors, 0 warnings, and 0 notices.
 - Frozen portal fixtures cover RTS, Index.hr, NSPM, Vijesti.me, and Klix.ba.
 - Xcode 26.6 compiles `Prepisi (macOS)` and `Prepisi (iOS)` Safari App Wrappers cleanly for macOS 26.5 and physical iPhone 14 (iOS 26.5.2).
@@ -228,6 +228,47 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
      desktop and Android before claiming full v0.9.2 support — this is a
      fresh signed artifact and does not inherit 0.9.1's signed-package
      verification.
+
+8. **Expanded the still-unreleased source catalog from 125 to 134 families
+   (2026-08-24), on top of the unsubmitted v0.9.3 work above.** Added nine
+   read-verified long-form culture/analysis/criticism portals: Velike priče,
+   Vreme, Nedeljnik, Peščanik (Serbia); Lupiga, Kritika HDP, Booksa, Portal
+   Novosti (Croatia); Prometej.ba (Bosnia and Herzegovina). Portal Novosti's
+   own automated read (direct fetch, a rendering proxy, and a real headless
+   browser) was blocked by an active Cloudflare Turnstile challenge; it was
+   added only after the user supplied a live real-browser screenshot of
+   `www.portalnovosti.com` showing a dated 24 August 2026 article and the
+   site's own Ćirilica/Latinica script toggle — script conversion is
+   confirmed robust there, but the site's own content does not exercise
+   Ekavian/Ijekavian dialect conversion. Firefox's predeclared
+   host-permission pattern count moved from 566 to **594**
+   (`node scripts/verify-build-outputs.mjs`). `npm run check` 92/92 (incl. the
+   raised `test/site-persistence.test.js` catalog cap, now 70-140), and
+   `npm run build:all` all pass. Full per-site verification evidence and
+   evaluated-but-excluded candidates (Telegram.hr already present; Radar
+   already covered via the existing `rs-nova` family; Balkan Insight excluded
+   as predominantly English; Mešanac excluded as non-editorial) are recorded
+   in
+   [`research/CURATED_EDITORIAL_PORTALS.md`](../research/CURATED_EDITORIAL_PORTALS.md).
+   This further raises the still-unsubmitted v0.9.3 host-permission surface;
+   review it alongside item 6 before that release ships.
+
+9. **Added a large multi-language broadcaster exception (2026-08-24).**
+   Deutsche Welle's Serbian/Croatian sections (`www.dw.com`), BBC News na
+   srpskom (`www.bbc.com`), and Australia's SBS Bosnian/Croatian/Serbian
+   sections (`www.sbs.com.au`) are each served from one large shared host
+   that also carries many unrelated-language editions; `curated-portals.js`
+   only matches/predeclares permissions per hostname, so each entry's
+   permission and remembered-rule scope necessarily covers the whole shared
+   host. Previously this was a hard exclusion (matching the existing SBS/UK
+   rationale); the project owner explicitly requested the exception, judging
+   that a user who enables **Remember on this site** on `dw.com`, `bbc.com`,
+   or `sbs.com.au` knows which language section they are on. Catalog now 137
+   families; Firefox's predeclared host-permission pattern count moved from
+   594 to **600**. `npm run check` 92/92, `npm run build:all` and
+   `node scripts/verify-build-outputs.mjs` 24/24 pass. See the new
+   "Large multi-language broadcaster exception" sections in
+   [`research/CURATED_EDITORIAL_PORTALS.md`](../research/CURATED_EDITORIAL_PORTALS.md).
 
 Firefox Android event-page research is recorded in
 `research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also

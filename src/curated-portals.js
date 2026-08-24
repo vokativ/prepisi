@@ -32,6 +32,10 @@
     ["rs-itnetwork", "itnetwork.rs", ["itnetwork.rs", "www.itnetwork.rs"], "core", ["RS"], ["sr"]],
     ["rs-sajbersfera", "sajbersfera.in.rs", ["sajbersfera.in.rs"], "core", ["RS"], ["sr"]],
     ["rs-netokracija", "netokracija.rs", ["netokracija.rs", "www.netokracija.rs"], "core", ["RS"], ["sr"]],
+    ["rs-velikeprice", "velikeprice.com", ["velikeprice.com"], "core", ["RS"], ["sr"]],
+    ["rs-vreme", "vreme.com", ["vreme.com"], "core", ["RS"], ["sr"]],
+    ["rs-nedeljnik", "www.nedeljnik.rs", ["nedeljnik.rs", "www.nedeljnik.rs"], "core", ["RS"], ["sr"]],
+    ["rs-pescanik", "pescanik.net", ["pescanik.net"], "core", ["RS"], ["sr"]],
 
     ["hr-index", "index.hr", ["index.hr", "www.index.hr"], "core", ["HR"], ["hr"]],
     ["hr-24sata", "24sata.hr", ["24sata.hr", "www.24sata.hr", "express.24sata.hr", "autostart.24sata.hr", "miss7.24sata.hr", "miss7zdrava.24sata.hr", "miss7mama.24sata.hr", "gastro.24sata.hr", "joomboos.24sata.hr"], "core", ["HR"], ["hr"]],
@@ -57,6 +61,10 @@
     ["hr-pcekspert", "pcekspert.com", ["pcekspert.com", "www.pcekspert.com"], "core", ["HR"], ["hr"]],
     ["hr-mobhr", "mob.hr", ["mob.hr"], "core", ["HR"], ["hr"]],
     ["hr-ictbusiness", "ictbusiness.info", ["ictbusiness.info", "www.ictbusiness.info"], "core", ["HR"], ["hr"]],
+    ["hr-lupiga", "lupiga.com", ["lupiga.com", "www.lupiga.com"], "core", ["HR"], ["hr"]],
+    ["hr-kritika-hdp", "kritika-hdp.hr", ["kritika-hdp.hr"], "core", ["HR"], ["hr"]],
+    ["hr-booksa", "booksa.hr", ["booksa.hr", "www.booksa.hr"], "core", ["HR"], ["hr"]],
+    ["hr-portalnovosti", "www.portalnovosti.com", ["portalnovosti.com", "www.portalnovosti.com"], "core", ["HR"], ["sr"]],
 
     ["ba-klix", "klix.ba", ["klix.ba", "www.klix.ba"], "core", ["BA"], ["bs"]],
     ["ba-avaz", "avaz.ba", ["avaz.ba", "www.avaz.ba"], "core", ["BA"], ["bs"]],
@@ -73,6 +81,7 @@
     ["ba-radiosarajevo", "radiosarajevo.ba", ["radiosarajevo.ba", "www.radiosarajevo.ba"], "core", ["BA"], ["bs"]],
     ["ba-bljesak", "bljesak.info", ["bljesak.info", "www.bljesak.info"], "core", ["BA"], ["hr"]],
     ["ba-itportal", "itportal.ba", ["itportal.ba", "www.itportal.ba"], "core", ["BA"], ["hr"]],
+    ["ba-prometej", "www.prometej.ba", ["prometej.ba", "www.prometej.ba"], "core", ["BA"], ["bs"]],
 
     ["me-vijesti", "vijesti.me", ["vijesti.me", "www.vijesti.me", "forbes.vijesti.me"], "core", ["ME"], ["cnr", "sr"]],
     ["me-cdm", "cdm.me", ["cdm.me", "www.cdm.me"], "core", ["ME"], ["cnr"]],
@@ -87,6 +96,16 @@
     ["me-aktuelno", "aktuelno.me", ["aktuelno.me", "www.aktuelno.me"], "core", ["ME"], ["cnr"]],
     ["me-mondo", "mondo.me", ["mondo.me", "www.mondo.me"], "core", ["ME"], ["cnr", "sr"]],
     ["me-kolektiv", "kolektiv.me", ["kolektiv.me", "www.kolektiv.me"], "core", ["ME"], ["cnr"]],
+
+    // Large multi-language international broadcaster exception (2026-08-24):
+    // each of these serves its Serbian/Croatian/Bosnian section from a shared
+    // host that also carries many unrelated-language editions. Host-level
+    // permission scope therefore covers the whole domain, not just the
+    // Balkan-language paths; see the inclusion-policy exception in
+    // research/CURATED_EDITORIAL_PORTALS.md before adding another one.
+    ["intl-dw", "www.dw.com", ["www.dw.com"], "core", ["RS", "HR"], ["sr", "hr"]],
+    ["intl-bbc-serbian", "www.bbc.com", ["www.bbc.com"], "core", ["RS"], ["sr"]],
+    ["au-sbs", "www.sbs.com.au", ["www.sbs.com.au"], "diaspora", ["AU"], ["bs", "hr", "sr"]],
 
     // Betting-linked publications use their own editorial reading hosts. Do not
     // add betting, account, payment, odds, API, advertising, or static hosts.

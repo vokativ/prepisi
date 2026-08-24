@@ -68,7 +68,7 @@ test("RTS paths share one finite apex and www portal family", () => {
 
 test("curated catalog is normalized, non-overlapping, and within the reviewed cap", () => {
   assert.ok(curated.portals.length >= 70);
-  assert.ok(curated.portals.length <= 125);
+  assert.ok(curated.portals.length <= 140);
   const ids = new Set();
   const hosts = new Set();
   for (const portal of curated.portals) {
