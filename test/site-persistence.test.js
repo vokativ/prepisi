@@ -66,7 +66,7 @@ test("RTS paths share one finite apex and www portal family", () => {
   assert.deepEqual(Array.from(oko.hosts), ["rts.rs", "www.rts.rs", "oko.rts.rs"]);
 });
 
-test("curated catalog is normalized, non-overlapping, and below the reviewed cap", () => {
+test("curated catalog is normalized, non-overlapping, and within the reviewed cap", () => {
   assert.ok(curated.portals.length >= 70);
   assert.ok(curated.portals.length <= 125);
   const ids = new Set();
@@ -124,6 +124,39 @@ test("browser-verified technology sites use the inspected alias families", () =>
     assert.deepEqual(Array.from(portal.hosts), hosts);
     assert.equal(portal.tier, "core");
   }
+});
+
+test("sports and betting-linked editorial portals retain verified exact hosts", () => {
+  const core = {
+    "rs-sportske": ["sportske.net"],
+    "rs-sportklub": ["sportklub.n1info.rs"],
+    "rs-sportski-zurnal": ["zurnal.politika.rs"],
+    "hr-sportklub": ["sportklub.n1info.hr"],
+    "hr-sportnet": ["sportnet.hr"],
+    "ba-reprezentacija": ["reprezentacija.ba"],
+    "me-cgsport": ["cgsport.me"],
+    "me-sportski": ["sportski.me"]
+  };
+  const commercial = {
+    "rs-mozzart-sport": ["mozzartsport.com", "www.mozzartsport.com"],
+    "rs-meridian-sport": ["meridiansport.rs"],
+    "hr-germanijak": ["germanijak.hr", "www.germanijak.hr"],
+    "ba-meridiansport": ["meridiansport.ba"],
+    "me-meridiansport": ["meridiansport.me"]
+  };
+  for (const [id, hosts] of Object.entries(core)) {
+    const portal = curated.portals.find((candidate) => candidate.id === id);
+    assert.ok(portal, id);
+    assert.deepEqual(Array.from(portal.hosts), hosts);
+    assert.equal(portal.tier, "core");
+  }
+  for (const [id, hosts] of Object.entries(commercial)) {
+    const portal = curated.portals.find((candidate) => candidate.id === id);
+    assert.ok(portal, id);
+    assert.deepEqual(Array.from(portal.hosts), hosts);
+    assert.equal(portal.tier, "commercial");
+  }
+  assert.equal(curated.portalForHostname("sportklub.n1info.com"), null);
 });
 
 test("registered site scripts are ordered, local, persistent, and top-frame only", () => {

@@ -23,6 +23,9 @@
     ["rs-informer", "informer.rs", ["informer.rs", "www.informer.rs", "sportinjo.informer.rs"], "core", ["RS"], ["sr"]],
     ["rs-prva", "prva.rs", ["prva.rs", "www.prva.rs"], "core", ["RS"], ["sr"]],
     ["rs-pink", "pink.rs", ["pink.rs", "www.pink.rs"], "core", ["RS"], ["sr"]],
+    ["rs-sportske", "sportske.net", ["sportske.net"], "core", ["RS"], ["sr"]],
+    ["rs-sportklub", "sportklub.n1info.rs", ["sportklub.n1info.rs"], "core", ["RS"], ["sr"]],
+    ["rs-sportski-zurnal", "zurnal.politika.rs", ["zurnal.politika.rs"], "core", ["RS"], ["sr"]],
     ["rs-startit", "startit.rs", ["startit.rs", "www.startit.rs"], "core", ["RS"], ["sr"]],
     ["rs-svetkompjutera", "sk.rs", ["sk.rs", "www.sk.rs"], "core", ["RS"], ["sr"]],
     ["rs-buffgaming", "buffgaming.rs", ["buffgaming.rs", "www.buffgaming.rs"], "core", ["RS"], ["sr"]],
@@ -44,6 +47,8 @@
     ["hr-slobodnadalmacija", "slobodnadalmacija.hr", ["slobodnadalmacija.hr", "www.slobodnadalmacija.hr"], "core", ["HR"], ["hr"]],
     ["hr-direktno", "direktno.hr", ["direktno.hr", "www.direktno.hr"], "core", ["HR"], ["hr"]],
     ["hr-n1", "n1info.hr", ["n1info.hr", "www.n1info.hr"], "core", ["HR"], ["hr"]],
+    ["hr-sportklub", "sportklub.n1info.hr", ["sportklub.n1info.hr"], "core", ["HR"], ["hr"]],
+    ["hr-sportnet", "sportnet.hr", ["sportnet.hr"], "core", ["HR"], ["hr"]],
     ["hr-netokracija", "netokracija.com", ["netokracija.com", "www.netokracija.com"], "core", ["HR"], ["hr"]],
     ["hr-bug", "bug.hr", ["bug.hr", "www.bug.hr", "mreza.bug.hr"], "core", ["HR"], ["hr"]],
     ["hr-pcchip", "pcchip.hr", ["pcchip.hr", "www.pcchip.hr"], "core", ["HR"], ["hr"]],
@@ -56,6 +61,7 @@
     ["ba-klix", "klix.ba", ["klix.ba", "www.klix.ba"], "core", ["BA"], ["bs"]],
     ["ba-avaz", "avaz.ba", ["avaz.ba", "www.avaz.ba"], "core", ["BA"], ["bs"]],
     ["ba-sportsport", "sportsport.ba", ["sportsport.ba", "www.sportsport.ba"], "core", ["BA"], ["bs"]],
+    ["ba-reprezentacija", "reprezentacija.ba", ["reprezentacija.ba"], "core", ["BA"], ["bs"]],
     ["ba-srpskainfo", "srpskainfo.com", ["srpskainfo.com", "www.srpskainfo.com", "zdravlje.srpskainfo.com", "sport.srpskainfo.com"], "core", ["BA"], ["sr"]],
     ["ba-nezavisne", "nezavisne.com", ["nezavisne.com", "www.nezavisne.com"], "core", ["BA"], ["sr"]],
     ["ba-vijesti", "vijesti.ba", ["vijesti.ba", "www.vijesti.ba"], "core", ["BA"], ["bs"]],
@@ -81,6 +87,18 @@
     ["me-aktuelno", "aktuelno.me", ["aktuelno.me", "www.aktuelno.me"], "core", ["ME"], ["cnr"]],
     ["me-mondo", "mondo.me", ["mondo.me", "www.mondo.me"], "core", ["ME"], ["cnr", "sr"]],
     ["me-kolektiv", "kolektiv.me", ["kolektiv.me", "www.kolektiv.me"], "core", ["ME"], ["cnr"]],
+
+    // Betting-linked publications use their own editorial reading hosts. Do not
+    // add betting, account, payment, odds, API, advertising, or static hosts.
+    ["rs-mozzart-sport", "mozzartsport.com", ["mozzartsport.com", "www.mozzartsport.com"], "commercial", ["RS"], ["sr"]],
+    ["rs-meridian-sport", "meridiansport.rs", ["meridiansport.rs"], "commercial", ["RS"], ["sr"]],
+    ["hr-germanijak", "www.germanijak.hr", ["germanijak.hr", "www.germanijak.hr"], "commercial", ["HR"], ["hr"]],
+    ["ba-meridiansport", "meridiansport.ba", ["meridiansport.ba"], "commercial", ["BA"], ["bs"]],
+    ["me-meridiansport", "meridiansport.me", ["meridiansport.me"], "commercial", ["ME"], ["cnr"]],
+
+    ["me-cgsport", "cgsport.me", ["cgsport.me"], "core", ["ME"], ["cnr"]],
+    ["me-sportski", "sportski.me", ["sportski.me"], "core", ["ME"], ["cnr"]],
+
 
     ["xk-kosovo-online", "kosovo-online.com", ["kosovo-online.com", "www.kosovo-online.com"], "minority", ["XK"], ["sr"]],
     ["xk-kossev", "kossev.info", ["kossev.info", "www.kossev.info"], "minority", ["XK"], ["sr"]],

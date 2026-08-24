@@ -134,22 +134,27 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
    there are more apps to publish; then register `com.vokativ.prepisi` /
    `com.vokativ.prepisi.Extension`.
 6. **Prepare v0.9.3 only after the v0.9.2 store path is resolved.** Source
-   version 0.9.3 expands the remembered-site catalog from 81 to **112**
+   version 0.9.3 expands the remembered-site catalog from 81 to **125**
    families. It adds fifteen vetted regional IT/technology specialist portal
    families (Startit, Svet Kompjutera, BuffGaming, ITNetwork, Sajber Sfera,
    Netokracija Croatia/Serbia, BUG/Mreža, PC CHIP, VIDI, HCL, PC Ekspert,
-   Mob.hr, ICT Business, IT Portal) plus **16** exact `outreach` families /
-   **23** hosts for entities named in the outreach plan. Reader/WAF failures
-   were rechecked in the local Chrome CDP browser: PC Press, ITNetwork, Sajber
-   Sfera, Netokracija Srbija, and ICT Business are now browser-verified; only
-   Benchmark remains blocked even in the real browser. The outreach tier
-   excludes Reddit, Discord, Google Groups, mailing lists, broad parent
-   domains, and other shared/social surfaces; the three exact language-project
-   Wikipedia subdomains are the stated community-editable exception. Firefox's
-   predeclared **536** explicit host-permission patterns cover the whole catalog
-   (not 536 sites), including 46 patterns from outreach hosts. Firefox is
-   technically authorized on declared pages, but Prepiši makes no browsing-time
-   network request and injects only after a local remembered rule;
+   Mob.hr, ICT Business, IT Portal); eight dedicated regional sports
+   publications (Sportske.net, Sport Klub RS/HR, Sportski žurnal, Sportnet,
+   Reprezentacija.ba, CG Sport, Sportski.me); and five separately hosted,
+   betting-linked sports editorial portals (Mozzart Sport, Meridian Sport
+   RS/BA/ME, Germanijak). The latter use a narrow `commercial` tier: betting,
+   account, payment, odds, API, advertising, and static hosts stay absent.
+   Reader/WAF failures were rechecked in the local Chrome CDP browser: PC
+   Press, ITNetwork, Sajber Sfera, Netokracija Srbija, and ICT Business are
+   now browser-verified; only Benchmark remains blocked even in the real
+   browser. The outreach tier excludes Reddit, Discord, Google Groups, mailing
+   lists, broad parent domains, and other shared/social surfaces; the three
+   exact language-project Wikipedia subdomains are the stated
+   community-editable exception. Firefox's predeclared **566** explicit
+   host-permission patterns cover the whole catalog (not 566 sites), including
+   46 patterns from outreach hosts. Firefox is technically authorized on
+   declared pages, but Prepiši makes no browsing-time network request and
+   injects only after a local remembered rule;
    Chromium/Edge/Safari request a host only after the user opts into
    **Remember on this site**. The full dated evidence, alias checks, and
    exceptions (notably TLS-broken FCJK and Benchmark's persistent Cloudflare
