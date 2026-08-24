@@ -23,6 +23,12 @@
     ["rs-informer", "informer.rs", ["informer.rs", "www.informer.rs", "sportinjo.informer.rs"], "core", ["RS"], ["sr"]],
     ["rs-prva", "prva.rs", ["prva.rs", "www.prva.rs"], "core", ["RS"], ["sr"]],
     ["rs-pink", "pink.rs", ["pink.rs", "www.pink.rs"], "core", ["RS"], ["sr"]],
+    ["rs-startit", "startit.rs", ["startit.rs", "www.startit.rs"], "core", ["RS"], ["sr"]],
+    ["rs-svetkompjutera", "sk.rs", ["sk.rs", "www.sk.rs"], "core", ["RS"], ["sr"]],
+    ["rs-buffgaming", "buffgaming.rs", ["buffgaming.rs", "www.buffgaming.rs"], "core", ["RS"], ["sr"]],
+    ["rs-itnetwork", "itnetwork.rs", ["itnetwork.rs", "www.itnetwork.rs"], "core", ["RS"], ["sr"]],
+    ["rs-sajbersfera", "sajbersfera.in.rs", ["sajbersfera.in.rs"], "core", ["RS"], ["sr"]],
+    ["rs-netokracija", "netokracija.rs", ["netokracija.rs", "www.netokracija.rs"], "core", ["RS"], ["sr"]],
 
     ["hr-index", "index.hr", ["index.hr", "www.index.hr"], "core", ["HR"], ["hr"]],
     ["hr-24sata", "24sata.hr", ["24sata.hr", "www.24sata.hr", "express.24sata.hr", "autostart.24sata.hr", "miss7.24sata.hr", "miss7zdrava.24sata.hr", "miss7mama.24sata.hr", "gastro.24sata.hr", "joomboos.24sata.hr"], "core", ["HR"], ["hr"]],
@@ -38,6 +44,14 @@
     ["hr-slobodnadalmacija", "slobodnadalmacija.hr", ["slobodnadalmacija.hr", "www.slobodnadalmacija.hr"], "core", ["HR"], ["hr"]],
     ["hr-direktno", "direktno.hr", ["direktno.hr", "www.direktno.hr"], "core", ["HR"], ["hr"]],
     ["hr-n1", "n1info.hr", ["n1info.hr", "www.n1info.hr"], "core", ["HR"], ["hr"]],
+    ["hr-netokracija", "netokracija.com", ["netokracija.com", "www.netokracija.com"], "core", ["HR"], ["hr"]],
+    ["hr-bug", "bug.hr", ["bug.hr", "www.bug.hr", "mreza.bug.hr"], "core", ["HR"], ["hr"]],
+    ["hr-pcchip", "pcchip.hr", ["pcchip.hr", "www.pcchip.hr"], "core", ["HR"], ["hr"]],
+    ["hr-vidi", "vidi.hr", ["vidi.hr", "www.vidi.hr"], "core", ["HR"], ["hr"]],
+    ["hr-hcl", "hcl.hr", ["hcl.hr", "www.hcl.hr"], "core", ["HR"], ["hr"]],
+    ["hr-pcekspert", "pcekspert.com", ["pcekspert.com", "www.pcekspert.com"], "core", ["HR"], ["hr"]],
+    ["hr-mobhr", "mob.hr", ["mob.hr"], "core", ["HR"], ["hr"]],
+    ["hr-ictbusiness", "ictbusiness.info", ["ictbusiness.info", "www.ictbusiness.info"], "core", ["HR"], ["hr"]],
 
     ["ba-klix", "klix.ba", ["klix.ba", "www.klix.ba"], "core", ["BA"], ["bs"]],
     ["ba-avaz", "avaz.ba", ["avaz.ba", "www.avaz.ba"], "core", ["BA"], ["bs"]],
@@ -52,6 +66,7 @@
     ["ba-vecernji", "vecernji.ba", ["vecernji.ba", "www.vecernji.ba"], "core", ["BA"], ["hr"]],
     ["ba-radiosarajevo", "radiosarajevo.ba", ["radiosarajevo.ba", "www.radiosarajevo.ba"], "core", ["BA"], ["bs"]],
     ["ba-bljesak", "bljesak.info", ["bljesak.info", "www.bljesak.info"], "core", ["BA"], ["hr"]],
+    ["ba-itportal", "itportal.ba", ["itportal.ba", "www.itportal.ba"], "core", ["BA"], ["hr"]],
 
     ["me-vijesti", "vijesti.me", ["vijesti.me", "www.vijesti.me", "forbes.vijesti.me"], "core", ["ME"], ["cnr", "sr"]],
     ["me-cdm", "cdm.me", ["cdm.me", "www.cdm.me"], "core", ["ME"], ["cnr"]],
@@ -92,7 +107,27 @@
     ["us-chicago-glasnik", "chicagoglasnik.com", ["chicagoglasnik.com", "www.chicagoglasnik.com"], "diaspora", ["US"], ["sr"]],
     ["us-serbian-times", "serbiantimes.info", ["serbiantimes.info", "www.serbiantimes.info"], "diaspora", ["US"], ["sr"]],
     ["us-srpska-televizija", "srpskatelevizija.com", ["srpskatelevizija.com", "www.srpskatelevizija.com"], "diaspora", ["US"], ["sr"]],
-    ["au-hrvatski-vjesnik", "vjesnik.com.au", ["vjesnik.com.au", "www.vjesnik.com.au"], "diaspora", ["AU"], ["hr"]]
+    ["au-hrvatski-vjesnik", "vjesnik.com.au", ["vjesnik.com.au", "www.vjesnik.com.au"], "diaspora", ["AU"], ["hr"]],
+
+    // User-directed outreach sites. Keep this separate from editorial coverage:
+    // each is a named entity's exact site, never a social platform, broad parent
+    // domain, or wildcard; the three Wikipedia language-project hosts are explicit.
+    ["outreach-wikimedia-rs", "wikimedia.rs", ["wikimedia.rs"], "outreach", ["RS"], ["sr"]],
+    ["outreach-sr-wikipedia", "sr.wikipedia.org", ["sr.wikipedia.org"], "outreach", ["RS"], ["sr"]],
+    ["outreach-hr-wikipedia", "hr.wikipedia.org", ["hr.wikipedia.org"], "outreach", ["HR"], ["hr"]],
+    ["outreach-bs-wikipedia", "bs.wikipedia.org", ["bs.wikipedia.org"], "outreach", ["BA"], ["bs"]],
+    ["outreach-classla", "www.clarin.si", ["clarin.si", "www.clarin.si"], "outreach", ["SI"], ["bs", "hr", "sr"]],
+    ["outreach-sigslav", "sigslav.cs.helsinki.fi", ["sigslav.cs.helsinki.fi"], "outreach", ["FI"], ["en"]],
+    ["outreach-bsnlp", "bsnlp.cs.helsinki.fi", ["bsnlp.cs.helsinki.fi"], "outreach", ["FI"], ["en"]],
+    ["outreach-ffzg-nlp", "inf.ffzg.unizg.hr", ["inf.ffzg.unizg.hr"], "outreach", ["HR"], ["hr"]],
+    ["outreach-airi", "airi.uniri.hr", ["airi.uniri.hr", "www.airi.uniri.hr"], "outreach", ["HR"], ["hr"]],
+    ["outreach-share", "sharefoundation.info", ["sharefoundation.info", "www.sharefoundation.info"], "outreach", ["RS"], ["sr"]],
+    ["outreach-isj-sanu", "www.isj.sanu.ac.rs", ["www.isj.sanu.ac.rs"], "outreach", ["RS"], ["sr"]],
+    ["outreach-matica-srpska", "maticasrpska.org.rs", ["maticasrpska.org.rs", "www.maticasrpska.org.rs"], "outreach", ["RS"], ["sr"]],
+    ["outreach-fcjk", "fcjk.ac.me", ["fcjk.ac.me"], "outreach", ["ME"], ["cnr"]],
+    ["outreach-cirilica", "cirilica-beograd.rs", ["cirilica-beograd.rs", "www.cirilica-beograd.rs"], "outreach", ["RS"], ["sr"]],
+    ["rs-pcpress", "pcpress.rs", ["pcpress.rs", "www.pcpress.rs"], "outreach", ["RS"], ["sr"]],
+    ["rs-nspm", "nspm.rs", ["nspm.rs", "www.nspm.rs"], "outreach", ["RS"], ["sr"]],
   ];
 
   const byHost = new Map();

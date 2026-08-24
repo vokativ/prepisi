@@ -10,11 +10,11 @@ const root = path.resolve(__dirname, "..");
 const persistence = require("../src/site-persistence.js");
 const curated = require("../src/curated-portals.js");
 
-test("creates a narrow HTTP/HTTPS registration for one hostname", () => {
-  const site = persistence.descriptorForUrl("https://www.nspm.rs/hronika/article.html");
-  assert.equal(site.key, "www.nspm.rs");
+test("creates a narrow HTTP/HTTPS registration for one uncurated hostname", () => {
+  const site = persistence.descriptorForUrl("https://example.com/article.html");
+  assert.equal(site.key, "example.com");
   assert.deepEqual(Array.from(site.matches), [
-    "http://www.nspm.rs/*", "https://www.nspm.rs/*"
+    "http://example.com/*", "https://example.com/*"
   ]);
   assert.match(site.id, /^prepisi-site-[0-9a-f]{8}$/u);
   assert.equal(persistence.descriptorForUrl("about:debugging"), null);
@@ -68,7 +68,7 @@ test("RTS paths share one finite apex and www portal family", () => {
 
 test("curated catalog is normalized, non-overlapping, and below the reviewed cap", () => {
   assert.ok(curated.portals.length >= 70);
-  assert.ok(curated.portals.length <= 100);
+  assert.ok(curated.portals.length <= 125);
   const ids = new Set();
   const hosts = new Set();
   for (const portal of curated.portals) {
@@ -85,6 +85,45 @@ test("curated catalog is normalized, non-overlapping, and below the reviewed cap
     }
   }
   assert.equal(curated.matchPatterns().length, hosts.size * 2);
+});
+
+test("outreach entities use exact own-site families, never social platforms", () => {
+  const expected = {
+    "outreach-wikimedia-rs": ["wikimedia.rs"],
+    "outreach-sr-wikipedia": ["sr.wikipedia.org"],
+    "outreach-hr-wikipedia": ["hr.wikipedia.org"],
+    "outreach-bs-wikipedia": ["bs.wikipedia.org"],
+    "outreach-classla": ["clarin.si", "www.clarin.si"],
+    "outreach-sigslav": ["sigslav.cs.helsinki.fi"],
+    "outreach-bsnlp": ["bsnlp.cs.helsinki.fi"],
+    "outreach-ffzg-nlp": ["inf.ffzg.unizg.hr"],
+    "outreach-airi": ["airi.uniri.hr", "www.airi.uniri.hr"],
+    "outreach-share": ["sharefoundation.info", "www.sharefoundation.info"],
+    "outreach-isj-sanu": ["www.isj.sanu.ac.rs"],
+    "outreach-matica-srpska": ["maticasrpska.org.rs", "www.maticasrpska.org.rs"],
+    "outreach-fcjk": ["fcjk.ac.me"],
+    "outreach-cirilica": ["cirilica-beograd.rs", "www.cirilica-beograd.rs"],
+    "rs-pcpress": ["pcpress.rs", "www.pcpress.rs"],
+    "rs-nspm": ["nspm.rs", "www.nspm.rs"]
+  };
+  const outreach = curated.portals.filter((portal) => portal.tier === "outreach");
+  assert.deepEqual(Object.fromEntries(outreach.map((portal) => [portal.id, Array.from(portal.hosts)])), expected);
+  assert.equal(outreach.some((portal) => /(?:^|\.)(?:reddit\.com|discord\.com|groups\.google\.com|mailman\.ijs\.si)$/u.test(portal.canonicalHost)), false);
+});
+
+test("browser-verified technology sites use the inspected alias families", () => {
+  const expected = {
+    "rs-itnetwork": ["itnetwork.rs", "www.itnetwork.rs"],
+    "rs-sajbersfera": ["sajbersfera.in.rs"],
+    "rs-netokracija": ["netokracija.rs", "www.netokracija.rs"],
+    "hr-ictbusiness": ["ictbusiness.info", "www.ictbusiness.info"]
+  };
+  for (const [id, hosts] of Object.entries(expected)) {
+    const portal = curated.portals.find((candidate) => candidate.id === id);
+    assert.ok(portal, id);
+    assert.deepEqual(Array.from(portal.hosts), hosts);
+    assert.equal(portal.tier, "core");
+  }
 });
 
 test("registered site scripts are ordered, local, persistent, and top-frame only", () => {
