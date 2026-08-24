@@ -1,8 +1,8 @@
 # Curated editorial portal snapshot
 
 Review dates: **2026-08-13** (national/minority/diaspora news), **2026-08-24**
-(IT/technology specialist press and user-directed outreach-site additions; see
-below).
+(IT/technology specialist press, sport, betting-linked sports press, and
+user-directed outreach-site additions; see below).
 
 The exhaustive 81-family DNS/editorial-alias refresh was completed on 2026-08-13. Its full regional findings, candidate subdomains, and 5-criteria evaluation method are recorded in
 [`PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md`](PORTAL_ALIAS_DNS_AUDIT_2026-08-13.md), and all approved subdomains have been integrated into [`src/curated-portals.js`](../src/curated-portals.js).
@@ -10,10 +10,11 @@ The exhaustive 81-family DNS/editorial-alias refresh was completed on 2026-08-13
 All browser builds use one catalog to group remembered rules across finite,
 reviewed editorial aliases. Firefox desktop and Android additionally predeclare
 the catalog as host permissions for their shared event-page package. The catalog
-currently contains **112 portal families**: 70 national publishers in
+currently contains **125 portal families**: 78 national publishers in
 Serbia, Croatia, Bosnia and Herzegovina, and Montenegro (55 general news +
-15 IT/technology specialist press added 2026-08-24); 18 minority publishers;
-8 diaspora publishers; and 16 exact, user-directed outreach-site families.
+15 IT/technology specialist press + 8 sports specialist press); 5
+betting-linked sports editorial publishers; 18 minority publishers; 8 diaspora
+publishers; and 16 exact, user-directed outreach-site families.
 The executable, alias-level source of truth is
 [`src/curated-portals.js`](../src/curated-portals.js).
 
@@ -29,6 +30,14 @@ Include an active publisher that produces recurring news, analysis, magazine,
 broadcast, or specialist editorial material in Serbian, Croatian, Bosnian, or
 Montenegrin. Editorial viewpoint is not a criterion and inclusion is not an
 endorsement.
+
+**Betting-linked sports-publication exception (2026-08-24):** A betting
+operator's separately hosted, recurring sports-news publication can enter the
+distinct `commercial` tier when its selected hosts are reader-facing editorial
+surfaces. This narrow exception does not admit a wagering product itself or
+express endorsement. Betting, odds, live-play, account, payment, affiliate,
+API, advertising, CDN/static, and wildcard hosts remain absent, even when
+linked from a reviewed publication.
 
 **User-directed outreach-site exception (2026-08-24):** Include the exact own
 website of an entity explicitly named in
@@ -48,7 +57,7 @@ top-level reading surface or be its canonical redirect destination.
 
 **Permission effect:** The 16 `outreach` families contain 23 hosts. Firefox
 generates 46 HTTP/HTTPS install-time permission patterns from them; source
-v0.9.3 generates 522 patterns across the entire catalog, not 522 distinct
+v0.9.3 generates 566 patterns across the entire catalog, not 566 distinct
 sites. Firefox is technically authorized on matched pages, but Prepiši makes no
 browsing-time network request and injects only after a local remembered rule
 exists. Chrome, Edge, and Safari request a matching host only when the user
@@ -56,7 +65,7 @@ chooses **Remember on this site**.
 
 ## Core national publishers
 
-Serbia (21):
+Serbia (24):
 
 ```text
 n1info.rs              blic.rs              telegraf.rs
@@ -64,41 +73,42 @@ nova.rs                birn.rs              danas.rs
 kurir.rs               mondo.rs             rts.rs
 srbijadanas.com        juznevesti.com       b92.net
 informer.rs            prva.rs              pink.rs
+sportske.net           sportklub.n1info.rs  zurnal.politika.rs
 startit.rs             sk.rs                buffgaming.rs
 itnetwork.rs           sajbersfera.in.rs    netokracija.rs
 ```
 
-Croatia (22):
+Croatia (24):
 
 ```text
 index.hr               24sata.hr            dnevnik.hr
 jutarnji.hr            net.hr               tportal.hr
 vecernji.hr            hrt.hr               dnevno.hr
 rtl.hr                 telegram.hr          slobodnadalmacija.hr
-direktno.hr            n1info.hr            netokracija.com
-bug.hr                 pcchip.hr            vidi.hr
-hcl.hr                 pcekspert.com        mob.hr
-ictbusiness.info
+direktno.hr            n1info.hr            sportklub.n1info.hr
+sportnet.hr            netokracija.com      bug.hr
+pcchip.hr              vidi.hr              hcl.hr
+pcekspert.com          mob.hr               ictbusiness.info
 ```
 
-Bosnia and Herzegovina (14):
+Bosnia and Herzegovina (15):
 
 ```text
 klix.ba                avaz.ba              sportsport.ba
-srpskainfo.com         nezavisne.com        vijesti.ba
-hercegovina.info       n1info.ba            slobodna-bosna.ba
-oslobodjenje.ba        vecernji.ba          radiosarajevo.ba
-bljesak.info           itportal.ba
+reprezentacija.ba      srpskainfo.com       nezavisne.com
+vijesti.ba             hercegovina.info     n1info.ba
+slobodna-bosna.ba      oslobodjenje.ba       vecernji.ba
+radiosarajevo.ba       bljesak.info          itportal.ba
 ```
 
-Montenegro (13):
+Montenegro (15):
 
 ```text
 vijesti.me             cdm.me               dan.co.me
 antenam.net            pobjeda.me           in4s.net
 borba.me               rtcg.me              standard.co.me
 portalanalitika.me     aktuelno.me          mondo.me
-kolektiv.me
+kolektiv.me            cgsport.me           sportski.me
 ```
 
 ### IT/technology specialist press addition (2026-08-24)
@@ -141,6 +151,33 @@ family. `pcpress.rs` is retained in the separate user-directed `outreach` tier:
 the local Chrome agent completed its challenge and showed current, bylined
 Serbian Business & ICT News on 21 August 2026; stale `pc.pcpress.rs` remains
 excluded.
+
+### Sports and betting-linked sports press addition (2026-08-24)
+
+The eight `core` families below are dedicated, active regional sports
+publications. The five `commercial` families are separate reader-facing sports
+publications operated in betting ecosystems; the catalog does not include their
+wagering products. Each exact host was checked for current editorial use and
+canonical behavior. Redirect-only `www` aliases are intentionally absent.
+`sportklub.n1info.com` is not an alias: DNS returned NXDOMAIN. The active,
+market-specific Sport Klub surfaces are separate portal families so an N1
+remembered rule does not unexpectedly apply to them.
+
+| Tier | Market | Publisher | Exact catalog hosts | Verification boundary |
+| --- | --- | --- | --- | --- |
+| `core` | RS | Sportske.net | `sportske.net` | Active Serbian multi-sport reporting; `www` redirects to apex. |
+| `core` | RS | Sport Klub | `sportklub.n1info.rs` | Active Serbian editorial surface; direct fetch is protected, while indexed official section/imprint pages establish the host. `sportklub.rs` redirects here and the nonexistent `.com` host is excluded. |
+| `core` | RS | Sportski žurnal | `zurnal.politika.rs` | Active sports-publication canonical host; legacy `zurnal.rs` redirects and is omitted. |
+| `core` | HR | Sport Klub | `sportklub.n1info.hr` | Active Croatian editorial surface; direct fetch is protected, and current indexed official pages establish the host. |
+| `core` | HR | Sportnet | `sportnet.hr` | Active Croatian multi-sport reporting; `www` redirects to apex. |
+| `core` | BA | Reprezentacija.ba | `reprezentacija.ba` | Active Bosnian football and national-team editorial reporting; `www` redirects to apex. |
+| `core` | ME | CG Sport | `cgsport.me` | Active Montenegrin multi-sport editorial reporting; `www` redirects to apex. |
+| `core` | ME | Sportski.me | `sportski.me` | Active Montenegrin multi-sport editorial reporting; `www` redirects to apex. |
+| `commercial` | RS | Mozzart Sport | `mozzartsport.com`, `www.mozzartsport.com` | Separate Serbian sports publication; no Mozzart betting, account, or payment host. |
+| `commercial` | RS | Meridian Sport | `meridiansport.rs` | Separate Serbian sports publication; protected direct fetch, indexed official editorial pages; no Meridian betting host. |
+| `commercial` | HR | Germanijak | `germanijak.hr`, `www.germanijak.hr` | Both serve the editorial surface; `www` is the declared canonical host. Germania wagering hosts are excluded. |
+| `commercial` | BA | Meridian Sport | `meridiansport.ba` | Separate Bosnian sports publication; its wagering link leaves the host and is excluded. |
+| `commercial` | ME | Meridian Sport | `meridiansport.me` | Separate Montenegrin sports publication; its wagering link leaves the host and is excluded. |
 
 ### User-directed outreach-site addition (2026-08-24)
 
