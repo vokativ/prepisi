@@ -1,8 +1,10 @@
 # Project status and machine handoff
 
-Last updated: 2026-08-24. Current live extension version: 0.9.1. Version
-0.9.2 (i18n release, see "Next release work" below) is prepared in the
-repository and pending packaging/upload; it is not yet submitted anywhere.
+Last updated: 2026-08-24. Current live extension version: 0.9.1 on all three
+stores. Version 0.9.2 (i18n release) is submitted to Edge (in review, ~7
+business days) and Firefox AMO (in review, up to 24h+); Chrome upload is
+blocked until its in-flight promo-tile-only review clears (see "Next
+release work" below).
 
 ## Current state
 
@@ -128,37 +130,53 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
 5. **Apple remains postponed.** Enroll in the paid Developer Program only when
    there are more apps to publish; then register `com.vokativ.prepisi` /
    `com.vokativ.prepisi.Extension`.
-6. **Ship the prepared v0.9.2 name+description localization.** `_locales/{en,sr,hr,bs}/messages.json`
-   plus `manifest.json`'s `__MSG_extName__` / `__MSG_extDescription__` /
-   `default_locale` are committed, version-bumped to 0.9.2 in `package.json`
-   and `manifest.json` together, and pass `npm run check` (88/88, including
-   two new tests asserting manifest i18n tokens and cross-locale key/message
-   parity), `npm run build:all`, `node scripts/verify-build-outputs.mjs`
-   (24/24, after fixing a real bug this release exposed: the script rejected
-   the tokenized manifest name), and Firefox `web-ext lint` (0/0/0).
-   - **Correction to an earlier claim in this file:** direct verification
-     against the live AMO listing (both `/sr/` and `/hr/` locale paths) shows
-     Serbian/Croatian store-listing translations are **not** actually live on
-     any store yet, contrary to a prior note here. Chrome's per-locale store
-     listing is gated on the locales present in the *uploaded package's*
-     `_locales/` folder (confirmed against Chrome's own developer docs), and
-     the currently live 0.9.1 packages on all three stores predate this i18n
-     work entirely (added one commit after the `v0.9.1` tag). Shipping
-     localized store listings therefore requires the v0.9.2 package first.
+6. **Shipped v0.9.2: Chrome/Edge/Firefox name+description i18n, submitted to
+   all three stores.** `_locales/{en,sr,hr,bs}/messages.json` plus
+   `manifest.json`'s `__MSG_extName__` / `__MSG_extDescription__` /
+   `default_locale` shipped in v0.9.2. `npm run check` 88/88 (incl. two new
+   tests: manifest i18n tokens, cross-locale key/message parity),
+   `npm run build:all`, `node scripts/verify-build-outputs.mjs` 24/24 (after
+   fixing a real bug this release exposed: the script rejected the
+   tokenized manifest name), Firefox `web-ext lint` 0/0/0.
+   - **Submission results (2026-08-24):**
+     - **Chrome:** blocked. The dashboard disables new package uploads while
+       a submission is "Pending review" — the small-promo-tile fix from
+       earlier this session is still in Chrome's review queue. v0.9.2 must
+       wait for that to clear before it can be uploaded.
+     - **Edge:** v0.9.2 package uploaded and verified (Partner Center itself
+       reported "Languages in package: Bosnian, English, Croatian, Serbian"
+       — Edge, unlike Chrome, does not reject the `bs` locale folder). All
+       four per-locale store listings (name/description/logo/small tile)
+       filled and marked Complete, then submitted: status **"In review,"
+       expect a response in 7 business days.** v0.9.1 stays live during
+       review.
+     - **Firefox AMO:** v0.9.2 XPI uploaded, validated with 0 errors/warnings,
+       Firefox desktop + Android compatibility enabled, submitted ("may take
+       up to 24 hours, longer if selected for manual review"). AMO's
+       per-locale store listing is a *separate* system from the package
+       `_locales/` folder (unlike Chrome): Hrvatski and Srpski listing
+       entries already existed with real translated name/summary/description
+       (pre-existing project work, not written this session) and were
+       re-saved to confirm persistence. Live-verified in a real browser
+       (not a locale-blind fetch) at `addons.mozilla.org/hr/.../` and
+       `/sr/.../` — both correctly serve the Croatian/Serbian text. AMO's
+       "New Locales" picker does not offer Bosnian at all (a real gap in
+       AMO's listing-locale list, separate from Firefox's runtime
+       `_locales/bs` support, which does work).
    - `scripts/build-extension.mjs` shares one `_locales` copy across all four
-     targets, so this is a **three-store release** (Chrome, Edge, and
-     Firefox), not a Chrome/Edge-only change as previously assumed.
-   - Bosnian (`bs`) is included and works on Firefox (Mozilla's WebExtensions
-     i18n follows BCP 47 without a fixed locale whitelist), but Chrome and
-     Edge silently ignore unrecognized locale folders and `bs` is not on
-     Chrome's fixed ~55-locale list — Bosnian-locale Chrome/Edge users still
-     fall back to English. This is a real platform constraint, not a bug.
+     targets, so this was correctly treated as a **three-store release**
+     (Chrome, Edge, and Firefox), not Chrome/Edge-only as first assumed.
+   - Bosnian (`bs`) ships and is confirmed functional on Firefox and Edge;
+     Chrome's fixed ~55-locale list excludes `bs`, so Chrome will silently
+     ignore that folder once its v0.9.2 upload eventually goes through —
+     Bosnian-locale Chrome users fall back to English there. Real platform
+     constraint, not a bug.
    - Montenegrin has no shippable browser-UI locale on Chrome, Edge, or
-     Firefox today (no `cnr`/`me` code in Chrome's locale list, and no
-     Montenegrin language pack in Firefox), so an in-extension-name/description
-     Montenegrin locale is not currently achievable in any of the three
-     `_locales` systems; the extension's own script/dialect conversion still
-     covers Montenegrin readers regardless.
+     Firefox today (no `cnr`/`me` code on Chrome's list, no Montenegrin
+     Firefox language pack), so an in-extension-name/description Montenegrin
+     locale is not currently achievable on any of the three; the extension's
+     own script/dialect conversion still covers Montenegrin readers
+     regardless.
    - Packaging (`npm run package`) now runs on any OS with only Node.js: it
      was rewritten (`scripts/package.mjs`) as a dependency-free ZIP writer
      (hand-written local/central-directory/EOCD structures via `node:zlib`
@@ -170,16 +188,14 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
      and asserts exact content equality against `build/<target>` plus
      run-to-run byte-for-byte reproducibility. The Windows-only
      `scripts/package.ps1` (`Compress-Archive`) is removed; there is now one
-     canonical packaging implementation for every OS.
-   - Release order: submit all three stores together (owner's explicit
-     choice, overriding a more conservative staged rollout). Note this
-     collides with the Chrome graphics-only promo-tile review already
-     in flight from this same session — Chrome may end up processing two
-     queued submissions.
-   - Once Mozilla signs the v0.9.2 XPI, this resets the "retest the signed
-     package on Firefox desktop and Android" gate (item 3 above) for the new
-     version; the existing 0.9.1 signed-package verification does not carry
-     forward.
+     canonical packaging implementation for every OS, and it produced the
+     actual ZIPs uploaded to Edge and AMO above.
+   - **Still open:** upload v0.9.2 to Chrome once the pending promo-tile
+     review clears (package is already built in `dist/`, nothing else
+     blocks it). Retest the newly Mozilla-signed v0.9.2 XPI on Firefox
+     desktop and Android before claiming full v0.9.2 support — this is a
+     fresh signed artifact and does not inherit 0.9.1's signed-package
+     verification.
 
 Firefox Android event-page research is recorded in
 `research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also
