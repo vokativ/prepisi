@@ -50,8 +50,14 @@ for (const target of targets) {
     if (manifest.manifest_version !== 3) {
       throw new Error(`Expected manifest_version 3, got ${manifest.manifest_version}`);
     }
-    if (manifest.name !== "Prepiši — pismo i izgovor" && manifest.name !== "Prepiši") {
+    if (manifest.name !== "__MSG_extName__") {
       throw new Error(`Unexpected manifest name: ${manifest.name}`);
+    }
+    const defaultLocaleMessages = JSON.parse(
+      await fs.readFile(path.join(targetDir, "_locales", manifest.default_locale, "messages.json"), "utf8")
+    );
+    if (defaultLocaleMessages.extName?.message !== "Prepiši") {
+      throw new Error(`Unexpected resolved extName: ${defaultLocaleMessages.extName?.message}`);
     }
     if (manifest.version !== packageVersion) {
       throw new Error(

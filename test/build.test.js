@@ -33,6 +33,12 @@ test("browser builds share one runtime and contain target-specific manifests", (
     assert.equal(fs.existsSync(path.join(root, "build", target, "src", "converter.js")), true);
     assert.equal(fs.existsSync(path.join(root, "build", target, "src", "auto-apply.js")), true);
     assert.equal(fs.existsSync(path.join(root, "build", target, "src", "platform", "webext.js")), true);
+    for (const locale of ["en", "sr", "hr", "bs"]) {
+      assert.equal(
+        fs.existsSync(path.join(root, "build", target, "_locales", locale, "messages.json")),
+        true, `${target}/${locale}`
+      );
+    }
     assert.match(fs.readFileSync(path.join(root, "build", target, "LICENSE"), "utf8"),
       /^GNU GENERAL PUBLIC LICENSE\r?\nVersion 3, 29 June 2007/u);
     const packagedSmoke = childProcess.execFileSync(process.execPath, ["-e", [

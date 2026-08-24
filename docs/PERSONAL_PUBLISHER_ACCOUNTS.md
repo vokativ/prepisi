@@ -1,6 +1,6 @@
 # Personal publisher account guide
 
-Last checked: 2026-08-18. Publisher identity: `hepsesus@gmail.com`. Public
+Last checked: 2026-08-24. Publisher identity: `hepsesus@gmail.com`. Public
 display name: `Nemanja G`.
 
 ## Current release position
@@ -8,10 +8,13 @@ display name: `Nemanja G`.
 - Version 0.9.1 packages were submitted on 2026-08-17.
 - Chrome Web Store: **Approved & Published** (2026-08-18). Item
   `lgcbhfgbbjdhglmomlgkbeikcngjhikb` (<https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb>).
-- Firefox AMO: validated, 0 errors, in review, Firefox for Android enabled.
-  Slug `prepisi-converter`.
-- Microsoft Edge: **In review**. Product
-  `0575918a-bf45-4fee-9f26-f28fcdf02398`, Store ID `0RDCK9XMTNZC`.
+- Firefox AMO: **Approved & Published**, including Firefox for Android.
+  Slug `prepisi-converter`
+  (<https://addons.mozilla.org/firefox/addon/prepisi-converter/>).
+- Microsoft Edge: **Approved & Published**. Product
+  `0575918a-bf45-4fee-9f26-f28fcdf02398`, Store ID `0RDCK9XMTNZC`; public
+  listing:
+  <https://microsoftedge.microsoft.com/addons/detail/prepi%C5%A1i/idgdmkmmdemdhdkenlodijkljpbckool>.
 - Apple paid membership is postponed. The free Apple ID is enough for local
   Xcode/iPhone testing only.
 - GitHub `vokativ/prepisi` is public. Privacy:
@@ -137,9 +140,8 @@ work, or business differently, so confirm that characterization during signup.
 Completed 2026-08-17: Individual enrollment in Singapore, publisher profile,
 public GitHub support URL, package validation, Productivity category, privacy
 disclosures, English listing, real screenshots, and certification notes. The
-public Edge listing is **In review**; Microsoft quoted 7 business days. Edge
-runtime testing on macOS remains deferred, so do not claim that combination as
-verified.
+public Edge listing is **Approved & Published**. Edge runtime testing on macOS
+remains deferred, so do not claim that combination as verified.
 
 There is no Microsoft Edge extension-program registration fee.
 
@@ -164,8 +166,8 @@ desktop and Android compatibility enabled, `dist/prepisi-0.9.1-firefox.zip`
 validated with 0 errors or warnings, metadata and reviewer notes completed, and
 a tagged source archive uploaded. AMO slug: `prepisi-converter`.
 
-Next real gate: after Mozilla signs the XPI, test that exact file on Firefox
-desktop and Android before describing the signed package as fully supported.
+Next real gate: retest the signed XPI on Firefox desktop and Android before
+describing the signed package as fully supported.
 
 Official guidance:
 
@@ -203,14 +205,16 @@ Official guidance:
 ## Recommended order
 
 Done for 0.9.1: branding replacement, public GitHub repo, `v0.9.1` tag, privacy
-URL, Chrome/Firefox/Edge individual accounts, and store submissions. See
-[`docs/LAUNCH_AND_SOCIAL.md`](LAUNCH_AND_SOCIAL.md) for review wait dates.
+URL, Chrome/Firefox/Edge individual accounts, store submissions, and all three
+browser-store publications. See [`docs/LAUNCH_AND_SOCIAL.md`](LAUNCH_AND_SOCIAL.md)
+for the current launch notes.
 
 Still open:
 
-1. Wait for Chrome, Firefox, and Edge review; retest the Mozilla-signed XPI.
+1. Retest the Mozilla-signed XPI on Firefox desktop and Android.
 2. Apple paid membership remains postponed.
-3. After a store URL exists, add it to the README and a follow-up social post.
+3. Add the localized Chrome/Edge listing metadata in a versioned upload, then
+   publish the follow-up social post.
 
 ## Where the account owner must step in
 

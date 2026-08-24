@@ -1,6 +1,6 @@
 {
   "name": "prepisi-browser-extension",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "private": true,
   "license": "GPL-3.0-only",
   "description": "Privacy-first in-page script and pronunciation converter for BCMS text.",

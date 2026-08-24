@@ -17,6 +17,30 @@ test("manifest is a minimal-permission Chromium MV3 extension", () => {
   assert.equal(manifest.background, undefined);
 });
 
+test("manifest uses tokenized name and description with a complete default locale", () => {
+  assert.equal(manifest.name, "__MSG_extName__");
+  assert.equal(manifest.description, "__MSG_extDescription__");
+  assert.equal(manifest.default_locale, "en");
+});
+
+test("shipped locales share identical keys, non-empty messages, and one brand name", () => {
+  const locales = ["en", "sr", "hr", "bs"];
+  const messagesByLocale = Object.fromEntries(locales.map((locale) => [
+    locale,
+    JSON.parse(fs.readFileSync(path.join(root, "_locales", locale, "messages.json"), "utf8"))
+  ]));
+  const defaultKeys = Object.keys(messagesByLocale.en).sort();
+  assert.deepEqual(defaultKeys, ["extDescription", "extName"]);
+  for (const locale of locales) {
+    assert.deepEqual(Object.keys(messagesByLocale[locale]).sort(), defaultKeys, locale);
+    for (const key of defaultKeys) {
+      assert.equal(typeof messagesByLocale[locale][key].message, "string", `${locale}.${key}`);
+      assert.notEqual(messagesByLocale[locale][key].message.trim(), "", `${locale}.${key}`);
+    }
+    assert.equal(messagesByLocale[locale].extName.message, "Prepiši", locale);
+  }
+});
+
 test("every manifest page exists inside the extension", () => {
   const referencedFiles = [
     manifest.action.default_popup,

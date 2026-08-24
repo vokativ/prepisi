@@ -1,18 +1,22 @@
 # Launch status, review reminders, and social posts
 
-Last updated: 2026-08-18. Extension version: 0.9.1.
+Last updated: 2026-08-24. Extension version: 0.9.1.
 Publisher display name: `Nemanja G`. Store mailbox: `hepsesus@gmail.com`.
 
 Promo lines below were produced by `src/converter.js`, not invented by hand.
 
-## What we are waiting for
+## Current publication status
 
-| Store | Submitted | Status | Typical wait | Where to check |
-| --- | --- | --- | --- | --- |
-| Chrome Web Store | 2026-08-17 | **Approved & Live** (published 2026-08-18) | — | [Public Store Listing](https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb) |
-| Firefox AMO (desktop + Android) | 2026-08-17 | Validated with 0 errors; in Mozilla signing/review | Often ~24 hours; longer if picked for manual review | Inbox and [AMO developer listing](https://addons.mozilla.org/developers/addon/prepisi-converter/) |
-| Microsoft Edge Add-ons | 2026-08-17 | **In review**, public, Productivity, EN-US | Microsoft quoted **7 business days** | Inbox and [Edge overview](https://partner.microsoft.com/en-us/dashboard/microsoftedge/0575918a-bf45-4fee-9f26-f28fcdf02398/overview) |
-| Apple Safari / App Store | Not submitted | Paid Developer Program postponed | After a later $99/year enrollment | [developer.apple.com/account](https://developer.apple.com/account) |
+| Store | Submitted | Status | Where to check |
+| --- | --- | --- | --- |
+| Chrome Web Store | 2026-08-17 | **Approved & Live** (published 2026-08-18) | [Public Store Listing](https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb) |
+| Firefox AMO (desktop + Android) | 2026-08-17 | **Approved & Live**, v0.9.1 | [Public AMO Listing](https://addons.mozilla.org/firefox/addon/prepisi-converter/) |
+| Microsoft Edge Add-ons | 2026-08-17 | **Approved & Live**, v0.9.1, Productivity, EN-US | [Public Edge Listing](https://microsoftedge.microsoft.com/addons/detail/prepi%C5%A1i/idgdmkmmdemdhdkenlodijkljpbckool) |
+| Apple Safari / App Store | Not submitted | Paid Developer Program postponed | [developer.apple.com/account](https://developer.apple.com/account) |
+
+All three browser-store targets are now published. The remaining release gate
+for Firefox is regression testing the exact signed XPI on desktop and Android;
+Safari is not a submitted store target.
 
 Already live for reviewers and the public repo:
 
@@ -21,26 +25,18 @@ Already live for reviewers and the public repo:
 
 Chrome item ID: `lgcbhfgbbjdhglmomlgkbeikcngjhikb` (Live: <https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb>).
 Firefox slug: `prepisi-converter`.
-Edge Store ID: `0RDCK9XMTNZC`. Edge product: `0575918a-bf45-4fee-9f26-f28fcdf02398`.
-
+Edge Store ID: `0RDCK9XMTNZC`; Edge product: `0575918a-bf45-4fee-9f26-f28fcdf02398`; public listing ID: `idgdmkmmdemdhdkenlodijkljpbckool`.
 ## When to go look
 
 Do not poll dashboards hourly. Check `hepsesus@gmail.com` first, including Spam
 and Promotions.
 
-1. **Around 2026-08-18 (24 hours after the Firefox submit).** Open AMO. If the
-   version is signed, download that exact XPI and retest Firefox desktop plus
-   Android remembered navigation before calling the signed package supported.
-2. **Chrome Web Store published.** The extension is live on the Chrome Web Store.
-3. **2026-08-26 (seven business days after the Edge submit).** Open Partner
-   Center. If it is still "In review", wait. If published, add the public URL
-   to the README and to a follow-up social post.
-4. **Any rejection or "more information needed" mail.** Reply from
-   `hepsesus@gmail.com` with the same reviewer note used at submit: 100%
-   offline, no remote code, source at the GitHub URL above.
-
-Safari stays postponed until there are more Apple apps to justify the annual
-fee. Local Xcode and iPhone testing already passed on the free Apple ID.
+1. Download the Mozilla-signed XPI and retest Firefox desktop plus Android
+   remembered navigation before calling the signed package fully supported.
+2. Watch the three published listings for rejection, update, or user feedback.
+3. If a store asks for more information, reply from `hepsesus@gmail.com` with
+   the same reviewer note used at submit: 100% offline, no remote code, source
+   at the GitHub URL above.
 
 ## Promo graphics
 
