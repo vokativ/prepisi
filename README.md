@@ -4,11 +4,11 @@
   <a href="https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb">
     <img src="docs/images/badges/badge-chrome.svg" alt="Available in the Chrome Web Store" height="48">
   </a>
-  <a href="https://addons.mozilla.org/developers/addon/prepisi-converter/">
-    <img src="docs/images/badges/badge-firefox.svg" alt="Firefox Add-ons (In Review)" height="48">
+  <a href="https://addons.mozilla.org/firefox/addon/prepisi-converter/">
+    <img src="docs/images/badges/badge-firefox.svg" alt="Available on Firefox Add-ons" height="48">
   </a>
-  <a href="https://partner.microsoft.com/en-us/dashboard/microsoftedge/0575918a-bf45-4fee-9f26-f28fcdf02398/overview">
-    <img src="docs/images/badges/badge-edge.svg" alt="Microsoft Edge Add-ons (In Review)" height="48">
+  <a href="https://microsoftedge.microsoft.com/addons/detail/prepi%C5%A1i/idgdmkmmdemdhdkenlodijkljpbckool">
+    <img src="docs/images/badges/badge-edge.svg" alt="Available on Microsoft Edge Add-ons" height="48">
   </a>
 </p>
 
@@ -39,7 +39,8 @@ forking the conversion rules or vocabulary.
   after navigation. Reviewed news portals share rules across a finite list of
   explicit editorial aliases such as the apex and `www` host; unknown sites
   remain exact-host. Firefox predeclares the reviewed portal catalog for its
-  event page. Signed-build validation is still pending.
+  event page. The Mozilla-signed 0.9.1 listing is live; exact signed-package
+  regression validation remains pending.
 - A one-click Latin/Cyrillic interface switch, stored locally and independent of
   the script selected for the web page.
 - Optional dialect-only highlighting through browser-native text ranges; page HTML
@@ -62,17 +63,17 @@ forking the conversion rules or vocabulary.
   <a href="https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb">
     <img src="docs/images/badges/badge-chrome.svg" alt="Available in the Chrome Web Store" height="44">
   </a>
-  <a href="https://addons.mozilla.org/developers/addon/prepisi-converter/">
-    <img src="docs/images/badges/badge-firefox.svg" alt="Firefox Add-ons (In Review)" height="44">
+  <a href="https://addons.mozilla.org/firefox/addon/prepisi-converter/">
+    <img src="docs/images/badges/badge-firefox.svg" alt="Available on Firefox Add-ons" height="44">
   </a>
-  <a href="https://partner.microsoft.com/en-us/dashboard/microsoftedge/0575918a-bf45-4fee-9f26-f28fcdf02398/overview">
-    <img src="docs/images/badges/badge-edge.svg" alt="Microsoft Edge Add-ons (In Review)" height="44">
+  <a href="https://microsoftedge.microsoft.com/addons/detail/prepi%C5%A1i/idgdmkmmdemdhdkenlodijkljpbckool">
+    <img src="docs/images/badges/badge-edge.svg" alt="Available on Microsoft Edge Add-ons" height="44">
   </a>
 </p>
 
 - **Chrome / Chromium:** [**Chrome Web Store**](https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb) (v0.9.1 — published)
-- **Firefox (Desktop & Android):** In review / signing on Mozilla Add-ons (slug `prepisi-converter`)
-- **Microsoft Edge:** In review on Microsoft Edge Add-ons (Product ID `0575918a-bf45-4fee-9f26-f28fcdf02398`)
+- **Firefox (Desktop & Android):** [**Mozilla Add-ons**](https://addons.mozilla.org/firefox/addon/prepisi-converter/) (v0.9.1 — published)
+- **Microsoft Edge:** [**Microsoft Edge Add-ons**](https://microsoftedge.microsoft.com/addons/detail/prepi%C5%A1i/idgdmkmmdemdhdkenlodijkljpbckool) (v0.9.1 — published; desktop/mobile smoke tests remain)
 
 ## Load unpacked for development
 
@@ -323,23 +324,24 @@ All browser packages use the same files in `src/`, including one small
 | Target | Repository state | Distribution path |
 |---|---|---|
 | Chrome desktop | Generated Chromium build; tested primary target | Chrome Web Store |
-| Edge desktop, Android, and iOS | Generated Edge package; desktop and both mobile platforms still require smoke tests and Microsoft certification | Microsoft Edge Add-ons |
+| Edge desktop, Android, and iOS | Generated Edge package; v0.9.1 published; desktop and both mobile platforms still require smoke tests | Microsoft Edge Add-ons |
 | Brave and Opera desktop | Chromium compatibility candidates; test before claiming support | Chrome Web Store / Opera Add-ons |
-| Firefox desktop and Android | Generated MV3 build; device smoke tests and Mozilla signing still required | Mozilla Add-ons |
-| Safari macOS, iOS, and iPadOS | Generated web-extension source; Apple wrapper and device QA still required | Xcode/App Store/TestFlight |
+| Firefox desktop and Android | Generated MV3 build; v0.9.1 signed and published; exact signed-package device regression remains | Mozilla Add-ons |
+| Safari macOS, iOS, and iPadOS | Generated web-extension source; Apple wrapper and device QA still required; App Store submission postponed | Xcode/App Store/TestFlight |
 | Yandex Android | Exploratory Chromium-mobile target after a published Chrome build | Chrome/Opera catalog or developer loading |
 | Orion iOS/iPadOS | Exploratory manual Safari-extension compatibility test, not a release target | User-installed compatible extension |
 | Samsung Internet | Not a ZIP port; Samsung approval and an Android application wrapper are required | Samsung closed partner program/Galaxy Store |
 | Chrome Android and Firefox iOS | Not supported by those browsers' public extension models | None |
 
 The Edge target is a separately named package for Microsoft Partner Center but
-shares the Chromium manifest and runtime. Microsoft's mobile collection now lists
-extensions for both Android and iOS; availability still depends on Microsoft
-certification and successful device tests. The Firefox target declares desktop
-140 and Android 142 minimums, a stable add-on
-ID, and no data collection. The Safari target declares 17.2 for consistent Custom
-Highlight support. See the compatibility research for the official sources and
-the remaining real-device test gates.
+shares the Chromium manifest and runtime. Its v0.9.1 package is now published
+in Microsoft Edge Add-ons; desktop and mobile smoke tests remain separate from
+store publication. The Firefox target declares desktop 140 and Android 142
+minimums, a stable add-on ID, and no data collection; its v0.9.1 listing is
+signed and live, while exact signed-package regression testing remains open.
+The Safari target declares 17.2 for consistent Custom Highlight support but has
+not been submitted to Apple's store. See the compatibility research for the
+official sources and the remaining real-device test gates.
 
 ## License and integration
 
