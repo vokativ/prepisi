@@ -159,10 +159,18 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
      Montenegrin locale is not currently achievable in any of the three
      `_locales` systems; the extension's own script/dialect conversion still
      covers Montenegrin readers regardless.
-   - Packaging (`npm run package`) requires Windows PowerShell
-     (`scripts/package.ps1`, uses `Compress-Archive`) and must be run on the
-     project owner's Windows machine; it cannot run on the Linux development
-     workstation.
+   - Packaging (`npm run package`) now runs on any OS with only Node.js: it
+     was rewritten (`scripts/package.mjs`) as a dependency-free ZIP writer
+     (hand-written local/central-directory/EOCD structures via `node:zlib`
+     DEFLATE + a small CRC32 table, no third-party npm packages, no `zip`/
+     `7z`/Python requirement). Verified independently against `unzip -t`,
+     `python3 -m zipfile -t`, and `7z t` (all pass), and against
+     `test/package.test.js`, which parses the archives back with its own
+     reader (`zlib.inflateRawSync`, a different code path from the writer)
+     and asserts exact content equality against `build/<target>` plus
+     run-to-run byte-for-byte reproducibility. The Windows-only
+     `scripts/package.ps1` (`Compress-Archive`) is removed; there is now one
+     canonical packaging implementation for every OS.
    - Release order: submit all three stores together (owner's explicit
      choice, overriding a more conservative staged rollout). Note this
      collides with the Chrome graphics-only promo-tile review already

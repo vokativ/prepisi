@@ -7,7 +7,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require = createRequire(import.meta.url);
 const curatedPortals = require(path.join(root, "src", "curated-portals.js"));
 const persistence = require(path.join(root, "src", "site-persistence.js"));
-const buildRoot = path.join(root, "build");
+let buildRoot = path.join(root, "build");
 const targets = Object.freeze(["chromium", "edge", "firefox", "safari"]);
 const runtimeEntries = Object.freeze([
   "src", "assets", "_locales", "PRIVACY.md", "ATTRIBUTIONS.md", "LICENSE"
@@ -60,7 +60,10 @@ async function build(target) {
   console.log(`${target}: ${path.relative(root, output)} (${manifest.version})`);
 }
 
-const requested = process.argv.slice(2);
+const rawArgs = process.argv.slice(2);
+const buildRootArg = rawArgs.find((arg) => arg.startsWith("--build-root="));
+if (buildRootArg) buildRoot = path.resolve(buildRootArg.slice("--build-root=".length));
+const requested = rawArgs.filter((arg) => !arg.startsWith("--build-root="));
 const selected = requested.length === 0 || requested.includes("all") ? targets : requested;
 for (const target of selected) {
   if (!targets.includes(target)) throw new Error(`Unknown browser target: ${target}`);
