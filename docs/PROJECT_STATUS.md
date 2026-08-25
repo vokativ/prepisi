@@ -1,11 +1,10 @@
 # Project status and machine handoff
 
-Last updated: 2026-08-24. Current live extension version: 0.9.1 on all three
-stores. Version 0.9.2 (i18n release) is submitted to Edge (in review, ~7
-business days) and Firefox AMO (in review, up to 24h+); Chrome upload is
-blocked until its in-flight promo-tile-only review clears. Source HEAD is
-**0.9.3**, the next unsubmitted catalog update; it must not be substituted for
-the already-built 0.9.2 upload.
+Last updated: 2026-08-25. Current live versions: Chrome 0.9.1, Firefox AMO
+0.9.3, and Edge 0.9.2. Firefox AMO accepted and published the 0.9.3 catalog
+update; Edge has 0.9.3 in review and keeps 0.9.2 live. Chrome retains its
+in-flight promo-tile-only review, so 0.9.3 has deliberately not been uploaded
+there. Submit the built Chrome package only after that review clears.
 
 ## Current state
 
@@ -269,6 +268,23 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
    `node scripts/verify-build-outputs.mjs` 24/24 pass. See the new
    "Large multi-language broadcaster exception" sections in
    [`research/CURATED_EDITORIAL_PORTALS.md`](../research/CURATED_EDITORIAL_PORTALS.md).
+
+10. **v0.9.3 current store status (2026-08-25).** `npm run check` passed
+    92/92 tests; `npm run build:all` and `npm run package` produced the 0.9.3
+    artifacts; Firefox `web-ext lint` reported 0 errors, 0 warnings, and 0
+    notices.
+    - **Firefox AMO:** the Firefox desktop + Android package and a matching
+      source archive were submitted. AMO accepted the release, and the public
+      listing now reports version 0.9.3.
+    - **Microsoft Edge:** Partner Center verified the package's Bosnian,
+      English, Croatian, and Serbian locales and `activeTab`, `scripting`, and
+      `storage` permissions. The certification notes confirm that no
+      credentials, accounts, remote services, or test data are required; the
+      extension runs locally. v0.9.3 is **In review** (Partner Center says to
+      expect a response within 7 business days); v0.9.2 remains live.
+    - **Chrome:** the public listing remains at v0.9.1. Its existing
+      promo-tile-only review is still the submission gate; do not upload 0.9.3
+      until it clears.
 
 Firefox Android event-page research is recorded in
 `research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also
