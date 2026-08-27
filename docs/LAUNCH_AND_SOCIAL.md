@@ -1,6 +1,6 @@
 # Launch status, review reminders, and social posts
 
-Last updated: 2026-08-24. Extension version: 0.9.1.
+Last updated: 2026-08-27. Extension version: 0.9.3.
 Publisher display name: `Nemanja G`. Store mailbox: `hepsesus@gmail.com`.
 
 Promo lines below were produced by `src/converter.js`, not invented by hand.
@@ -9,9 +9,9 @@ Promo lines below were produced by `src/converter.js`, not invented by hand.
 
 | Store | Submitted | Status | Where to check |
 | --- | --- | --- | --- |
-| Chrome Web Store | 2026-08-17 | **Approved & Live** (published 2026-08-18) | [Public Store Listing](https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb) |
-| Firefox AMO (desktop + Android) | 2026-08-17 | **Approved & Live**, v0.9.1 | [Public AMO Listing](https://addons.mozilla.org/firefox/addon/prepisi-converter/) |
-| Microsoft Edge Add-ons | 2026-08-17 | **Approved & Live**, v0.9.1, Productivity, EN-US | [Public Edge Listing](https://microsoftedge.microsoft.com/addons/detail/prepi%C5%A1i/idgdmkmmdemdhdkenlodijkljpbckool) |
+| Chrome Web Store | 2026-08-27 | **v0.9.3 In Review** (v0.9.1 live, promo tile updated) | [Public Store Listing](https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb) |
+| Firefox AMO (desktop + Android) | 2026-08-25 | **Approved & Live**, v0.9.3 | [Public AMO Listing](https://addons.mozilla.org/firefox/addon/prepisi-converter/) |
+| Microsoft Edge Add-ons | 2026-08-25 | **Approved & Live**, v0.9.3, Productivity | [Public Edge Listing](https://microsoftedge.microsoft.com/addons/detail/prepi%C5%A1i/idgdmkmmdemdhdkenlodijkljpbckool) |
 | Apple Safari / App Store | Not submitted | Paid Developer Program postponed | [developer.apple.com/account](https://developer.apple.com/account) |
 
 All three browser-store targets are now published. The remaining release gate
