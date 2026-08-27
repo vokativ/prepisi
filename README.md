@@ -39,7 +39,7 @@ forking the conversion rules or vocabulary.
   after navigation. Reviewed news portals share rules across a finite list of
   explicit editorial aliases such as the apex and `www` host; unknown sites
   remain exact-host. Firefox predeclares the reviewed portal catalog for its
-  event page. The Mozilla-signed 0.9.1 listing is live; exact signed-package
+  event page. The Mozilla-signed listing is live at v0.9.3; exact signed-package
   regression validation remains pending.
 - A one-click Latin/Cyrillic interface switch, stored locally and independent of
   the script selected for the web page.
@@ -71,9 +71,9 @@ forking the conversion rules or vocabulary.
   </a>
 </p>
 
-- **Chrome / Chromium:** [**Chrome Web Store**](https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb) (v0.9.1 — published)
-- **Firefox (Desktop & Android):** [**Mozilla Add-ons**](https://addons.mozilla.org/firefox/addon/prepisi-converter/) (v0.9.1 — published)
-- **Microsoft Edge:** [**Microsoft Edge Add-ons**](https://microsoftedge.microsoft.com/addons/detail/prepi%C5%A1i/idgdmkmmdemdhdkenlodijkljpbckool) (v0.9.1 — published; desktop/mobile smoke tests remain)
+- **Chrome / Chromium:** [**Chrome Web Store**](https://chromewebstore.google.com/detail/prepi%C5%A1i/lgcbhfgbbjdhglmomlgkbeikcngjhikb) (v0.9.1 published; v0.9.3 in review)
+- **Firefox (Desktop & Android):** [**Mozilla Add-ons**](https://addons.mozilla.org/firefox/addon/prepisi-converter/) (v0.9.3 — published)
+- **Microsoft Edge:** [**Microsoft Edge Add-ons**](https://microsoftedge.microsoft.com/addons/detail/prepi%C5%A1i/idgdmkmmdemdhdkenlodijkljpbckool) (v0.9.3 — published; desktop/mobile smoke tests remain)
 
 ## Load unpacked for development
 
@@ -323,10 +323,10 @@ All browser packages use the same files in `src/`, including one small
 
 | Target | Repository state | Distribution path |
 |---|---|---|
-| Chrome desktop | Generated Chromium build; tested primary target | Chrome Web Store |
-| Edge desktop, Android, and iOS | Generated Edge package; v0.9.1 published; desktop and both mobile platforms still require smoke tests | Microsoft Edge Add-ons |
+| Chrome desktop | Generated Chromium build; tested primary target; v0.9.1 published, v0.9.3 in review | Chrome Web Store |
+| Edge desktop, Android, and iOS | Generated Edge package; v0.9.3 published; desktop and both mobile platforms still require smoke tests | Microsoft Edge Add-ons |
 | Brave and Opera desktop | Chromium compatibility candidates; test before claiming support | Chrome Web Store / Opera Add-ons |
-| Firefox desktop and Android | Generated MV3 build; v0.9.1 signed and published; exact signed-package device regression remains | Mozilla Add-ons |
+| Firefox desktop and Android | Generated MV3 build; v0.9.3 signed and published; exact signed-package device regression remains | Mozilla Add-ons |
 | Safari macOS, iOS, and iPadOS | Generated web-extension source; Apple wrapper and device QA still required; App Store submission postponed | Xcode/App Store/TestFlight |
 | Yandex Android | Exploratory Chromium-mobile target after a published Chrome build | Chrome/Opera catalog or developer loading |
 | Orion iOS/iPadOS | Exploratory manual Safari-extension compatibility test, not a release target | User-installed compatible extension |
@@ -334,10 +334,10 @@ All browser packages use the same files in `src/`, including one small
 | Chrome Android and Firefox iOS | Not supported by those browsers' public extension models | None |
 
 The Edge target is a separately named package for Microsoft Partner Center but
-shares the Chromium manifest and runtime. Its v0.9.1 package is now published
+shares the Chromium manifest and runtime. Its v0.9.3 package is now published
 in Microsoft Edge Add-ons; desktop and mobile smoke tests remain separate from
 store publication. The Firefox target declares desktop 140 and Android 142
-minimums, a stable add-on ID, and no data collection; its v0.9.1 listing is
+minimums, a stable add-on ID, and no data collection; its v0.9.3 listing is
 signed and live, while exact signed-package regression testing remains open.
 The Safari target declares 17.2 for consistent Custom Highlight support but has
 not been submitted to Apple's store. See the compatibility research for the
