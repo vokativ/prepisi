@@ -281,7 +281,7 @@ Run `npm run apply:jat-reviews` before regenerating the report. It copies decisi
 to the durable ledger at `data/jat-discovery/reviews.csv`, creates the reviewed
 relation source, and updates the semantic blocklist. `npm run discover:jat` and
 `npm run build:data` perform this import automatically before they overwrite the
-generated report. The earlier `OK (human-reviewer)` edit was migrated this way as the
+generated report. The earlier `OK (human review)` edit was migrated this way as the
 approved `sudelovanje ↔ sudjelovanje` relation; its five safe inflection pairs now
 ship in the runtime data.
 

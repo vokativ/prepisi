@@ -72,8 +72,9 @@ configured for automatic publishing upon approval).
   Chrome 151.0.7922.138, Edge 151.0.4129.78, Firefox 153.0.3 — the current
   stable releases for that date), via a mix of manual and AI-agent-assisted
   testing; see `docs/WINDOWS_DESKTOP_TEST_2026-08-13.md`.
-- The release owner publishes as an individual under the dedicated project
-  identity `the dedicated project mailbox`. Public publisher display name is `the publisher`.
+- The release owner publishes as an individual under a dedicated project
+  identity and display name; both are intentionally not recorded in this
+  public repository.
 - GitHub `vokativ/prepisi` is public. Privacy URL:
   `https://github.com/vokativ/prepisi/blob/main/PRIVACY.md`.
 - Toolbar icons shipped 2026-08-17 use the original `PRE` / `ПРЕ` lockup, not
@@ -286,6 +287,22 @@ commands documented in `CONTRIBUTING.md` and `docs/DIALECT_DATA.md`.
       2026, and submitted for review with automatic publishing enabled (status:
       **Pending review**).
 
+## Browser test status and platform handoff
+
+- **Firefox Android:** Manual conversion passed on a Pixel 7 with Firefox 153.0.3.
+  Automatic remembered navigation failed in the unsigned `web-ext` session.
+  The decisive Android comparison is a clean temporary install versus a clean
+  Mozilla-signed XPI, preferably also Firefox Nightly. See
+  [`research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`](../research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md)
+  and [`docs/FIREFOX_ANDROID_TEST.md`](FIREFOX_ANDROID_TEST.md).
+  Firefox options contain an opt-in, single-host diagnostic log bounded to 40
+  technical entries and storing no page text or full URLs; the next Android pass
+  should enable it for the explicit test domain before navigating.
+- **macOS desktop testing:** Pending for Chrome, Edge, Firefox, and Safari
+  across the full platform checklist. Follow [`docs/LOCAL_INSTALL.md`](LOCAL_INSTALL.md)
+  and [`HUMAN_TEST.md`](../HUMAN_TEST.md); record exact browser/macOS versions
+  and results in a new dated document rather than rewriting the Android report.
+
 Firefox Android event-page research is recorded in
-`research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`; repository guardrails are also
-summarized in `AGENTS.md`.
+[`research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md`](../research/FIREFOX_MV3_ANDROID_EVENT_PAGES.md);
+repository guardrails are also summarized in `AGENTS.md`.

@@ -1,7 +1,7 @@
 # Launch status, review reminders, and social posts
 
 Last updated: 2026-08-27. Extension version: 0.9.3.
-Publisher display name: `the publisher`. Store mailbox: `the dedicated project mailbox`.
+Publisher display name and store mailbox: intentionally not recorded in this public repository.
 
 Promo lines below were produced by `src/converter.js`, not invented by hand.
 
@@ -28,13 +28,13 @@ Firefox slug: `prepisi-converter`.
 Edge Store ID: `0RDCK9XMTNZC`; Edge product: `0575918a-bf45-4fee-9f26-f28fcdf02398`; public listing ID: `idgdmkmmdemdhdkenlodijkljpbckool`.
 ## When to go look
 
-Do not poll dashboards hourly. Check `the dedicated project mailbox` first, including Spam
+Do not poll dashboards hourly. Check the dedicated project mailbox first, including Spam
 and Promotions.
 
 1. Download the Mozilla-signed XPI and retest Firefox desktop plus Android
    remembered navigation before calling the signed package fully supported.
 2. Watch the three published listings for rejection, update, or user feedback.
-3. If a store asks for more information, reply from `the dedicated project mailbox` with
+3. If a store asks for more information, reply from the dedicated project mailbox with
    the same reviewer note used at submit: 100% offline, no remote code, source
    at the GitHub URL above.
 
@@ -165,7 +165,7 @@ cases; do not claim any affiliation.
 - **CLASSLA (CLARIN Knowledge Centre for South Slavic Languages)** — `helpdesk.classla@clarin.si`; mailing list <https://mailman.ijs.si/mailman/listinfo/classla>; Discord <https://discord.com/invite/vQDRpGMU7C>. Direct fit: reviewed BCMS corpora/lexicons is their core subject.
 - **SIGSLAV (ACL Slavic NLP)** — <https://sigslav.cs.helsinki.fi/contact.html>, Google Group via <https://sigslav.cs.helsinki.fi/>. **SlavNLP/BSNLP workshop** — `bsnlp@cs.helsinki.fi`, <https://bsnlp.cs.helsinki.fi/>. Worth a short write-up: rule-based script/dialect conversion plus name-recognition protection is a citable applied case.
 - **University of Zagreb FFZG NLP/Lexicography section** — <https://inf.ffzg.unizg.hr/index.php/en/department-profile/department-sections/natural-language-processing-lexicography-and-encyclopedic-science>.
-- **University of Rijeka AIRI speech/language lab** — ``.
+- **University of Rijeka AIRI speech/language lab** — contact via the lab URL.
 
 ### Tier 2 — reader communities (need prior mod permission; one post, no repeats)
 
@@ -184,7 +184,7 @@ behavior. They are fair demo surfaces after 0.9.3 ships; state that the
 extension works on their public pages, never that they endorse it.
 
 - **Startit.rs** — `kontakt@startit.rs` / `komunikacije@startit.rs`, <https://startit.rs/kontakt/>. Has covered domestic OSS projects (Mainflux, Superplane); closest precedent match.
-- **Netokracija** — Croatian: `` / `info@netokracija.com`; Serbian edition is now browser-verified at `netokracija.rs`, but contact research is still required for it.
+- **Netokracija** — Croatian: `info@netokracija.com`; Serbian edition is now browser-verified at `netokracija.rs`, but contact research is still required for it.
 - **BUG.hr** — `pisma@bug.hr`, <https://www.bug.hr/kontakt>. **Mreža** (BUG's IT-professional title) — `mreza@bug.hr`; use a technical/architecture-angle pitch.
 - **PC Press** (Serbia) — `pc@pcpress.rs`. Local Chrome completed the bot challenge and confirmed current, bylined Business & ICT News, so it is now a valid 0.9.3 demo surface.
 - **Additional catalog candidates for later regional outreach:** Svet Kompjutera (`sk.rs`), BuffGaming, PC CHIP, VIDI, HCL, PC Ekspert, Mob.hr, Bosnia-targeted IT Portal, ITNetwork, Sajber Sfera, and ICT Business. Contact research is still required before pitching them.
@@ -206,8 +206,8 @@ tool that supports every direction (Latin↔Cyrillic, Ekavian↔Ijekavian↔Ikav
 equally — never as advocacy for one script or standard over another, and
 never implying institutional endorsement.
 
-- **Institut za srpski jezik SANU** — ``, <https://www.isj.sanu.ac.rs/>.
-- **Matica srpska, Odeljenje za književnost i jezik** — ``, ``.
+- **Institut za srpski jezik SANU** — <https://www.isj.sanu.ac.rs/>.
+- **Matica srpska, Odeljenje za književnost i jezik** — contact via the institution's website.
 - **Fakultet za crnogorski jezik i književnost (FCJK)** — `info@fcjk.me`, <https://fcjk.ac.me/>. Best point of contact for the Montenegrin ś/ź handling specifically.
 - **Udruženje za odbranu ćirilice „Dobrica Erić"** — `info@cirilica-beograd.rs`. Cyrillic-preservation association; likely receptive but the most politically loaded single contact on this list — lead with "supports both scripts equally," not "helps Cyrillic."
 

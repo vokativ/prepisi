@@ -1,7 +1,7 @@
 # Personal publisher account guide
 
-Last checked: 2026-08-24. Publisher identity: `the dedicated project mailbox`. Public
-display name: `the publisher`.
+Last checked: 2026-08-24. Publisher identity and public display name are
+intentionally not recorded in this public repository.
 
 ## Current release position
 
@@ -27,13 +27,13 @@ display name: `the publisher`.
 
 ## Account status (2026-08-17)
 
-1. Dedicated project mailbox `the dedicated project mailbox` is the login and Chrome
+1. Dedicated project mailbox (address intentionally not recorded here) is the login and Chrome
    public contact email.
 2. Apple ID under that mailbox is a **free** developer account (`Enroll today`
    still shown). Not in the paid program.
 3. Chrome Web Store: $5 paid, Non-Trader declared, contact email **verified**,
-   publisher name `the publisher`.
-4. Mozilla AMO: agreement accepted, display name `the publisher`, first add-on
+   publisher name set to the public display name.
+4. Mozilla AMO: agreement accepted, display name set likewise, first add-on
    submitted.
 5. Microsoft Partner Center: Individual enrollment complete, Edge
    package verified and listing submitted.
@@ -105,12 +105,12 @@ README is enough after Chrome, Firefox, or Edge publish.
 
 ### Account to use
 
-Use the dedicated project Google Account `the dedicated project mailbox`. Note that Google
+Use the dedicated project Google Account (address intentionally not recorded here). Note that Google
 Play Console and Chrome Web Store are separate developer programs; signing in to
 the Chrome Web Store Developer Dashboard initiates the extension registration flow.
 
-Completed 2026-08-17 under `the dedicated project mailbox`: Non-Trader declaration, $5
-fee, publisher name `the publisher`, verified contact email, and upload of
+Completed 2026-08-17 under the dedicated project account: Non-Trader declaration, $5
+fee, publisher name set to the public display name, verified contact email, and upload of
 `dist/prepisi-0.9.1-chromium.zip`. Item
 `lgcbhfgbbjdhglmomlgkbeikcngjhikb` was **approved and published** on 2026-08-18.
 
@@ -137,7 +137,7 @@ work, or business differently, so confirm that characterization during signup.
 
 ### Submission status
 
-Completed 2026-08-17: Individual enrollment,  publisher profile,
+Completed 2026-08-17: Individual enrollment, publisher profile,
 public GitHub support URL, package validation, Productivity category, privacy
 disclosures, English listing, real screenshots, and certification notes. The
 public Edge listing is **Approved & Published**. Edge runtime testing on macOS

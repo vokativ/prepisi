@@ -126,7 +126,7 @@ test("uses strict frequency-ranked families while withholding semantic lookalike
   assert.equal(converter.convertText("prijeko i premijera", dialect("ekavian")), "prijeko i premijera");
 });
 
-test("uses the migrated human-reviewer-reviewed noun relation in both directions", () => {
+test("uses the migrated human-reviewed noun relation in both directions", () => {
   assert.equal(converter.convertText("Sudelovanje i sudelovanja", dialect("ijekavian")),
     "Sudjelovanje i sudjelovanja");
   assert.equal(converter.convertText("Sudjelovanje i sudjelovanja", dialect("ekavian")),

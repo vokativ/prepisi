@@ -77,8 +77,8 @@ attribution of authorship" (translated from the original Serbian). This
 attribution entry, the pinned commit, and the upstream project link fulfil the
 CC BY 4.0 attribution requirement, so this source no longer blocks the
 public-release decision. Project contact for optional written confirmation or
-collaboration: dr Vuk Batanović, COMtext.SR project lead,
-<>. License text:
+collaboration: dr Vuk Batanović, COMtext.SR project lead (contact via the
+project page below). License text:
 <https://creativecommons.org/licenses/by/4.0/>. Project page:
 <https://www.ic.etf.bg.ac.rs/projects/comtext-sr/>.
 
